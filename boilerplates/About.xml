@@ -2,7 +2,7 @@
 
 <ModMetaData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns="https://github.com/sharky98/RWSchema/About"
-    xsi:schemaLocation="https://github.com/sharky98/RWSchema/About https://raw.githubusercontent.com/sharky98/RWSchema/refs/heads/main/RimWorld.Mod.About.xsd">
+    xsi:schemaLocation="https://github.com/sharky98/RWSchema/About https://raw.githubusercontent.com/sharky98/RWSchema/refs/heads/main/schemas/RimWorld.Mod.About.xsd">
 
     <packageId>SharkySuited.BoilerPlate.Mod</packageId>
 
