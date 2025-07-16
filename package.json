@@ -1,0 +1,14 @@
+{
+  "name": "rimworld-xsd-schema-validation",
+  "private":"true",
+  "type": "module",
+  "dependencies": {
+    "@biomejs/biome": "^2.1.1",
+    "@types/mocha": "^10.0.10",
+    "@types/node": "^24.0.14",
+    "mocha": "^11.7.1",
+    "tsx": "^4.20.3",
+    "typescript": "^5.8.3",
+    "xsd-schema-validator": "^0.11.0"
+  }
+}
