@@ -5,176 +5,165 @@
 
   <xs:element name="ModMetaData">
     <xs:complexType>
-      <xs:sequence>
-        <xs:group ref="requiredModMetaDataGroup" />
-        <xs:group ref="optionalModMetaDataGroup" />
-      </xs:sequence>
+      <xs:all>
+        <!-- ### REQUIRED ### -->
+        <xs:element minOccurs="1" name="packageId" type="packageIdType">
+          <xs:annotation>
+            <xs:documentation> The internal identifier for your mod, used to identify your mod as a
+              dependency, load order helper, or with `MayRequire` attributes. `packageIds` should be
+              alphanumeric with at least one period separating two strings. It is usually
+              recommended that you use `YourName.YourModName`, `YourProjectName.YourModName`,
+              `YourName.YourSeriesName.YourModName`, or something similar. </xs:documentation>
+            <xs:documentation> **`packageId` must be globally unique across all mods.** If RimWorld
+              encounters more than one mod with the same packageId, *even if they are not in your
+              current mod list*, then an error will be thrown and only the first mod will be usable.
+              The only time that using the same packageId is recommended is if you are forking or
+              continuing a mod and want it to act as a drop-in replacement. In such cases, players
+              must unsubscribe from the original mod to be able to use yours. </xs:documentation>
+            <xs:documentation> Note: packageId is case-insensitive as RimWorld will internally
+              convert all IDs to lowercase; capitalization is done for readability, but two IDs that
+              are identical other than case will resolve as identical. </xs:documentation>
+          </xs:annotation>
+        </xs:element>
+        <xs:element minOccurs="1" name="name" type="xs:string">
+          <xs:annotation>
+            <xs:documentation> The title of your mod. While the name of your mod does not need to be
+              globally unique and most references to mods are now using `packageId`,
+              `PatchOperationFindMod` still uses mod names and thus you should avoid changing the
+              name of your mod unless absolutely necessary. </xs:documentation>
+          </xs:annotation>
+        </xs:element>
+        <!-- FIXME: Only one of author and authors should be present. I can't find a way with xs:all -->
+        <xs:element minOccurs="0" name="author" type="xs:string">
+          <xs:annotation>
+            <xs:documentation> The author of this mod, usually yourself. More than one author can be
+              specified by separating names with commas or by using the `<authors></authors>` tag. </xs:documentation>
+          </xs:annotation>
+        </xs:element>
+        <xs:element minOccurs="0" name="authors" type="listOfStringsType">
+          <xs:annotation>
+            <xs:documentation> The author of this mod, usually yourself. More than one author can be
+              specified by separating names with commas or by using the `<authors></authors>` tag. </xs:documentation>
+          </xs:annotation>
+        </xs:element>
+        <xs:element minOccurs="1" name="description" type="xs:string">
+          <xs:annotation>
+            <xs:documentation> The plain-text description of your mod. This is used as both the
+              content description of your mod in mod managers (including the vanilla mod manager) as
+              well as the initial description of your mod if uploaded to Steam Workshop. In the
+              latter case, you can change your Workshop item description independent of the mod
+              itself, thus it is generally recommended that you keep the description of your mod in
+              `About.xml` relatively short. </xs:documentation>
+          </xs:annotation>
+        </xs:element>
+        <xs:element minOccurs="1" name="supportedVersions" type="supportedVersionsType">
+          <xs:annotation>
+            <xs:documentation> The RimWorld versions that your mod supports. A warning will be given
+              to the player if attempting to load the mod under a version you have not explicitly
+              specified support for, but this does not prevent players from loading the mod if they
+              so choose. </xs:documentation>
+            <xs:documentation> It is strongly recommended that you only specify support for versions
+              that you have explicitly tested compatibility for; RimWorld has changed dramatically
+              between versions in the past and even XML-only mods may not be guaranteed to work
+              without version-specific changes. </xs:documentation>
+          </xs:annotation>
+        </xs:element>
+        <!-- ### OPTIONAL ### -->
+        <xs:element minOccurs="0" name="modVersion" type="modVersionType">
+          <xs:annotation>
+            <xs:documentation>A version string for your own personal version tracking.</xs:documentation>
+            <xs:documentation> **WARNING**: This tag was introduced in RimWorld 1.4 and will
+              generate errors in previous versions unless `IgnoreIfNoMatchingField` is used. If you
+              intend to support older versions of RimWorld with your mod and you want to use this
+              field, you must add this attribute. </xs:documentation>
+            <!-- TODO: Maybe possible to use conditional type assignment to force it's usage?
+            https://stackoverflow.com/a/30089560 -->
+          </xs:annotation>
+        </xs:element>
+        <xs:element minOccurs="0" name="modIconPath" type="modIconPathType">
+          <xs:annotation>
+            <xs:documentation> Adds an icon for your mod that is shown on loading screens. Note that
+              the current unstable version of RimWorld 1.5 also automatically loads
+              `About/ModIcon.png`, so this field is not necessary to show a mod icon. You only need
+              it if you want to store your mod icon in your Textures folder for some reason. Mod
+              icons should be 32x32 PNG files with limited colors; Unity's image compression will
+              make icons very crunchy if you try to add too much detail. </xs:documentation>
+            <xs:documentation> **WARNING**: This tag was introduced in RimWorld 1.5 and will
+              generate errors in previous versions unless `IgnoreIfNoMatchingField` is used. If you
+              intend to support older versions of RimWorld with your mod and you want to use this
+              field, you must add this attribute. </xs:documentation>
+            <!-- TODO: Maybe possible to use conditional type assignment to force it's usage?
+            https://stackoverflow.com/a/30089560 -->
+          </xs:annotation>
+        </xs:element>
+        <xs:element minOccurs="0" name="url" type="xs:anyURI">
+          <xs:annotation>
+            <xs:documentation> A web link that can be displayed with your mod info. This can be any
+              link, though most mods will link to their primary download source, such as a Steam
+              Workshop page, GitHub repository, or Ludeon Forum link. </xs:documentation>
+          </xs:annotation>
+        </xs:element>
+        <xs:element minOccurs="0" name="descriptionsByVersion" type="stringByVersionType" />
+        <xs:element minOccurs="0" name="modDependencies" type="listOfModDependenciesType">
+          <xs:annotation>
+            <xs:documentation> Used to specify dependencies for your mod. Players will be warned if
+              a dependency for your mod is not loaded in their mod list, though players may choose
+              to ignore it. </xs:documentation>
+            <xs:documentation> Note that this is not automatically used by Steam Workshop; if you
+              want players to be notified that they should download a dependency, you must add that
+              via Steam Workshop's "Required Items" feature. </xs:documentation>
+          </xs:annotation>
+        </xs:element>
+        <xs:element minOccurs="0" name="modDependenciesByVersion"
+          type="modDependenciesByVersionType">
+          <xs:annotation>
+            <xs:documentation> Used to specify dependencies for your mod that only apply for a
+              specific version. See above for more details. </xs:documentation>
+          </xs:annotation>
+        </xs:element>
+        <xs:element minOccurs="0" name="loadBefore" type="listOfStringsType">
+          <xs:annotation>
+            <xs:documentation>TODO</xs:documentation>
+          </xs:annotation>
+        </xs:element>
+        <xs:element minOccurs="0" name="loadBeforeByVersion" type="listOfStringsByVersionType">
+          <xs:annotation>
+            <xs:documentation>TODO</xs:documentation>
+          </xs:annotation>
+        </xs:element>
+        <xs:element minOccurs="0" name="forceLoadBefore" type="listOfStringsType">
+          <xs:annotation>
+            <xs:documentation>TODO</xs:documentation>
+          </xs:annotation>
+        </xs:element>
+        <xs:element minOccurs="0" name="loadAfter" type="listOfStringsType">
+          <xs:annotation>
+            <xs:documentation>TODO</xs:documentation>
+          </xs:annotation>
+        </xs:element>
+        <xs:element minOccurs="0" name="loadAfterByVersion" type="listOfStringsByVersionType">
+          <xs:annotation>
+            <xs:documentation>TODO</xs:documentation>
+          </xs:annotation>
+        </xs:element>
+        <xs:element minOccurs="0" name="forceLoadAfter" type="listOfStringsType">
+          <xs:annotation>
+            <xs:documentation>TODO</xs:documentation>
+          </xs:annotation>
+        </xs:element>
+        <xs:element minOccurs="0" name="incompatibleWith" type="listOfStringsType">
+          <xs:annotation>
+            <xs:documentation>TODO</xs:documentation>
+          </xs:annotation>
+        </xs:element>
+        <xs:element minOccurs="0" name="incompatibleWithByVersion" type="listOfStringsByVersionType">
+          <xs:annotation>
+            <xs:documentation>TODO</xs:documentation>
+          </xs:annotation>
+        </xs:element>
+      </xs:all>
     </xs:complexType>
   </xs:element>
-
-  <xs:group name="requiredModMetaDataGroup">
-    <xs:sequence>
-      <!-- ### REQUIRED ### -->
-      <xs:element minOccurs="1" name="packageId" type="packageIdType">
-        <xs:annotation>
-          <xs:documentation> The internal identifier for your mod, used to identify your mod as a
-            dependency, load order helper, or with `MayRequire` attributes. `packageIds` should be
-            alphanumeric with at least one period separating two strings. It is usually recommended
-            that you use `YourName.YourModName`, `YourProjectName.YourModName`,
-            `YourName.YourSeriesName.YourModName`, or something similar. </xs:documentation>
-          <xs:documentation> **`packageId` must be globally unique across all mods.** If RimWorld
-            encounters more than one mod with the same packageId, *even if they are not in your
-            current mod list*, then an error will be thrown and only the first mod will be usable.
-            The only time that using the same packageId is recommended is if you are forking or
-            continuing a mod and want it to act as a drop-in replacement. In such cases, players
-            must unsubscribe from the original mod to be able to use yours. </xs:documentation>
-          <xs:documentation> Note: packageId is case-insensitive as RimWorld will internally convert
-            all IDs to lowercase; capitalization is done for readability, but two IDs that are
-            identical other than case will resolve as identical. </xs:documentation>
-        </xs:annotation>
-      </xs:element>
-      <xs:element minOccurs="1" name="name" type="xs:string">
-        <xs:annotation>
-          <xs:documentation> The title of your mod. While the name of your mod does not need to be
-            globally unique and most references to mods are now using `packageId`,
-            `PatchOperationFindMod` still uses mod names and thus you should avoid changing the name
-            of your mod unless absolutely necessary. </xs:documentation>
-        </xs:annotation>
-      </xs:element>
-      <xs:group ref="authorGroup">
-        <xs:annotation>
-          <xs:documentation> The author of this mod, usually yourself. More than one author can be
-            specified by separating names with commas or by using the `<authors></authors>` tag. </xs:documentation>
-        </xs:annotation>
-      </xs:group>
-      <xs:element minOccurs="1" name="description" type="xs:string">
-        <xs:annotation>
-          <xs:documentation> The plain-text description of your mod. This is used as both the
-            content description of your mod in mod managers (including the vanilla mod manager) as
-            well as the initial description of your mod if uploaded to Steam Workshop. In the latter
-            case, you can change your Workshop item description independent of the mod itself, thus
-            it is generally recommended that you keep the description of your mod in `About.xml`
-            relatively short. </xs:documentation>
-        </xs:annotation>
-      </xs:element>
-      <xs:element minOccurs="1" name="supportedVersions" type="supportedVersionsType">
-        <xs:annotation>
-          <xs:documentation> The RimWorld versions that your mod supports. A warning will be given
-            to the player if attempting to load the mod under a version you have not explicitly
-            specified support for, but this does not prevent players from loading the mod if they so
-            choose. </xs:documentation>
-          <xs:documentation> It is strongly recommended that you only specify support for versions
-            that you have explicitly tested compatibility for; RimWorld has changed dramatically
-            between versions in the past and even XML-only mods may not be guaranteed to work
-            without version-specific changes. </xs:documentation>
-        </xs:annotation>
-      </xs:element>
-    </xs:sequence>
-  </xs:group>
-
-  <xs:group name="optionalModMetaDataGroup">
-    <xs:sequence>
-      <!-- ### OPTIONAL ### -->
-      <xs:element minOccurs="0" name="modVersion" type="modVersionType">
-        <xs:annotation>
-          <xs:documentation>A version string for your own personal version tracking.</xs:documentation>
-          <xs:documentation> **WARNING**: This tag was introduced in RimWorld 1.4 and will generate
-            errors in previous versions unless `IgnoreIfNoMatchingField` is used. If you intend to
-            support older versions of RimWorld with your mod and you want to use this field, you
-            must add this attribute. </xs:documentation>
-          <!-- TODO: Maybe possible to use conditional type assignment to force it's usage?
-            https://stackoverflow.com/a/30089560 -->
-        </xs:annotation>
-      </xs:element>
-      <xs:element minOccurs="0" name="modIconPath" type="modIconPathType">
-        <xs:annotation>
-          <xs:documentation> Adds an icon for your mod that is shown on loading screens. Note that
-            the current unstable version of RimWorld 1.5 also automatically loads
-            `About/ModIcon.png`, so this field is not necessary to show a mod icon. You only need it
-            if you want to store your mod icon in your Textures folder for some reason. Mod icons
-            should be 32x32 PNG files with limited colors; Unity's image compression will make icons
-            very crunchy if you try to add too much detail. </xs:documentation>
-          <xs:documentation> **WARNING**: This tag was introduced in RimWorld 1.5 and will generate
-            errors in previous versions unless `IgnoreIfNoMatchingField` is used. If you intend to
-            support older versions of RimWorld with your mod and you want to use this field, you
-            must add this attribute. </xs:documentation>
-          <!-- TODO: Maybe possible to use conditional type assignment to force it's usage?
-            https://stackoverflow.com/a/30089560 -->
-        </xs:annotation>
-      </xs:element>
-      <xs:element minOccurs="0" name="url" type="xs:anyURI">
-        <xs:annotation>
-          <xs:documentation> A web link that can be displayed with your mod info. This can be any
-            link, though most mods will link to their primary download source, such as a Steam
-            Workshop page, GitHub repository, or Ludeon Forum link. </xs:documentation>
-        </xs:annotation>
-      </xs:element>
-      <xs:element minOccurs="0" name="descriptionsByVersion" type="stringByVersionType" />
-      <xs:element minOccurs="0" name="modDependencies" type="listOfModDependenciesType">
-        <xs:annotation>
-          <xs:documentation>Used to specify dependencies for your mod. Players will be warned if a
-            dependency for your mod is not loaded in their mod list, though players may choose to
-            ignore it.</xs:documentation>
-          <xs:documentation>Note that this is not automatically used by Steam Workshop; if you want
-            players to be notified that they should download a dependency, you must add that via
-            Steam Workshop's "Required Items" feature.</xs:documentation>
-        </xs:annotation>
-      </xs:element>
-      <xs:element minOccurs="0" name="modDependenciesByVersion" type="modDependenciesByVersionType">
-        <xs:annotation>
-          <xs:documentation>Used to specify dependencies for your mod that only apply for a specific
-            version. See above for more details.</xs:documentation>
-        </xs:annotation>
-      </xs:element>
-      <xs:element minOccurs="0" name="loadBefore" type="listOfStringsType">
-        <xs:annotation>
-          <xs:documentation>TODO</xs:documentation>
-        </xs:annotation>
-      </xs:element>
-      <xs:element minOccurs="0" name="loadBeforeByVersion" type="listOfStringsByVersionType">
-        <xs:annotation>
-          <xs:documentation>TODO</xs:documentation>
-        </xs:annotation>
-      </xs:element>
-      <xs:element minOccurs="0" name="forceLoadBefore" type="listOfStringsType">
-        <xs:annotation>
-          <xs:documentation>TODO</xs:documentation>
-        </xs:annotation>
-      </xs:element>
-      <xs:element minOccurs="0" name="loadAfter" type="listOfStringsType">
-        <xs:annotation>
-          <xs:documentation>TODO</xs:documentation>
-        </xs:annotation>
-      </xs:element>
-      <xs:element minOccurs="0" name="loadAfterByVersion" type="listOfStringsByVersionType">
-        <xs:annotation>
-          <xs:documentation>TODO</xs:documentation>
-        </xs:annotation>
-      </xs:element>
-      <xs:element minOccurs="0" name="forceLoadAfter" type="listOfStringsType">
-        <xs:annotation>
-          <xs:documentation>TODO</xs:documentation>
-        </xs:annotation>
-      </xs:element>
-      <xs:element minOccurs="0" name="incompatibleWith" type="listOfStringsType">
-        <xs:annotation>
-          <xs:documentation>TODO</xs:documentation>
-        </xs:annotation>
-      </xs:element>
-      <xs:element minOccurs="0" name="incompatibleWithByVersion" type="listOfStringsByVersionType">
-        <xs:annotation>
-          <xs:documentation>TODO</xs:documentation>
-        </xs:annotation>
-      </xs:element>
-    </xs:sequence>
-  </xs:group>
-
-  <xs:group name="authorGroup">
-    <xs:choice>
-      <xs:element name="author" type="xs:string" />
-      <xs:element name="authors" type="listOfStringsType" />
-    </xs:choice>
-  </xs:group>
 
   <xs:simpleType name="packageIdType">
     <xs:restriction base="xs:string">
@@ -188,10 +177,20 @@
     </xs:sequence>
   </xs:complexType>
 
+  <xs:attributeGroup name="IgnoreIfNoMatchingFieldAttribute">
+    <xs:attribute name="IgnoreIfNoMatchingField" use="optional">
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:pattern value="True" />
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:attribute>
+  </xs:attributeGroup>
+
   <xs:complexType name="modVersionType">
     <xs:simpleContent>
-      <xs:extension base="versionNumberType">
-        <xs:attribute name="IgnoreIfNoMatchingField" type="xs:boolean" use="optional" />
+      <xs:extension base="xs:string">
+        <xs:attributeGroup ref="IgnoreIfNoMatchingFieldAttribute" />
       </xs:extension>
     </xs:simpleContent>
   </xs:complexType>
@@ -199,7 +198,7 @@
   <xs:complexType name="modIconPathType">
     <xs:simpleContent>
       <xs:extension base="xs:string">
-        <xs:attribute name="IgnoreIfNoMatchingField" type="xs:boolean" use="optional" />
+        <xs:attributeGroup ref="IgnoreIfNoMatchingFieldAttribute" />
       </xs:extension>
     </xs:simpleContent>
   </xs:complexType>
@@ -211,12 +210,12 @@
   </xs:simpleType>
 
   <xs:complexType name="modDependenciesType">
-    <xs:sequence>
+    <xs:all>
       <xs:element name="packageId" type="packageIdType" />
       <xs:element name="displayName" type="xs:string" />
       <xs:element name="steamWorkshopUrl" type="xs:anyURI" />
       <xs:element minOccurs="0" name="downloadUrl" type="xs:anyURI" />
-    </xs:sequence>
+    </xs:all>
   </xs:complexType>
 
   <xs:complexType name="listOfModDependenciesType">
@@ -228,8 +227,8 @@
   <xs:complexType name="modDependenciesByVersionType">
     <xs:sequence>
       <xs:element minOccurs="0" name="v1.0" type="listOfModDependenciesType" />
-      <xs:element minOccurs="0" name="v1.2" type="listOfModDependenciesType" />
       <xs:element minOccurs="0" name="v1.1" type="listOfModDependenciesType" />
+      <xs:element minOccurs="0" name="v1.2" type="listOfModDependenciesType" />
       <xs:element minOccurs="0" name="v1.3" type="listOfModDependenciesType" />
       <xs:element minOccurs="0" name="v1.4" type="listOfModDependenciesType" />
       <xs:element minOccurs="0" name="v1.5" type="listOfModDependenciesType" />

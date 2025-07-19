@@ -1,2 +1,8 @@
 wip
 node_modules
+sandbox
+test/fixtures/**/*.xml
+bin
+obj
+*.dll
+ExtractSchemas/extractedSchemas

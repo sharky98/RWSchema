@@ -7,7 +7,7 @@
   },
   "files": {
     "ignoreUnknown": false,
-    "includes": ["tests/**/*", "biome.json"]
+    "includes": ["tests/**/*", "sandbox/**/*", "biome.json"]
   },
   "assist": {
     "actions": {

@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+  xmlns="https://github.com/sharky98/RWSchema/Languages"
+  targetNamespace="https://github.com/sharky98/RWSchema/Languages">
+  <xs:element name="LanguageData">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:any minOccurs="1" maxOccurs="unbounded" processContents="lax" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
