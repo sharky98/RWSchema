@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<xs:schema elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema"
-  xmlns="https://github.com/sharky98/RWSchema/About"
-  targetNamespace="https://github.com/sharky98/RWSchema/About">
+<xs:schema elementFormDefault="qualified"
+  xmlns:xs="http://www.w3.org/2001/XMLSchema"
+  xmlns="https://github.com/sharky98/RWSchema/About" targetNamespace="https://github.com/sharky98/RWSchema/About">
 
   <xs:element name="ModMetaData">
     <xs:complexType>
@@ -114,8 +114,7 @@
               via Steam Workshop's "Required Items" feature. </xs:documentation>
           </xs:annotation>
         </xs:element>
-        <xs:element minOccurs="0" name="modDependenciesByVersion"
-          type="modDependenciesByVersionType">
+        <xs:element minOccurs="0" name="modDependenciesByVersion" type="modDependenciesByVersionType">
           <xs:annotation>
             <xs:documentation> Used to specify dependencies for your mod that only apply for a
               specific version. See above for more details. </xs:documentation>
@@ -167,7 +166,13 @@
 
   <xs:simpleType name="packageIdType">
     <xs:restriction base="xs:string">
-      <xs:pattern value="([a-zA-Z0-9]+\.)+[a-zA-Z0-9]+" />
+      <!-- ModMetaData.ModMetaDataInternal.PackageIdFormatRegex is as follow  -->
+      <!-- (?=.{1,60}$)^(?!\\.)(?=.*?[.])(?!.*([.])\\1+)[a-zA-Z0-9.]{1,}[a-zA-Z0-9]{1}$ -->
+      <!-- XML Regex flavor doesn't allow lookahead. So here an hopefully good enough. -->
+      <xs:pattern value="[a-zA-Z0-9.]{1,}[.]{1}[a-zA-Z0-9]{1,}" />
+      <xs:maxLength value="60" />
+      <!-- This shows as an error in VSCode due to xs:assertion being added in XSD 1.1, which is not supported yet -->
+      <xs:assertion test="not(contains(lower-case($value),'ludeon'))" />
     </xs:restriction>
   </xs:simpleType>
 
@@ -189,7 +194,7 @@
 
   <xs:complexType name="modVersionType">
     <xs:simpleContent>
-      <xs:extension base="xs:string">
+      <xs:extension base="versionNumberType">
         <xs:attributeGroup ref="IgnoreIfNoMatchingFieldAttribute" />
       </xs:extension>
     </xs:simpleContent>
@@ -205,7 +210,9 @@
 
   <xs:simpleType name="versionNumberType">
     <xs:restriction base="xs:string">
-      <xs:pattern value="[0-9]+\.[0-9]+(\.[0-9]+)?" />
+      <!-- The source code acception version in the format Major.Minor. -->
+      <!-- For the modVersion, it seems to be stored in System.Version, but only account for Major.Minor -->
+      <xs:pattern value="[0-9]+\.[0-9]+(\.[0-9]+(\.[0-9]+)?)?" />
     </xs:restriction>
   </xs:simpleType>
 
@@ -226,6 +233,7 @@
 
   <xs:complexType name="modDependenciesByVersionType">
     <xs:sequence>
+      <!-- TODO: According to the source, the name of the tag could be <v1.0> or <1.0> -->
       <xs:element minOccurs="0" name="v1.0" type="listOfModDependenciesType" />
       <xs:element minOccurs="0" name="v1.1" type="listOfModDependenciesType" />
       <xs:element minOccurs="0" name="v1.2" type="listOfModDependenciesType" />
@@ -238,6 +246,7 @@
 
   <xs:complexType name="stringByVersionType">
     <xs:sequence>
+      <!-- TODO: According to the source, the name of the tag could be <v1.0> or <1.0> -->
       <xs:element minOccurs="0" name="v1.0" type="xs:string" />
       <xs:element minOccurs="0" name="v1.1" type="xs:string" />
       <xs:element minOccurs="0" name="v1.2" type="xs:string" />
@@ -256,6 +265,7 @@
 
   <xs:complexType name="listOfStringsByVersionType">
     <xs:sequence>
+      <!-- TODO: According to the source, the name of the tag could be <v1.0> or <1.0> -->
       <xs:element minOccurs="0" name="v1.0" type="listOfStringsType" />
       <xs:element minOccurs="0" name="v1.1" type="listOfStringsType" />
       <xs:element minOccurs="0" name="v1.2" type="listOfStringsType" />
