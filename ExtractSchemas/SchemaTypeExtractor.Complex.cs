@@ -20,7 +20,7 @@ partial class SchemaTypeExtractor
 
     DeriveAttributesOfType().ToList().ForEach(x => complexType.Attributes.Add(x));
 
-    DeriveFieldsOfType().ToList().FindAll(x => x != null).ForEach(x => choice.Items.Add(x!));
+    DeriveFieldsOfType().ToList().ForEach(x => choice.Items.Add(x));
 
     return complexType;
   }
@@ -54,12 +54,13 @@ partial class SchemaTypeExtractor
     return attributeList;
   }
 
-  private IEnumerable<XmlSchemaElement?> DeriveFieldsOfType()
+  private IEnumerable<XmlSchemaElement> DeriveFieldsOfType()
   {
-    var fieldList = new List<XmlSchemaElement?>();
+    var fieldList = new List<XmlSchemaElement>();
     foreach (var field in assemblyType.GetFields())
     {
-      fieldList.Add(DeriveField(field));
+      if (DeriveField(field) is var f and not null)
+        fieldList.Add(f);
     }
     return fieldList;
   }
