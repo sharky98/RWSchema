@@ -6,7 +6,7 @@ namespace ExtractSchemas;
 
 partial class SchemaTypeExtractor
 {
-  private XmlSchemaSimpleType DeriveCommonType()
+  private XmlSchemaSimpleType DeriveSimpleType()
   {
     if (assemblyType.BaseType == typeof(Enum))
       return DeriveTypeEnum();

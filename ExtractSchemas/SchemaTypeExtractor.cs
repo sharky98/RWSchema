@@ -45,7 +45,7 @@ partial class SchemaTypeExtractor(Type assemblyType, Dictionary<Type, string> kn
   {
     if (commonTypes.Any(x => x == assemblyType))
     {
-      XmlSchemaType = DeriveCommonType();
+      XmlSchemaType = DeriveSimpleType();
       XmlSchemaType.Name = assemblyType.Name;
       return;
     }
