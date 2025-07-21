@@ -75,7 +75,6 @@ partial class SchemaTypeExtractor
       return new XmlSchemaElement()
       {
         Name = field.Name,
-        // TODO: Validate that "value" is allowed with xsdSchema.
         SchemaTypeName = new XmlQualifiedName(value, SchemaCommonValues.xsdSchema),
       };
 

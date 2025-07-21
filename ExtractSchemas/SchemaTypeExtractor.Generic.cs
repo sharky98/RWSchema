@@ -39,6 +39,7 @@ partial class SchemaTypeExtractor
     // As a list, there is only one generic argument
     var innerFieldType = fieldInfo.FieldType.GetGenericArguments()[0];
     // TODO: If it's not already a known type or common type, extract it
+    // TODO: Original code check for ThingDefCountClass and ThingDefCountRangeClass because it has a different type.
 
     // Element inside the sequence
     var schemaTypeName = knownTypes.TryGetValue(innerFieldType, out string? value)
@@ -58,15 +59,9 @@ partial class SchemaTypeExtractor
 
     // Complex Type that contain the sequence
     var complexType = new XmlSchemaComplexType { Particle = list };
-    var element = new XmlSchemaElement()
-    {
-      Name = fieldInfo.Name,
-      SchemaTypeName = new XmlQualifiedName(fieldInfo.Name, SchemaCommonValues.targetNamespace),
-    };
-    complexType.Parent = element;
 
     // Element that contain the complex type
-    return element;
+    return new XmlSchemaElement() { Name = fieldInfo.Name, SchemaType = complexType };
   }
 
   private XmlSchemaElement? DeriveFieldDictionaryGenericType(FieldInfo fieldInfo)
