@@ -10,7 +10,7 @@ namespace ExtractSchemas;
 
 partial class SchemaTypeExtractor
 {
-  private XmlSchemaParticle? DeriveGenericType(FieldInfo fieldInfo)
+  private XmlSchemaElement? DeriveGenericType(FieldInfo fieldInfo)
   {
     var fieldGenericTypeDefinition = fieldInfo.FieldType.GetGenericTypeDefinition();
 
@@ -34,37 +34,46 @@ partial class SchemaTypeExtractor
     return null;
   }
 
-  private XmlSchemaParticle? DeriveFieldListGenericType(FieldInfo fieldInfo)
+  private XmlSchemaElement? DeriveFieldListGenericType(FieldInfo fieldInfo)
   {
     // As a list, there is only one generic argument
     var innerFieldType = fieldInfo.FieldType.GetGenericArguments()[0];
     // TODO: If it's not already a known type or common type, extract it
 
-    // Then create the list
-    var list = new XmlSchemaSequence();
+    // Element inside the sequence
     var schemaTypeName = knownTypes.TryGetValue(innerFieldType, out string? value)
       ? new XmlQualifiedName(value, SchemaCommonValues.xsdSchema)
       : new XmlQualifiedName(innerFieldType.Name.ToCamelCase(), SchemaCommonValues.targetNamespace);
-    list.Items.Add(
-      new XmlSchemaElement()
-      {
-        Name = "li",
-        SchemaTypeName = schemaTypeName,
-        MinOccurs = 0,
-        MaxOccursString = "unbounded",
-      }
-    );
+    var listElements = new XmlSchemaElement()
+    {
+      Name = "li",
+      SchemaTypeName = schemaTypeName,
+      MinOccurs = 0,
+      MaxOccursString = "unbounded",
+    };
 
-    return list;
+    // Sequence that contains the elements
+    var list = new XmlSchemaSequence();
+    list.Items.Add(listElements);
+
+    // Complex Type that contain the sequence
+    var complexType = new XmlSchemaComplexType { Particle = list };
+
+    // Element that contain the complex type
+    return new XmlSchemaElement()
+    {
+      Name = fieldInfo.Name,
+      SchemaTypeName = new XmlQualifiedName(fieldInfo.Name, SchemaCommonValues.targetNamespace),
+    };
   }
 
-  private XmlSchemaParticle? DeriveFieldDictionaryGenericType(FieldInfo fieldInfo)
+  private XmlSchemaElement? DeriveFieldDictionaryGenericType(FieldInfo fieldInfo)
   {
     Console.WriteLine($"{fieldInfo.Name} is a dictionary");
     return null;
   }
 
-  private XmlSchemaParticle? DeriveFieldNullableGenericType(FieldInfo fieldInfo)
+  private XmlSchemaElement? DeriveFieldNullableGenericType(FieldInfo fieldInfo)
   {
     Console.WriteLine($"{fieldInfo.Name} is nullable");
     return null;

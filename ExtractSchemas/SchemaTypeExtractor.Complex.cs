@@ -54,9 +54,9 @@ partial class SchemaTypeExtractor
     return attributeList;
   }
 
-  private IEnumerable<XmlSchemaParticle> DeriveFieldsOfType()
+  private IEnumerable<XmlSchemaElement> DeriveFieldsOfType()
   {
-    var fieldList = new List<XmlSchemaParticle>();
+    var fieldList = new List<XmlSchemaElement>();
     foreach (var field in assemblyType.GetFields())
     {
       if (DeriveField(field) is var f and not null)
@@ -65,7 +65,7 @@ partial class SchemaTypeExtractor
     return fieldList;
   }
 
-  private XmlSchemaParticle? DeriveField(FieldInfo field)
+  private XmlSchemaElement? DeriveField(FieldInfo field)
   {
     if (IsFieldIgnored(field))
       return null;
