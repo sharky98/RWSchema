@@ -70,7 +70,7 @@ partial class SchemaTypeExtractor
     if (IsFieldIgnored(field))
       return null;
 
-    // If the field name is a basic type or a type that we extracted, the element will be of that type.
+    // If the field name is a known type, the element will be of that type.
     if (knownTypes.TryGetValue(field.FieldType, out string? value))
       return new XmlSchemaElement()
       {

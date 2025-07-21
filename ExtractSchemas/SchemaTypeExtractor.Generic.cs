@@ -58,13 +58,15 @@ partial class SchemaTypeExtractor
 
     // Complex Type that contain the sequence
     var complexType = new XmlSchemaComplexType { Particle = list };
-
-    // Element that contain the complex type
-    return new XmlSchemaElement()
+    var element = new XmlSchemaElement()
     {
       Name = fieldInfo.Name,
       SchemaTypeName = new XmlQualifiedName(fieldInfo.Name, SchemaCommonValues.targetNamespace),
     };
+    complexType.Parent = element;
+
+    // Element that contain the complex type
+    return element;
   }
 
   private XmlSchemaElement? DeriveFieldDictionaryGenericType(FieldInfo fieldInfo)
