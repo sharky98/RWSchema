@@ -36,19 +36,13 @@ partial class SchemaTypeExtractor
 
   private XmlSchemaElement? DeriveFieldListGenericType(FieldInfo fieldInfo)
   {
-    // As a list, there is only one generic argument
-    var innerFieldType = fieldInfo.FieldType.GetGenericArguments()[0];
     // TODO: If it's not already a known type or common type, extract it
     // TODO: Original code check for ThingDefCountClass and ThingDefCountRangeClass because it has a different type.
 
-    // Element inside the sequence
-    var schemaTypeName = knownTypes.TryGetValue(innerFieldType, out string? value)
-      ? new XmlQualifiedName(value, SchemaCommonValues.xsdSchema)
-      : new XmlQualifiedName(innerFieldType.Name.ToCamelCase(), SchemaCommonValues.targetNamespace);
     var listElements = new XmlSchemaElement()
     {
       Name = "li",
-      SchemaTypeName = schemaTypeName,
+      SchemaTypeName = GetSchemaTypeName(fieldInfo),
       MinOccurs = 0,
       MaxOccursString = "unbounded",
     };
@@ -66,13 +60,54 @@ partial class SchemaTypeExtractor
 
   private XmlSchemaElement? DeriveFieldDictionaryGenericType(FieldInfo fieldInfo)
   {
-    Console.WriteLine($"{fieldInfo.Name} is a dictionary");
-    return null;
+    // TODO: If it's not already a known type or common type, extract it
+    var keyElement = new XmlSchemaElement() { Name = "key", SchemaTypeName = GetSchemaTypeName(fieldInfo, 0) };
+    var valueElement = new XmlSchemaElement() { Name = "value", SchemaTypeName = GetSchemaTypeName(fieldInfo, 1) };
+    var keyValuePairElement = new XmlSchemaSequence();
+    keyValuePairElement.Items.Add(keyElement);
+    keyValuePairElement.Items.Add(valueElement);
+
+    var keyValuePairType = new XmlSchemaComplexType() { Particle = keyValuePairElement };
+
+    var listElements = new XmlSchemaElement()
+    {
+      Name = "li",
+      SchemaType = keyValuePairType,
+      MinOccurs = 0,
+      MaxOccursString = "unbounded",
+    };
+
+    // Sequence that contains the elements
+    var list = new XmlSchemaSequence();
+    list.Items.Add(listElements);
+
+    // Complex Type that contain the sequence
+    var complexType = new XmlSchemaComplexType { Particle = list };
+
+    // Element that contain the complex type
+    return new XmlSchemaElement() { Name = fieldInfo.Name, SchemaType = complexType };
   }
 
   private XmlSchemaElement? DeriveFieldNullableGenericType(FieldInfo fieldInfo)
   {
-    Console.WriteLine($"{fieldInfo.Name} is nullable");
-    return null;
+    // TODO: If it's not already a known type or common type, extract it
+
+    var nullableElement = new XmlSchemaElement()
+    {
+      Name = fieldInfo.Name,
+      SchemaTypeName = GetSchemaTypeName(fieldInfo),
+    };
+    return nullableElement;
+  }
+
+  private XmlQualifiedName GetSchemaTypeName(FieldInfo fieldInfo, int argIdx = 0)
+  {
+    var innerFieldType = fieldInfo.FieldType.GetGenericArguments()[argIdx];
+
+    // TODO: Check if defined in KnownTypes or DefinedTypes; if neither create it.
+
+    return knownTypes.TryGetValue(innerFieldType, out string? value)
+      ? new XmlQualifiedName(value, SchemaCommonValues.xsdSchema)
+      : new XmlQualifiedName(innerFieldType.Name.ToCamelCase(), SchemaCommonValues.targetNamespace);
   }
 }
