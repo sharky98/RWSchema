@@ -7,42 +7,54 @@ namespace ExtractSchemas;
 
 class SchemaExtractor
 {
+  /// <summary>
+  /// Contains the relation between a System.Type and it's XML type.
+  /// When a `Def` is used in another one, they are linked by string, so all `Def` in the assembly are of Xml type string.
+  /// </summary>
   public Dictionary<Type, string> knownTypes = SchemaCommonValues.baseKnownTypes;
+
+  /// <summary>
+  /// Gather in a single Xml Schema all complex and simple types common to all other schema.
+  /// </summary>
+  public IList<XmlSchemaType> commonElements = [];
+
+  public XmlSchemaSet schemaSet = new();
 
   public void Extract()
   {
-    Assembly rimWorldAssembly = Assembly.Load("Assembly-CSharp");
+    schemaSet.ValidationEventHandler += new ValidationEventHandler(ValidationCallbackOne);
 
-    var assemblyTypes = rimWorldAssembly
-      .GetExportedTypes()
-      .Where(x => !x.IsAbstract)
-      .Where(x => x.IsClass)
-      .Where(x => typeof(Def).IsAssignableFrom(x));
-
-    // Extract the list of all defs to get the known values.
+    var assemblyTypes = GetAssemblyType("Assembly-CSharp");
     knownTypes.AddRange(assemblyTypes.ToDictionary(x => x, x => "string"));
-
     foreach (var assemblyType in assemblyTypes)
     {
       ExtractAssemblyTypeSchema(assemblyType);
     }
+    var schemas = CompileXmlSchemaSet();
+    foreach (var schema in schemas)
+    {
+      XmlSchemaType schemaName = (XmlSchemaType)schema.Items[0];
+      WriteXmlSchemaToFile(schema, $"{schemaName.Name}.xsd");
+    }
+  }
+
+  private static IEnumerable<Type> GetAssemblyType(string assemblyName)
+  {
+    Assembly assembly = Assembly.Load(assemblyName);
+
+    return assembly
+      .GetExportedTypes()
+      .Where(x => !x.IsAbstract)
+      .Where(x => x.IsClass)
+      .Where(x => typeof(Def).IsAssignableFrom(x));
   }
 
   private void ExtractAssemblyTypeSchema(Type assemblyType)
   {
-    // Each Assembly Type will have it's own XSD file.
-    var schema = new XmlSchema
-    {
-      TargetNamespace = SchemaCommonValues.targetNamespace,
-      ElementFormDefault = XmlSchemaForm.Qualified,
-    };
+    var schema = CreateNewSchema();
+    schemaSet.Add(schema);
 
-    // Which mean, I need to include the common values (it'll be a LONG file)
-    var include = new XmlSchemaInclude { SchemaLocation = "schema-common.xsd" };
-    schema.Includes.Add(include);
-
-    // I need to get the XML Schema Type (SimpleType or ComplexType)
-    var typeExtractor = new SchemaTypeExtractor(assemblyType, knownTypes);
+    var typeExtractor = new SchemaTypeExtractor(assemblyType, knownTypes, commonElements);
     typeExtractor.Derive();
     if (typeExtractor.XmlSchemaType == null)
     { // It should not be null, but just in case, we skip and go to the next type.
@@ -50,26 +62,21 @@ class SchemaExtractor
       return;
     }
     schema.Items.Add(typeExtractor.XmlSchemaType);
-
-    var compiledSchema = CompileXmlSchema(schema);
-    WriteXmlSchemaToFile(compiledSchema, @$"{assemblyType.Name.ToStringSafe()}.xsd");
+    commonElements = typeExtractor.CommonElements;
   }
 
-  private XmlSchema CompileXmlSchema(XmlSchema schema)
+  private IList<XmlSchema> CompileXmlSchemaSet()
   {
-    XmlSchemaSet schemaSet = new XmlSchemaSet();
-    schemaSet.ValidationEventHandler += new ValidationEventHandler(ValidationCallbackOne);
-    schemaSet.Add(schema);
     schemaSet.Compile();
 
-    XmlSchema? compiledSchema = null;
+    IList<XmlSchema> compiledSchema = [];
 
     foreach (XmlSchema schemaFromSet in schemaSet.Schemas())
     {
-      compiledSchema = schemaFromSet;
+      compiledSchema.Add(schemaFromSet);
     }
 
-    return compiledSchema!;
+    return compiledSchema;
   }
 
   private void WriteXmlSchemaToFile(XmlSchema schema, string filename)
@@ -93,5 +100,14 @@ class SchemaExtractor
   private static void ValidationCallbackOne(object? sender, ValidationEventArgs args)
   {
     Console.WriteLine(args.Message);
+  }
+
+  private static XmlSchema CreateNewSchema()
+  {
+    return new XmlSchema
+    {
+      TargetNamespace = SchemaCommonValues.targetNamespace,
+      ElementFormDefault = XmlSchemaForm.Qualified,
+    };
   }
 }

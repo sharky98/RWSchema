@@ -8,11 +8,16 @@ using Verse.Sound;
 
 namespace ExtractSchemas;
 
-partial class SchemaTypeExtractor(Type assemblyType, Dictionary<Type, string> knownTypes)
+partial class SchemaTypeExtractor(
+  Type assemblyType,
+  Dictionary<Type, string> knownTypes,
+  IList<XmlSchemaType> commonElements
+)
 {
   public XmlSchemaType? XmlSchemaType { get; set; }
   private readonly Type assemblyType = assemblyType;
   private readonly Dictionary<Type, string> knownTypes = knownTypes;
+  public IList<XmlSchemaType> CommonElements = commonElements;
   private readonly IEnumerable<Type> commonTypes =
   [
     typeof(Enum),
@@ -55,5 +60,24 @@ partial class SchemaTypeExtractor(Type assemblyType, Dictionary<Type, string> kn
     return;
 
     throw new Exception("not done yet");
+  }
+
+  private void MaybeAddToCommonElements(Type fieldType)
+  {
+    var fieldName = fieldType.Name.ToCamelCase();
+    var isKnownType = knownTypes.ContainsKey(fieldType);
+    var isCommonElement = CommonElements.Any(x => x.Name == fieldName);
+
+    if (isKnownType || isCommonElement)
+      return;
+
+    var xmlFieldType = new SchemaTypeExtractor(assemblyType, knownTypes, CommonElements);
+    xmlFieldType.Derive();
+    if (xmlFieldType.XmlSchemaType == null)
+    { // It should not be null, but just in case, we skip and go to the next type.
+      Console.WriteLine($"The type {fieldName} returned a null XML schema type.");
+      return;
+    }
+    CommonElements.Add(xmlFieldType.XmlSchemaType);
   }
 }

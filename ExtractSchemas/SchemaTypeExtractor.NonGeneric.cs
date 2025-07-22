@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using System.Reflection;
 using System.Xml;
 using System.Xml.Schema;
@@ -14,19 +12,7 @@ partial class SchemaTypeExtractor
     if (field.FieldType == typeof(IntRange) || field.FieldType == typeof(FloatRange))
       return DeriveRangeType(field);
 
-    // If the field doesn't exist, we create it!
-    var fieldTypeName = field.FieldType.Name.ToCamelCase();
-    if (true)
-    {
-      Console.WriteLine($"The field type {fieldTypeName} should be added here.");
-      // var fieldTypeExtractor = new SchemaTypeExtractor(field.FieldType, knownTypes, XmlSchemaCommonType);
-      // fieldTypeExtractor.Derive();
-      // if (fieldTypeExtractor.XmlSchemaType != null)
-      // {
-      //   XmlSchemaCommonType = fieldTypeExtractor.XmlSchemaCommonType;
-      //   XmlSchemaCommonType.Add(fieldTypeName, fieldTypeExtractor.XmlSchemaType);
-      // }
-    }
+    MaybeAddToCommonElements(field.FieldType);
 
     return new XmlSchemaElement()
     {

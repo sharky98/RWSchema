@@ -36,8 +36,7 @@ partial class SchemaTypeExtractor
 
   private XmlSchemaElement? DeriveFieldListGenericType(FieldInfo fieldInfo)
   {
-    // TODO: If it's not already a known type or common type, extract it
-    // TODO: Original code check for ThingDefCountClass and ThingDefCountRangeClass because it has a different type.
+    MaybeAddToCommonElements(fieldInfo.FieldType);
 
     var listElements = new XmlSchemaElement()
     {
@@ -60,7 +59,8 @@ partial class SchemaTypeExtractor
 
   private XmlSchemaElement? DeriveFieldDictionaryGenericType(FieldInfo fieldInfo)
   {
-    // TODO: If it's not already a known type or common type, extract it
+    MaybeAddToCommonElements(fieldInfo.FieldType);
+
     var keyElement = new XmlSchemaElement() { Name = "key", SchemaTypeName = GetSchemaTypeName(fieldInfo, 0) };
     var valueElement = new XmlSchemaElement() { Name = "value", SchemaTypeName = GetSchemaTypeName(fieldInfo, 1) };
     var keyValuePairElement = new XmlSchemaSequence();
@@ -90,7 +90,7 @@ partial class SchemaTypeExtractor
 
   private XmlSchemaElement? DeriveFieldNullableGenericType(FieldInfo fieldInfo)
   {
-    // TODO: If it's not already a known type or common type, extract it
+    MaybeAddToCommonElements(fieldInfo.FieldType);
 
     var nullableElement = new XmlSchemaElement()
     {
@@ -104,7 +104,7 @@ partial class SchemaTypeExtractor
   {
     var innerFieldType = fieldInfo.FieldType.GetGenericArguments()[argIdx];
 
-    // TODO: Check if defined in KnownTypes or DefinedTypes; if neither create it.
+    MaybeAddToCommonElements(fieldInfo.FieldType);
 
     return knownTypes.TryGetValue(innerFieldType, out string? value)
       ? new XmlQualifiedName(value, SchemaCommonValues.xsdSchema)
