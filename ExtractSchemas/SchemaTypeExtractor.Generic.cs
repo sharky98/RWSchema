@@ -52,7 +52,7 @@ partial class SchemaTypeExtractor
     var complexType = new XmlSchemaComplexType { Particle = list };
 
     // Element that contain the complex type
-    return new XmlSchemaElement() { Name = fieldInfo.Name, SchemaType = complexType };
+    return new XmlSchemaElement() { Name = fieldInfo.Name.ToCamelCase(), SchemaType = complexType };
   }
 
   private XmlSchemaElement? DeriveFieldDictionaryGenericType(FieldInfo fieldInfo)
@@ -88,7 +88,7 @@ partial class SchemaTypeExtractor
   {
     var nullableElement = new XmlSchemaElement()
     {
-      Name = fieldInfo.Name,
+      Name = fieldInfo.Name.ToCamelCase(),
       SchemaTypeName = GetSchemaTypeName(fieldInfo),
     };
     return nullableElement;
@@ -102,6 +102,6 @@ partial class SchemaTypeExtractor
 
     return knownTypes.TryGetValue(innerFieldType, out string? value)
       ? new XmlQualifiedName(value, SchemaCommonValues.xsdSchema)
-      : new XmlQualifiedName(innerFieldType.Name.ToCamelCase(), SchemaCommonValues.targetNamespace);
+      : new XmlQualifiedName(innerFieldType.Name, SchemaCommonValues.targetNamespace);
   }
 }

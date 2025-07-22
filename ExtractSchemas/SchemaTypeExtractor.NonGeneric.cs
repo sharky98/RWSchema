@@ -17,7 +17,7 @@ partial class SchemaTypeExtractor
     return new XmlSchemaElement()
     {
       Name = field.Name,
-      SchemaTypeName = new XmlQualifiedName(field.FieldType.Name.ToCamelCase(), SchemaCommonValues.targetNamespace),
+      SchemaTypeName = new XmlQualifiedName(field.FieldType.Name, SchemaCommonValues.targetNamespace),
     };
   }
 

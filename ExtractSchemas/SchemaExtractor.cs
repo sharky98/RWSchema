@@ -30,6 +30,11 @@ class SchemaExtractor
     {
       ExtractAssemblyTypeSchema(assemblyType);
     }
+
+    var commonElementSchema = CreateNewSchema();
+    schemaSet.Add(commonElementSchema);
+    commonElements.ToList().ForEach(x => commonElementSchema.Items.Add(x));
+
     var schemas = CompileXmlSchemaSet();
     foreach (var schema in schemas)
     {
@@ -53,6 +58,9 @@ class SchemaExtractor
   {
     var schema = CreateNewSchema();
     schemaSet.Add(schema);
+
+    var include = new XmlSchemaInclude { SchemaLocation = "CommonElements.xsd" };
+    schema.Includes.Add(include);
 
     var typeExtractor = new SchemaTypeExtractor(assemblyType, knownTypes, commonElements);
     typeExtractor.Derive();
@@ -85,6 +93,11 @@ class SchemaExtractor
     {
       Console.WriteLine($"The schema to be saved at {filename} was not compiled.");
       return;
+    }
+
+    if (schema.Items.Count > 1)
+    {
+      filename = "CommonElements.xsd";
     }
 
     XmlNamespaceManager nsmgr = new(new NameTable());
