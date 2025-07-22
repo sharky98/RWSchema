@@ -31,16 +31,51 @@ class SchemaExtractor
       ExtractAssemblyTypeSchema(assemblyType);
     }
 
+    var combinedSchema = CreateCombinedSchema();
     var commonElementSchema = CreateNewSchema();
     schemaSet.Add(commonElementSchema);
     commonElements.ToList().ForEach(x => commonElementSchema.Items.Add(x));
 
+    combinedSchema.Includes.Add(new XmlSchemaInclude { SchemaLocation = $"CommonElements.xsd" });
+
     var schemas = CompileXmlSchemaSet();
     foreach (var schema in schemas)
     {
-      XmlSchemaType schemaName = (XmlSchemaType)schema.Items[0];
-      WriteXmlSchemaToFile(schema, $"{schemaName.Name}.xsd");
+      WriteXmlSchemaToFile(schema);
     }
+  }
+
+  private XmlSchema CreateCombinedSchema()
+  {
+    var choice = new XmlSchemaChoice() { MinOccurs = 1, MaxOccursString = "unbounded" };
+    var complexType = new XmlSchemaComplexType { Particle = choice };
+    var defElement = new XmlSchemaElement { Name = "Defs", SchemaType = complexType };
+    var combinedSchema = CreateNewSchema();
+    combinedSchema.Items.Add(defElement);
+
+    foreach (XmlSchema schema in schemaSet.Schemas())
+    {
+      XmlSchemaType schemaName = (XmlSchemaType)schema.Items[0];
+      var innerElement = new XmlSchemaElement
+      {
+        Name = schemaName.Name,
+        SchemaTypeName = new XmlQualifiedName(schemaName.Name, SchemaCommonValues.targetNamespace),
+      };
+      choice.Items.Add(innerElement);
+      var include = new XmlSchemaInclude { SchemaLocation = $"{schemaName.Name}.xsd" };
+      combinedSchema.Includes.Add(include);
+    }
+
+    XmlNamespaceManager nsmgr = new(new NameTable());
+    nsmgr.AddNamespace(string.Empty, SchemaCommonValues.targetNamespace);
+    nsmgr.AddNamespace("xs", SchemaCommonValues.xsdSchema);
+
+    var path = SchemaCommonValues.destination + "/" + "CommonDefs.xsd";
+    File.WriteAllText(path, string.Empty);
+    using StreamWriter file = new(path);
+    combinedSchema.Write(file, nsmgr);
+
+    return combinedSchema;
   }
 
   private static IEnumerable<Type> GetAssemblyType(string assemblyName)
@@ -87,17 +122,32 @@ class SchemaExtractor
     return compiledSchema;
   }
 
-  private void WriteXmlSchemaToFile(XmlSchema schema, string filename)
+  private void WriteXmlSchemaToFile(XmlSchema schema)
   {
+    string filename = "";
+    try
+    {
+      XmlSchemaType schemaName = (XmlSchemaType)schema.Items[0];
+      filename = $"{schemaName.Name}.xsd";
+    }
+    catch (System.InvalidCastException)
+    {
+      if (schema.Items.Count > 1)
+      {
+        filename = "CommonElements.xsd";
+      }
+    }
+
+    if (filename == "")
+    {
+      Console.WriteLine($"Could not find a filename for the schema.");
+      return;
+    }
+
     if (!schema.IsCompiled)
     {
       Console.WriteLine($"The schema to be saved at {filename} was not compiled.");
       return;
-    }
-
-    if (schema.Items.Count > 1)
-    {
-      filename = "CommonElements.xsd";
     }
 
     XmlNamespaceManager nsmgr = new(new NameTable());
