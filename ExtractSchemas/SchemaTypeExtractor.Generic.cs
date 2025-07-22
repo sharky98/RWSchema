@@ -30,14 +30,12 @@ partial class SchemaTypeExtractor
     if (fieldGenericTypeDefinition == typeof(Nullable<>))
       return DeriveFieldNullableGenericType(fieldInfo);
 
-    Console.WriteLine($"Unable to process the generic type of {fieldInfo.Name} is {assemblyType.Name}.");
+    Console.WriteLine($"Unable to process the type `{fieldInfo.Name}` in `{assemblyType.FullName}`.");
     return null;
   }
 
   private XmlSchemaElement? DeriveFieldListGenericType(FieldInfo fieldInfo)
   {
-    MaybeAddToCommonElements(fieldInfo.FieldType);
-
     var listElements = new XmlSchemaElement()
     {
       Name = "li",
@@ -59,8 +57,6 @@ partial class SchemaTypeExtractor
 
   private XmlSchemaElement? DeriveFieldDictionaryGenericType(FieldInfo fieldInfo)
   {
-    MaybeAddToCommonElements(fieldInfo.FieldType);
-
     var keyElement = new XmlSchemaElement() { Name = "key", SchemaTypeName = GetSchemaTypeName(fieldInfo, 0) };
     var valueElement = new XmlSchemaElement() { Name = "value", SchemaTypeName = GetSchemaTypeName(fieldInfo, 1) };
     var keyValuePairElement = new XmlSchemaSequence();
@@ -90,8 +86,6 @@ partial class SchemaTypeExtractor
 
   private XmlSchemaElement? DeriveFieldNullableGenericType(FieldInfo fieldInfo)
   {
-    MaybeAddToCommonElements(fieldInfo.FieldType);
-
     var nullableElement = new XmlSchemaElement()
     {
       Name = fieldInfo.Name,
@@ -104,7 +98,7 @@ partial class SchemaTypeExtractor
   {
     var innerFieldType = fieldInfo.FieldType.GetGenericArguments()[argIdx];
 
-    MaybeAddToCommonElements(fieldInfo.FieldType);
+    MaybeAddToCommonElements(innerFieldType);
 
     return knownTypes.TryGetValue(innerFieldType, out string? value)
       ? new XmlQualifiedName(value, SchemaCommonValues.xsdSchema)

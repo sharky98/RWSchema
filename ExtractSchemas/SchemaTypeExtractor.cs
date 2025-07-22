@@ -66,12 +66,14 @@ partial class SchemaTypeExtractor(
   {
     var fieldName = fieldType.Name.ToCamelCase();
     var isKnownType = knownTypes.ContainsKey(fieldType);
-    var isCommonElement = CommonElements.Any(x => x.Name == fieldName);
+    var isCommonElement = CommonElements.Any(x => x.Name!.ToCamelCase() == fieldName);
 
     if (isKnownType || isCommonElement)
       return;
+    if (fieldType == assemblyType)
+      return;
 
-    var xmlFieldType = new SchemaTypeExtractor(assemblyType, knownTypes, CommonElements);
+    var xmlFieldType = new SchemaTypeExtractor(fieldType, knownTypes, CommonElements);
     xmlFieldType.Derive();
     if (xmlFieldType.XmlSchemaType == null)
     { // It should not be null, but just in case, we skip and go to the next type.

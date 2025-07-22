@@ -57,7 +57,8 @@ partial class SchemaTypeExtractor
   private IEnumerable<XmlSchemaElement> DeriveFieldsOfType()
   {
     var fieldList = new List<XmlSchemaElement>();
-    foreach (var field in assemblyType.GetFields())
+    var fields = assemblyType.GetFields();
+    foreach (var field in fields)
     {
       if (DeriveField(field) is var f and not null)
         fieldList.Add(f);
