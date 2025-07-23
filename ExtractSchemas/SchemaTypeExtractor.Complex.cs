@@ -90,10 +90,20 @@ partial class SchemaTypeExtractor
         assemblyType.GetField("rulesFiles", BindingFlags.NonPublic | BindingFlags.Instance)!,
       ];
     }
-    var assName = assemblyType.Name;
     if (assemblyType.BaseType?.Name == "StyleItemDef")
     {
       addedFields = [assemblyType.BaseType.GetField("category", BindingFlags.NonPublic | BindingFlags.Instance)!];
+    }
+    if (assemblyType.Name == "BiomeDef")
+    {
+      addedFields =
+      [
+        assemblyType.GetField("wildAnimals", BindingFlags.NonPublic | BindingFlags.Instance)!,
+        assemblyType.GetField("pollutionWildAnimals", BindingFlags.NonPublic | BindingFlags.Instance)!,
+        assemblyType.GetField("coastalWildAnimals", BindingFlags.NonPublic | BindingFlags.Instance)!,
+        assemblyType.GetField("diseases", BindingFlags.NonPublic | BindingFlags.Instance)!,
+        assemblyType.GetField("allowedPackAnimals", BindingFlags.NonPublic | BindingFlags.Instance)!,
+      ];
     }
 
     return [.. baseFields, .. addedFields];

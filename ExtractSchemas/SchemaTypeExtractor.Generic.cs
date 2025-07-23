@@ -47,8 +47,20 @@ partial class SchemaTypeExtractor
   private XmlSchemaElement? DeriveFieldListGenericType(FieldInfo fieldInfo)
   {
     var baseType = GetSchemaTypeName(fieldInfo);
-    var fieldName = fieldInfo.Name;
-    if (baseType.Name == "StatModifier" || fieldInfo.Name == "comps")
+    string[] isPatchWithWildcards =
+    [
+      "StatModifier",
+      "WeatherCommonalityRecord",
+      "FishChance",
+      "BiomePlantRecord",
+      "BiomeAnimalRecord",
+      "BiomeDiseaseRecord",
+    ];
+    if (
+      isPatchWithWildcards.Any(x => x == baseType.Name)
+      || fieldInfo.Name == "comps"
+      || fieldInfo.Name == "allowedPackAnimals"
+    )
     {
       return CreateFieldListWildcardGenericType(fieldInfo);
     }

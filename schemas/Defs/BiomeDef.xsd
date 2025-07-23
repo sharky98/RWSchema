@@ -27,11 +27,9 @@
       <xs:element name="movementDifficulty" type="xs:float" />
       <xs:element name="baseWeatherCommonalities">
         <xs:complexType>
-          <xs:sequence>
-            <xs:element minOccurs="0" maxOccurs="unbounded" name="li" type="WeatherCommonalityRecord" />
-          </xs:sequence>
-          <xs:attribute name="MayRequire" type="xs:string" />
-          <xs:attribute name="MayRequireAnyOf" type="xs:string" />
+          <xs:choice minOccurs="1" maxOccurs="unbounded">
+            <xs:any minOccurs="0" maxOccurs="unbounded" processContents="lax" />
+          </xs:choice>
         </xs:complexType>
       </xs:element>
       <xs:element name="terrainsByFertility">
@@ -72,11 +70,9 @@
       </xs:element>
       <xs:element name="wildPlants">
         <xs:complexType>
-          <xs:sequence>
-            <xs:element minOccurs="0" maxOccurs="unbounded" name="li" type="BiomePlantRecord" />
-          </xs:sequence>
-          <xs:attribute name="MayRequire" type="xs:string" />
-          <xs:attribute name="MayRequireAnyOf" type="xs:string" />
+          <xs:choice minOccurs="1" maxOccurs="unbounded">
+            <xs:any minOccurs="0" maxOccurs="unbounded" processContents="lax" />
+          </xs:choice>
         </xs:complexType>
       </xs:element>
       <xs:element name="hasBedrock" type="StrBoolean" />
@@ -266,6 +262,41 @@
           </xs:sequence>
           <xs:attribute name="MayRequire" type="xs:string" />
           <xs:attribute name="MayRequireAnyOf" type="xs:string" />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="wildAnimals">
+        <xs:complexType>
+          <xs:choice minOccurs="1" maxOccurs="unbounded">
+            <xs:any minOccurs="0" maxOccurs="unbounded" processContents="lax" />
+          </xs:choice>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="pollutionWildAnimals">
+        <xs:complexType>
+          <xs:choice minOccurs="1" maxOccurs="unbounded">
+            <xs:any minOccurs="0" maxOccurs="unbounded" processContents="lax" />
+          </xs:choice>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="coastalWildAnimals">
+        <xs:complexType>
+          <xs:choice minOccurs="1" maxOccurs="unbounded">
+            <xs:any minOccurs="0" maxOccurs="unbounded" processContents="lax" />
+          </xs:choice>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="diseases">
+        <xs:complexType>
+          <xs:choice minOccurs="1" maxOccurs="unbounded">
+            <xs:any minOccurs="0" maxOccurs="unbounded" processContents="lax" />
+          </xs:choice>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="allowedPackAnimals">
+        <xs:complexType>
+          <xs:choice minOccurs="1" maxOccurs="unbounded">
+            <xs:any minOccurs="0" maxOccurs="unbounded" processContents="lax" />
+          </xs:choice>
         </xs:complexType>
       </xs:element>
     </xs:choice>
