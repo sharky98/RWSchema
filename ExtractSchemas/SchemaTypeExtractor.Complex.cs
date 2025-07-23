@@ -62,6 +62,16 @@ partial class SchemaTypeExtractor
   {
     var fieldList = new List<XmlSchemaElement>();
     var fields = assemblyType.GetFields();
+    if (assemblyType.Name == "RulePack")
+    {
+      var addedFields = new List<FieldInfo>
+      {
+        assemblyType.GetField("rulesStrings", BindingFlags.NonPublic | BindingFlags.Instance)!,
+        assemblyType.GetField("rulesFiles", BindingFlags.NonPublic | BindingFlags.Instance)!,
+      };
+      addedFields.AddRange(fields);
+      fields = [.. addedFields];
+    }
     foreach (var field in fields)
     {
       if (DeriveField(field) is var f and not null)
