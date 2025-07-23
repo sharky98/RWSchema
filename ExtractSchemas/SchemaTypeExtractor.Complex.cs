@@ -46,6 +46,13 @@ partial class SchemaTypeExtractor
       attributeList.Add(
         new XmlSchemaAttribute() { Name = "ParentName", SchemaTypeName = SchemaCommonValues.stringType }
       );
+      attributeList.Add(
+        new XmlSchemaAttribute()
+        {
+          Name = "Abstract",
+          SchemaTypeName = new XmlQualifiedName("StrBoolean", SchemaCommonValues.targetNamespace),
+        }
+      );
     }
 
     // All type have the attribute Class

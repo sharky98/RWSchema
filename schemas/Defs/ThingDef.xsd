@@ -670,6 +670,7 @@
     </xs:choice>
     <xs:attribute name="Name" type="xs:string" />
     <xs:attribute name="ParentName" type="xs:string" />
+    <xs:attribute name="Abstract" type="StrBoolean" />
     <xs:attribute name="Class" type="xs:string" />
     <xs:attribute name="MayRequire" type="xs:string" />
     <xs:attribute name="MayRequireAnyOf" type="xs:string" />
