@@ -30,6 +30,8 @@
           <xs:choice minOccurs="1" maxOccurs="unbounded">
             <xs:any minOccurs="0" maxOccurs="unbounded" processContents="lax" />
           </xs:choice>
+          <xs:attribute name="MayRequire" type="xs:string" />
+          <xs:attribute name="MayRequireAnyOf" type="xs:string" />
         </xs:complexType>
       </xs:element>
       <xs:element name="terrainsByFertility">
@@ -73,6 +75,8 @@
           <xs:choice minOccurs="1" maxOccurs="unbounded">
             <xs:any minOccurs="0" maxOccurs="unbounded" processContents="lax" />
           </xs:choice>
+          <xs:attribute name="MayRequire" type="xs:string" />
+          <xs:attribute name="MayRequireAnyOf" type="xs:string" />
         </xs:complexType>
       </xs:element>
       <xs:element name="hasBedrock" type="StrBoolean" />
@@ -269,6 +273,8 @@
           <xs:choice minOccurs="1" maxOccurs="unbounded">
             <xs:any minOccurs="0" maxOccurs="unbounded" processContents="lax" />
           </xs:choice>
+          <xs:attribute name="MayRequire" type="xs:string" />
+          <xs:attribute name="MayRequireAnyOf" type="xs:string" />
         </xs:complexType>
       </xs:element>
       <xs:element name="pollutionWildAnimals">
@@ -276,6 +282,8 @@
           <xs:choice minOccurs="1" maxOccurs="unbounded">
             <xs:any minOccurs="0" maxOccurs="unbounded" processContents="lax" />
           </xs:choice>
+          <xs:attribute name="MayRequire" type="xs:string" />
+          <xs:attribute name="MayRequireAnyOf" type="xs:string" />
         </xs:complexType>
       </xs:element>
       <xs:element name="coastalWildAnimals">
@@ -283,6 +291,8 @@
           <xs:choice minOccurs="1" maxOccurs="unbounded">
             <xs:any minOccurs="0" maxOccurs="unbounded" processContents="lax" />
           </xs:choice>
+          <xs:attribute name="MayRequire" type="xs:string" />
+          <xs:attribute name="MayRequireAnyOf" type="xs:string" />
         </xs:complexType>
       </xs:element>
       <xs:element name="diseases">
@@ -290,6 +300,8 @@
           <xs:choice minOccurs="1" maxOccurs="unbounded">
             <xs:any minOccurs="0" maxOccurs="unbounded" processContents="lax" />
           </xs:choice>
+          <xs:attribute name="MayRequire" type="xs:string" />
+          <xs:attribute name="MayRequireAnyOf" type="xs:string" />
         </xs:complexType>
       </xs:element>
       <xs:element name="allowedPackAnimals">
@@ -297,6 +309,8 @@
           <xs:choice minOccurs="1" maxOccurs="unbounded">
             <xs:any minOccurs="0" maxOccurs="unbounded" processContents="lax" />
           </xs:choice>
+          <xs:attribute name="MayRequire" type="xs:string" />
+          <xs:attribute name="MayRequireAnyOf" type="xs:string" />
         </xs:complexType>
       </xs:element>
     </xs:choice>

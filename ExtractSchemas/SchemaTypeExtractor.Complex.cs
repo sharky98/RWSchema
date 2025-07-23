@@ -126,17 +126,47 @@ partial class SchemaTypeExtractor
 
     // If the field name is a known type, the element will be of that type.
     if (knownTypes.TryGetValue(field.FieldType, out string? value))
-      return new XmlSchemaElement()
-      {
-        Name = field.Name,
-        SchemaTypeName = new XmlQualifiedName(value, SchemaCommonValues.xsdSchema),
-      };
+    {
+      return PatchKnownTypeElement(field, value);
+    }
 
     // Is not a generic type
     if (!field.FieldType.IsGenericType)
       return DeriveNonGenericType(field);
 
     return DeriveGenericType(field);
+  }
+
+  private XmlSchemaElement? PatchKnownTypeElement(FieldInfo field, string value)
+  {
+    string[] toPatch = ["rareCatchesSetMaker"];
+
+    if (toPatch.Any(x => x == field.Name))
+    {
+      var knownElement = new XmlSchemaElement() { Name = field.Name };
+      var innerComplexType = new XmlSchemaComplexType();
+      knownElement.SchemaType = innerComplexType;
+      var innerContent = new XmlSchemaSimpleContent();
+      var extension = new XmlSchemaSimpleContentExtension
+      {
+        BaseTypeName = new XmlQualifiedName(value, SchemaCommonValues.xsdSchema),
+      };
+      innerComplexType.ContentModel = innerContent;
+      innerContent.Content = extension;
+      extension.Attributes.Add(
+        new XmlSchemaAttribute() { Name = "MayRequire", SchemaTypeName = SchemaCommonValues.stringType }
+      );
+      extension.Attributes.Add(
+        new XmlSchemaAttribute() { Name = "MayRequireAnyOf", SchemaTypeName = SchemaCommonValues.stringType }
+      );
+      return knownElement;
+    }
+
+    return new XmlSchemaElement()
+    {
+      Name = field.Name,
+      SchemaTypeName = new XmlQualifiedName(value, SchemaCommonValues.xsdSchema),
+    };
   }
 
   private bool IsFieldIgnored(FieldInfo field)

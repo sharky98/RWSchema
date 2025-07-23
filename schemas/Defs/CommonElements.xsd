@@ -309,6 +309,8 @@
           <xs:choice minOccurs="1" maxOccurs="unbounded">
             <xs:any minOccurs="0" maxOccurs="unbounded" processContents="lax" />
           </xs:choice>
+          <xs:attribute name="MayRequire" type="xs:string" />
+          <xs:attribute name="MayRequireAnyOf" type="xs:string" />
         </xs:complexType>
       </xs:element>
       <xs:element name="statOffsets">
@@ -316,6 +318,8 @@
           <xs:choice minOccurs="1" maxOccurs="unbounded">
             <xs:any minOccurs="0" maxOccurs="unbounded" processContents="lax" />
           </xs:choice>
+          <xs:attribute name="MayRequire" type="xs:string" />
+          <xs:attribute name="MayRequireAnyOf" type="xs:string" />
         </xs:complexType>
       </xs:element>
     </xs:choice>
@@ -1526,6 +1530,8 @@
           <xs:choice minOccurs="1" maxOccurs="unbounded">
             <xs:any minOccurs="0" maxOccurs="unbounded" processContents="lax" />
           </xs:choice>
+          <xs:attribute name="MayRequire" type="xs:string" />
+          <xs:attribute name="MayRequireAnyOf" type="xs:string" />
         </xs:complexType>
       </xs:element>
       <xs:element name="statFactors">
@@ -1533,6 +1539,8 @@
           <xs:choice minOccurs="1" maxOccurs="unbounded">
             <xs:any minOccurs="0" maxOccurs="unbounded" processContents="lax" />
           </xs:choice>
+          <xs:attribute name="MayRequire" type="xs:string" />
+          <xs:attribute name="MayRequireAnyOf" type="xs:string" />
         </xs:complexType>
       </xs:element>
       <xs:element name="statOffsetsBySeverity">
@@ -4700,6 +4708,8 @@
           <xs:choice minOccurs="1" maxOccurs="unbounded">
             <xs:any minOccurs="0" maxOccurs="unbounded" processContents="lax" />
           </xs:choice>
+          <xs:attribute name="MayRequire" type="xs:string" />
+          <xs:attribute name="MayRequireAnyOf" type="xs:string" />
         </xs:complexType>
       </xs:element>
       <xs:element name="statFactors">
@@ -4707,6 +4717,8 @@
           <xs:choice minOccurs="1" maxOccurs="unbounded">
             <xs:any minOccurs="0" maxOccurs="unbounded" processContents="lax" />
           </xs:choice>
+          <xs:attribute name="MayRequire" type="xs:string" />
+          <xs:attribute name="MayRequireAnyOf" type="xs:string" />
         </xs:complexType>
       </xs:element>
       <xs:element name="statOffsetsQuality">
@@ -5084,6 +5096,8 @@
           <xs:choice minOccurs="1" maxOccurs="unbounded">
             <xs:any minOccurs="0" maxOccurs="unbounded" processContents="lax" />
           </xs:choice>
+          <xs:attribute name="MayRequire" type="xs:string" />
+          <xs:attribute name="MayRequireAnyOf" type="xs:string" />
         </xs:complexType>
       </xs:element>
       <xs:element name="saltwater_Common">
@@ -5091,6 +5105,8 @@
           <xs:choice minOccurs="1" maxOccurs="unbounded">
             <xs:any minOccurs="0" maxOccurs="unbounded" processContents="lax" />
           </xs:choice>
+          <xs:attribute name="MayRequire" type="xs:string" />
+          <xs:attribute name="MayRequireAnyOf" type="xs:string" />
         </xs:complexType>
       </xs:element>
       <xs:element name="freshwater_Uncommon">
@@ -5098,6 +5114,8 @@
           <xs:choice minOccurs="1" maxOccurs="unbounded">
             <xs:any minOccurs="0" maxOccurs="unbounded" processContents="lax" />
           </xs:choice>
+          <xs:attribute name="MayRequire" type="xs:string" />
+          <xs:attribute name="MayRequireAnyOf" type="xs:string" />
         </xs:complexType>
       </xs:element>
       <xs:element name="saltwater_Uncommon">
@@ -5105,9 +5123,20 @@
           <xs:choice minOccurs="1" maxOccurs="unbounded">
             <xs:any minOccurs="0" maxOccurs="unbounded" processContents="lax" />
           </xs:choice>
+          <xs:attribute name="MayRequire" type="xs:string" />
+          <xs:attribute name="MayRequireAnyOf" type="xs:string" />
         </xs:complexType>
       </xs:element>
-      <xs:element name="rareCatchesSetMaker" type="xs:string" />
+      <xs:element name="rareCatchesSetMaker">
+        <xs:complexType>
+          <xs:simpleContent>
+            <xs:extension base="xs:string">
+              <xs:attribute name="MayRequire" type="xs:string" />
+              <xs:attribute name="MayRequireAnyOf" type="xs:string" />
+            </xs:extension>
+          </xs:simpleContent>
+        </xs:complexType>
+      </xs:element>
     </xs:choice>
     <xs:attribute name="Class" type="xs:string" />
     <xs:attribute name="MayRequire" type="xs:string" />
@@ -6002,6 +6031,8 @@
           <xs:choice minOccurs="1" maxOccurs="unbounded">
             <xs:any minOccurs="0" maxOccurs="unbounded" processContents="lax" />
           </xs:choice>
+          <xs:attribute name="MayRequire" type="xs:string" />
+          <xs:attribute name="MayRequireAnyOf" type="xs:string" />
         </xs:complexType>
       </xs:element>
     </xs:choice>
@@ -6560,6 +6591,8 @@
           <xs:choice minOccurs="1" maxOccurs="unbounded">
             <xs:any minOccurs="0" maxOccurs="unbounded" processContents="lax" />
           </xs:choice>
+          <xs:attribute name="MayRequire" type="xs:string" />
+          <xs:attribute name="MayRequireAnyOf" type="xs:string" />
         </xs:complexType>
       </xs:element>
       <xs:element name="statFactors">
@@ -6567,6 +6600,8 @@
           <xs:choice minOccurs="1" maxOccurs="unbounded">
             <xs:any minOccurs="0" maxOccurs="unbounded" processContents="lax" />
           </xs:choice>
+          <xs:attribute name="MayRequire" type="xs:string" />
+          <xs:attribute name="MayRequireAnyOf" type="xs:string" />
         </xs:complexType>
       </xs:element>
       <xs:element name="thinkTree" type="xs:string" />

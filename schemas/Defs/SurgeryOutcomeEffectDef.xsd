@@ -8,6 +8,8 @@
           <xs:choice minOccurs="1" maxOccurs="unbounded">
             <xs:any minOccurs="0" maxOccurs="unbounded" processContents="lax" />
           </xs:choice>
+          <xs:attribute name="MayRequire" type="xs:string" />
+          <xs:attribute name="MayRequireAnyOf" type="xs:string" />
         </xs:complexType>
       </xs:element>
       <xs:element name="outcomes">

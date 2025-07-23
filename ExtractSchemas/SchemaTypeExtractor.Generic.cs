@@ -41,6 +41,12 @@ partial class SchemaTypeExtractor
     var choice = new XmlSchemaChoice() { MinOccurs = 1, MaxOccursString = "unbounded" };
     anyComplexType.Particle = choice;
     choice.Items.Add(DeriveWildcardType());
+    anyComplexType.Attributes.Add(
+      new XmlSchemaAttribute() { Name = "MayRequire", SchemaTypeName = SchemaCommonValues.stringType }
+    );
+    anyComplexType.Attributes.Add(
+      new XmlSchemaAttribute() { Name = "MayRequireAnyOf", SchemaTypeName = SchemaCommonValues.stringType }
+    );
     return new XmlSchemaElement() { Name = fieldInfo.Name.ToCamelCase(), SchemaType = anyComplexType };
   }
 
