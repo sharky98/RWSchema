@@ -50,6 +50,10 @@ partial class SchemaTypeExtractor
 
     // All type have the attribute Class
     attributeList.Add(new XmlSchemaAttribute() { Name = "Class", SchemaTypeName = SchemaCommonValues.stringType });
+    attributeList.Add(new XmlSchemaAttribute() { Name = "MayRequire", SchemaTypeName = SchemaCommonValues.stringType });
+    attributeList.Add(
+      new XmlSchemaAttribute() { Name = "MayRequireAnyOf", SchemaTypeName = SchemaCommonValues.stringType }
+    );
 
     return attributeList;
   }

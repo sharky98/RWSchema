@@ -36,6 +36,7 @@ partial class SchemaTypeExtractor
 
   private XmlSchemaElement? DeriveFieldListGenericType(FieldInfo fieldInfo)
   {
+    // FIXME: Need to convert "li" into a complex element to add attributes
     var listElements = new XmlSchemaElement()
     {
       Name = "li",
@@ -50,6 +51,12 @@ partial class SchemaTypeExtractor
 
     // Complex Type that contain the sequence
     var complexType = new XmlSchemaComplexType { Particle = list };
+    complexType.Attributes.Add(
+      new XmlSchemaAttribute() { Name = "MayRequire", SchemaTypeName = SchemaCommonValues.stringType }
+    );
+    complexType.Attributes.Add(
+      new XmlSchemaAttribute() { Name = "MayRequireAnyOf", SchemaTypeName = SchemaCommonValues.stringType }
+    );
 
     // Element that contain the complex type
     return new XmlSchemaElement() { Name = fieldInfo.Name.ToCamelCase(), SchemaType = complexType };
@@ -64,6 +71,12 @@ partial class SchemaTypeExtractor
     keyValuePairElement.Items.Add(valueElement);
 
     var keyValuePairType = new XmlSchemaComplexType() { Particle = keyValuePairElement };
+    keyValuePairType.Attributes.Add(
+      new XmlSchemaAttribute() { Name = "MayRequire", SchemaTypeName = SchemaCommonValues.stringType }
+    );
+    keyValuePairType.Attributes.Add(
+      new XmlSchemaAttribute() { Name = "MayRequireAnyOf", SchemaTypeName = SchemaCommonValues.stringType }
+    );
 
     var listElements = new XmlSchemaElement()
     {
@@ -79,6 +92,12 @@ partial class SchemaTypeExtractor
 
     // Complex Type that contain the sequence
     var complexType = new XmlSchemaComplexType { Particle = list };
+    complexType.Attributes.Add(
+      new XmlSchemaAttribute() { Name = "MayRequire", SchemaTypeName = SchemaCommonValues.stringType }
+    );
+    complexType.Attributes.Add(
+      new XmlSchemaAttribute() { Name = "MayRequireAnyOf", SchemaTypeName = SchemaCommonValues.stringType }
+    );
 
     // Element that contain the complex type
     return new XmlSchemaElement() { Name = fieldInfo.Name, SchemaType = complexType };
