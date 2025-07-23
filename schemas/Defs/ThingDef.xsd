@@ -439,11 +439,9 @@
       <xs:element name="destroyOnDrop" type="StrBoolean" />
       <xs:element name="equippedStatOffsets">
         <xs:complexType>
-          <xs:sequence>
-            <xs:element minOccurs="0" maxOccurs="unbounded" name="li" type="StatModifier" />
-          </xs:sequence>
-          <xs:attribute name="MayRequire" type="xs:string" />
-          <xs:attribute name="MayRequireAnyOf" type="xs:string" />
+          <xs:choice minOccurs="1" maxOccurs="unbounded">
+            <xs:any minOccurs="0" maxOccurs="unbounded" processContents="lax" />
+          </xs:choice>
         </xs:complexType>
       </xs:element>
       <xs:element name="meleeHitSound" type="xs:string" />
@@ -473,11 +471,9 @@
       <xs:element name="canBeUsedUnderRoof" type="StrBoolean" />
       <xs:element name="statBases">
         <xs:complexType>
-          <xs:sequence>
-            <xs:element minOccurs="0" maxOccurs="unbounded" name="li" type="StatModifier" />
-          </xs:sequence>
-          <xs:attribute name="MayRequire" type="xs:string" />
-          <xs:attribute name="MayRequireAnyOf" type="xs:string" />
+          <xs:choice minOccurs="1" maxOccurs="unbounded">
+            <xs:any minOccurs="0" maxOccurs="unbounded" processContents="lax" />
+          </xs:choice>
         </xs:complexType>
       </xs:element>
       <xs:element name="passability" type="Traversability" />

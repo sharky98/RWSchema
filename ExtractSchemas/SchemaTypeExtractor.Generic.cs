@@ -37,6 +37,15 @@ partial class SchemaTypeExtractor
   private XmlSchemaElement? DeriveFieldListGenericType(FieldInfo fieldInfo)
   {
     var baseType = GetSchemaTypeName(fieldInfo);
+    if (baseType.Name == "StatModifier")
+    {
+      // I need to do something else... probably a simple xs:any here...
+      var anyComplexType = new XmlSchemaComplexType();
+      var choice = new XmlSchemaChoice() { MinOccurs = 1, MaxOccursString = "unbounded" };
+      anyComplexType.Particle = choice;
+      choice.Items.Add(DeriveWildcardType());
+      return new XmlSchemaElement() { Name = fieldInfo.Name.ToCamelCase(), SchemaType = anyComplexType };
+    }
     var listElements = new XmlSchemaElement()
     {
       Name = "li",
