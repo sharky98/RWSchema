@@ -48,7 +48,7 @@ partial class SchemaTypeExtractor(
 
   public void Derive()
   {
-    if (commonTypes.Any(x => x == assemblyType))
+    if (commonTypes.Any(x => x == assemblyType) || assemblyType.BaseType == typeof(Enum))
     {
       XmlSchemaType = DeriveSimpleType();
       XmlSchemaType.Name = assemblyType.Name;
