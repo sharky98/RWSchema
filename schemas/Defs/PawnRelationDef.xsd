@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns="https://github.com/sharky98/RWSchema/Defs" elementFormDefault="qualified" targetNamespace="https://github.com/sharky98/RWSchema/Defs" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:include schemaLocation="CommonElements.xsd" />
+  <xs:complexType name="PawnRelationDef">
+    <xs:choice minOccurs="1" maxOccurs="unbounded">
+      <xs:element name="workerClass" type="xs:string" />
+      <xs:element name="labelFemale" type="xs:string" />
+      <xs:element name="importance" type="xs:float" />
+      <xs:element name="implied" type="xs:boolean" />
+      <xs:element name="reflexive" type="xs:boolean" />
+      <xs:element name="opinionOffset" type="xs:int" />
+      <xs:element name="generationChanceFactor" type="xs:float" />
+      <xs:element name="romanceChanceFactor" type="xs:float" />
+      <xs:element name="incestOpinionOffset" type="xs:float" />
+      <xs:element name="familyByBloodRelation" type="xs:boolean" />
+      <xs:element name="removeOnDeath" type="xs:boolean" />
+      <xs:element name="inbredChanceOnChild" type="xs:float" />
+      <xs:element name="diedThought" type="xs:string" />
+      <xs:element name="diedThoughtFemale" type="xs:string" />
+      <xs:element name="lostThought" type="xs:string" />
+      <xs:element name="lostThoughtFemale" type="xs:string" />
+      <xs:element name="soldThoughts">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="li" type="xs:string" />
+          </xs:sequence>
+          <xs:attribute name="MayRequire" type="xs:string" />
+          <xs:attribute name="MayRequireAnyOf" type="xs:string" />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="killedThought" type="xs:string" />
+      <xs:element name="killedThoughtFemale" type="xs:string" />
+      <xs:element name="defName" type="xs:string" />
+      <xs:element name="label" type="xs:string" />
+      <xs:element name="description" type="xs:string" />
+      <xs:element name="descriptionHyperlinks">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="li" type="DefHyperlink" />
+          </xs:sequence>
+          <xs:attribute name="MayRequire" type="xs:string" />
+          <xs:attribute name="MayRequireAnyOf" type="xs:string" />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="ignoreConfigErrors" type="xs:boolean" />
+      <xs:element name="ignoreIllegalLabelCharacterConfigError" type="xs:boolean" />
+      <xs:element name="modExtensions">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="li" type="DefModExtension" />
+          </xs:sequence>
+          <xs:attribute name="MayRequire" type="xs:string" />
+          <xs:attribute name="MayRequireAnyOf" type="xs:string" />
+        </xs:complexType>
+      </xs:element>
+    </xs:choice>
+    <xs:attribute name="Name" type="xs:string" />
+    <xs:attribute name="ParentName" type="xs:string" />
+    <xs:attribute name="Class" type="xs:string" />
+    <xs:attribute name="MayRequire" type="xs:string" />
+    <xs:attribute name="MayRequireAnyOf" type="xs:string" />
+  </xs:complexType>
+</xs:schema>

@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns="https://github.com/sharky98/RWSchema/Defs" elementFormDefault="qualified" targetNamespace="https://github.com/sharky98/RWSchema/Defs" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:include schemaLocation="CommonElements.xsd" />
+  <xs:complexType name="TileMutatorDef">
+    <xs:choice minOccurs="1" maxOccurs="unbounded">
+      <xs:element name="genOrder" type="xs:int" />
+      <xs:element name="categories">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="li" type="xs:string" />
+          </xs:sequence>
+          <xs:attribute name="MayRequire" type="xs:string" />
+          <xs:attribute name="MayRequireAnyOf" type="xs:string" />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="overrideCategories">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="li" type="xs:string" />
+          </xs:sequence>
+          <xs:attribute name="MayRequire" type="xs:string" />
+          <xs:attribute name="MayRequireAnyOf" type="xs:string" />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="priority" type="xs:int" />
+      <xs:element name="displayPriority" type="xs:int" />
+      <xs:element name="chanceOnNonLandmarkTile" type="xs:float" />
+      <xs:element name="extraGenSteps">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="li" type="xs:string" />
+          </xs:sequence>
+          <xs:attribute name="MayRequire" type="xs:string" />
+          <xs:attribute name="MayRequireAnyOf" type="xs:string" />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="preventGenSteps">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="li" type="xs:string" />
+          </xs:sequence>
+          <xs:attribute name="MayRequire" type="xs:string" />
+          <xs:attribute name="MayRequireAnyOf" type="xs:string" />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="overrideCoastalBeachTerrain" type="xs:string" />
+      <xs:element name="overrideLakeBeachTerrain" type="xs:string" />
+      <xs:element name="overrideRiverbankTerrain" type="xs:string" />
+      <xs:element name="overrideMudTerrain" type="xs:string" />
+      <xs:element name="preventsPondGeneration" type="xs:boolean" />
+      <xs:element name="preventsLandmarks" type="xs:boolean" />
+      <xs:element name="preventNaturalElevation" type="xs:boolean" />
+      <xs:element name="preventPatches" type="xs:boolean" />
+      <xs:element name="animalDensityFactor" type="xs:float" />
+      <xs:element name="plantDensityFactor" type="xs:float" />
+      <xs:element name="junkDensityFactor" type="xs:float" />
+      <xs:element name="geyserCountFactor" type="xs:float" />
+      <xs:element name="chunkDensityFactor" type="xs:float" />
+      <xs:element name="fishPopulationFactor" type="xs:float" />
+      <xs:element name="additionalWildPlants">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="li" type="BiomePlantRecord" />
+          </xs:sequence>
+          <xs:attribute name="MayRequire" type="xs:string" />
+          <xs:attribute name="MayRequireAnyOf" type="xs:string" />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="allowRoofedEdgeWalkIn" type="xs:boolean" />
+      <xs:element name="blacklistedRaidStrategies">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="li" type="xs:string" />
+          </xs:sequence>
+          <xs:attribute name="MayRequire" type="xs:string" />
+          <xs:attribute name="MayRequireAnyOf" type="xs:string" />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="additionalGameConditions">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="li" type="xs:string" />
+          </xs:sequence>
+          <xs:attribute name="MayRequire" type="xs:string" />
+          <xs:attribute name="MayRequireAnyOf" type="xs:string" />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="hillinessForElevationGen" type="Hilliness" />
+      <xs:element name="hillinessForOreGeneration" type="Hilliness" />
+      <xs:element name="hillinessLabel" type="Hilliness" />
+      <xs:element name="biomeWhitelist">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="li" type="xs:string" />
+          </xs:sequence>
+          <xs:attribute name="MayRequire" type="xs:string" />
+          <xs:attribute name="MayRequireAnyOf" type="xs:string" />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="biomeBlacklist">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="li" type="xs:string" />
+          </xs:sequence>
+          <xs:attribute name="MayRequire" type="xs:string" />
+          <xs:attribute name="MayRequireAnyOf" type="xs:string" />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="animalDensityRange">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:pattern value="\s*-?\d+(\.\d+)?\s*(~\s*-?\d+(\.\d+)?\s*)?" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="plantDensityRange">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:pattern value="\s*-?\d+(\.\d+)?\s*(~\s*-?\d+(\.\d+)?\s*)?" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="minHilliness" type="Hilliness" />
+      <xs:element name="maxHilliness" type="Hilliness" />
+      <xs:element name="coastSidesRange">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:pattern value="\s*-?\d+\s*(~\s*-?\d+\s*)?" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="canSpawnOnRiver" type="xs:boolean" />
+      <xs:element name="canSpawnOnRoad" type="xs:boolean" />
+      <xs:element name="canSpawnOnLandmark" type="xs:boolean" />
+      <xs:element name="requiresFactionOfDef" type="xs:string" />
+      <xs:element name="pollutionRange">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:pattern value="\s*-?\d+(\.\d+)?\s*(~\s*-?\d+(\.\d+)?\s*)?" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="averageTemperatureRange">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:pattern value="\s*-?\d+(\.\d+)?\s*(~\s*-?\d+(\.\d+)?\s*)?" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="weatherFrequencyFactor" type="xs:float" />
+      <xs:element name="weatherFrequencyOffset" type="xs:float" />
+      <xs:element name="weathersToAffect">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="li" type="xs:string" />
+          </xs:sequence>
+          <xs:attribute name="MayRequire" type="xs:string" />
+          <xs:attribute name="MayRequireAnyOf" type="xs:string" />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="terrainPatchMakers">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="li" type="TerrainPatchMaker" />
+          </xs:sequence>
+          <xs:attribute name="MayRequire" type="xs:string" />
+          <xs:attribute name="MayRequireAnyOf" type="xs:string" />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="plantKinds">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="li" type="xs:string" />
+          </xs:sequence>
+          <xs:attribute name="MayRequire" type="xs:string" />
+          <xs:attribute name="MayRequireAnyOf" type="xs:string" />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="structureGenParms" type="AncientStructureGenParms" />
+      <xs:element name="resourceBlacklist">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="li" type="xs:string" />
+          </xs:sequence>
+          <xs:attribute name="MayRequire" type="xs:string" />
+          <xs:attribute name="MayRequireAnyOf" type="xs:string" />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="defName" type="xs:string" />
+      <xs:element name="label" type="xs:string" />
+      <xs:element name="description" type="xs:string" />
+      <xs:element name="descriptionHyperlinks">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="li" type="DefHyperlink" />
+          </xs:sequence>
+          <xs:attribute name="MayRequire" type="xs:string" />
+          <xs:attribute name="MayRequireAnyOf" type="xs:string" />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="ignoreConfigErrors" type="xs:boolean" />
+      <xs:element name="ignoreIllegalLabelCharacterConfigError" type="xs:boolean" />
+      <xs:element name="modExtensions">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="li" type="DefModExtension" />
+          </xs:sequence>
+          <xs:attribute name="MayRequire" type="xs:string" />
+          <xs:attribute name="MayRequireAnyOf" type="xs:string" />
+        </xs:complexType>
+      </xs:element>
+    </xs:choice>
+    <xs:attribute name="Name" type="xs:string" />
+    <xs:attribute name="ParentName" type="xs:string" />
+    <xs:attribute name="Class" type="xs:string" />
+    <xs:attribute name="MayRequire" type="xs:string" />
+    <xs:attribute name="MayRequireAnyOf" type="xs:string" />
+  </xs:complexType>
+</xs:schema>

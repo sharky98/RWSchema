@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns="https://github.com/sharky98/RWSchema/Defs" elementFormDefault="qualified" targetNamespace="https://github.com/sharky98/RWSchema/Defs" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:include schemaLocation="CommonElements.xsd" />
+  <xs:complexType name="DamageDef">
+    <xs:choice minOccurs="1" maxOccurs="unbounded">
+      <xs:element name="workerClass" type="xs:string" />
+      <xs:element name="hasForcefulImpact" type="xs:boolean" />
+      <xs:element name="harmsHealth" type="xs:boolean" />
+      <xs:element name="makesBlood" type="xs:boolean" />
+      <xs:element name="canInterruptJobs" type="xs:boolean" />
+      <xs:element name="isRanged" type="xs:boolean" />
+      <xs:element name="makesAnimalsFlee" type="xs:boolean" />
+      <xs:element name="execution" type="xs:boolean" />
+      <xs:element name="combatLogRules" type="xs:string" />
+      <xs:element name="buildingDamageFactor" type="xs:float" />
+      <xs:element name="buildingDamageFactorPassable" type="xs:float" />
+      <xs:element name="buildingDamageFactorImpassable" type="xs:float" />
+      <xs:element name="plantDamageFactor" type="xs:float" />
+      <xs:element name="corpseDamageFactor" type="xs:float" />
+      <xs:element name="causeStun" type="xs:boolean" />
+      <xs:element name="stunAdaptationTicks" type="xs:int" />
+      <xs:element name="constantStunDurationTicks" type="xs:int" />
+      <xs:element name="stunResistStat" type="xs:string" />
+      <xs:element name="displayAdaptedTextMote" type="xs:boolean" />
+      <xs:element name="adaptedText" type="xs:string" />
+      <xs:element name="canUseDeflectMetalEffect" type="xs:boolean" />
+      <xs:element name="impactSoundType" type="xs:string" />
+      <xs:element name="deathMessage" type="xs:string" />
+      <xs:element name="damageEffecter" type="xs:string" />
+      <xs:element name="defaultDamage" type="xs:int" />
+      <xs:element name="defaultArmorPenetration" type="xs:float" />
+      <xs:element name="defaultStoppingPower" type="xs:float" />
+      <xs:element name="additionalHediffs">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="li" type="DamageDefAdditionalHediff" />
+          </xs:sequence>
+          <xs:attribute name="MayRequire" type="xs:string" />
+          <xs:attribute name="MayRequireAnyOf" type="xs:string" />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="additionalHediffsThisPart">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="li" type="xs:string" />
+          </xs:sequence>
+          <xs:attribute name="MayRequire" type="xs:string" />
+          <xs:attribute name="MayRequireAnyOf" type="xs:string" />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="applyAdditionalHediffsIfHuntingForFood" type="xs:boolean" />
+      <xs:element name="armorCategory" type="xs:string" />
+      <xs:element name="minDamageToFragment" type="xs:int" />
+      <xs:element name="overkillPctToDestroyPart">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:pattern value="\s*-?\d+(\.\d+)?\s*(~\s*-?\d+(\.\d+)?\s*)?" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="consideredHelpful" type="xs:boolean" />
+      <xs:element name="igniteCellChance" type="xs:float" />
+      <xs:element name="ignoreShields" type="xs:boolean" />
+      <xs:element name="harmAllLayersUntilOutside" type="xs:boolean" />
+      <xs:element name="hediff" type="xs:string" />
+      <xs:element name="hediffSkin" type="xs:string" />
+      <xs:element name="hediffSolid" type="xs:string" />
+      <xs:element name="isExplosive" type="xs:boolean" />
+      <xs:element name="explosionSnowMeltAmount" type="xs:float" />
+      <xs:element name="explosionAffectOutsidePartsOnly" type="xs:boolean" />
+      <xs:element name="explosionCellMote" type="xs:string" />
+      <xs:element name="explosionCellFleck" type="xs:string" />
+      <xs:element name="explosionColorCenter" type="Color" />
+      <xs:element name="explosionColorEdge" type="Color" />
+      <xs:element name="explosionInteriorEffecter" type="xs:string" />
+      <xs:element name="explosionInteriorMote" type="xs:string" />
+      <xs:element name="explosionInteriorFleck" type="xs:string" />
+      <xs:element name="explosionCenterMote" type="xs:string" />
+      <xs:element name="explosionCenterFleck" type="xs:string" />
+      <xs:element name="explosionCenterEffecter" type="xs:string" />
+      <xs:element name="explosionCellEffecter" type="xs:string" />
+      <xs:element name="explosionCellEffecterChance" type="xs:float" />
+      <xs:element name="explosionCellEffecterMaxRadius" type="xs:float" />
+      <xs:element name="explosionHeatEnergyPerCell" type="xs:float" />
+      <xs:element name="expolosionPropagationSpeed" type="xs:float" />
+      <xs:element name="soundExplosion" type="xs:string" />
+      <xs:element name="explosionInteriorCellCountMultiplier" type="xs:float" />
+      <xs:element name="explosionInteriorCellDistanceMultiplier" type="xs:float" />
+      <xs:element name="stabChanceOfForcedInternal" type="xs:float" />
+      <xs:element name="cutCleaveBonus" type="xs:float" />
+      <xs:element name="bluntInnerHitChance" type="xs:float" />
+      <xs:element name="bluntInnerHitDamageFractionToConvert">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:pattern value="\s*-?\d+(\.\d+)?\s*(~\s*-?\d+(\.\d+)?\s*)?" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="bluntInnerHitDamageFractionToAdd">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:pattern value="\s*-?\d+(\.\d+)?\s*(~\s*-?\d+(\.\d+)?\s*)?" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="bluntStunDuration" type="xs:float" />
+      <xs:element name="scratchSplitPercentage" type="xs:float" />
+      <xs:element name="scaleDamageToBuildingsBasedOnFlammability" type="xs:boolean" />
+      <xs:element name="defName" type="xs:string" />
+      <xs:element name="label" type="xs:string" />
+      <xs:element name="description" type="xs:string" />
+      <xs:element name="descriptionHyperlinks">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="li" type="DefHyperlink" />
+          </xs:sequence>
+          <xs:attribute name="MayRequire" type="xs:string" />
+          <xs:attribute name="MayRequireAnyOf" type="xs:string" />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="ignoreConfigErrors" type="xs:boolean" />
+      <xs:element name="ignoreIllegalLabelCharacterConfigError" type="xs:boolean" />
+      <xs:element name="modExtensions">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="li" type="DefModExtension" />
+          </xs:sequence>
+          <xs:attribute name="MayRequire" type="xs:string" />
+          <xs:attribute name="MayRequireAnyOf" type="xs:string" />
+        </xs:complexType>
+      </xs:element>
+    </xs:choice>
+    <xs:attribute name="Name" type="xs:string" />
+    <xs:attribute name="ParentName" type="xs:string" />
+    <xs:attribute name="Class" type="xs:string" />
+    <xs:attribute name="MayRequire" type="xs:string" />
+    <xs:attribute name="MayRequireAnyOf" type="xs:string" />
+  </xs:complexType>
+</xs:schema>

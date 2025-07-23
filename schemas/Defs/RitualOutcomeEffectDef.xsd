@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns="https://github.com/sharky98/RWSchema/Defs" elementFormDefault="qualified" targetNamespace="https://github.com/sharky98/RWSchema/Defs" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:include schemaLocation="CommonElements.xsd" />
+  <xs:complexType name="RitualOutcomeEffectDef">
+    <xs:choice minOccurs="1" maxOccurs="unbounded">
+      <xs:element name="workerClass" type="xs:string" />
+      <xs:element name="startingQuality" type="xs:float" />
+      <xs:element name="minQuality" type="xs:float" />
+      <xs:element name="maxQuality" type="xs:float" />
+      <xs:element name="givesDevelopmentPoints" type="xs:boolean" />
+      <xs:element name="memoryDef" type="xs:string" />
+      <xs:element name="outcomeChances">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="li" type="RitualOutcomePossibility" />
+          </xs:sequence>
+          <xs:attribute name="MayRequire" type="xs:string" />
+          <xs:attribute name="MayRequireAnyOf" type="xs:string" />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="extraPredictedOutcomeDescriptions">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="li" type="xs:string" />
+          </xs:sequence>
+          <xs:attribute name="MayRequire" type="xs:string" />
+          <xs:attribute name="MayRequireAnyOf" type="xs:string" />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="extraInfoLines">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="li" type="xs:string" />
+          </xs:sequence>
+          <xs:attribute name="MayRequire" type="xs:string" />
+          <xs:attribute name="MayRequireAnyOf" type="xs:string" />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="extraOutcomeDescriptions">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="li" type="ExtraOutcomeChanceDescription" />
+          </xs:sequence>
+          <xs:attribute name="MayRequire" type="xs:string" />
+          <xs:attribute name="MayRequireAnyOf" type="xs:string" />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="effecter" type="xs:string" />
+      <xs:element name="fleckDef" type="xs:string" />
+      <xs:element name="flecksPerCell" type="xs:int" />
+      <xs:element name="fleckRotationRange">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:pattern value="\s*-?\d+(\.\d+)?\s*(~\s*-?\d+(\.\d+)?\s*)?" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="fleckScaleRange">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:pattern value="\s*-?\d+(\.\d+)?\s*(~\s*-?\d+(\.\d+)?\s*)?" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="fleckVelocityAngle">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:pattern value="\s*-?\d+(\.\d+)?\s*(~\s*-?\d+(\.\d+)?\s*)?" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="fleckVelocitySpeed">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:pattern value="\s*-?\d+(\.\d+)?\s*(~\s*-?\d+(\.\d+)?\s*)?" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="filthDefToSpawn" type="xs:string" />
+      <xs:element name="filthCountToSpawn">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:pattern value="\s*-?\d+\s*(~\s*-?\d+\s*)?" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="comps">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="li" type="RitualOutcomeComp" />
+          </xs:sequence>
+          <xs:attribute name="MayRequire" type="xs:string" />
+          <xs:attribute name="MayRequireAnyOf" type="xs:string" />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="warnOnLowQuality" type="xs:boolean" />
+      <xs:element name="allowAttachableOutcome" type="xs:boolean" />
+      <xs:element name="allowOutcomeWithNoAttendance" type="xs:boolean" />
+      <xs:element name="defName" type="xs:string" />
+      <xs:element name="label" type="xs:string" />
+      <xs:element name="description" type="xs:string" />
+      <xs:element name="descriptionHyperlinks">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="li" type="DefHyperlink" />
+          </xs:sequence>
+          <xs:attribute name="MayRequire" type="xs:string" />
+          <xs:attribute name="MayRequireAnyOf" type="xs:string" />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="ignoreConfigErrors" type="xs:boolean" />
+      <xs:element name="ignoreIllegalLabelCharacterConfigError" type="xs:boolean" />
+      <xs:element name="modExtensions">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="li" type="DefModExtension" />
+          </xs:sequence>
+          <xs:attribute name="MayRequire" type="xs:string" />
+          <xs:attribute name="MayRequireAnyOf" type="xs:string" />
+        </xs:complexType>
+      </xs:element>
+    </xs:choice>
+    <xs:attribute name="Name" type="xs:string" />
+    <xs:attribute name="ParentName" type="xs:string" />
+    <xs:attribute name="Class" type="xs:string" />
+    <xs:attribute name="MayRequire" type="xs:string" />
+    <xs:attribute name="MayRequireAnyOf" type="xs:string" />
+  </xs:complexType>
+</xs:schema>

@@ -1,0 +1,307 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns="https://github.com/sharky98/RWSchema/Defs" elementFormDefault="qualified" targetNamespace="https://github.com/sharky98/RWSchema/Defs" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:include schemaLocation="CommonElements.xsd" />
+  <xs:complexType name="PreceptDef">
+    <xs:choice minOccurs="1" maxOccurs="unbounded">
+      <xs:element name="preceptClass" type="xs:string" />
+      <xs:element name="issue" type="xs:string" />
+      <xs:element name="comps">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="li" type="PreceptComp" />
+          </xs:sequence>
+          <xs:attribute name="MayRequire" type="xs:string" />
+          <xs:attribute name="MayRequireAnyOf" type="xs:string" />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="abilityStatFactors">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="li" type="AbilityStatModifiers" />
+          </xs:sequence>
+          <xs:attribute name="MayRequire" type="xs:string" />
+          <xs:attribute name="MayRequireAnyOf" type="xs:string" />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="statOffsets">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="li" type="StatModifier" />
+          </xs:sequence>
+          <xs:attribute name="MayRequire" type="xs:string" />
+          <xs:attribute name="MayRequireAnyOf" type="xs:string" />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="statFactors">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="li" type="StatModifier" />
+          </xs:sequence>
+          <xs:attribute name="MayRequire" type="xs:string" />
+          <xs:attribute name="MayRequireAnyOf" type="xs:string" />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="conditionalStatAffecters">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="li" type="ConditionalStatAffecter" />
+          </xs:sequence>
+          <xs:attribute name="MayRequire" type="xs:string" />
+          <xs:attribute name="MayRequireAnyOf" type="xs:string" />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="selectionWeight" type="xs:float" />
+      <xs:element name="opposedWorkTypes">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="li" type="xs:string" />
+          </xs:sequence>
+          <xs:attribute name="MayRequire" type="xs:string" />
+          <xs:attribute name="MayRequireAnyOf" type="xs:string" />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="impact" type="PreceptImpact" />
+      <xs:element name="associatedMemes">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="li" type="xs:string" />
+          </xs:sequence>
+          <xs:attribute name="MayRequire" type="xs:string" />
+          <xs:attribute name="MayRequireAnyOf" type="xs:string" />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="conflictingMemes">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="li" type="xs:string" />
+          </xs:sequence>
+          <xs:attribute name="MayRequire" type="xs:string" />
+          <xs:attribute name="MayRequireAnyOf" type="xs:string" />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="requiredMemes">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="li" type="xs:string" />
+          </xs:sequence>
+          <xs:attribute name="MayRequire" type="xs:string" />
+          <xs:attribute name="MayRequireAnyOf" type="xs:string" />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="visible" type="xs:boolean" />
+      <xs:element name="visibleOnAddFloatMenu" type="xs:boolean" />
+      <xs:element name="listedForRoles" type="xs:boolean" />
+      <xs:element name="takeNameFrom" type="xs:string" />
+      <xs:element name="alsoAdds" type="xs:string" />
+      <xs:element name="maxCount" type="xs:int" />
+      <xs:element name="exclusionTags">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="li" type="xs:string" />
+          </xs:sequence>
+          <xs:attribute name="MayRequire" type="xs:string" />
+          <xs:attribute name="MayRequireAnyOf" type="xs:string" />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="allowDuplicates" type="xs:boolean" />
+      <xs:element name="ignoreLimitsInEditMode" type="xs:boolean" />
+      <xs:element name="canUseAlreadyUsedThingDef" type="xs:boolean" />
+      <xs:element name="classic" type="xs:boolean" />
+      <xs:element name="classicExtra" type="xs:boolean" />
+      <xs:element name="defaultSelectionWeight" type="xs:float" />
+      <xs:element name="enabledForNPCFactions" type="xs:boolean" />
+      <xs:element name="countsTowardsPreceptLimit" type="xs:boolean" />
+      <xs:element name="canGenerateAsSpecialPrecept" type="xs:boolean" />
+      <xs:element name="nameMaker" type="xs:string" />
+      <xs:element name="nameMaxLength" type="xs:int" />
+      <xs:element name="ritualPatternBase" type="xs:string" />
+      <xs:element name="receivesExpectationsQualityOffset" type="xs:boolean" />
+      <xs:element name="usesIdeoVisualEffects" type="xs:boolean" />
+      <xs:element name="mergeRitualGizmosFromAllIdeos" type="xs:boolean" />
+      <xs:element name="allowSpectatorsFromOtherIdeos" type="xs:boolean" />
+      <xs:element name="allowOptionalRitualObligations" type="xs:boolean" />
+      <xs:element name="classicModeOnly" type="xs:boolean" />
+      <xs:element name="buildingDefChances">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="li" type="PreceptThingChanceClass" />
+          </xs:sequence>
+          <xs:attribute name="MayRequire" type="xs:string" />
+          <xs:attribute name="MayRequireAnyOf" type="xs:string" />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="buildingMinExpectations">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="li" type="xs:string" />
+          </xs:sequence>
+          <xs:attribute name="MayRequire" type="xs:string" />
+          <xs:attribute name="MayRequireAnyOf" type="xs:string" />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="buildingRoomRequirements">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="li" type="RoomRequirement" />
+          </xs:sequence>
+          <xs:attribute name="MayRequire" type="xs:string" />
+          <xs:attribute name="MayRequireAnyOf" type="xs:string" />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="buildingRoomRequirementsFixed">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="li" type="RoomRequirement" />
+          </xs:sequence>
+          <xs:attribute name="MayRequire" type="xs:string" />
+          <xs:attribute name="MayRequireAnyOf" type="xs:string" />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="leaderRole" type="xs:boolean" />
+      <xs:element name="activationBelieverCount" type="xs:int" />
+      <xs:element name="deactivationBelieverCount" type="xs:int" />
+      <xs:element name="roleRequirements">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="li" type="RoleRequirement" />
+          </xs:sequence>
+          <xs:attribute name="MayRequire" type="xs:string" />
+          <xs:attribute name="MayRequireAnyOf" type="xs:string" />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="roleDisabledWorkTags" type="WorkTags" />
+      <xs:element name="roleRequiredWorkTags" type="WorkTags" />
+      <xs:element name="roleRequiredWorkTagAny" type="WorkTags" />
+      <xs:element name="roleApparelRequirements">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="li" type="PreceptApparelRequirement" />
+          </xs:sequence>
+          <xs:attribute name="MayRequire" type="xs:string" />
+          <xs:attribute name="MayRequireAnyOf" type="xs:string" />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="grantedAbilities">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="li" type="xs:string" />
+          </xs:sequence>
+          <xs:attribute name="MayRequire" type="xs:string" />
+          <xs:attribute name="MayRequireAnyOf" type="xs:string" />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="roleEffects">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="li" type="RoleEffect" />
+          </xs:sequence>
+          <xs:attribute name="MayRequire" type="xs:string" />
+          <xs:attribute name="MayRequireAnyOf" type="xs:string" />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="roleTags">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="li" type="xs:string" />
+          </xs:sequence>
+          <xs:attribute name="MayRequire" type="xs:string" />
+          <xs:attribute name="MayRequireAnyOf" type="xs:string" />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="iconPath" type="xs:string" />
+      <xs:element name="restrictToSupremeGenderChance" type="xs:float" />
+      <xs:element name="certaintyLossFactor" type="xs:float" />
+      <xs:element name="convertPowerFactor" type="xs:float" />
+      <xs:element name="expectationsOffset" type="xs:int" />
+      <xs:element name="createsRoleEmptyThought" type="xs:boolean" />
+      <xs:element name="roleCanBeChild" type="xs:boolean" />
+      <xs:element name="disallowLoggingCamps" type="xs:boolean" />
+      <xs:element name="disallowMiningCamps" type="xs:boolean" />
+      <xs:element name="disallowHuntingCamps" type="xs:boolean" />
+      <xs:element name="disallowFarmingCamps" type="xs:boolean" />
+      <xs:element name="approvesOfSlavery" type="xs:boolean" />
+      <xs:element name="prefersNudity" type="xs:boolean" />
+      <xs:element name="genderPrefersNudity" type="Gender" />
+      <xs:element name="useChoicesFromBuildingDefs" type="xs:boolean" />
+      <xs:element name="displayOrderInImpact" type="xs:int" />
+      <xs:element name="displayOrderInIssue" type="xs:int" />
+      <xs:element name="proselytizes" type="xs:boolean" />
+      <xs:element name="requiredScars" type="xs:int" />
+      <xs:element name="approvesOfCharity" type="xs:boolean" />
+      <xs:element name="blindPawnChance" type="xs:float" />
+      <xs:element name="approvesOfBlindness" type="xs:boolean" />
+      <xs:element name="canRemoveInUI" type="xs:boolean" />
+      <xs:element name="prefersDarkness" type="xs:boolean" />
+      <xs:element name="enablesNeeds">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="li" type="xs:string" />
+          </xs:sequence>
+          <xs:attribute name="MayRequire" type="xs:string" />
+          <xs:attribute name="MayRequireAnyOf" type="xs:string" />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="disablesNeeds">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="li" type="xs:string" />
+          </xs:sequence>
+          <xs:attribute name="MayRequire" type="xs:string" />
+          <xs:attribute name="MayRequireAnyOf" type="xs:string" />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="blindPsychicSensitivityOffset" type="xs:float" />
+      <xs:element name="defaultDrugPolicyOverride" type="xs:string" />
+      <xs:element name="warnPlayerOnDesignateChopTree" type="xs:boolean" />
+      <xs:element name="warnPlayerOnDesignateMine" type="xs:boolean" />
+      <xs:element name="willingToConstructOtherIdeoBuildables" type="xs:boolean" />
+      <xs:element name="biosculpterPodCycleSpeedFactor" type="xs:float" />
+      <xs:element name="growthVatSpeedFactor" type="xs:float" />
+      <xs:element name="prefersSlabBed" type="xs:boolean" />
+      <xs:element name="useRepeatPenalty" type="xs:boolean" />
+      <xs:element name="showRitualFloatMenuOption" type="xs:boolean" />
+      <xs:element name="tipLabelOverride" type="xs:string" />
+      <xs:element name="capitalizeAsTitle" type="xs:boolean" />
+      <xs:element name="ignoreNameUniqueness" type="xs:boolean" />
+      <xs:element name="extraTextPawnDeathLetter" type="xs:string" />
+      <xs:element name="apparelPreceptSwapDef" type="xs:string" />
+      <xs:element name="useCooldownFromAbilityGroupDef" type="xs:string" />
+      <xs:element name="iconIgnoresIdeoColor" type="xs:boolean" />
+      <xs:element name="sourcePawnRoleDef" type="xs:string" />
+      <xs:element name="sourceAbilityDef" type="xs:string" />
+      <xs:element name="likesHumanLeatherApparel" type="xs:boolean" />
+      <xs:element name="approvesOfRaiding" type="xs:boolean" />
+      <xs:element name="skipOpportunityLettersBeforeDay" type="xs:float" />
+      <xs:element name="notifyPlayerOnOpportunity" type="xs:boolean" />
+      <xs:element name="workerClass" type="xs:string" />
+      <xs:element name="defName" type="xs:string" />
+      <xs:element name="label" type="xs:string" />
+      <xs:element name="description" type="xs:string" />
+      <xs:element name="descriptionHyperlinks">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="li" type="DefHyperlink" />
+          </xs:sequence>
+          <xs:attribute name="MayRequire" type="xs:string" />
+          <xs:attribute name="MayRequireAnyOf" type="xs:string" />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="ignoreConfigErrors" type="xs:boolean" />
+      <xs:element name="ignoreIllegalLabelCharacterConfigError" type="xs:boolean" />
+      <xs:element name="modExtensions">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="li" type="DefModExtension" />
+          </xs:sequence>
+          <xs:attribute name="MayRequire" type="xs:string" />
+          <xs:attribute name="MayRequireAnyOf" type="xs:string" />
+        </xs:complexType>
+      </xs:element>
+    </xs:choice>
+    <xs:attribute name="Name" type="xs:string" />
+    <xs:attribute name="ParentName" type="xs:string" />
+    <xs:attribute name="Class" type="xs:string" />
+    <xs:attribute name="MayRequire" type="xs:string" />
+    <xs:attribute name="MayRequireAnyOf" type="xs:string" />
+  </xs:complexType>
+</xs:schema>

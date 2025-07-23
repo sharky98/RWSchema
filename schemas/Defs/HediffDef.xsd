@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns="https://github.com/sharky98/RWSchema/Defs" elementFormDefault="qualified" targetNamespace="https://github.com/sharky98/RWSchema/Defs" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:include schemaLocation="CommonElements.xsd" />
+  <xs:complexType name="HediffDef">
+    <xs:choice minOccurs="1" maxOccurs="unbounded">
+      <xs:element name="hediffClass" type="xs:string" />
+      <xs:element name="comps">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="li" type="HediffCompProperties" />
+          </xs:sequence>
+          <xs:attribute name="MayRequire" type="xs:string" />
+          <xs:attribute name="MayRequireAnyOf" type="xs:string" />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="descriptionShort" type="xs:string" />
+      <xs:element name="debugLabelExtra" type="xs:string" />
+      <xs:element name="initialSeverity" type="xs:float" />
+      <xs:element name="lethalSeverity" type="xs:float" />
+      <xs:element name="stages">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="li" type="HediffStage" />
+          </xs:sequence>
+          <xs:attribute name="MayRequire" type="xs:string" />
+          <xs:attribute name="MayRequireAnyOf" type="xs:string" />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="tendable" type="xs:boolean" />
+      <xs:element name="isBad" type="xs:boolean" />
+      <xs:element name="spawnThingOnRemoved" type="xs:string" />
+      <xs:element name="chanceToCauseNoPain" type="xs:float" />
+      <xs:element name="canApplyDodChanceForCapacityChanges" type="xs:boolean" />
+      <xs:element name="makesSickThought" type="xs:boolean" />
+      <xs:element name="makesAlert" type="xs:boolean" />
+      <xs:element name="chemicalNeed" type="xs:string" />
+      <xs:element name="minSeverity" type="xs:float" />
+      <xs:element name="maxSeverity" type="xs:float" />
+      <xs:element name="scenarioCanAdd" type="xs:boolean" />
+      <xs:element name="hediffGivers">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="li" type="HediffGiver" />
+          </xs:sequence>
+          <xs:attribute name="MayRequire" type="xs:string" />
+          <xs:attribute name="MayRequireAnyOf" type="xs:string" />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="cureAllAtOnceIfCuredByItem" type="xs:boolean" />
+      <xs:element name="taleOnVisible" type="xs:string" />
+      <xs:element name="recordDownedTale" type="xs:boolean" />
+      <xs:element name="everCurableByItem" type="xs:boolean" />
+      <xs:element name="tags">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="li" type="xs:string" />
+          </xs:sequence>
+          <xs:attribute name="MayRequire" type="xs:string" />
+          <xs:attribute name="MayRequireAnyOf" type="xs:string" />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="priceImpact" type="xs:boolean" />
+      <xs:element name="priceOffset" type="xs:float" />
+      <xs:element name="chronic" type="xs:boolean" />
+      <xs:element name="keepOnBodyPartRestoration" type="xs:boolean" />
+      <xs:element name="countsAsAddedPartOrImplant" type="xs:boolean" />
+      <xs:element name="blocksSocialInteraction" type="xs:boolean" />
+      <xs:element name="blocksSleeping" type="xs:boolean" />
+      <xs:element name="overrideTooltip" type="xs:string" />
+      <xs:element name="extraTooltip" type="xs:string" />
+      <xs:element name="inspectString" type="xs:string" />
+      <xs:element name="levelIsQuantity" type="xs:boolean" />
+      <xs:element name="removeOnDeathrestStart" type="xs:boolean" />
+      <xs:element name="preventsCrawling" type="xs:boolean" />
+      <xs:element name="preventsPregnancy" type="xs:boolean" />
+      <xs:element name="preventsLungRot" type="xs:boolean" />
+      <xs:element name="pregnant" type="xs:boolean" />
+      <xs:element name="allowMothballIfLowPriorityWorldPawn" type="xs:boolean" />
+      <xs:element name="removeWithTags">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="li" type="xs:string" />
+          </xs:sequence>
+          <xs:attribute name="MayRequire" type="xs:string" />
+          <xs:attribute name="MayRequireAnyOf" type="xs:string" />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="onlyLifeThreateningTo">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="li" type="xs:string" />
+          </xs:sequence>
+          <xs:attribute name="MayRequire" type="xs:string" />
+          <xs:attribute name="MayRequireAnyOf" type="xs:string" />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="canAffectBionicOrImplant" type="xs:boolean" />
+      <xs:element name="alwaysShowSeverity" type="xs:boolean" />
+      <xs:element name="showGizmosOnCorpse" type="xs:boolean" />
+      <xs:element name="defaultInstallPart" type="xs:string" />
+      <xs:element name="hairColorOverride" type="Color" />
+      <xs:element name="possiblePathways">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="li" type="HediffInfectionPathway" />
+          </xs:sequence>
+          <xs:attribute name="MayRequire" type="xs:string" />
+          <xs:attribute name="MayRequireAnyOf" type="xs:string" />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="givesInfectionPathways">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="li" type="xs:string" />
+          </xs:sequence>
+          <xs:attribute name="MayRequire" type="xs:string" />
+          <xs:attribute name="MayRequireAnyOf" type="xs:string" />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="duplicationAllowed" type="xs:boolean" />
+      <xs:element name="preventsDeath" type="xs:boolean" />
+      <xs:element name="allowedMeditationFocusTypes">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="li" type="xs:string" />
+          </xs:sequence>
+          <xs:attribute name="MayRequire" type="xs:string" />
+          <xs:attribute name="MayRequireAnyOf" type="xs:string" />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="abilities">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="li" type="xs:string" />
+          </xs:sequence>
+          <xs:attribute name="MayRequire" type="xs:string" />
+          <xs:attribute name="MayRequireAnyOf" type="xs:string" />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="isInfection" type="xs:boolean" />
+      <xs:element name="forceRemoveOnResurrection" type="xs:boolean" />
+      <xs:element name="organicAddedBodypart" type="xs:boolean" />
+      <xs:element name="deprioritizeHealing" type="xs:boolean" />
+      <xs:element name="clearsEgo" type="xs:boolean" />
+      <xs:element name="aptitudes">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="li" type="Aptitude" />
+          </xs:sequence>
+          <xs:attribute name="MayRequire" type="xs:string" />
+          <xs:attribute name="MayRequireAnyOf" type="xs:string" />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="removeOnQuestLodgers" type="xs:boolean" />
+      <xs:element name="removeOnRedressIfNotOfKind">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="li" type="xs:string" />
+          </xs:sequence>
+          <xs:attribute name="MayRequire" type="xs:string" />
+          <xs:attribute name="MayRequireAnyOf" type="xs:string" />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="displayWound" type="xs:boolean" />
+      <xs:element name="woundAnchorRange" type="xs:float" />
+      <xs:element name="defaultLabelColor" type="Color" />
+      <xs:element name="skinColorOverride" type="Color" />
+      <xs:element name="skinColorTint" type="Color" />
+      <xs:element name="skinColorTintStrength" type="xs:float" />
+      <xs:element name="skinShader" type="xs:string" />
+      <xs:element name="forceRenderTreeRecache" type="xs:boolean" />
+      <xs:element name="injuryProps" type="InjuryProps" />
+      <xs:element name="addedPartProps" type="AddedBodyPartProps" />
+      <xs:element name="labelNoun" type="xs:string" />
+      <xs:element name="battleStateLabel" type="xs:string" />
+      <xs:element name="labelNounPretty" type="xs:string" />
+      <xs:element name="targetPrefix" type="xs:string" />
+      <xs:element name="defName" type="xs:string" />
+      <xs:element name="label" type="xs:string" />
+      <xs:element name="description" type="xs:string" />
+      <xs:element name="descriptionHyperlinks">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="li" type="DefHyperlink" />
+          </xs:sequence>
+          <xs:attribute name="MayRequire" type="xs:string" />
+          <xs:attribute name="MayRequireAnyOf" type="xs:string" />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="ignoreConfigErrors" type="xs:boolean" />
+      <xs:element name="ignoreIllegalLabelCharacterConfigError" type="xs:boolean" />
+      <xs:element name="modExtensions">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="li" type="DefModExtension" />
+          </xs:sequence>
+          <xs:attribute name="MayRequire" type="xs:string" />
+          <xs:attribute name="MayRequireAnyOf" type="xs:string" />
+        </xs:complexType>
+      </xs:element>
+    </xs:choice>
+    <xs:attribute name="Name" type="xs:string" />
+    <xs:attribute name="ParentName" type="xs:string" />
+    <xs:attribute name="Class" type="xs:string" />
+    <xs:attribute name="MayRequire" type="xs:string" />
+    <xs:attribute name="MayRequireAnyOf" type="xs:string" />
+  </xs:complexType>
+</xs:schema>

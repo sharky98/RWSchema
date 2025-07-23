@@ -172,7 +172,7 @@
       <xs:pattern value="[a-zA-Z0-9.]{1,}[.]{1}[a-zA-Z0-9]{1,}" />
       <xs:maxLength value="60" />
       <!-- This shows as an error in VSCode due to xs:assertion being added in XSD 1.1, which is not supported yet -->
-      <xs:assertion test="not(contains(lower-case($value),'ludeon'))" />
+      <!-- <xs:assertion test="not(contains(lower-case($value),'ludeon'))" /> -->
     </xs:restriction>
   </xs:simpleType>
 

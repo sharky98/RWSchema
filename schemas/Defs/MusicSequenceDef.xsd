@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns="https://github.com/sharky98/RWSchema/Defs" elementFormDefault="qualified" targetNamespace="https://github.com/sharky98/RWSchema/Defs" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:include schemaLocation="CommonElements.xsd" />
+  <xs:complexType name="MusicSequenceDef">
+    <xs:choice minOccurs="1" maxOccurs="unbounded">
+      <xs:element name="workerType" type="xs:string" />
+      <xs:element name="song" type="xs:string" />
+      <xs:element name="songs">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="li" type="xs:string" />
+          </xs:sequence>
+          <xs:attribute name="MayRequire" type="xs:string" />
+          <xs:attribute name="MayRequireAnyOf" type="xs:string" />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="nextSequence" type="xs:string" />
+      <xs:element name="loop" type="xs:boolean" />
+      <xs:element name="canBeInterrupted" type="xs:boolean" />
+      <xs:element name="useTransitionForLifetime" type="xs:boolean" />
+      <xs:element name="transitionOnDanger" type="xs:boolean" />
+      <xs:element name="transitionOnNoDanger" type="xs:boolean" />
+      <xs:element name="endOnNoDanger" type="xs:boolean" />
+      <xs:element name="endOnDanger" type="xs:boolean" />
+      <xs:element name="loopDelayRange">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:pattern value="\s*-?\d+(\.\d+)?\s*(~\s*-?\d+(\.\d+)?\s*)?" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="fadeoutLastSongDuration" type="xs:float" />
+      <xs:element name="fadeInDuration" type="xs:float" />
+      <xs:element name="loopFadeout" type="xs:boolean" />
+      <xs:element name="overrideFadeout" type="xs:float" />
+      <xs:element name="overrideVolume" type="xs:float" />
+      <xs:element name="minTimeToPlay" type="xs:float" />
+      <xs:element name="pausedVolumeFactor" type="xs:float" />
+      <xs:element name="defName" type="xs:string" />
+      <xs:element name="label" type="xs:string" />
+      <xs:element name="description" type="xs:string" />
+      <xs:element name="descriptionHyperlinks">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="li" type="DefHyperlink" />
+          </xs:sequence>
+          <xs:attribute name="MayRequire" type="xs:string" />
+          <xs:attribute name="MayRequireAnyOf" type="xs:string" />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="ignoreConfigErrors" type="xs:boolean" />
+      <xs:element name="ignoreIllegalLabelCharacterConfigError" type="xs:boolean" />
+      <xs:element name="modExtensions">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="li" type="DefModExtension" />
+          </xs:sequence>
+          <xs:attribute name="MayRequire" type="xs:string" />
+          <xs:attribute name="MayRequireAnyOf" type="xs:string" />
+        </xs:complexType>
+      </xs:element>
+    </xs:choice>
+    <xs:attribute name="Name" type="xs:string" />
+    <xs:attribute name="ParentName" type="xs:string" />
+    <xs:attribute name="Class" type="xs:string" />
+    <xs:attribute name="MayRequire" type="xs:string" />
+    <xs:attribute name="MayRequireAnyOf" type="xs:string" />
+  </xs:complexType>
+</xs:schema>

@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns="https://github.com/sharky98/RWSchema/Defs" elementFormDefault="qualified" targetNamespace="https://github.com/sharky98/RWSchema/Defs" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:include schemaLocation="CommonElements.xsd" />
+  <xs:complexType name="WeatherDef">
+    <xs:choice minOccurs="1" maxOccurs="unbounded">
+      <xs:element name="durationRange">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:pattern value="\s*-?\d+\s*(~\s*-?\d+\s*)?" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="repeatable" type="xs:boolean" />
+      <xs:element name="isBad" type="xs:boolean" />
+      <xs:element name="canOccurAsRandomForcedEvent" type="xs:boolean" />
+      <xs:element name="favorability" type="Favorability" />
+      <xs:element name="temperatureRange">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:pattern value="\s*-?\d+(\.\d+)?\s*(~\s*-?\d+(\.\d+)?\s*)?" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="transitionTicksOverride" type="xs:int" />
+      <xs:element name="minMonolithLevel" type="xs:int" />
+      <xs:element name="canOccurInAmbientHorror" type="xs:boolean" />
+      <xs:element name="letterText" type="xs:string" />
+      <xs:element name="letterLabel" type="xs:string" />
+      <xs:element name="letterDef" type="xs:string" />
+      <xs:element name="rainRate" type="xs:float" />
+      <xs:element name="snowRate" type="xs:float" />
+      <xs:element name="sandRate" type="xs:float" />
+      <xs:element name="windSpeedFactor" type="xs:float" />
+      <xs:element name="windSpeedOffset" type="xs:float" />
+      <xs:element name="moveSpeedMultiplier" type="xs:float" />
+      <xs:element name="accuracyMultiplier" type="xs:float" />
+      <xs:element name="maxRangeCap" type="xs:float" />
+      <xs:element name="perceivePriority" type="xs:float" />
+      <xs:element name="doToxicBuildup" type="xs:boolean" />
+      <xs:element name="weatherThought" type="xs:string" />
+      <xs:element name="maxGlow" type="xs:float" />
+      <xs:element name="preventSkygaze" type="xs:boolean" />
+      <xs:element name="preventsShuttleLaunch" type="xs:boolean" />
+      <xs:element name="ambientSounds">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="li" type="xs:string" />
+          </xs:sequence>
+          <xs:attribute name="MayRequire" type="xs:string" />
+          <xs:attribute name="MayRequireAnyOf" type="xs:string" />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="eventMakers">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="li" type="WeatherEventMaker" />
+          </xs:sequence>
+          <xs:attribute name="MayRequire" type="xs:string" />
+          <xs:attribute name="MayRequireAnyOf" type="xs:string" />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="overlayClasses">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="li" type="xs:string" />
+          </xs:sequence>
+          <xs:attribute name="MayRequire" type="xs:string" />
+          <xs:attribute name="MayRequireAnyOf" type="xs:string" />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="skyColorsNightMid" type="SkyColorSet" />
+      <xs:element name="skyColorsNightEdge" type="SkyColorSet" />
+      <xs:element name="skyColorsDay" type="SkyColorSet" />
+      <xs:element name="skyColorsDusk" type="SkyColorSet" />
+      <xs:element name="workerClass" type="xs:string" />
+      <xs:element name="defName" type="xs:string" />
+      <xs:element name="label" type="xs:string" />
+      <xs:element name="description" type="xs:string" />
+      <xs:element name="descriptionHyperlinks">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="li" type="DefHyperlink" />
+          </xs:sequence>
+          <xs:attribute name="MayRequire" type="xs:string" />
+          <xs:attribute name="MayRequireAnyOf" type="xs:string" />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="ignoreConfigErrors" type="xs:boolean" />
+      <xs:element name="ignoreIllegalLabelCharacterConfigError" type="xs:boolean" />
+      <xs:element name="modExtensions">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="li" type="DefModExtension" />
+          </xs:sequence>
+          <xs:attribute name="MayRequire" type="xs:string" />
+          <xs:attribute name="MayRequireAnyOf" type="xs:string" />
+        </xs:complexType>
+      </xs:element>
+    </xs:choice>
+    <xs:attribute name="Name" type="xs:string" />
+    <xs:attribute name="ParentName" type="xs:string" />
+    <xs:attribute name="Class" type="xs:string" />
+    <xs:attribute name="MayRequire" type="xs:string" />
+    <xs:attribute name="MayRequireAnyOf" type="xs:string" />
+  </xs:complexType>
+</xs:schema>

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns="https://github.com/sharky98/RWSchema/Defs" elementFormDefault="qualified" targetNamespace="https://github.com/sharky98/RWSchema/Defs" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:include schemaLocation="CommonElements.xsd" />
+  <xs:complexType name="JobDef">
+    <xs:choice minOccurs="1" maxOccurs="unbounded">
+      <xs:element name="driverClass" type="xs:string" />
+      <xs:element name="reportString" type="xs:string" />
+      <xs:element name="playerInterruptible" type="xs:boolean" />
+      <xs:element name="forceCompleteBeforeNextJob" type="xs:boolean" />
+      <xs:element name="checkOverrideOnDamage" type="CheckJobOverrideOnDamageMode" />
+      <xs:element name="alwaysShowWeapon" type="xs:boolean" />
+      <xs:element name="neverShowWeapon" type="xs:boolean" />
+      <xs:element name="suspendable" type="xs:boolean" />
+      <xs:element name="casualInterruptible" type="xs:boolean" />
+      <xs:element name="allowOpportunisticPrefix" type="xs:boolean" />
+      <xs:element name="collideWithPawns" type="xs:boolean" />
+      <xs:element name="isIdle" type="xs:boolean" />
+      <xs:element name="taleOnCompletion" type="xs:string" />
+      <xs:element name="neverFleeFromEnemies" type="xs:boolean" />
+      <xs:element name="sleepCanInterrupt" type="xs:boolean" />
+      <xs:element name="makeTargetPrisoner" type="xs:boolean" />
+      <xs:element name="waitAfterArriving" type="xs:int" />
+      <xs:element name="carryThingAfterJob" type="xs:boolean" />
+      <xs:element name="dropThingBeforeJob" type="xs:boolean" />
+      <xs:element name="isCrawlingIfDowned" type="xs:boolean" />
+      <xs:element name="alwaysShowReport" type="xs:boolean" />
+      <xs:element name="abilityCasting" type="xs:boolean" />
+      <xs:element name="tryStartFlying" type="xs:boolean" />
+      <xs:element name="ifFlyingKeepFlying" type="xs:boolean" />
+      <xs:element name="overrideFlyChance" type="xs:float" />
+      <xs:element name="displayAsAreaInFloatMenu" type="xs:boolean" />
+      <xs:element name="joyDuration" type="xs:int" />
+      <xs:element name="joyMaxParticipants" type="xs:int" />
+      <xs:element name="joyGainRate" type="xs:float" />
+      <xs:element name="joySkill" type="xs:string" />
+      <xs:element name="joyXpPerTick" type="xs:float" />
+      <xs:element name="joyKind" type="xs:string" />
+      <xs:element name="faceDir" type="Rot4" />
+      <xs:element name="learningDuration" type="xs:int" />
+      <xs:element name="containerReservationLayer" type="xs:string" />
+      <xs:element name="defName" type="xs:string" />
+      <xs:element name="label" type="xs:string" />
+      <xs:element name="description" type="xs:string" />
+      <xs:element name="descriptionHyperlinks">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="li" type="DefHyperlink" />
+          </xs:sequence>
+          <xs:attribute name="MayRequire" type="xs:string" />
+          <xs:attribute name="MayRequireAnyOf" type="xs:string" />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="ignoreConfigErrors" type="xs:boolean" />
+      <xs:element name="ignoreIllegalLabelCharacterConfigError" type="xs:boolean" />
+      <xs:element name="modExtensions">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="li" type="DefModExtension" />
+          </xs:sequence>
+          <xs:attribute name="MayRequire" type="xs:string" />
+          <xs:attribute name="MayRequireAnyOf" type="xs:string" />
+        </xs:complexType>
+      </xs:element>
+    </xs:choice>
+    <xs:attribute name="Name" type="xs:string" />
+    <xs:attribute name="ParentName" type="xs:string" />
+    <xs:attribute name="Class" type="xs:string" />
+    <xs:attribute name="MayRequire" type="xs:string" />
+    <xs:attribute name="MayRequireAnyOf" type="xs:string" />
+  </xs:complexType>
+</xs:schema>

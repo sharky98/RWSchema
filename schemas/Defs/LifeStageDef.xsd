@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns="https://github.com/sharky98/RWSchema/Defs" elementFormDefault="qualified" targetNamespace="https://github.com/sharky98/RWSchema/Defs" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:include schemaLocation="CommonElements.xsd" />
+  <xs:complexType name="LifeStageDef">
+    <xs:choice minOccurs="1" maxOccurs="unbounded">
+      <xs:element name="visible" type="xs:boolean" />
+      <xs:element name="reproductive" type="xs:boolean" />
+      <xs:element name="milkable" type="xs:boolean" />
+      <xs:element name="shearable" type="xs:boolean" />
+      <xs:element name="caravanRideable" type="xs:boolean" />
+      <xs:element name="alwaysDowned" type="xs:boolean" />
+      <xs:element name="claimable" type="xs:boolean" />
+      <xs:element name="developmentalStage" type="DevelopmentalStage" />
+      <xs:element name="workerClass" type="xs:string" />
+      <xs:element name="involuntarySleepIsNegativeEvent" type="xs:boolean" />
+      <xs:element name="thinkTreeMainOverride" type="xs:string" />
+      <xs:element name="thinkTreeConstantOverride" type="xs:string" />
+      <xs:element name="canDoRandomMentalBreaks" type="xs:boolean" />
+      <xs:element name="customMoodTipString" type="xs:string" />
+      <xs:element name="canSleepWhileHeld" type="xs:boolean" />
+      <xs:element name="canVoluntarilySleep" type="xs:boolean" />
+      <xs:element name="canSleepWhenStarving" type="xs:boolean" />
+      <xs:element name="canInitiateSocialInteraction" type="xs:boolean" />
+      <xs:element name="equipmentDrawDistanceFactor" type="xs:float" />
+      <xs:element name="soundAttackChance" type="xs:float" />
+      <xs:element name="voxPitch" type="xs:float" />
+      <xs:element name="voxVolume" type="xs:float" />
+      <xs:element name="icon" type="xs:string" />
+      <xs:element name="silhouetteGraphicData" type="GraphicData" />
+      <xs:element name="statOffsets">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="li" type="StatModifier" />
+          </xs:sequence>
+          <xs:attribute name="MayRequire" type="xs:string" />
+          <xs:attribute name="MayRequireAnyOf" type="xs:string" />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="statFactors">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="li" type="StatModifier" />
+          </xs:sequence>
+          <xs:attribute name="MayRequire" type="xs:string" />
+          <xs:attribute name="MayRequireAnyOf" type="xs:string" />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="bodySizeFactor" type="xs:float" />
+      <xs:element name="healthScaleFactor" type="xs:float" />
+      <xs:element name="hungerRateFactor" type="xs:float" />
+      <xs:element name="marketValueFactor" type="xs:float" />
+      <xs:element name="foodMaxFactor" type="xs:float" />
+      <xs:element name="attachPointScaleFactor" type="xs:float" />
+      <xs:element name="meleeDamageFactor" type="xs:float" />
+      <xs:element name="fallAsleepMaxThresholdOverride" type="xs:float" />
+      <xs:element name="naturalWakeThresholdOverride" type="xs:float" />
+      <xs:element name="bodyWidth" type="xs:float" />
+      <xs:element name="bodyDrawOffset" type="Vector3" />
+      <xs:element name="headSizeFactor" type="xs:float" />
+      <xs:element name="eyeSizeFactor" type="xs:float" />
+      <xs:element name="sittingOffset" type="xs:float" />
+      <xs:element name="hairStyleFilter" type="TagFilter" />
+      <xs:element name="defName" type="xs:string" />
+      <xs:element name="label" type="xs:string" />
+      <xs:element name="description" type="xs:string" />
+      <xs:element name="descriptionHyperlinks">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="li" type="DefHyperlink" />
+          </xs:sequence>
+          <xs:attribute name="MayRequire" type="xs:string" />
+          <xs:attribute name="MayRequireAnyOf" type="xs:string" />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="ignoreConfigErrors" type="xs:boolean" />
+      <xs:element name="ignoreIllegalLabelCharacterConfigError" type="xs:boolean" />
+      <xs:element name="modExtensions">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="li" type="DefModExtension" />
+          </xs:sequence>
+          <xs:attribute name="MayRequire" type="xs:string" />
+          <xs:attribute name="MayRequireAnyOf" type="xs:string" />
+        </xs:complexType>
+      </xs:element>
+    </xs:choice>
+    <xs:attribute name="Name" type="xs:string" />
+    <xs:attribute name="ParentName" type="xs:string" />
+    <xs:attribute name="Class" type="xs:string" />
+    <xs:attribute name="MayRequire" type="xs:string" />
+    <xs:attribute name="MayRequireAnyOf" type="xs:string" />
+  </xs:complexType>
+</xs:schema>

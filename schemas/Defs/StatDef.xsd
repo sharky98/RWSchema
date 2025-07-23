@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns="https://github.com/sharky98/RWSchema/Defs" elementFormDefault="qualified" targetNamespace="https://github.com/sharky98/RWSchema/Defs" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:include schemaLocation="CommonElements.xsd" />
+  <xs:complexType name="StatDef">
+    <xs:choice minOccurs="1" maxOccurs="unbounded">
+      <xs:element name="category" type="xs:string" />
+      <xs:element name="workerClass" type="xs:string" />
+      <xs:element name="labelForFullStatList" type="xs:string" />
+      <xs:element name="forInformationOnly" type="xs:boolean" />
+      <xs:element name="hideAtValue" type="xs:float" />
+      <xs:element name="alwaysHide" type="xs:boolean" />
+      <xs:element name="showNonAbstract" type="xs:boolean" />
+      <xs:element name="showIfUndefined" type="xs:boolean" />
+      <xs:element name="showOnPawns" type="xs:boolean" />
+      <xs:element name="showOnHumanlikes" type="xs:boolean" />
+      <xs:element name="showOnNonWildManHumanlikes" type="xs:boolean" />
+      <xs:element name="showOnAnimals" type="xs:boolean" />
+      <xs:element name="showOnMechanoids" type="xs:boolean" />
+      <xs:element name="showOnNonWorkTables" type="xs:boolean" />
+      <xs:element name="showOnEntities" type="xs:boolean" />
+      <xs:element name="showOnDrones" type="xs:boolean" />
+      <xs:element name="showOnNonPowerPlants" type="xs:boolean" />
+      <xs:element name="showOnDefaultValue" type="xs:boolean" />
+      <xs:element name="showOnUnhaulables" type="xs:boolean" />
+      <xs:element name="showOnUntradeables" type="xs:boolean" />
+      <xs:element name="showIfModsLoaded">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="li" type="xs:string" />
+          </xs:sequence>
+          <xs:attribute name="MayRequire" type="xs:string" />
+          <xs:attribute name="MayRequireAnyOf" type="xs:string" />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="showIfModsLoadedAny">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="li" type="xs:string" />
+          </xs:sequence>
+          <xs:attribute name="MayRequire" type="xs:string" />
+          <xs:attribute name="MayRequireAnyOf" type="xs:string" />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="showIfHediffsPresent">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="li" type="xs:string" />
+          </xs:sequence>
+          <xs:attribute name="MayRequire" type="xs:string" />
+          <xs:attribute name="MayRequireAnyOf" type="xs:string" />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="neverDisabled" type="xs:boolean" />
+      <xs:element name="showZeroBaseValue" type="xs:boolean" />
+      <xs:element name="showOnSlavesOnly" type="xs:boolean" />
+      <xs:element name="showOnPlayerMechanoids" type="xs:boolean" />
+      <xs:element name="showDevelopmentalStageFilter" type="DevelopmentalStage" />
+      <xs:element name="hideInClassicMode" type="xs:boolean" />
+      <xs:element name="showOnPawnKind">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="li" type="xs:string" />
+          </xs:sequence>
+          <xs:attribute name="MayRequire" type="xs:string" />
+          <xs:attribute name="MayRequireAnyOf" type="xs:string" />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="overridesHideStats" type="xs:boolean" />
+      <xs:element name="displayPriorityInCategory" type="xs:int" />
+      <xs:element name="toStringNumberSense" type="ToStringNumberSense" />
+      <xs:element name="toStringStyle" type="ToStringStyle" />
+      <xs:element name="formatString" type="xs:string" />
+      <xs:element name="formatStringUnfinalized" type="xs:string" />
+      <xs:element name="finalizeEquippedStatOffset" type="xs:boolean" />
+      <xs:element name="statFactorsExplanationHeader" type="xs:string" />
+      <xs:element name="defaultBaseValue" type="xs:float" />
+      <xs:element name="skillNeedOffsets">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="li" type="SkillNeed" />
+          </xs:sequence>
+          <xs:attribute name="MayRequire" type="xs:string" />
+          <xs:attribute name="MayRequireAnyOf" type="xs:string" />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="noSkillOffset" type="xs:float" />
+      <xs:element name="capacityOffsets">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="li" type="PawnCapacityOffset" />
+          </xs:sequence>
+          <xs:attribute name="MayRequire" type="xs:string" />
+          <xs:attribute name="MayRequireAnyOf" type="xs:string" />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="statFactors">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="li" type="xs:string" />
+          </xs:sequence>
+          <xs:attribute name="MayRequire" type="xs:string" />
+          <xs:attribute name="MayRequireAnyOf" type="xs:string" />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="applyFactorsIfNegative" type="xs:boolean" />
+      <xs:element name="skillNeedFactors">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="li" type="SkillNeed" />
+          </xs:sequence>
+          <xs:attribute name="MayRequire" type="xs:string" />
+          <xs:attribute name="MayRequireAnyOf" type="xs:string" />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="noSkillFactor" type="xs:float" />
+      <xs:element name="capacityFactors">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="li" type="PawnCapacityFactor" />
+          </xs:sequence>
+          <xs:attribute name="MayRequire" type="xs:string" />
+          <xs:attribute name="MayRequireAnyOf" type="xs:string" />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="postProcessStatFactors">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="li" type="xs:string" />
+          </xs:sequence>
+          <xs:attribute name="MayRequire" type="xs:string" />
+          <xs:attribute name="MayRequireAnyOf" type="xs:string" />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="minValue" type="xs:float" />
+      <xs:element name="maxValue" type="xs:float" />
+      <xs:element name="valueIfMissing" type="xs:float" />
+      <xs:element name="roundValue" type="xs:boolean" />
+      <xs:element name="roundToFiveOver" type="xs:float" />
+      <xs:element name="minifiedThingInherits" type="xs:boolean" />
+      <xs:element name="supressDisabledError" type="xs:boolean" />
+      <xs:element name="cacheable" type="xs:boolean" />
+      <xs:element name="displayMaxWhenAboveOrEqual" type="xs:boolean" />
+      <xs:element name="scenarioRandomizable" type="xs:boolean" />
+      <xs:element name="disableIfSkillDisabled" type="xs:string" />
+      <xs:element name="parts">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="li" type="StatPart" />
+          </xs:sequence>
+          <xs:attribute name="MayRequire" type="xs:string" />
+          <xs:attribute name="MayRequireAnyOf" type="xs:string" />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="defName" type="xs:string" />
+      <xs:element name="label" type="xs:string" />
+      <xs:element name="description" type="xs:string" />
+      <xs:element name="descriptionHyperlinks">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="li" type="DefHyperlink" />
+          </xs:sequence>
+          <xs:attribute name="MayRequire" type="xs:string" />
+          <xs:attribute name="MayRequireAnyOf" type="xs:string" />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="ignoreConfigErrors" type="xs:boolean" />
+      <xs:element name="ignoreIllegalLabelCharacterConfigError" type="xs:boolean" />
+      <xs:element name="modExtensions">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="li" type="DefModExtension" />
+          </xs:sequence>
+          <xs:attribute name="MayRequire" type="xs:string" />
+          <xs:attribute name="MayRequireAnyOf" type="xs:string" />
+        </xs:complexType>
+      </xs:element>
+    </xs:choice>
+    <xs:attribute name="Name" type="xs:string" />
+    <xs:attribute name="ParentName" type="xs:string" />
+    <xs:attribute name="Class" type="xs:string" />
+    <xs:attribute name="MayRequire" type="xs:string" />
+    <xs:attribute name="MayRequireAnyOf" type="xs:string" />
+  </xs:complexType>
+</xs:schema>

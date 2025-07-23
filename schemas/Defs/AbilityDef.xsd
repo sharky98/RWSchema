@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns="https://github.com/sharky98/RWSchema/Defs" elementFormDefault="qualified" targetNamespace="https://github.com/sharky98/RWSchema/Defs" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:include schemaLocation="CommonElements.xsd" />
+  <xs:complexType name="AbilityDef">
+    <xs:choice minOccurs="1" maxOccurs="unbounded">
+      <xs:element name="abilityClass" type="xs:string" />
+      <xs:element name="gizmoClass" type="xs:string" />
+      <xs:element name="comps">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="li" type="AbilityCompProperties" />
+          </xs:sequence>
+          <xs:attribute name="MayRequire" type="xs:string" />
+          <xs:attribute name="MayRequireAnyOf" type="xs:string" />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="category" type="xs:string" />
+      <xs:element name="displayOrder" type="xs:int" />
+      <xs:element name="statBases">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="li" type="StatModifier" />
+          </xs:sequence>
+          <xs:attribute name="MayRequire" type="xs:string" />
+          <xs:attribute name="MayRequireAnyOf" type="xs:string" />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="verbProperties" type="VerbProperties" />
+      <xs:element name="hotKey" type="xs:string" />
+      <xs:element name="jobDef" type="xs:string" />
+      <xs:element name="warmupMote" type="xs:string" />
+      <xs:element name="warmupEffecter" type="xs:string" />
+      <xs:element name="emittedFleck" type="xs:string" />
+      <xs:element name="emissionInterval" type="xs:int" />
+      <xs:element name="warmupMoteSocialSymbol" type="xs:string" />
+      <xs:element name="warmupStartSound" type="xs:string" />
+      <xs:element name="warmupSound" type="xs:string" />
+      <xs:element name="warmupPreEndSound" type="xs:string" />
+      <xs:element name="warmupPreEndSoundSeconds" type="xs:float" />
+      <xs:element name="moteDrawOffset" type="Vector3" />
+      <xs:element name="moteOffsetAmountTowardsTarget" type="xs:float" />
+      <xs:element name="canUseAoeToGetTargets" type="xs:boolean" />
+      <xs:element name="useAverageTargetPositionForWarmupEffecter" type="xs:boolean" />
+      <xs:element name="targetRequired" type="xs:boolean" />
+      <xs:element name="targetWorldCell" type="xs:boolean" />
+      <xs:element name="showGizmoOnWorldView" type="xs:boolean" />
+      <xs:element name="aiCanUse" type="xs:boolean" />
+      <xs:element name="ai_SearchAOEForTargets" type="xs:boolean" />
+      <xs:element name="ai_IsOffensive" type="xs:boolean" />
+      <xs:element name="ai_IsIncendiary" type="xs:boolean" />
+      <xs:element name="groupAbility" type="xs:boolean" />
+      <xs:element name="level" type="xs:int" />
+      <xs:element name="cooldownTicksRange">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:pattern value="\s*-?\d+\s*(~\s*-?\d+\s*)?" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="cooldownPerCharge" type="xs:boolean" />
+      <xs:element name="hasExternallyHandledCooldown" type="xs:boolean" />
+      <xs:element name="charges" type="xs:int" />
+      <xs:element name="groupDef" type="xs:string" />
+      <xs:element name="overrideGroupCooldown" type="xs:boolean" />
+      <xs:element name="requiredMemes">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="li" type="xs:string" />
+          </xs:sequence>
+          <xs:attribute name="MayRequire" type="xs:string" />
+          <xs:attribute name="MayRequireAnyOf" type="xs:string" />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="sendLetterOnCooldownComplete" type="xs:boolean" />
+      <xs:element name="sendMessageOnCooldownComplete" type="xs:boolean" />
+      <xs:element name="displayGizmoWhileUndrafted" type="xs:boolean" />
+      <xs:element name="disableGizmoWhileUndrafted" type="xs:boolean" />
+      <xs:element name="writeCombatLog" type="xs:boolean" />
+      <xs:element name="stunTargetWhileCasting" type="xs:boolean" />
+      <xs:element name="showPsycastEffects" type="xs:boolean" />
+      <xs:element name="showCastingProgressBar" type="xs:boolean" />
+      <xs:element name="detectionChanceOverride" type="xs:float" />
+      <xs:element name="uiOrder" type="xs:float" />
+      <xs:element name="waitForJobEnd" type="xs:boolean" />
+      <xs:element name="showWhenDrafted" type="xs:boolean" />
+      <xs:element name="showOnCharacterCard" type="xs:boolean" />
+      <xs:element name="hostile" type="xs:boolean" />
+      <xs:element name="casterMustBeCapableOfViolence" type="xs:boolean" />
+      <xs:element name="confirmationDialogText" type="xs:string" />
+      <xs:element name="iconPath" type="xs:string" />
+      <xs:element name="uiIcon" type="Texture2D" />
+      <xs:element name="defName" type="xs:string" />
+      <xs:element name="label" type="xs:string" />
+      <xs:element name="description" type="xs:string" />
+      <xs:element name="descriptionHyperlinks">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="li" type="DefHyperlink" />
+          </xs:sequence>
+          <xs:attribute name="MayRequire" type="xs:string" />
+          <xs:attribute name="MayRequireAnyOf" type="xs:string" />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="ignoreConfigErrors" type="xs:boolean" />
+      <xs:element name="ignoreIllegalLabelCharacterConfigError" type="xs:boolean" />
+      <xs:element name="modExtensions">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="li" type="DefModExtension" />
+          </xs:sequence>
+          <xs:attribute name="MayRequire" type="xs:string" />
+          <xs:attribute name="MayRequireAnyOf" type="xs:string" />
+        </xs:complexType>
+      </xs:element>
+    </xs:choice>
+    <xs:attribute name="Name" type="xs:string" />
+    <xs:attribute name="ParentName" type="xs:string" />
+    <xs:attribute name="Class" type="xs:string" />
+    <xs:attribute name="MayRequire" type="xs:string" />
+    <xs:attribute name="MayRequireAnyOf" type="xs:string" />
+  </xs:complexType>
+</xs:schema>

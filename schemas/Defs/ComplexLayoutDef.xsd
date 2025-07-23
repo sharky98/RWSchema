@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns="https://github.com/sharky98/RWSchema/Defs" elementFormDefault="qualified" targetNamespace="https://github.com/sharky98/RWSchema/Defs" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:include schemaLocation="CommonElements.xsd" />
+  <xs:complexType name="ComplexLayoutDef">
+    <xs:choice minOccurs="1" maxOccurs="unbounded">
+      <xs:element name="threats">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="li" type="ComplexThreat" />
+          </xs:sequence>
+          <xs:attribute name="MayRequire" type="xs:string" />
+          <xs:attribute name="MayRequireAnyOf" type="xs:string" />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="roomRewardCrateFactor" type="xs:float" />
+      <xs:element name="fixedHostileFactionChance" type="xs:float" />
+      <xs:element name="rewardThingSetMakerDef" type="xs:string" />
+      <xs:element name="wallDef" type="xs:string" />
+      <xs:element name="wallStuffDef" type="xs:string" />
+      <xs:element name="doorDef" type="xs:string" />
+      <xs:element name="doorStuffDef" type="xs:string" />
+      <xs:element name="wallLampDef" type="xs:string" />
+      <xs:element name="wallLampChancePerPosition" type="xs:float" />
+      <xs:element name="exteriorDoorDef" type="xs:string" />
+      <xs:element name="exteriorDoorStuffDef" type="xs:string" />
+      <xs:element name="terrainDef" type="xs:string" />
+      <xs:element name="defaultAffordanceTerrainDef" type="xs:string" />
+      <xs:element name="importantRoomDef" type="xs:string" />
+      <xs:element name="roomToExteriorDoorRatio" type="xs:float" />
+      <xs:element name="spawnDoors" type="xs:boolean" />
+      <xs:element name="clearDoorFaction" type="xs:boolean" />
+      <xs:element name="canConnectRoomsExternally" type="xs:boolean" />
+      <xs:element name="areaPrunePercent" type="xs:float" />
+      <xs:element name="canDisconnectRooms" type="xs:boolean" />
+      <xs:element name="ensureOneDoorUnlocked" type="xs:boolean" />
+      <xs:element name="corridorDef" type="xs:string" />
+      <xs:element name="wallDamageRange">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:pattern value="\s*-?\d+\s*(~\s*-?\d+\s*)?" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="corridorShapes" type="CorridorShape" />
+      <xs:element name="surroundingTerrainDef" type="xs:string" />
+      <xs:element name="surroundingScatterTerrainDef" type="xs:string" />
+      <xs:element name="surroundingScatterRange">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:pattern value="\s*-?\d+\s*(~\s*-?\d+\s*)?" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="scatteredPrefabs">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="li" type="ScatteredPrefabs" />
+          </xs:sequence>
+          <xs:attribute name="MayRequire" type="xs:string" />
+          <xs:attribute name="MayRequireAnyOf" type="xs:string" />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="roomDefs">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="li" type="LayoutRoomWeight" />
+          </xs:sequence>
+          <xs:attribute name="MayRequire" type="xs:string" />
+          <xs:attribute name="MayRequireAnyOf" type="xs:string" />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="workerClass" type="xs:string" />
+      <xs:element name="clearRoomsEntirely" type="xs:boolean" />
+      <xs:element name="canHaveMultipleLayoutsInRoom" type="xs:boolean" />
+      <xs:element name="multipleLayoutRoomChance" type="xs:float" />
+      <xs:element name="shouldDamage" type="xs:boolean" />
+      <xs:element name="noRoof" type="xs:boolean" />
+      <xs:element name="adjacentRoomMergeChance" type="xs:float" />
+      <xs:element name="borderDoorRemoveChance" type="xs:float" />
+      <xs:element name="minRoomWidth" type="xs:int" />
+      <xs:element name="minRoomHeight" type="xs:int" />
+      <xs:element name="junkScaterrers">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="li" type="LayoutScatterParms" />
+          </xs:sequence>
+          <xs:attribute name="MayRequire" type="xs:string" />
+          <xs:attribute name="MayRequireAnyOf" type="xs:string" />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="scatterTerrain">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="li" type="LayoutScatterTerrainParms" />
+          </xs:sequence>
+          <xs:attribute name="MayRequire" type="xs:string" />
+          <xs:attribute name="MayRequireAnyOf" type="xs:string" />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="fillEdges">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="li" type="LayoutFillEdgesParms" />
+          </xs:sequence>
+          <xs:attribute name="MayRequire" type="xs:string" />
+          <xs:attribute name="MayRequireAnyOf" type="xs:string" />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="fillInterior">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="li" type="LayoutFillInteriorParms" />
+          </xs:sequence>
+          <xs:attribute name="MayRequire" type="xs:string" />
+          <xs:attribute name="MayRequireAnyOf" type="xs:string" />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="wallAttachments">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="li" type="LayoutWallAttatchmentParms" />
+          </xs:sequence>
+          <xs:attribute name="MayRequire" type="xs:string" />
+          <xs:attribute name="MayRequireAnyOf" type="xs:string" />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="prefabs">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="li" type="LayoutPrefabParms" />
+          </xs:sequence>
+          <xs:attribute name="MayRequire" type="xs:string" />
+          <xs:attribute name="MayRequireAnyOf" type="xs:string" />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="parts">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="li" type="LayoutPartParms" />
+          </xs:sequence>
+          <xs:attribute name="MayRequire" type="xs:string" />
+          <xs:attribute name="MayRequireAnyOf" type="xs:string" />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="defName" type="xs:string" />
+      <xs:element name="label" type="xs:string" />
+      <xs:element name="description" type="xs:string" />
+      <xs:element name="descriptionHyperlinks">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="li" type="DefHyperlink" />
+          </xs:sequence>
+          <xs:attribute name="MayRequire" type="xs:string" />
+          <xs:attribute name="MayRequireAnyOf" type="xs:string" />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="ignoreConfigErrors" type="xs:boolean" />
+      <xs:element name="ignoreIllegalLabelCharacterConfigError" type="xs:boolean" />
+      <xs:element name="modExtensions">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="li" type="DefModExtension" />
+          </xs:sequence>
+          <xs:attribute name="MayRequire" type="xs:string" />
+          <xs:attribute name="MayRequireAnyOf" type="xs:string" />
+        </xs:complexType>
+      </xs:element>
+    </xs:choice>
+    <xs:attribute name="Name" type="xs:string" />
+    <xs:attribute name="ParentName" type="xs:string" />
+    <xs:attribute name="Class" type="xs:string" />
+    <xs:attribute name="MayRequire" type="xs:string" />
+    <xs:attribute name="MayRequireAnyOf" type="xs:string" />
+  </xs:complexType>
+</xs:schema>

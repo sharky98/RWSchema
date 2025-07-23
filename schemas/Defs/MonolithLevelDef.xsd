@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns="https://github.com/sharky98/RWSchema/Defs" elementFormDefault="qualified" targetNamespace="https://github.com/sharky98/RWSchema/Defs" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:include schemaLocation="CommonElements.xsd" />
+  <xs:complexType name="MonolithLevelDef">
+    <xs:choice minOccurs="1" maxOccurs="unbounded">
+      <xs:element name="level" type="xs:int" />
+      <xs:element name="graphicIndex" type="xs:int" />
+      <xs:element name="monolithGlows" type="xs:boolean" />
+      <xs:element name="anomalyThreatTier" type="xs:int" />
+      <xs:element name="useInactiveAnomalyThreatFraction" type="xs:boolean" />
+      <xs:element name="useActiveAnomalyThreatFraction" type="xs:boolean" />
+      <xs:element name="anomalyThreatFractionFactor" type="xs:float" />
+      <xs:element name="anomalyThreatFraction" type="xs:float" />
+      <xs:element name="incidentsOnReached">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="li" type="xs:string" />
+          </xs:sequence>
+          <xs:attribute name="MayRequire" type="xs:string" />
+          <xs:attribute name="MayRequireAnyOf" type="xs:string" />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="triggersGrayPall" type="xs:boolean" />
+      <xs:element name="unreachableDuringConditions">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="li" type="xs:string" />
+          </xs:sequence>
+          <xs:attribute name="MayRequire" type="xs:string" />
+          <xs:attribute name="MayRequireAnyOf" type="xs:string" />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="advanceThroughActivation" type="xs:boolean" />
+      <xs:element name="desiredHarbingerTreeCount" type="xs:int" />
+      <xs:element name="postEndgame" type="xs:boolean" />
+      <xs:element name="monolithGlowRadiusOverride" type="xs:int" />
+      <xs:element name="monolithStudyCategory" type="xs:string" />
+      <xs:element name="entityCatagoryCompletionRequired" type="xs:string" />
+      <xs:element name="entityCountCompletionRequired" type="xs:int" />
+      <xs:element name="anomalyMentalBreakChance" type="xs:float" />
+      <xs:element name="activateSound" type="xs:string" />
+      <xs:element name="activatedSound" type="xs:string" />
+      <xs:element name="attachments">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="li" type="MonolithAttachment" />
+          </xs:sequence>
+          <xs:attribute name="MayRequire" type="xs:string" />
+          <xs:attribute name="MayRequireAnyOf" type="xs:string" />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="sizeIncludingAttachments" type="IntVec2" />
+      <xs:element name="uiIconPath" type="xs:string" />
+      <xs:element name="monolithLabel" type="xs:string" />
+      <xs:element name="monolithDescription" type="xs:string" />
+      <xs:element name="levelInspectText" type="xs:string" />
+      <xs:element name="extraQuestDescription" type="xs:string" />
+      <xs:element name="activateGizmoText" type="xs:string" />
+      <xs:element name="activateFloatMenuText" type="xs:string" />
+      <xs:element name="activateGizmoDescription" type="xs:string" />
+      <xs:element name="pawnSentToActivateMessage" type="xs:string" />
+      <xs:element name="monolithCanBeActivatedText" type="xs:string" />
+      <xs:element name="activateQuestText" type="xs:string" />
+      <xs:element name="activatableLetterLabel" type="xs:string" />
+      <xs:element name="activatableLetterText" type="xs:string" />
+      <xs:element name="activatedLetterText" type="xs:string" />
+      <xs:element name="defName" type="xs:string" />
+      <xs:element name="label" type="xs:string" />
+      <xs:element name="description" type="xs:string" />
+      <xs:element name="descriptionHyperlinks">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="li" type="DefHyperlink" />
+          </xs:sequence>
+          <xs:attribute name="MayRequire" type="xs:string" />
+          <xs:attribute name="MayRequireAnyOf" type="xs:string" />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="ignoreConfigErrors" type="xs:boolean" />
+      <xs:element name="ignoreIllegalLabelCharacterConfigError" type="xs:boolean" />
+      <xs:element name="modExtensions">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="li" type="DefModExtension" />
+          </xs:sequence>
+          <xs:attribute name="MayRequire" type="xs:string" />
+          <xs:attribute name="MayRequireAnyOf" type="xs:string" />
+        </xs:complexType>
+      </xs:element>
+    </xs:choice>
+    <xs:attribute name="Name" type="xs:string" />
+    <xs:attribute name="ParentName" type="xs:string" />
+    <xs:attribute name="Class" type="xs:string" />
+    <xs:attribute name="MayRequire" type="xs:string" />
+    <xs:attribute name="MayRequireAnyOf" type="xs:string" />
+  </xs:complexType>
+</xs:schema>

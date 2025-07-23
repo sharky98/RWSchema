@@ -1,0 +1,278 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns="https://github.com/sharky98/RWSchema/Defs" elementFormDefault="qualified" targetNamespace="https://github.com/sharky98/RWSchema/Defs" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:include schemaLocation="CommonElements.xsd" />
+  <xs:complexType name="TerrainDef">
+    <xs:choice minOccurs="1" maxOccurs="unbounded">
+      <xs:element name="texturePath" type="xs:string" />
+      <xs:element name="edgeType" type="TerrainEdgeType" />
+      <xs:element name="customShader" type="xs:string" />
+      <xs:element name="customShaderParameters">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="li" type="ShaderParameter" />
+          </xs:sequence>
+          <xs:attribute name="MayRequire" type="xs:string" />
+          <xs:attribute name="MayRequireAnyOf" type="xs:string" />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="waterDepthShader" type="xs:string" />
+      <xs:element name="waterDepthShaderParameters">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="li" type="ShaderParameter" />
+          </xs:sequence>
+          <xs:attribute name="MayRequire" type="xs:string" />
+          <xs:attribute name="MayRequireAnyOf" type="xs:string" />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="renderPrecedence" type="xs:int" />
+      <xs:element name="affordances">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="li" type="xs:string" />
+          </xs:sequence>
+          <xs:attribute name="MayRequire" type="xs:string" />
+          <xs:attribute name="MayRequireAnyOf" type="xs:string" />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="layerable" type="xs:boolean" />
+      <xs:element name="scatterType" type="xs:string" />
+      <xs:element name="takeFootprints" type="xs:boolean" />
+      <xs:element name="natural" type="xs:boolean" />
+      <xs:element name="takeSplashes" type="xs:boolean" />
+      <xs:element name="avoidWander" type="xs:boolean" />
+      <xs:element name="changeable" type="xs:boolean" />
+      <xs:element name="smoothedTerrain" type="xs:string" />
+      <xs:element name="gravshipReplacementTerrain" type="xs:string" />
+      <xs:element name="holdSnowOrSand" type="xs:boolean" />
+      <xs:element name="isPaintable" type="xs:boolean" />
+      <xs:element name="extinguishesFire" type="xs:boolean" />
+      <xs:element name="color" type="Color" />
+      <xs:element name="colorDef" type="xs:string" />
+      <xs:element name="driesTo" type="xs:string" />
+      <xs:element name="tags">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="li" type="xs:string" />
+          </xs:sequence>
+          <xs:attribute name="MayRequire" type="xs:string" />
+          <xs:attribute name="MayRequireAnyOf" type="xs:string" />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="burnedDef" type="xs:string" />
+      <xs:element name="tools">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="li" type="Tool" />
+          </xs:sequence>
+          <xs:attribute name="MayRequire" type="xs:string" />
+          <xs:attribute name="MayRequireAnyOf" type="xs:string" />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="extraDeteriorationFactor" type="xs:float" />
+      <xs:element name="destroyOnBombDamageThreshold" type="xs:float" />
+      <xs:element name="destroyBuildingsOnDestroyed" type="xs:boolean" />
+      <xs:element name="traversedThought" type="xs:string" />
+      <xs:element name="extraDraftedPerceivedPathCost" type="xs:int" />
+      <xs:element name="extraNonDraftedPerceivedPathCost" type="xs:int" />
+      <xs:element name="destroyEffect" type="xs:string" />
+      <xs:element name="destroyEffectWater" type="xs:string" />
+      <xs:element name="autoRebuildable" type="xs:boolean" />
+      <xs:element name="categoryType" type="TerrainCategoryType" />
+      <xs:element name="meltSnowRadius" type="xs:float" />
+      <xs:element name="heatPerTick" type="xs:float" />
+      <xs:element name="igniteRadius" type="xs:float" />
+      <xs:element name="ignitePawnsIntervalTicks" type="xs:float" />
+      <xs:element name="burnDamage" type="xs:int" />
+      <xs:element name="burnIntervalTicks" type="xs:float" />
+      <xs:element name="supportsRock" type="xs:boolean" />
+      <xs:element name="toxicBuildupFactor" type="xs:float" />
+      <xs:element name="dontRender" type="xs:boolean" />
+      <xs:element name="exposesToVacuum" type="xs:boolean" />
+      <xs:element name="canFreeze" type="xs:boolean" />
+      <xs:element name="dangerous" type="xs:boolean" />
+      <xs:element name="preventCraters" type="xs:boolean" />
+      <xs:element name="canEverTerraform" type="xs:boolean" />
+      <xs:element name="waterBodyType" type="WaterBodyType" />
+      <xs:element name="cropIcon" type="xs:boolean" />
+      <xs:element name="glowRadius" type="xs:float" />
+      <xs:element name="glowColor" type="ColorInt" />
+      <xs:element name="throwFleckChance" type="xs:float" />
+      <xs:element name="fleckData" type="TerrainFleckData" />
+      <xs:element name="isFoundation" type="xs:boolean" />
+      <xs:element name="bridge" type="xs:boolean" />
+      <xs:element name="bridgePropsPath" type="xs:string" />
+      <xs:element name="temporary" type="xs:boolean" />
+      <xs:element name="tempTerrain" type="TempTerrainProps" />
+      <xs:element name="floodTerrain" type="xs:string" />
+      <xs:element name="canBePolluted" type="xs:boolean" />
+      <xs:element name="pollutedTexturePath" type="xs:string" />
+      <xs:element name="pollutionOverlayTexturePath" type="xs:string" />
+      <xs:element name="pollutionShaderType" type="xs:string" />
+      <xs:element name="pollutionColor" type="Color" />
+      <xs:element name="pollutionOverlayScrollSpeed" type="Vector2" />
+      <xs:element name="pollutionOverlayScale" type="Vector2" />
+      <xs:element name="pollutionCloudColor" type="Color" />
+      <xs:element name="pollutionTintColor" type="Color" />
+      <xs:element name="generatedFilth" type="xs:string" />
+      <xs:element name="filthAcceptanceMask" type="FilthSourceFlags" />
+      <xs:element name="spaceEdgeGraphicData" type="SpaceEdgeGraphicData" />
+      <xs:element name="statBases">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="li" type="StatModifier" />
+          </xs:sequence>
+          <xs:attribute name="MayRequire" type="xs:string" />
+          <xs:attribute name="MayRequireAnyOf" type="xs:string" />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="passability" type="Traversability" />
+      <xs:element name="pathCost" type="xs:int" />
+      <xs:element name="pathCostIgnoreRepeat" type="xs:boolean" />
+      <xs:element name="fertility" type="xs:float" />
+      <xs:element name="costList">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="li" type="ThingDefCountClass" />
+          </xs:sequence>
+          <xs:attribute name="MayRequire" type="xs:string" />
+          <xs:attribute name="MayRequireAnyOf" type="xs:string" />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="costStuffCount" type="xs:int" />
+      <xs:element name="stuffCategories">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="li" type="xs:string" />
+          </xs:sequence>
+          <xs:attribute name="MayRequire" type="xs:string" />
+          <xs:attribute name="MayRequireAnyOf" type="xs:string" />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="stuffCategorySummary" type="xs:string" />
+      <xs:element name="costListForDifficulty" type="CostListForDifficulty" />
+      <xs:element name="drawStyleCategory" type="xs:string" />
+      <xs:element name="clearBuildingArea" type="xs:boolean" />
+      <xs:element name="defaultPlacingRot" type="Rot4" />
+      <xs:element name="resourcesFractionWhenDeconstructed" type="xs:float" />
+      <xs:element name="blocksAltitudes">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="li" type="AltitudeLayer" />
+          </xs:sequence>
+          <xs:attribute name="MayRequire" type="xs:string" />
+          <xs:attribute name="MayRequireAnyOf" type="xs:string" />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="dominantStyleCategory" type="xs:string" />
+      <xs:element name="forcePassableByFlyingPawns" type="xs:boolean" />
+      <xs:element name="forceMoveItemsBeforeConstruction" type="xs:boolean" />
+      <xs:element name="isAltar" type="xs:boolean" />
+      <xs:element name="useStuffTerrainAffordance" type="xs:boolean" />
+      <xs:element name="terrainAffordanceNeeded" type="xs:string" />
+      <xs:element name="buildingPrerequisites">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="li" type="xs:string" />
+          </xs:sequence>
+          <xs:attribute name="MayRequire" type="xs:string" />
+          <xs:attribute name="MayRequireAnyOf" type="xs:string" />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="discoveryPrerequisites">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="li" type="xs:string" />
+          </xs:sequence>
+          <xs:attribute name="MayRequire" type="xs:string" />
+          <xs:attribute name="MayRequireAnyOf" type="xs:string" />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="researchPrerequisites">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="li" type="xs:string" />
+          </xs:sequence>
+          <xs:attribute name="MayRequire" type="xs:string" />
+          <xs:attribute name="MayRequireAnyOf" type="xs:string" />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="minMonolithLevel" type="xs:int" />
+      <xs:element name="constructionSkillPrerequisite" type="xs:int" />
+      <xs:element name="artisticSkillPrerequisite" type="xs:int" />
+      <xs:element name="minTechLevelToBuild" type="TechLevel" />
+      <xs:element name="maxTechLevelToBuild" type="TechLevel" />
+      <xs:element name="requireInspectedGravEngine" type="xs:boolean" />
+      <xs:element name="altitudeLayer" type="AltitudeLayer" />
+      <xs:element name="repairEffect" type="xs:string" />
+      <xs:element name="constructEffect" type="xs:string" />
+      <xs:element name="colorPerStuff">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="li" type="ColorForStuff" />
+          </xs:sequence>
+          <xs:attribute name="MayRequire" type="xs:string" />
+          <xs:attribute name="MayRequireAnyOf" type="xs:string" />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="canGenerateDefaultDesignator" type="xs:boolean" />
+      <xs:element name="ideoBuilding" type="xs:boolean" />
+      <xs:element name="specialDisplayRadius" type="xs:float" />
+      <xs:element name="placeWorkers">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="li" type="xs:string" />
+          </xs:sequence>
+          <xs:attribute name="MayRequire" type="xs:string" />
+          <xs:attribute name="MayRequireAnyOf" type="xs:string" />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="designationCategory" type="xs:string" />
+      <xs:element name="designatorDropdown" type="xs:string" />
+      <xs:element name="designationHotKey" type="xs:string" />
+      <xs:element name="uiOrder" type="xs:float" />
+      <xs:element name="uiIconPath" type="xs:string" />
+      <xs:element name="uiIconPathsStuff">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="li" type="IconForStuffAppearance" />
+          </xs:sequence>
+          <xs:attribute name="MayRequire" type="xs:string" />
+          <xs:attribute name="MayRequireAnyOf" type="xs:string" />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="uiIconOffset" type="Vector2" />
+      <xs:element name="uiIconColor" type="Color" />
+      <xs:element name="uiIconColorTwo" type="Color" />
+      <xs:element name="uiIconForStackCount" type="xs:int" />
+      <xs:element name="defName" type="xs:string" />
+      <xs:element name="label" type="xs:string" />
+      <xs:element name="description" type="xs:string" />
+      <xs:element name="descriptionHyperlinks">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="li" type="DefHyperlink" />
+          </xs:sequence>
+          <xs:attribute name="MayRequire" type="xs:string" />
+          <xs:attribute name="MayRequireAnyOf" type="xs:string" />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="ignoreConfigErrors" type="xs:boolean" />
+      <xs:element name="ignoreIllegalLabelCharacterConfigError" type="xs:boolean" />
+      <xs:element name="modExtensions">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="li" type="DefModExtension" />
+          </xs:sequence>
+          <xs:attribute name="MayRequire" type="xs:string" />
+          <xs:attribute name="MayRequireAnyOf" type="xs:string" />
+        </xs:complexType>
+      </xs:element>
+    </xs:choice>
+    <xs:attribute name="Name" type="xs:string" />
+    <xs:attribute name="ParentName" type="xs:string" />
+    <xs:attribute name="Class" type="xs:string" />
+    <xs:attribute name="MayRequire" type="xs:string" />
+    <xs:attribute name="MayRequireAnyOf" type="xs:string" />
+  </xs:complexType>
+</xs:schema>

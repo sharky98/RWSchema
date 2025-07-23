@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns="https://github.com/sharky98/RWSchema/Defs" elementFormDefault="qualified" targetNamespace="https://github.com/sharky98/RWSchema/Defs" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:include schemaLocation="CommonElements.xsd" />
+  <xs:complexType name="NeedDef">
+    <xs:choice minOccurs="1" maxOccurs="unbounded">
+      <xs:element name="needClass" type="xs:string" />
+      <xs:element name="minIntelligence" type="Intelligence" />
+      <xs:element name="colonistAndPrisonersOnly" type="xs:boolean" />
+      <xs:element name="playerMechsOnly" type="xs:boolean" />
+      <xs:element name="colonistsOnly" type="xs:boolean" />
+      <xs:element name="slavesOnly" type="xs:boolean" />
+      <xs:element name="onlyIfCausedByHediff" type="xs:boolean" />
+      <xs:element name="onlyIfCausedByGene" type="xs:boolean" />
+      <xs:element name="onlyIfCausedByTrait" type="xs:boolean" />
+      <xs:element name="onlyIfCausedByIdeo" type="xs:boolean" />
+      <xs:element name="neverOnPrisoner" type="xs:boolean" />
+      <xs:element name="neverOnSlave" type="xs:boolean" />
+      <xs:element name="titleRequiredAny">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="li" type="xs:string" />
+          </xs:sequence>
+          <xs:attribute name="MayRequire" type="xs:string" />
+          <xs:attribute name="MayRequireAnyOf" type="xs:string" />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="hediffRequiredAny">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="li" type="xs:string" />
+          </xs:sequence>
+          <xs:attribute name="MayRequire" type="xs:string" />
+          <xs:attribute name="MayRequireAnyOf" type="xs:string" />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="nullifyingPrecepts">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="li" type="xs:string" />
+          </xs:sequence>
+          <xs:attribute name="MayRequire" type="xs:string" />
+          <xs:attribute name="MayRequireAnyOf" type="xs:string" />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="requiredComps">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="li" type="CompProperties" />
+          </xs:sequence>
+          <xs:attribute name="MayRequire" type="xs:string" />
+          <xs:attribute name="MayRequireAnyOf" type="xs:string" />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="developmentalStageFilter" type="DevelopmentalStage" />
+      <xs:element name="showOnNeedList" type="xs:boolean" />
+      <xs:element name="baseLevel" type="xs:float" />
+      <xs:element name="major" type="xs:boolean" />
+      <xs:element name="listPriority" type="xs:int" />
+      <xs:element name="tutorHighlightTag" type="xs:string" />
+      <xs:element name="showForCaravanMembers" type="xs:boolean" />
+      <xs:element name="scaleBar" type="xs:boolean" />
+      <xs:element name="showUnitTicks" type="xs:boolean" />
+      <xs:element name="fallPerDay" type="xs:float" />
+      <xs:element name="seekerRisePerHour" type="xs:float" />
+      <xs:element name="seekerFallPerHour" type="xs:float" />
+      <xs:element name="freezeWhileSleeping" type="xs:boolean" />
+      <xs:element name="freezeInMentalState" type="xs:boolean" />
+      <xs:element name="defName" type="xs:string" />
+      <xs:element name="label" type="xs:string" />
+      <xs:element name="description" type="xs:string" />
+      <xs:element name="descriptionHyperlinks">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="li" type="DefHyperlink" />
+          </xs:sequence>
+          <xs:attribute name="MayRequire" type="xs:string" />
+          <xs:attribute name="MayRequireAnyOf" type="xs:string" />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="ignoreConfigErrors" type="xs:boolean" />
+      <xs:element name="ignoreIllegalLabelCharacterConfigError" type="xs:boolean" />
+      <xs:element name="modExtensions">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="li" type="DefModExtension" />
+          </xs:sequence>
+          <xs:attribute name="MayRequire" type="xs:string" />
+          <xs:attribute name="MayRequireAnyOf" type="xs:string" />
+        </xs:complexType>
+      </xs:element>
+    </xs:choice>
+    <xs:attribute name="Name" type="xs:string" />
+    <xs:attribute name="ParentName" type="xs:string" />
+    <xs:attribute name="Class" type="xs:string" />
+    <xs:attribute name="MayRequire" type="xs:string" />
+    <xs:attribute name="MayRequireAnyOf" type="xs:string" />
+  </xs:complexType>
+</xs:schema>

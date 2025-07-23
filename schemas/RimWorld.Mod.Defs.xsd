@@ -1,0 +1,518 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns="https://github.com/sharky98/RWSchema/Defs" elementFormDefault="qualified" targetNamespace="https://github.com/sharky98/RWSchema/Defs"
+  xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:include schemaLocation="Defs/WeaponClassDef.xsd" />
+  <xs:include schemaLocation="Defs/WeaponClassPairDef.xsd" />
+  <xs:include schemaLocation="Defs/GeneCategoryDef.xsd" />
+  <xs:include schemaLocation="Defs/GeneDef.xsd" />
+  <xs:include schemaLocation="Defs/OptionCategoryDef.xsd" />
+  <xs:include schemaLocation="Defs/PawnRenderTreeDef.xsd" />
+  <xs:include schemaLocation="Defs/Def.xsd" />
+  <xs:include schemaLocation="Defs/AnimationDef.xsd" />
+  <xs:include schemaLocation="Defs/ApparelLayerDef.xsd" />
+  <xs:include schemaLocation="Defs/BodyDef.xsd" />
+  <xs:include schemaLocation="Defs/BodyPartDef.xsd" />
+  <xs:include schemaLocation="Defs/BodyPartGroupDef.xsd" />
+  <xs:include schemaLocation="Defs/BodyPartTagDef.xsd" />
+  <xs:include schemaLocation="Defs/ClamorDef.xsd" />
+  <xs:include schemaLocation="Defs/CreepJoinerBaseDef.xsd" />
+  <xs:include schemaLocation="Defs/CreepJoinerFormKindDef.xsd" />
+  <xs:include schemaLocation="Defs/CreepJoinerBenefitDef.xsd" />
+  <xs:include schemaLocation="Defs/CreepJoinerDownsideDef.xsd" />
+  <xs:include schemaLocation="Defs/CreepJoinerAggressiveDef.xsd" />
+  <xs:include schemaLocation="Defs/CreepJoinerRejectionDef.xsd" />
+  <xs:include schemaLocation="Defs/DamageArmorCategoryDef.xsd" />
+  <xs:include schemaLocation="Defs/DamageDef.xsd" />
+  <xs:include schemaLocation="Defs/MechWeightClassDef.xsd" />
+  <xs:include schemaLocation="Defs/StuffAppearanceDef.xsd" />
+  <xs:include schemaLocation="Defs/DesignationCategoryDef.xsd" />
+  <xs:include schemaLocation="Defs/DesignationDef.xsd" />
+  <xs:include schemaLocation="Defs/DesignatorDropdownGroupDef.xsd" />
+  <xs:include schemaLocation="Defs/DrawStyleCategoryDef.xsd" />
+  <xs:include schemaLocation="Defs/DrawStyleDef.xsd" />
+  <xs:include schemaLocation="Defs/EffecterDef.xsd" />
+  <xs:include schemaLocation="Defs/GameConditionDef.xsd" />
+  <xs:include schemaLocation="Defs/GameSetupStepDef.xsd" />
+  <xs:include schemaLocation="Defs/GenStepDef.xsd" />
+  <xs:include schemaLocation="Defs/GraphicStateDef.xsd" />
+  <xs:include schemaLocation="Defs/HeadTypeDef.xsd" />
+  <xs:include schemaLocation="Defs/HediffDef.xsd" />
+  <xs:include schemaLocation="Defs/IdeoStoryPatternDef.xsd" />
+  <xs:include schemaLocation="Defs/ImplementOwnerTypeDef.xsd" />
+  <xs:include schemaLocation="Defs/InventoryStockGroupDef.xsd" />
+  <xs:include schemaLocation="Defs/JobDef.xsd" />
+  <xs:include schemaLocation="Defs/KeyBindingCategoryDef.xsd" />
+  <xs:include schemaLocation="Defs/KeyBindingDef.xsd" />
+  <xs:include schemaLocation="Defs/LetterDef.xsd" />
+  <xs:include schemaLocation="Defs/LogEntryDef.xsd" />
+  <xs:include schemaLocation="Defs/ManeuverDef.xsd" />
+  <xs:include schemaLocation="Defs/MapGeneratorDef.xsd" />
+  <xs:include schemaLocation="Defs/MechWorkModeDef.xsd" />
+  <xs:include schemaLocation="Defs/MentalBreakDef.xsd" />
+  <xs:include schemaLocation="Defs/MentalFitDef.xsd" />
+  <xs:include schemaLocation="Defs/MentalStateDef.xsd" />
+  <xs:include schemaLocation="Defs/MessageTypeDef.xsd" />
+  <xs:include schemaLocation="Defs/OrbitalDebrisDef.xsd" />
+  <xs:include schemaLocation="Defs/OrderedTakeGroupDef.xsd" />
+  <xs:include schemaLocation="Defs/PathGridDef.xsd" />
+  <xs:include schemaLocation="Defs/PawnCapacityDef.xsd" />
+  <xs:include schemaLocation="Defs/PawnKindDef.xsd" />
+  <xs:include schemaLocation="Defs/PlaceDef.xsd" />
+  <xs:include schemaLocation="Defs/RecipeDef.xsd" />
+  <xs:include schemaLocation="Defs/ResearchProjectDef.xsd" />
+  <xs:include schemaLocation="Defs/ResearchProjectTagDef.xsd" />
+  <xs:include schemaLocation="Defs/ReservationLayerDef.xsd" />
+  <xs:include schemaLocation="Defs/RoofDef.xsd" />
+  <xs:include schemaLocation="Defs/RoomRoleDef.xsd" />
+  <xs:include schemaLocation="Defs/RoomStatDef.xsd" />
+  <xs:include schemaLocation="Defs/RulePackDef.xsd" />
+  <xs:include schemaLocation="Defs/ScatterableDef.xsd" />
+  <xs:include schemaLocation="Defs/ShaderTypeDef.xsd" />
+  <xs:include schemaLocation="Defs/SongDef.xsd" />
+  <xs:include schemaLocation="Defs/SoundDef.xsd" />
+  <xs:include schemaLocation="Defs/StyleCategoryDef.xsd" />
+  <xs:include schemaLocation="Defs/SubcameraDef.xsd" />
+  <xs:include schemaLocation="Defs/TerrainAffordanceDef.xsd" />
+  <xs:include schemaLocation="Defs/TerrainDef.xsd" />
+  <xs:include schemaLocation="Defs/ThingCategoryDef.xsd" />
+  <xs:include schemaLocation="Defs/ThingDef.xsd" />
+  <xs:include schemaLocation="Defs/ThingStyleDef.xsd" />
+  <xs:include schemaLocation="Defs/ThinkTreeDef.xsd" />
+  <xs:include schemaLocation="Defs/TipSetDef.xsd" />
+  <xs:include schemaLocation="Defs/ToolCapacityDef.xsd" />
+  <xs:include schemaLocation="Defs/TrainabilityDef.xsd" />
+  <xs:include schemaLocation="Defs/WeatherDef.xsd" />
+  <xs:include schemaLocation="Defs/WorkTypeDef.xsd" />
+  <xs:include schemaLocation="Defs/WorldGenStepDef.xsd" />
+  <xs:include schemaLocation="Defs/FleckDef.xsd" />
+  <xs:include schemaLocation="Defs/PawnRenderNodeTagDef.xsd" />
+  <xs:include schemaLocation="Defs/SpecialThingFilterDef.xsd" />
+  <xs:include schemaLocation="Defs/ImpactSoundTypeDef.xsd" />
+  <xs:include schemaLocation="Defs/DutyDef.xsd" />
+  <xs:include schemaLocation="Defs/PsychicRitualDef.xsd" />
+  <xs:include schemaLocation="Defs/PsychicRitualDef_BloodRain.xsd" />
+  <xs:include schemaLocation="Defs/PsychicRitualDef_Brainwipe.xsd" />
+  <xs:include schemaLocation="Defs/PsychicRitualDef_Chronophagy.xsd" />
+  <xs:include schemaLocation="Defs/PsychicRitualDef_ImbueDeathRefusal.xsd" />
+  <xs:include schemaLocation="Defs/PsychicRitualDef_InvocationCircle.xsd" />
+  <xs:include schemaLocation="Defs/PsychicRitualDef_NeurosisPulse.xsd" />
+  <xs:include schemaLocation="Defs/PsychicRitualDef_Philophagy.xsd" />
+  <xs:include schemaLocation="Defs/PsychicRitualDef_PleasurePulse.xsd" />
+  <xs:include schemaLocation="Defs/PsychicRitualDef_Psychophagy.xsd" />
+  <xs:include schemaLocation="Defs/PsychicRitualDef_SkipAbduction.xsd" />
+  <xs:include schemaLocation="Defs/PsychicRitualDef_SkipAbductionPlayer.xsd" />
+  <xs:include schemaLocation="Defs/PsychicRitualDef_SummonAnimals.xsd" />
+  <xs:include schemaLocation="Defs/PsychicRitualDef_SummonFleshbeasts.xsd" />
+  <xs:include schemaLocation="Defs/PsychicRitualDef_SummonFleshbeastsPlayer.xsd" />
+  <xs:include schemaLocation="Defs/PsychicRitualDef_SummonPitGate.xsd" />
+  <xs:include schemaLocation="Defs/PsychicRitualDef_SummonShamblers.xsd" />
+  <xs:include schemaLocation="Defs/PsychicRitualDef_VoidProvocation.xsd" />
+  <xs:include schemaLocation="Defs/PsychicRitualRoleDef.xsd" />
+  <xs:include schemaLocation="Defs/PsychicRitualRoleDef_DeathRefusalTarget.xsd" />
+  <xs:include schemaLocation="Defs/GeneTemplateDef.xsd" />
+  <xs:include schemaLocation="Defs/TerrainTemplateDef.xsd" />
+  <xs:include schemaLocation="Defs/AbilityCategoryDef.xsd" />
+  <xs:include schemaLocation="Defs/AbilityGroupDef.xsd" />
+  <xs:include schemaLocation="Defs/AbilityDef.xsd" />
+  <xs:include schemaLocation="Defs/AnomalyPlaystyleDef.xsd" />
+  <xs:include schemaLocation="Defs/BabyPlayDef.xsd" />
+  <xs:include schemaLocation="Defs/BackstoryDef.xsd" />
+  <xs:include schemaLocation="Defs/BillRepeatModeDef.xsd" />
+  <xs:include schemaLocation="Defs/BillStoreModeDef.xsd" />
+  <xs:include schemaLocation="Defs/BiomeDef.xsd" />
+  <xs:include schemaLocation="Defs/BodyTypeDef.xsd" />
+  <xs:include schemaLocation="Defs/BossDef.xsd" />
+  <xs:include schemaLocation="Defs/BossgroupDef.xsd" />
+  <xs:include schemaLocation="Defs/ChemicalDef.xsd" />
+  <xs:include schemaLocation="Defs/ColorDef.xsd" />
+  <xs:include schemaLocation="Defs/CultureDef.xsd" />
+  <xs:include schemaLocation="Defs/DebugTabMenuDef.xsd" />
+  <xs:include schemaLocation="Defs/DifficultyDef.xsd" />
+  <xs:include schemaLocation="Defs/DrugPolicyDef.xsd" />
+  <xs:include schemaLocation="Defs/EntityCategoryDef.xsd" />
+  <xs:include schemaLocation="Defs/EntityCodexEntryDef.xsd" />
+  <xs:include schemaLocation="Defs/ExpansionDef.xsd" />
+  <xs:include schemaLocation="Defs/ExpectationDef.xsd" />
+  <xs:include schemaLocation="Defs/FactionDef.xsd" />
+  <xs:include schemaLocation="Defs/FeatureDef.xsd" />
+  <xs:include schemaLocation="Defs/MapMeshFlagDef.xsd" />
+  <xs:include schemaLocation="Defs/RenderSkipFlagDef.xsd" />
+  <xs:include schemaLocation="Defs/FleshTypeDef.xsd" />
+  <xs:include schemaLocation="Defs/GatheringDef.xsd" />
+  <xs:include schemaLocation="Defs/GauranlenTreeModeDef.xsd" />
+  <xs:include schemaLocation="Defs/GlobalWorldDrawLayerDef.xsd" />
+  <xs:include schemaLocation="Defs/GoodwillSituationDef.xsd" />
+  <xs:include schemaLocation="Defs/HediffGiverSetDef.xsd" />
+  <xs:include schemaLocation="Defs/HibernatableStateDef.xsd" />
+  <xs:include schemaLocation="Defs/HistoryAutoRecorderDef.xsd" />
+  <xs:include schemaLocation="Defs/HistoryAutoRecorderGroupDef.xsd" />
+  <xs:include schemaLocation="Defs/HistoryEventDef.xsd" />
+  <xs:include schemaLocation="Defs/IdeoFoundationDef.xsd" />
+  <xs:include schemaLocation="Defs/IdeoPresetCategoryDef.xsd" />
+  <xs:include schemaLocation="Defs/IdeoPresetDef.xsd" />
+  <xs:include schemaLocation="Defs/IdeoSymbolPartDef.xsd" />
+  <xs:include schemaLocation="Defs/IdeoIconDef.xsd" />
+  <xs:include schemaLocation="Defs/IdeoColorDef.xsd" />
+  <xs:include schemaLocation="Defs/IncidentCategoryDef.xsd" />
+  <xs:include schemaLocation="Defs/IncidentDef.xsd" />
+  <xs:include schemaLocation="Defs/IncidentTargetTagDef.xsd" />
+  <xs:include schemaLocation="Defs/InspirationDef.xsd" />
+  <xs:include schemaLocation="Defs/InteractionDef.xsd" />
+  <xs:include schemaLocation="Defs/IssueDef.xsd" />
+  <xs:include schemaLocation="Defs/JoyGiverDef.xsd" />
+  <xs:include schemaLocation="Defs/JoyKindDef.xsd" />
+  <xs:include schemaLocation="Defs/KnowledgeCategoryDef.xsd" />
+  <xs:include schemaLocation="Defs/LandingOutcomeDef.xsd" />
+  <xs:include schemaLocation="Defs/ComplexLayoutDef.xsd" />
+  <xs:include schemaLocation="Defs/ComplexThreatDef.xsd" />
+  <xs:include schemaLocation="Defs/LayoutDef.xsd" />
+  <xs:include schemaLocation="Defs/LayoutRoomDef.xsd" />
+  <xs:include schemaLocation="Defs/RoomPartDef.xsd" />
+  <xs:include schemaLocation="Defs/RoomPart_CrateDef.xsd" />
+  <xs:include schemaLocation="Defs/RoomPart_BarricadeDef.xsd" />
+  <xs:include schemaLocation="Defs/RoomPart_GestationTankDef.xsd" />
+  <xs:include schemaLocation="Defs/RoomPart_ThingDef.xsd" />
+  <xs:include schemaLocation="Defs/PrefabDef.xsd" />
+  <xs:include schemaLocation="Defs/StructureLayoutDef.xsd" />
+  <xs:include schemaLocation="Defs/LearningDesireDef.xsd" />
+  <xs:include schemaLocation="Defs/LifeStageDef.xsd" />
+  <xs:include schemaLocation="Defs/MainButtonDef.xsd" />
+  <xs:include schemaLocation="Defs/MeditationFocusDef.xsd" />
+  <xs:include schemaLocation="Defs/MemeGroupDef.xsd" />
+  <xs:include schemaLocation="Defs/MemeDef.xsd" />
+  <xs:include schemaLocation="Defs/MonolithLevelDef.xsd" />
+  <xs:include schemaLocation="Defs/MusicSequenceDef.xsd" />
+  <xs:include schemaLocation="Defs/MusicTransitionDef.xsd" />
+  <xs:include schemaLocation="Defs/MutantDef.xsd" />
+  <xs:include schemaLocation="Defs/NeedDef.xsd" />
+  <xs:include schemaLocation="Defs/NegativeFishingOutcomeDef.xsd" />
+  <xs:include schemaLocation="Defs/PawnColumnDef.xsd" />
+  <xs:include schemaLocation="Defs/PawnGroupKindDef.xsd" />
+  <xs:include schemaLocation="Defs/PawnRelationDef.xsd" />
+  <xs:include schemaLocation="Defs/PawnsArrivalModeDef.xsd" />
+  <xs:include schemaLocation="Defs/PawnTableDef.xsd" />
+  <xs:include schemaLocation="Defs/PitGateIncidentDef.xsd" />
+  <xs:include schemaLocation="Defs/PlanetLayerDef.xsd" />
+  <xs:include schemaLocation="Defs/PlanetLayerSettingsDef.xsd" />
+  <xs:include schemaLocation="Defs/PreceptDef.xsd" />
+  <xs:include schemaLocation="Defs/PrisonerInteractionModeDef.xsd" />
+  <xs:include schemaLocation="Defs/QuestScriptDef.xsd" />
+  <xs:include schemaLocation="Defs/RaidAgeRestrictionDef.xsd" />
+  <xs:include schemaLocation="Defs/RaidStrategyDef.xsd" />
+  <xs:include schemaLocation="Defs/RecordDef.xsd" />
+  <xs:include schemaLocation="Defs/ResearchTabDef.xsd" />
+  <xs:include schemaLocation="Defs/RiverDef.xsd" />
+  <xs:include schemaLocation="Defs/RoadDef.xsd" />
+  <xs:include schemaLocation="Defs/RoadPathingDef.xsd" />
+  <xs:include schemaLocation="Defs/RoadWorldLayerDef.xsd" />
+  <xs:include schemaLocation="Defs/RuleDef.xsd" />
+  <xs:include schemaLocation="Defs/ScenarioDef.xsd" />
+  <xs:include schemaLocation="Defs/ScenPartDef.xsd" />
+  <xs:include schemaLocation="Defs/ShipJobDef.xsd" />
+  <xs:include schemaLocation="Defs/SitePartDef.xsd" />
+  <xs:include schemaLocation="Defs/SketchResolverDef.xsd" />
+  <xs:include schemaLocation="Defs/SkillDef.xsd" />
+  <xs:include schemaLocation="Defs/SlaveInteractionModeDef.xsd" />
+  <xs:include schemaLocation="Defs/StatCategoryDef.xsd" />
+  <xs:include schemaLocation="Defs/StatDef.xsd" />
+  <xs:include schemaLocation="Defs/StorytellerDef.xsd" />
+  <xs:include schemaLocation="Defs/StuffCategoryDef.xsd" />
+  <xs:include schemaLocation="Defs/StyleItemCategoryDef.xsd" />
+  <xs:include schemaLocation="Defs/HairDef.xsd" />
+  <xs:include schemaLocation="Defs/BeardDef.xsd" />
+  <xs:include schemaLocation="Defs/TattooDef.xsd" />
+  <xs:include schemaLocation="Defs/FurDef.xsd" />
+  <xs:include schemaLocation="Defs/TaleDef.xsd" />
+  <xs:include schemaLocation="Defs/ThingSetMakerDef.xsd" />
+  <xs:include schemaLocation="Defs/ThoughtDef.xsd" />
+  <xs:include schemaLocation="Defs/TimeAssignmentDef.xsd" />
+  <xs:include schemaLocation="Defs/TraderKindDef.xsd" />
+  <xs:include schemaLocation="Defs/TrainableDef.xsd" />
+  <xs:include schemaLocation="Defs/TraitDef.xsd" />
+  <xs:include schemaLocation="Defs/TransferableSorterDef.xsd" />
+  <xs:include schemaLocation="Defs/TransportShipDef.xsd" />
+  <xs:include schemaLocation="Defs/ConceptDef.xsd" />
+  <xs:include schemaLocation="Defs/InstructionDef.xsd" />
+  <xs:include schemaLocation="Defs/WeaponCategoryDef.xsd" />
+  <xs:include schemaLocation="Defs/WeaponTraitDef.xsd" />
+  <xs:include schemaLocation="Defs/WorldObjectDef.xsd" />
+  <xs:include schemaLocation="Defs/XenotypeDef.xsd" />
+  <xs:include schemaLocation="Defs/XenotypeIconDef.xsd" />
+  <xs:include schemaLocation="Defs/GeneratedLocationDef.xsd" />
+  <xs:include schemaLocation="Defs/TileMutatorDef.xsd" />
+  <xs:include schemaLocation="Defs/RitualAttachableOutcomeEffectDef.xsd" />
+  <xs:include schemaLocation="Defs/RitualBehaviorDef.xsd" />
+  <xs:include schemaLocation="Defs/RitualObligationTargetFilterDef.xsd" />
+  <xs:include schemaLocation="Defs/RitualOutcomeEffectDef.xsd" />
+  <xs:include schemaLocation="Defs/RitualPatternDef.xsd" />
+  <xs:include schemaLocation="Defs/RitualTargetFilterDef.xsd" />
+  <xs:include schemaLocation="Defs/RitualVisualEffectDef.xsd" />
+  <xs:include schemaLocation="Defs/LandmarkDef.xsd" />
+  <xs:include schemaLocation="Defs/GravshipComponentTypeDef.xsd" />
+  <xs:include schemaLocation="Defs/InfectionPathwayDef.xsd" />
+  <xs:include schemaLocation="Defs/RoyalTitleDef.xsd" />
+  <xs:include schemaLocation="Defs/RoyalTitlePermitDef.xsd" />
+  <xs:include schemaLocation="Defs/SurgeryOutcomeEffectDef.xsd" />
+  <xs:include schemaLocation="Defs/WorkGiverDef.xsd" />
+  <xs:include schemaLocation="Defs/WorkGiverEquivalenceGroupDef.xsd" />
+  <xs:element name="Defs">
+    <xs:complexType>
+      <xs:choice minOccurs="1" maxOccurs="unbounded">
+        <xs:element name="WeaponClassDef" type="WeaponClassDef" />
+        <xs:element name="WeaponClassPairDef" type="WeaponClassPairDef" />
+        <xs:element name="GeneCategoryDef" type="GeneCategoryDef" />
+        <xs:element name="GeneDef" type="GeneDef" />
+        <xs:element name="OptionCategoryDef" type="OptionCategoryDef" />
+        <xs:element name="PawnRenderTreeDef" type="PawnRenderTreeDef" />
+        <xs:element name="Def" type="Def" />
+        <xs:element name="AnimationDef" type="AnimationDef" />
+        <xs:element name="ApparelLayerDef" type="ApparelLayerDef" />
+        <xs:element name="BodyDef" type="BodyDef" />
+        <xs:element name="BodyPartDef" type="BodyPartDef" />
+        <xs:element name="BodyPartGroupDef" type="BodyPartGroupDef" />
+        <xs:element name="BodyPartTagDef" type="BodyPartTagDef" />
+        <xs:element name="ClamorDef" type="ClamorDef" />
+        <xs:element name="CreepJoinerBaseDef" type="CreepJoinerBaseDef" />
+        <xs:element name="CreepJoinerFormKindDef" type="CreepJoinerFormKindDef" />
+        <xs:element name="CreepJoinerBenefitDef" type="CreepJoinerBenefitDef" />
+        <xs:element name="CreepJoinerDownsideDef" type="CreepJoinerDownsideDef" />
+        <xs:element name="CreepJoinerAggressiveDef" type="CreepJoinerAggressiveDef" />
+        <xs:element name="CreepJoinerRejectionDef" type="CreepJoinerRejectionDef" />
+        <xs:element name="DamageArmorCategoryDef" type="DamageArmorCategoryDef" />
+        <xs:element name="DamageDef" type="DamageDef" />
+        <xs:element name="MechWeightClassDef" type="MechWeightClassDef" />
+        <xs:element name="StuffAppearanceDef" type="StuffAppearanceDef" />
+        <xs:element name="DesignationCategoryDef" type="DesignationCategoryDef" />
+        <xs:element name="DesignationDef" type="DesignationDef" />
+        <xs:element name="DesignatorDropdownGroupDef" type="DesignatorDropdownGroupDef" />
+        <xs:element name="DrawStyleCategoryDef" type="DrawStyleCategoryDef" />
+        <xs:element name="DrawStyleDef" type="DrawStyleDef" />
+        <xs:element name="EffecterDef" type="EffecterDef" />
+        <xs:element name="GameConditionDef" type="GameConditionDef" />
+        <xs:element name="GameSetupStepDef" type="GameSetupStepDef" />
+        <xs:element name="GenStepDef" type="GenStepDef" />
+        <xs:element name="GraphicStateDef" type="GraphicStateDef" />
+        <xs:element name="HeadTypeDef" type="HeadTypeDef" />
+        <xs:element name="HediffDef" type="HediffDef" />
+        <xs:element name="IdeoStoryPatternDef" type="IdeoStoryPatternDef" />
+        <xs:element name="ImplementOwnerTypeDef" type="ImplementOwnerTypeDef" />
+        <xs:element name="InventoryStockGroupDef" type="InventoryStockGroupDef" />
+        <xs:element name="JobDef" type="JobDef" />
+        <xs:element name="KeyBindingCategoryDef" type="KeyBindingCategoryDef" />
+        <xs:element name="KeyBindingDef" type="KeyBindingDef" />
+        <xs:element name="LetterDef" type="LetterDef" />
+        <xs:element name="LogEntryDef" type="LogEntryDef" />
+        <xs:element name="ManeuverDef" type="ManeuverDef" />
+        <xs:element name="MapGeneratorDef" type="MapGeneratorDef" />
+        <xs:element name="MechWorkModeDef" type="MechWorkModeDef" />
+        <xs:element name="MentalBreakDef" type="MentalBreakDef" />
+        <xs:element name="MentalFitDef" type="MentalFitDef" />
+        <xs:element name="MentalStateDef" type="MentalStateDef" />
+        <xs:element name="MessageTypeDef" type="MessageTypeDef" />
+        <xs:element name="OrbitalDebrisDef" type="OrbitalDebrisDef" />
+        <xs:element name="OrderedTakeGroupDef" type="OrderedTakeGroupDef" />
+        <xs:element name="PathGridDef" type="PathGridDef" />
+        <xs:element name="PawnCapacityDef" type="PawnCapacityDef" />
+        <xs:element name="PawnKindDef" type="PawnKindDef" />
+        <xs:element name="PlaceDef" type="PlaceDef" />
+        <xs:element name="RecipeDef" type="RecipeDef" />
+        <xs:element name="ResearchProjectDef" type="ResearchProjectDef" />
+        <xs:element name="ResearchProjectTagDef" type="ResearchProjectTagDef" />
+        <xs:element name="ReservationLayerDef" type="ReservationLayerDef" />
+        <xs:element name="RoofDef" type="RoofDef" />
+        <xs:element name="RoomRoleDef" type="RoomRoleDef" />
+        <xs:element name="RoomStatDef" type="RoomStatDef" />
+        <xs:element name="RulePackDef" type="RulePackDef" />
+        <xs:element name="ScatterableDef" type="ScatterableDef" />
+        <xs:element name="ShaderTypeDef" type="ShaderTypeDef" />
+        <xs:element name="SongDef" type="SongDef" />
+        <xs:element name="SoundDef" type="SoundDef" />
+        <xs:element name="StyleCategoryDef" type="StyleCategoryDef" />
+        <xs:element name="SubcameraDef" type="SubcameraDef" />
+        <xs:element name="TerrainAffordanceDef" type="TerrainAffordanceDef" />
+        <xs:element name="TerrainDef" type="TerrainDef" />
+        <xs:element name="ThingCategoryDef" type="ThingCategoryDef" />
+        <xs:element name="ThingDef" type="ThingDef" />
+        <xs:element name="ThingStyleDef" type="ThingStyleDef" />
+        <xs:element name="ThinkTreeDef" type="ThinkTreeDef" />
+        <xs:element name="TipSetDef" type="TipSetDef" />
+        <xs:element name="ToolCapacityDef" type="ToolCapacityDef" />
+        <xs:element name="TrainabilityDef" type="TrainabilityDef" />
+        <xs:element name="WeatherDef" type="WeatherDef" />
+        <xs:element name="WorkTypeDef" type="WorkTypeDef" />
+        <xs:element name="WorldGenStepDef" type="WorldGenStepDef" />
+        <xs:element name="FleckDef" type="FleckDef" />
+        <xs:element name="PawnRenderNodeTagDef" type="PawnRenderNodeTagDef" />
+        <xs:element name="SpecialThingFilterDef" type="SpecialThingFilterDef" />
+        <xs:element name="ImpactSoundTypeDef" type="ImpactSoundTypeDef" />
+        <xs:element name="DutyDef" type="DutyDef" />
+        <xs:element name="PsychicRitualDef" type="PsychicRitualDef" />
+        <xs:element name="PsychicRitualDef_BloodRain" type="PsychicRitualDef_BloodRain" />
+        <xs:element name="PsychicRitualDef_Brainwipe" type="PsychicRitualDef_Brainwipe" />
+        <xs:element name="PsychicRitualDef_Chronophagy" type="PsychicRitualDef_Chronophagy" />
+        <xs:element name="PsychicRitualDef_ImbueDeathRefusal" type="PsychicRitualDef_ImbueDeathRefusal" />
+        <xs:element name="PsychicRitualDef_InvocationCircle" type="PsychicRitualDef_InvocationCircle" />
+        <xs:element name="PsychicRitualDef_NeurosisPulse" type="PsychicRitualDef_NeurosisPulse" />
+        <xs:element name="PsychicRitualDef_Philophagy" type="PsychicRitualDef_Philophagy" />
+        <xs:element name="PsychicRitualDef_PleasurePulse" type="PsychicRitualDef_PleasurePulse" />
+        <xs:element name="PsychicRitualDef_Psychophagy" type="PsychicRitualDef_Psychophagy" />
+        <xs:element name="PsychicRitualDef_SkipAbduction" type="PsychicRitualDef_SkipAbduction" />
+        <xs:element name="PsychicRitualDef_SkipAbductionPlayer" type="PsychicRitualDef_SkipAbductionPlayer" />
+        <xs:element name="PsychicRitualDef_SummonAnimals" type="PsychicRitualDef_SummonAnimals" />
+        <xs:element name="PsychicRitualDef_SummonFleshbeasts" type="PsychicRitualDef_SummonFleshbeasts" />
+        <xs:element name="PsychicRitualDef_SummonFleshbeastsPlayer" type="PsychicRitualDef_SummonFleshbeastsPlayer" />
+        <xs:element name="PsychicRitualDef_SummonPitGate" type="PsychicRitualDef_SummonPitGate" />
+        <xs:element name="PsychicRitualDef_SummonShamblers" type="PsychicRitualDef_SummonShamblers" />
+        <xs:element name="PsychicRitualDef_VoidProvocation" type="PsychicRitualDef_VoidProvocation" />
+        <xs:element name="PsychicRitualRoleDef" type="PsychicRitualRoleDef" />
+        <xs:element name="PsychicRitualRoleDef_DeathRefusalTarget" type="PsychicRitualRoleDef_DeathRefusalTarget" />
+        <xs:element name="GeneTemplateDef" type="GeneTemplateDef" />
+        <xs:element name="TerrainTemplateDef" type="TerrainTemplateDef" />
+        <xs:element name="AbilityCategoryDef" type="AbilityCategoryDef" />
+        <xs:element name="AbilityGroupDef" type="AbilityGroupDef" />
+        <xs:element name="AbilityDef" type="AbilityDef" />
+        <xs:element name="AnomalyPlaystyleDef" type="AnomalyPlaystyleDef" />
+        <xs:element name="BabyPlayDef" type="BabyPlayDef" />
+        <xs:element name="BackstoryDef" type="BackstoryDef" />
+        <xs:element name="BillRepeatModeDef" type="BillRepeatModeDef" />
+        <xs:element name="BillStoreModeDef" type="BillStoreModeDef" />
+        <xs:element name="BiomeDef" type="BiomeDef" />
+        <xs:element name="BodyTypeDef" type="BodyTypeDef" />
+        <xs:element name="BossDef" type="BossDef" />
+        <xs:element name="BossgroupDef" type="BossgroupDef" />
+        <xs:element name="ChemicalDef" type="ChemicalDef" />
+        <xs:element name="ColorDef" type="ColorDef" />
+        <xs:element name="CultureDef" type="CultureDef" />
+        <xs:element name="DebugTabMenuDef" type="DebugTabMenuDef" />
+        <xs:element name="DifficultyDef" type="DifficultyDef" />
+        <xs:element name="DrugPolicyDef" type="DrugPolicyDef" />
+        <xs:element name="EntityCategoryDef" type="EntityCategoryDef" />
+        <xs:element name="EntityCodexEntryDef" type="EntityCodexEntryDef" />
+        <xs:element name="ExpansionDef" type="ExpansionDef" />
+        <xs:element name="ExpectationDef" type="ExpectationDef" />
+        <xs:element name="FactionDef" type="FactionDef" />
+        <xs:element name="FeatureDef" type="FeatureDef" />
+        <xs:element name="MapMeshFlagDef" type="MapMeshFlagDef" />
+        <xs:element name="RenderSkipFlagDef" type="RenderSkipFlagDef" />
+        <xs:element name="FleshTypeDef" type="FleshTypeDef" />
+        <xs:element name="GatheringDef" type="GatheringDef" />
+        <xs:element name="GauranlenTreeModeDef" type="GauranlenTreeModeDef" />
+        <xs:element name="GlobalWorldDrawLayerDef" type="GlobalWorldDrawLayerDef" />
+        <xs:element name="GoodwillSituationDef" type="GoodwillSituationDef" />
+        <xs:element name="HediffGiverSetDef" type="HediffGiverSetDef" />
+        <xs:element name="HibernatableStateDef" type="HibernatableStateDef" />
+        <xs:element name="HistoryAutoRecorderDef" type="HistoryAutoRecorderDef" />
+        <xs:element name="HistoryAutoRecorderGroupDef" type="HistoryAutoRecorderGroupDef" />
+        <xs:element name="HistoryEventDef" type="HistoryEventDef" />
+        <xs:element name="IdeoFoundationDef" type="IdeoFoundationDef" />
+        <xs:element name="IdeoPresetCategoryDef" type="IdeoPresetCategoryDef" />
+        <xs:element name="IdeoPresetDef" type="IdeoPresetDef" />
+        <xs:element name="IdeoSymbolPartDef" type="IdeoSymbolPartDef" />
+        <xs:element name="IdeoIconDef" type="IdeoIconDef" />
+        <xs:element name="IdeoColorDef" type="IdeoColorDef" />
+        <xs:element name="IncidentCategoryDef" type="IncidentCategoryDef" />
+        <xs:element name="IncidentDef" type="IncidentDef" />
+        <xs:element name="IncidentTargetTagDef" type="IncidentTargetTagDef" />
+        <xs:element name="InspirationDef" type="InspirationDef" />
+        <xs:element name="InteractionDef" type="InteractionDef" />
+        <xs:element name="IssueDef" type="IssueDef" />
+        <xs:element name="JoyGiverDef" type="JoyGiverDef" />
+        <xs:element name="JoyKindDef" type="JoyKindDef" />
+        <xs:element name="KnowledgeCategoryDef" type="KnowledgeCategoryDef" />
+        <xs:element name="LandingOutcomeDef" type="LandingOutcomeDef" />
+        <xs:element name="ComplexLayoutDef" type="ComplexLayoutDef" />
+        <xs:element name="ComplexThreatDef" type="ComplexThreatDef" />
+        <xs:element name="LayoutDef" type="LayoutDef" />
+        <xs:element name="LayoutRoomDef" type="LayoutRoomDef" />
+        <xs:element name="RoomPartDef" type="RoomPartDef" />
+        <xs:element name="RoomPart_CrateDef" type="RoomPart_CrateDef" />
+        <xs:element name="RoomPart_BarricadeDef" type="RoomPart_BarricadeDef" />
+        <xs:element name="RoomPart_GestationTankDef" type="RoomPart_GestationTankDef" />
+        <xs:element name="RoomPart_ThingDef" type="RoomPart_ThingDef" />
+        <xs:element name="PrefabDef" type="PrefabDef" />
+        <xs:element name="StructureLayoutDef" type="StructureLayoutDef" />
+        <xs:element name="LearningDesireDef" type="LearningDesireDef" />
+        <xs:element name="LifeStageDef" type="LifeStageDef" />
+        <xs:element name="MainButtonDef" type="MainButtonDef" />
+        <xs:element name="MeditationFocusDef" type="MeditationFocusDef" />
+        <xs:element name="MemeGroupDef" type="MemeGroupDef" />
+        <xs:element name="MemeDef" type="MemeDef" />
+        <xs:element name="MonolithLevelDef" type="MonolithLevelDef" />
+        <xs:element name="MusicSequenceDef" type="MusicSequenceDef" />
+        <xs:element name="MusicTransitionDef" type="MusicTransitionDef" />
+        <xs:element name="MutantDef" type="MutantDef" />
+        <xs:element name="NeedDef" type="NeedDef" />
+        <xs:element name="NegativeFishingOutcomeDef" type="NegativeFishingOutcomeDef" />
+        <xs:element name="PawnColumnDef" type="PawnColumnDef" />
+        <xs:element name="PawnGroupKindDef" type="PawnGroupKindDef" />
+        <xs:element name="PawnRelationDef" type="PawnRelationDef" />
+        <xs:element name="PawnsArrivalModeDef" type="PawnsArrivalModeDef" />
+        <xs:element name="PawnTableDef" type="PawnTableDef" />
+        <xs:element name="PitGateIncidentDef" type="PitGateIncidentDef" />
+        <xs:element name="PlanetLayerDef" type="PlanetLayerDef" />
+        <xs:element name="PlanetLayerSettingsDef" type="PlanetLayerSettingsDef" />
+        <xs:element name="PreceptDef" type="PreceptDef" />
+        <xs:element name="PrisonerInteractionModeDef" type="PrisonerInteractionModeDef" />
+        <xs:element name="QuestScriptDef" type="QuestScriptDef" />
+        <xs:element name="RaidAgeRestrictionDef" type="RaidAgeRestrictionDef" />
+        <xs:element name="RaidStrategyDef" type="RaidStrategyDef" />
+        <xs:element name="RecordDef" type="RecordDef" />
+        <xs:element name="ResearchTabDef" type="ResearchTabDef" />
+        <xs:element name="RiverDef" type="RiverDef" />
+        <xs:element name="RoadDef" type="RoadDef" />
+        <xs:element name="RoadPathingDef" type="RoadPathingDef" />
+        <xs:element name="RoadWorldLayerDef" type="RoadWorldLayerDef" />
+        <xs:element name="RuleDef" type="RuleDef" />
+        <xs:element name="ScenarioDef" type="ScenarioDef" />
+        <xs:element name="ScenPartDef" type="ScenPartDef" />
+        <xs:element name="ShipJobDef" type="ShipJobDef" />
+        <xs:element name="SitePartDef" type="SitePartDef" />
+        <xs:element name="SketchResolverDef" type="SketchResolverDef" />
+        <xs:element name="SkillDef" type="SkillDef" />
+        <xs:element name="SlaveInteractionModeDef" type="SlaveInteractionModeDef" />
+        <xs:element name="StatCategoryDef" type="StatCategoryDef" />
+        <xs:element name="StatDef" type="StatDef" />
+        <xs:element name="StorytellerDef" type="StorytellerDef" />
+        <xs:element name="StuffCategoryDef" type="StuffCategoryDef" />
+        <xs:element name="StyleItemCategoryDef" type="StyleItemCategoryDef" />
+        <xs:element name="HairDef" type="HairDef" />
+        <xs:element name="BeardDef" type="BeardDef" />
+        <xs:element name="TattooDef" type="TattooDef" />
+        <xs:element name="FurDef" type="FurDef" />
+        <xs:element name="TaleDef" type="TaleDef" />
+        <xs:element name="ThingSetMakerDef" type="ThingSetMakerDef" />
+        <xs:element name="ThoughtDef" type="ThoughtDef" />
+        <xs:element name="TimeAssignmentDef" type="TimeAssignmentDef" />
+        <xs:element name="TraderKindDef" type="TraderKindDef" />
+        <xs:element name="TrainableDef" type="TrainableDef" />
+        <xs:element name="TraitDef" type="TraitDef" />
+        <xs:element name="TransferableSorterDef" type="TransferableSorterDef" />
+        <xs:element name="TransportShipDef" type="TransportShipDef" />
+        <xs:element name="ConceptDef" type="ConceptDef" />
+        <xs:element name="InstructionDef" type="InstructionDef" />
+        <xs:element name="WeaponCategoryDef" type="WeaponCategoryDef" />
+        <xs:element name="WeaponTraitDef" type="WeaponTraitDef" />
+        <xs:element name="WorldObjectDef" type="WorldObjectDef" />
+        <xs:element name="XenotypeDef" type="XenotypeDef" />
+        <xs:element name="XenotypeIconDef" type="XenotypeIconDef" />
+        <xs:element name="GeneratedLocationDef" type="GeneratedLocationDef" />
+        <xs:element name="TileMutatorDef" type="TileMutatorDef" />
+        <xs:element name="RitualAttachableOutcomeEffectDef" type="RitualAttachableOutcomeEffectDef" />
+        <xs:element name="RitualBehaviorDef" type="RitualBehaviorDef" />
+        <xs:element name="RitualObligationTargetFilterDef" type="RitualObligationTargetFilterDef" />
+        <xs:element name="RitualOutcomeEffectDef" type="RitualOutcomeEffectDef" />
+        <xs:element name="RitualPatternDef" type="RitualPatternDef" />
+        <xs:element name="RitualTargetFilterDef" type="RitualTargetFilterDef" />
+        <xs:element name="RitualVisualEffectDef" type="RitualVisualEffectDef" />
+        <xs:element name="LandmarkDef" type="LandmarkDef" />
+        <xs:element name="GravshipComponentTypeDef" type="GravshipComponentTypeDef" />
+        <xs:element name="InfectionPathwayDef" type="InfectionPathwayDef" />
+        <xs:element name="RoyalTitleDef" type="RoyalTitleDef" />
+        <xs:element name="RoyalTitlePermitDef" type="RoyalTitlePermitDef" />
+        <xs:element name="SurgeryOutcomeEffectDef" type="SurgeryOutcomeEffectDef" />
+        <xs:element name="WorkGiverDef" type="WorkGiverDef" />
+        <xs:element name="WorkGiverEquivalenceGroupDef" type="WorkGiverEquivalenceGroupDef" />
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

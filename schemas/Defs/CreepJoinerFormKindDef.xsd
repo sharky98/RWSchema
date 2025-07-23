@@ -1,0 +1,494 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns="https://github.com/sharky98/RWSchema/Defs" elementFormDefault="qualified" targetNamespace="https://github.com/sharky98/RWSchema/Defs" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:include schemaLocation="CommonElements.xsd" />
+  <xs:complexType name="CreepJoinerFormKindDef">
+    <xs:choice minOccurs="1" maxOccurs="unbounded">
+      <xs:element name="letterLabel" type="xs:string" />
+      <xs:element name="letterPrompt" type="xs:string" />
+      <xs:element name="bodyTypeGraphicPaths">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="li" type="BodyTypeGraphicData" />
+          </xs:sequence>
+          <xs:attribute name="MayRequire" type="xs:string" />
+          <xs:attribute name="MayRequireAnyOf" type="xs:string" />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="forcedHeadTypes">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="li" type="xs:string" />
+          </xs:sequence>
+          <xs:attribute name="MayRequire" type="xs:string" />
+          <xs:attribute name="MayRequireAnyOf" type="xs:string" />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="hairTagFilter" type="TagFilter" />
+      <xs:element name="beardTagFilter" type="TagFilter" />
+      <xs:element name="hairColorOverride" type="Color" />
+      <xs:element name="race" type="xs:string" />
+      <xs:element name="defaultFactionDef" type="xs:string" />
+      <xs:element name="backstoryFilters">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="li" type="BackstoryCategoryFilter" />
+          </xs:sequence>
+          <xs:attribute name="MayRequire" type="xs:string" />
+          <xs:attribute name="MayRequireAnyOf" type="xs:string" />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="backstoryFiltersOverride">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="li" type="BackstoryCategoryFilter" />
+          </xs:sequence>
+          <xs:attribute name="MayRequire" type="xs:string" />
+          <xs:attribute name="MayRequireAnyOf" type="xs:string" />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="backstoryCategories">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="li" type="xs:string" />
+          </xs:sequence>
+          <xs:attribute name="MayRequire" type="xs:string" />
+          <xs:attribute name="MayRequireAnyOf" type="xs:string" />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="labelPlural" type="xs:string" />
+      <xs:element name="lifeStages">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="li" type="PawnKindLifeStage" />
+          </xs:sequence>
+          <xs:attribute name="MayRequire" type="xs:string" />
+          <xs:attribute name="MayRequireAnyOf" type="xs:string" />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="alternateGraphics">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="li" type="AlternateGraphic" />
+          </xs:sequence>
+          <xs:attribute name="MayRequire" type="xs:string" />
+          <xs:attribute name="MayRequireAnyOf" type="xs:string" />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="forcedTraits">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="li" type="TraitRequirement" />
+          </xs:sequence>
+          <xs:attribute name="MayRequire" type="xs:string" />
+          <xs:attribute name="MayRequireAnyOf" type="xs:string" />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="disallowedTraitsWithDegree">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="li" type="TraitRequirement" />
+          </xs:sequence>
+          <xs:attribute name="MayRequire" type="xs:string" />
+          <xs:attribute name="MayRequireAnyOf" type="xs:string" />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="disallowedTraits">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="li" type="xs:string" />
+          </xs:sequence>
+          <xs:attribute name="MayRequire" type="xs:string" />
+          <xs:attribute name="MayRequireAnyOf" type="xs:string" />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="alternateGraphicChance" type="xs:float" />
+      <xs:element name="mutant" type="xs:string" />
+      <xs:element name="xenotypeSet" type="XenotypeSet" />
+      <xs:element name="useFactionXenotypes" type="xs:boolean" />
+      <xs:element name="styleItemTags">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="li" type="StyleItemTagWeighted" />
+          </xs:sequence>
+          <xs:attribute name="MayRequire" type="xs:string" />
+          <xs:attribute name="MayRequireAnyOf" type="xs:string" />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="forcedHair" type="xs:string" />
+      <xs:element name="forcedHairColor" type="Color" />
+      <xs:element name="missingParts">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="li" type="MissingPart" />
+          </xs:sequence>
+          <xs:attribute name="MayRequire" type="xs:string" />
+          <xs:attribute name="MayRequireAnyOf" type="xs:string" />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="nameMaker" type="xs:string" />
+      <xs:element name="nameMakerFemale" type="xs:string" />
+      <xs:element name="abilities">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="li" type="xs:string" />
+          </xs:sequence>
+          <xs:attribute name="MayRequire" type="xs:string" />
+          <xs:attribute name="MayRequireAnyOf" type="xs:string" />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="preventIdeo" type="xs:boolean" />
+      <xs:element name="studiableAsPrisoner" type="xs:boolean" />
+      <xs:element name="isBoss" type="xs:boolean" />
+      <xs:element name="moveSpeedFactorByTerrainTag">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="li">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="key" type="xs:string" />
+                  <xs:element name="value" type="xs:float" />
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+          <xs:attribute name="MayRequire" type="xs:string" />
+          <xs:attribute name="MayRequireAnyOf" type="xs:string" />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="fixedChildBackstories">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="li" type="xs:string" />
+          </xs:sequence>
+          <xs:attribute name="MayRequire" type="xs:string" />
+          <xs:attribute name="MayRequireAnyOf" type="xs:string" />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="fixedAdultBackstories">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="li" type="xs:string" />
+          </xs:sequence>
+          <xs:attribute name="MayRequire" type="xs:string" />
+          <xs:attribute name="MayRequireAnyOf" type="xs:string" />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="backstoryCryptosleepCommonality" type="xs:float" />
+      <xs:element name="chronologicalAgeRange" type="FloatRange" />
+      <xs:element name="minGenerationAge" type="xs:int" />
+      <xs:element name="maxGenerationAge" type="xs:int" />
+      <xs:element name="factionLeader" type="xs:boolean" />
+      <xs:element name="fixedGender" type="Gender" />
+      <xs:element name="allowOldAgeInjuries" type="xs:boolean" />
+      <xs:element name="generateInitialNonFamilyRelations" type="xs:boolean" />
+      <xs:element name="pawnGroupDevelopmentStage" type="DevelopmentalStage" />
+      <xs:element name="destroyGearOnDrop" type="xs:boolean" />
+      <xs:element name="canStrip" type="xs:boolean" />
+      <xs:element name="defendPointRadius" type="xs:float" />
+      <xs:element name="factionHostileOnKill" type="xs:boolean" />
+      <xs:element name="factionHostileOnDeath" type="xs:boolean" />
+      <xs:element name="hostileToAll" type="xs:boolean" />
+      <xs:element name="initialResistanceRange" type="FloatRange" />
+      <xs:element name="initialWillRange" type="FloatRange" />
+      <xs:element name="forceNoDeathNotification" type="xs:boolean" />
+      <xs:element name="skipResistant" type="xs:boolean" />
+      <xs:element name="controlGroupPortraitZoom" type="xs:float" />
+      <xs:element name="overrideDeathOnDownedChance" type="xs:float" />
+      <xs:element name="forceDeathOnDowned" type="xs:boolean" />
+      <xs:element name="immuneToGameConditionEffects" type="xs:boolean" />
+      <xs:element name="immuneToTraps" type="xs:boolean" />
+      <xs:element name="collidesWithPawns" type="xs:boolean" />
+      <xs:element name="ignoresPainShock" type="xs:boolean" />
+      <xs:element name="canMeleeAttack" type="xs:boolean" />
+      <xs:element name="basePrisonBreakMtbDays" type="xs:float" />
+      <xs:element name="useFixedRotation" type="xs:boolean" />
+      <xs:element name="fixedRotation" type="Rot4" />
+      <xs:element name="showInDebugSpawner" type="xs:boolean" />
+      <xs:element name="canOpenAnyDoor" type="xs:boolean" />
+      <xs:element name="canOpenDoors" type="xs:boolean" />
+      <xs:element name="overrideDebugActionCategory" type="xs:string" />
+      <xs:element name="royalTitleChance" type="xs:float" />
+      <xs:element name="titleRequired" type="xs:string" />
+      <xs:element name="minTitleRequired" type="xs:string" />
+      <xs:element name="titleSelectOne">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="li" type="xs:string" />
+          </xs:sequence>
+          <xs:attribute name="MayRequire" type="xs:string" />
+          <xs:attribute name="MayRequireAnyOf" type="xs:string" />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="allowRoyalRoomRequirements" type="xs:boolean" />
+      <xs:element name="allowRoyalApparelRequirements" type="xs:boolean" />
+      <xs:element name="meleeAttackInfectionPathways">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="li" type="xs:string" />
+          </xs:sequence>
+          <xs:attribute name="MayRequire" type="xs:string" />
+          <xs:attribute name="MayRequireAnyOf" type="xs:string" />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="rangedAttackInfectionPathways">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="li" type="xs:string" />
+          </xs:sequence>
+          <xs:attribute name="MayRequire" type="xs:string" />
+          <xs:attribute name="MayRequireAnyOf" type="xs:string" />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="isFighter" type="xs:boolean" />
+      <xs:element name="combatPower" type="xs:float" />
+      <xs:element name="canArriveManhunter" type="xs:boolean" />
+      <xs:element name="canBeSapper" type="xs:boolean" />
+      <xs:element name="isGoodBreacher" type="xs:boolean" />
+      <xs:element name="allowInMechClusters" type="xs:boolean" />
+      <xs:element name="maxPerGroup" type="xs:int" />
+      <xs:element name="isGoodPsychicRitualInvoker" type="xs:boolean" />
+      <xs:element name="canBeScattered" type="xs:boolean" />
+      <xs:element name="appearsRandomlyInCombatGroups" type="xs:boolean" />
+      <xs:element name="aiAvoidCover" type="xs:boolean" />
+      <xs:element name="fleeHealthThresholdRange">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:pattern value="\s*-?\d+(\.\d+)?\s*(~\s*-?\d+(\.\d+)?\s*)?" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="acceptArrestChanceFactor" type="xs:float" />
+      <xs:element name="canUseAvoidGrid" type="xs:boolean" />
+      <xs:element name="itemQuality" type="QualityCategory" />
+      <xs:element name="forceWeaponQuality" type="QualityCategory" />
+      <xs:element name="forceNormalGearQuality" type="xs:boolean" />
+      <xs:element name="gearHealthRange">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:pattern value="\s*-?\d+(\.\d+)?\s*(~\s*-?\d+(\.\d+)?\s*)?" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="weaponMoney">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:pattern value="\s*-?\d+(\.\d+)?\s*(~\s*-?\d+(\.\d+)?\s*)?" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="weaponTags">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="li" type="xs:string" />
+          </xs:sequence>
+          <xs:attribute name="MayRequire" type="xs:string" />
+          <xs:attribute name="MayRequireAnyOf" type="xs:string" />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="weaponStuffOverride" type="xs:string" />
+      <xs:element name="weaponStyleDef" type="xs:string" />
+      <xs:element name="apparelMoney">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:pattern value="\s*-?\d+(\.\d+)?\s*(~\s*-?\d+(\.\d+)?\s*)?" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="apparelRequired">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="li" type="xs:string" />
+          </xs:sequence>
+          <xs:attribute name="MayRequire" type="xs:string" />
+          <xs:attribute name="MayRequireAnyOf" type="xs:string" />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="apparelTags">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="li" type="xs:string" />
+          </xs:sequence>
+          <xs:attribute name="MayRequire" type="xs:string" />
+          <xs:attribute name="MayRequireAnyOf" type="xs:string" />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="apparelDisallowTags">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="li" type="xs:string" />
+          </xs:sequence>
+          <xs:attribute name="MayRequire" type="xs:string" />
+          <xs:attribute name="MayRequireAnyOf" type="xs:string" />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="apparelAllowHeadgearChance" type="xs:float" />
+      <xs:element name="apparelIgnoreSeasons" type="xs:boolean" />
+      <xs:element name="apparelIgnorePollution" type="xs:boolean" />
+      <xs:element name="ignoreFactionApparelStuffRequirements" type="xs:boolean" />
+      <xs:element name="apparelColor" type="Color" />
+      <xs:element name="skinColorOverride" type="Color" />
+      <xs:element name="favoriteColor" type="xs:string" />
+      <xs:element name="ignoreIdeoApparelColors" type="xs:boolean" />
+      <xs:element name="specificApparelRequirements">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="li" type="SpecificApparelRequirement" />
+          </xs:sequence>
+          <xs:attribute name="MayRequire" type="xs:string" />
+          <xs:attribute name="MayRequireAnyOf" type="xs:string" />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="techHediffsRequired">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="li" type="xs:string" />
+          </xs:sequence>
+          <xs:attribute name="MayRequire" type="xs:string" />
+          <xs:attribute name="MayRequireAnyOf" type="xs:string" />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="techHediffsMoney">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:pattern value="\s*-?\d+(\.\d+)?\s*(~\s*-?\d+(\.\d+)?\s*)?" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="techHediffsTags">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="li" type="xs:string" />
+          </xs:sequence>
+          <xs:attribute name="MayRequire" type="xs:string" />
+          <xs:attribute name="MayRequireAnyOf" type="xs:string" />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="techHediffsDisallowTags">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="li" type="xs:string" />
+          </xs:sequence>
+          <xs:attribute name="MayRequire" type="xs:string" />
+          <xs:attribute name="MayRequireAnyOf" type="xs:string" />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="techHediffsChance" type="xs:float" />
+      <xs:element name="techHediffsMaxAmount" type="xs:int" />
+      <xs:element name="biocodeWeaponChance" type="xs:float" />
+      <xs:element name="humanPregnancyChance" type="xs:float" />
+      <xs:element name="startingHediffs">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="li" type="StartingHediff" />
+          </xs:sequence>
+          <xs:attribute name="MayRequire" type="xs:string" />
+          <xs:attribute name="MayRequireAnyOf" type="xs:string" />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="nakedChance" type="xs:float" />
+      <xs:element name="existingDamage">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="li" type="MiscDamage" />
+          </xs:sequence>
+          <xs:attribute name="MayRequire" type="xs:string" />
+          <xs:attribute name="MayRequireAnyOf" type="xs:string" />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="minApparelQuality" type="QualityCategory" />
+      <xs:element name="maxApparelQuality" type="QualityCategory" />
+      <xs:element name="fixedInventory">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="li" type="ThingDefCountClass" />
+          </xs:sequence>
+          <xs:attribute name="MayRequire" type="xs:string" />
+          <xs:attribute name="MayRequireAnyOf" type="xs:string" />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="inventoryOptions" type="PawnInventoryOption" />
+      <xs:element name="invNutrition" type="xs:float" />
+      <xs:element name="invFoodDef" type="xs:string" />
+      <xs:element name="chemicalAddictionChance" type="xs:float" />
+      <xs:element name="combatEnhancingDrugsChance" type="xs:float" />
+      <xs:element name="combatEnhancingDrugsCount">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:pattern value="\s*-?\d+\s*(~\s*-?\d+\s*)?" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="forcedAddictions">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="li" type="xs:string" />
+          </xs:sequence>
+          <xs:attribute name="MayRequire" type="xs:string" />
+          <xs:attribute name="MayRequireAnyOf" type="xs:string" />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="trader" type="xs:boolean" />
+      <xs:element name="skills">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="li" type="SkillRange" />
+          </xs:sequence>
+          <xs:attribute name="MayRequire" type="xs:string" />
+          <xs:attribute name="MayRequireAnyOf" type="xs:string" />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="requiredWorkTags" type="WorkTags" />
+      <xs:element name="disabledWorkTags" type="WorkTags" />
+      <xs:element name="extraSkillLevels" type="xs:int" />
+      <xs:element name="minTotalSkillLevels" type="xs:int" />
+      <xs:element name="minBestSkillLevel" type="xs:int" />
+      <xs:element name="labelMale" type="xs:string" />
+      <xs:element name="labelMalePlural" type="xs:string" />
+      <xs:element name="labelFemale" type="xs:string" />
+      <xs:element name="labelFemalePlural" type="xs:string" />
+      <xs:element name="wildGroupSize">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:pattern value="\s*-?\d+\s*(~\s*-?\d+\s*)?" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="ecoSystemWeight" type="xs:float" />
+      <xs:element name="flyingAnimationFramePathPrefix" type="xs:string" />
+      <xs:element name="flyingAnimationFramePathPrefixFemale" type="xs:string" />
+      <xs:element name="flyingAnimationFrameCount" type="xs:int" />
+      <xs:element name="flyingAnimationTicksPerFrame" type="xs:int" />
+      <xs:element name="flyingAnimationDrawSize" type="xs:float" />
+      <xs:element name="flyingAnimationDrawSizeIsMultiplier" type="xs:boolean" />
+      <xs:element name="flyingAnimationInheritColors" type="xs:boolean" />
+      <xs:element name="defName" type="xs:string" />
+      <xs:element name="label" type="xs:string" />
+      <xs:element name="description" type="xs:string" />
+      <xs:element name="descriptionHyperlinks">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="li" type="DefHyperlink" />
+          </xs:sequence>
+          <xs:attribute name="MayRequire" type="xs:string" />
+          <xs:attribute name="MayRequireAnyOf" type="xs:string" />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="ignoreConfigErrors" type="xs:boolean" />
+      <xs:element name="ignoreIllegalLabelCharacterConfigError" type="xs:boolean" />
+      <xs:element name="modExtensions">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="li" type="DefModExtension" />
+          </xs:sequence>
+          <xs:attribute name="MayRequire" type="xs:string" />
+          <xs:attribute name="MayRequireAnyOf" type="xs:string" />
+        </xs:complexType>
+      </xs:element>
+    </xs:choice>
+    <xs:attribute name="Name" type="xs:string" />
+    <xs:attribute name="ParentName" type="xs:string" />
+    <xs:attribute name="Class" type="xs:string" />
+    <xs:attribute name="MayRequire" type="xs:string" />
+    <xs:attribute name="MayRequireAnyOf" type="xs:string" />
+  </xs:complexType>
+</xs:schema>

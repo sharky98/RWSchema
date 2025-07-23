@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns="https://github.com/sharky98/RWSchema/Defs" elementFormDefault="qualified" targetNamespace="https://github.com/sharky98/RWSchema/Defs" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:include schemaLocation="CommonElements.xsd" />
+  <xs:complexType name="DifficultyDef">
+    <xs:choice minOccurs="1" maxOccurs="unbounded">
+      <xs:element name="drawColor" type="Color" />
+      <xs:element name="isExtreme" type="xs:boolean" />
+      <xs:element name="isCustom" type="xs:boolean" />
+      <xs:element name="difficulty" type="xs:int" />
+      <xs:element name="threatScale" type="xs:float" />
+      <xs:element name="allowBigThreats" type="xs:boolean" />
+      <xs:element name="allowIntroThreats" type="xs:boolean" />
+      <xs:element name="allowCaveHives" type="xs:boolean" />
+      <xs:element name="peacefulTemples" type="xs:boolean" />
+      <xs:element name="allowViolentQuests" type="xs:boolean" />
+      <xs:element name="predatorsHuntHumanlikes" type="xs:boolean" />
+      <xs:element name="babiesAreHealthy" type="xs:boolean" />
+      <xs:element name="noBabiesOrChildren" type="xs:boolean" />
+      <xs:element name="scariaRotChance" type="xs:float" />
+      <xs:element name="colonistMoodOffset" type="xs:float" />
+      <xs:element name="tradePriceFactorLoss" type="xs:float" />
+      <xs:element name="cropYieldFactor" type="xs:float" />
+      <xs:element name="mineYieldFactor" type="xs:float" />
+      <xs:element name="butcherYieldFactor" type="xs:float" />
+      <xs:element name="fishingYieldFactor" type="xs:float" />
+      <xs:element name="researchSpeedFactor" type="xs:float" />
+      <xs:element name="diseaseIntervalFactor" type="xs:float" />
+      <xs:element name="enemyReproductionRateFactor" type="xs:float" />
+      <xs:element name="playerPawnInfectionChanceFactor" type="xs:float" />
+      <xs:element name="manhunterChanceOnDamageFactor" type="xs:float" />
+      <xs:element name="deepDrillInfestationChanceFactor" type="xs:float" />
+      <xs:element name="wastepackInfestationChanceFactor" type="xs:float" />
+      <xs:element name="nomadicMineableResourcesFactor" type="xs:float" />
+      <xs:element name="foodPoisonChanceFactor" type="xs:float" />
+      <xs:element name="threatsGeneratorThreatCountFactor" type="xs:float" />
+      <xs:element name="maintenanceCostFactor" type="xs:float" />
+      <xs:element name="enemyDeathOnDownedChanceFactor" type="xs:float" />
+      <xs:element name="adaptationGrowthRateFactorOverZero" type="xs:float" />
+      <xs:element name="adaptationEffectFactor" type="xs:float" />
+      <xs:element name="questRewardValueFactor" type="xs:float" />
+      <xs:element name="raidLootPointsFactor" type="xs:float" />
+      <xs:element name="allowTraps" type="xs:boolean" />
+      <xs:element name="allowTurrets" type="xs:boolean" />
+      <xs:element name="allowMortars" type="xs:boolean" />
+      <xs:element name="classicMortars" type="xs:boolean" />
+      <xs:element name="allowExtremeWeatherIncidents" type="xs:boolean" />
+      <xs:element name="fixedWealthMode" type="xs:boolean" />
+      <xs:element name="lowPopConversionBoost" type="xs:float" />
+      <xs:element name="minThreatPointsRangeCeiling" type="xs:float" />
+      <xs:element name="childAgingRate" type="xs:float" />
+      <xs:element name="adultAgingRate" type="xs:float" />
+      <xs:element name="unwaveringPrisoners" type="xs:boolean" />
+      <xs:element name="childRaidersAllowed" type="xs:boolean" />
+      <xs:element name="anomalyThreatsInactiveFraction" type="xs:float" />
+      <xs:element name="anomalyThreatsActiveFraction" type="xs:float" />
+      <xs:element name="studyEfficiencyFactor" type="xs:float" />
+      <xs:element name="defName" type="xs:string" />
+      <xs:element name="label" type="xs:string" />
+      <xs:element name="description" type="xs:string" />
+      <xs:element name="descriptionHyperlinks">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="li" type="DefHyperlink" />
+          </xs:sequence>
+          <xs:attribute name="MayRequire" type="xs:string" />
+          <xs:attribute name="MayRequireAnyOf" type="xs:string" />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="ignoreConfigErrors" type="xs:boolean" />
+      <xs:element name="ignoreIllegalLabelCharacterConfigError" type="xs:boolean" />
+      <xs:element name="modExtensions">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="li" type="DefModExtension" />
+          </xs:sequence>
+          <xs:attribute name="MayRequire" type="xs:string" />
+          <xs:attribute name="MayRequireAnyOf" type="xs:string" />
+        </xs:complexType>
+      </xs:element>
+    </xs:choice>
+    <xs:attribute name="Name" type="xs:string" />
+    <xs:attribute name="ParentName" type="xs:string" />
+    <xs:attribute name="Class" type="xs:string" />
+    <xs:attribute name="MayRequire" type="xs:string" />
+    <xs:attribute name="MayRequireAnyOf" type="xs:string" />
+  </xs:complexType>
+</xs:schema>
