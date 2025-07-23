@@ -34,17 +34,23 @@ partial class SchemaTypeExtractor
     return null;
   }
 
+  private XmlSchemaElement CreateFieldListWildcardGenericType(FieldInfo fieldInfo)
+  {
+    // I need to do something else... probably a simple xs:any here...
+    var anyComplexType = new XmlSchemaComplexType();
+    var choice = new XmlSchemaChoice() { MinOccurs = 1, MaxOccursString = "unbounded" };
+    anyComplexType.Particle = choice;
+    choice.Items.Add(DeriveWildcardType());
+    return new XmlSchemaElement() { Name = fieldInfo.Name.ToCamelCase(), SchemaType = anyComplexType };
+  }
+
   private XmlSchemaElement? DeriveFieldListGenericType(FieldInfo fieldInfo)
   {
     var baseType = GetSchemaTypeName(fieldInfo);
-    if (baseType.Name == "StatModifier")
+    var fieldName = fieldInfo.Name;
+    if (baseType.Name == "StatModifier" || fieldInfo.Name == "comps")
     {
-      // I need to do something else... probably a simple xs:any here...
-      var anyComplexType = new XmlSchemaComplexType();
-      var choice = new XmlSchemaChoice() { MinOccurs = 1, MaxOccursString = "unbounded" };
-      anyComplexType.Particle = choice;
-      choice.Items.Add(DeriveWildcardType());
-      return new XmlSchemaElement() { Name = fieldInfo.Name.ToCamelCase(), SchemaType = anyComplexType };
+      return CreateFieldListWildcardGenericType(fieldInfo);
     }
     var listElements = new XmlSchemaElement()
     {
