@@ -9,8 +9,8 @@
       <xs:element name="intensity" type="MentalBreakIntensity" />
       <xs:element name="requiredTrait" type="xs:string" />
       <xs:element name="requiredGene" type="xs:string" />
-      <xs:element name="anomalousBreak" type="xs:boolean" />
-      <xs:element name="questLodgersCanDo" type="xs:boolean" />
+      <xs:element name="anomalousBreak" type="StrBoolean" />
+      <xs:element name="questLodgersCanDo" type="StrBoolean" />
       <xs:element name="requiredPrecept" type="xs:string" />
       <xs:element name="layerWhitelist">
         <xs:complexType>
@@ -42,8 +42,8 @@
           <xs:attribute name="MayRequireAnyOf" type="xs:string" />
         </xs:complexType>
       </xs:element>
-      <xs:element name="ignoreConfigErrors" type="xs:boolean" />
-      <xs:element name="ignoreIllegalLabelCharacterConfigError" type="xs:boolean" />
+      <xs:element name="ignoreConfigErrors" type="StrBoolean" />
+      <xs:element name="ignoreIllegalLabelCharacterConfigError" type="StrBoolean" />
       <xs:element name="modExtensions">
         <xs:complexType>
           <xs:sequence>

@@ -5,8 +5,8 @@
     <xs:choice minOccurs="1" maxOccurs="unbounded">
       <xs:element name="workerClass" type="xs:string" />
       <xs:element name="minTechLevel" type="TechLevel" />
-      <xs:element name="forQuickMilitaryAid" type="xs:boolean" />
-      <xs:element name="walkIn" type="xs:boolean" />
+      <xs:element name="forQuickMilitaryAid" type="StrBoolean" />
+      <xs:element name="walkIn" type="StrBoolean" />
       <xs:element name="biomeWhitelist">
         <xs:complexType>
           <xs:sequence>
@@ -103,8 +103,8 @@
           <xs:attribute name="MayRequireAnyOf" type="xs:string" />
         </xs:complexType>
       </xs:element>
-      <xs:element name="ignoreConfigErrors" type="xs:boolean" />
-      <xs:element name="ignoreIllegalLabelCharacterConfigError" type="xs:boolean" />
+      <xs:element name="ignoreConfigErrors" type="StrBoolean" />
+      <xs:element name="ignoreIllegalLabelCharacterConfigError" type="StrBoolean" />
       <xs:element name="modExtensions">
         <xs:complexType>
           <xs:sequence>

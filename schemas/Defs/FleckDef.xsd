@@ -6,7 +6,7 @@
       <xs:element name="fleckSystemClass" type="xs:string" />
       <xs:element name="altitudeLayer" type="AltitudeLayer" />
       <xs:element name="altitudeLayerIncOffset" type="xs:float" />
-      <xs:element name="drawGUIOverlay" type="xs:boolean" />
+      <xs:element name="drawGUIOverlay" type="StrBoolean" />
       <xs:element name="graphicData" type="GraphicData" />
       <xs:element name="randomGraphics">
         <xs:complexType>
@@ -17,9 +17,9 @@
           <xs:attribute name="MayRequireAnyOf" type="xs:string" />
         </xs:complexType>
       </xs:element>
-      <xs:element name="realTime" type="xs:boolean" />
-      <xs:element name="attachedToHead" type="xs:boolean" />
-      <xs:element name="useAttachLink" type="xs:boolean" />
+      <xs:element name="realTime" type="StrBoolean" />
+      <xs:element name="attachedToHead" type="StrBoolean" />
+      <xs:element name="useAttachLink" type="StrBoolean" />
       <xs:element name="fadeInTime" type="xs:float" />
       <xs:element name="solidTime" type="xs:float" />
       <xs:element name="fadeOutTime" type="xs:float" />
@@ -41,13 +41,13 @@
           <xs:attribute name="MayRequireAnyOf" type="xs:string" />
         </xs:complexType>
       </xs:element>
-      <xs:element name="collide" type="xs:boolean" />
+      <xs:element name="collide" type="StrBoolean" />
       <xs:element name="landSound" type="xs:string" />
       <xs:element name="unattachedDrawOffset" type="Vector3" />
       <xs:element name="attachedDrawOffset" type="Vector3" />
-      <xs:element name="rotateTowardsMoveDirection" type="xs:boolean" />
+      <xs:element name="rotateTowardsMoveDirection" type="StrBoolean" />
       <xs:element name="rotateTowardsMoveDirectionExtraAngle" type="xs:float" />
-      <xs:element name="drawOffscreen" type="xs:boolean" />
+      <xs:element name="drawOffscreen" type="StrBoolean" />
       <xs:element name="archHeight">
         <xs:simpleType>
           <xs:restriction base="xs:string">
@@ -75,8 +75,8 @@
           <xs:attribute name="MayRequireAnyOf" type="xs:string" />
         </xs:complexType>
       </xs:element>
-      <xs:element name="ignoreConfigErrors" type="xs:boolean" />
-      <xs:element name="ignoreIllegalLabelCharacterConfigError" type="xs:boolean" />
+      <xs:element name="ignoreConfigErrors" type="StrBoolean" />
+      <xs:element name="ignoreIllegalLabelCharacterConfigError" type="StrBoolean" />
       <xs:element name="modExtensions">
         <xs:complexType>
           <xs:sequence>

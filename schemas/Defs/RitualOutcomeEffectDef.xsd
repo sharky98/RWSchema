@@ -7,7 +7,7 @@
       <xs:element name="startingQuality" type="xs:float" />
       <xs:element name="minQuality" type="xs:float" />
       <xs:element name="maxQuality" type="xs:float" />
-      <xs:element name="givesDevelopmentPoints" type="xs:boolean" />
+      <xs:element name="givesDevelopmentPoints" type="StrBoolean" />
       <xs:element name="memoryDef" type="xs:string" />
       <xs:element name="outcomeChances">
         <xs:complexType>
@@ -111,9 +111,9 @@
           <xs:attribute name="MayRequireAnyOf" type="xs:string" />
         </xs:complexType>
       </xs:element>
-      <xs:element name="warnOnLowQuality" type="xs:boolean" />
-      <xs:element name="allowAttachableOutcome" type="xs:boolean" />
-      <xs:element name="allowOutcomeWithNoAttendance" type="xs:boolean" />
+      <xs:element name="warnOnLowQuality" type="StrBoolean" />
+      <xs:element name="allowAttachableOutcome" type="StrBoolean" />
+      <xs:element name="allowOutcomeWithNoAttendance" type="StrBoolean" />
       <xs:element name="defName" type="xs:string" />
       <xs:element name="label" type="xs:string" />
       <xs:element name="description" type="xs:string" />
@@ -126,8 +126,8 @@
           <xs:attribute name="MayRequireAnyOf" type="xs:string" />
         </xs:complexType>
       </xs:element>
-      <xs:element name="ignoreConfigErrors" type="xs:boolean" />
-      <xs:element name="ignoreIllegalLabelCharacterConfigError" type="xs:boolean" />
+      <xs:element name="ignoreConfigErrors" type="StrBoolean" />
+      <xs:element name="ignoreIllegalLabelCharacterConfigError" type="StrBoolean" />
       <xs:element name="modExtensions">
         <xs:complexType>
           <xs:sequence>

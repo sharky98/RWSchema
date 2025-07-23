@@ -24,13 +24,13 @@
         </xs:complexType>
       </xs:element>
       <xs:element name="nextSequence" type="xs:string" />
-      <xs:element name="loop" type="xs:boolean" />
-      <xs:element name="canBeInterrupted" type="xs:boolean" />
-      <xs:element name="useTransitionForLifetime" type="xs:boolean" />
-      <xs:element name="transitionOnDanger" type="xs:boolean" />
-      <xs:element name="transitionOnNoDanger" type="xs:boolean" />
-      <xs:element name="endOnNoDanger" type="xs:boolean" />
-      <xs:element name="endOnDanger" type="xs:boolean" />
+      <xs:element name="loop" type="StrBoolean" />
+      <xs:element name="canBeInterrupted" type="StrBoolean" />
+      <xs:element name="useTransitionForLifetime" type="StrBoolean" />
+      <xs:element name="transitionOnDanger" type="StrBoolean" />
+      <xs:element name="transitionOnNoDanger" type="StrBoolean" />
+      <xs:element name="endOnNoDanger" type="StrBoolean" />
+      <xs:element name="endOnDanger" type="StrBoolean" />
       <xs:element name="loopDelayRange">
         <xs:simpleType>
           <xs:restriction base="xs:string">
@@ -40,7 +40,7 @@
       </xs:element>
       <xs:element name="fadeoutLastSongDuration" type="xs:float" />
       <xs:element name="fadeInDuration" type="xs:float" />
-      <xs:element name="loopFadeout" type="xs:boolean" />
+      <xs:element name="loopFadeout" type="StrBoolean" />
       <xs:element name="overrideFadeout" type="xs:float" />
       <xs:element name="overrideVolume" type="xs:float" />
       <xs:element name="minTimeToPlay" type="xs:float" />
@@ -57,8 +57,8 @@
           <xs:attribute name="MayRequireAnyOf" type="xs:string" />
         </xs:complexType>
       </xs:element>
-      <xs:element name="ignoreConfigErrors" type="xs:boolean" />
-      <xs:element name="ignoreIllegalLabelCharacterConfigError" type="xs:boolean" />
+      <xs:element name="ignoreConfigErrors" type="StrBoolean" />
+      <xs:element name="ignoreIllegalLabelCharacterConfigError" type="StrBoolean" />
       <xs:element name="modExtensions">
         <xs:complexType>
           <xs:sequence>

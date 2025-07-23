@@ -21,11 +21,11 @@
           <xs:attribute name="MayRequireAnyOf" type="xs:string" />
         </xs:complexType>
       </xs:element>
-      <xs:element name="inheritable" type="xs:boolean" />
+      <xs:element name="inheritable" type="StrBoolean" />
       <xs:element name="iconPath" type="xs:string" />
       <xs:element name="descriptionShort" type="xs:string" />
       <xs:element name="combatPowerFactor" type="xs:float" />
-      <xs:element name="canGenerateAsCombatant" type="xs:boolean" />
+      <xs:element name="canGenerateAsCombatant" type="StrBoolean" />
       <xs:element name="factionlessGenerationWeight" type="xs:float" />
       <xs:element name="nameMaker" type="xs:string" />
       <xs:element name="nameMakerFemale" type="xs:string" />
@@ -79,8 +79,8 @@
           <xs:attribute name="MayRequireAnyOf" type="xs:string" />
         </xs:complexType>
       </xs:element>
-      <xs:element name="ignoreConfigErrors" type="xs:boolean" />
-      <xs:element name="ignoreIllegalLabelCharacterConfigError" type="xs:boolean" />
+      <xs:element name="ignoreConfigErrors" type="StrBoolean" />
+      <xs:element name="ignoreIllegalLabelCharacterConfigError" type="StrBoolean" />
       <xs:element name="modExtensions">
         <xs:complexType>
           <xs:sequence>

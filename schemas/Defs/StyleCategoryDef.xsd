@@ -13,7 +13,7 @@
         </xs:complexType>
       </xs:element>
       <xs:element name="iconPath" type="xs:string" />
-      <xs:element name="fixedIdeoOnly" type="xs:boolean" />
+      <xs:element name="fixedIdeoOnly" type="StrBoolean" />
       <xs:element name="addDesignators">
         <xs:complexType>
           <xs:sequence>
@@ -64,8 +64,8 @@
           <xs:attribute name="MayRequireAnyOf" type="xs:string" />
         </xs:complexType>
       </xs:element>
-      <xs:element name="ignoreConfigErrors" type="xs:boolean" />
-      <xs:element name="ignoreIllegalLabelCharacterConfigError" type="xs:boolean" />
+      <xs:element name="ignoreConfigErrors" type="StrBoolean" />
+      <xs:element name="ignoreIllegalLabelCharacterConfigError" type="StrBoolean" />
       <xs:element name="modExtensions">
         <xs:complexType>
           <xs:sequence>

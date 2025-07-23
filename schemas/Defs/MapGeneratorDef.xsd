@@ -3,8 +3,8 @@
   <xs:include schemaLocation="CommonElements.xsd" />
   <xs:complexType name="MapGeneratorDef">
     <xs:choice minOccurs="1" maxOccurs="unbounded">
-      <xs:element name="isUnderground" type="xs:boolean" />
-      <xs:element name="forceCaves" type="xs:boolean" />
+      <xs:element name="isUnderground" type="StrBoolean" />
+      <xs:element name="forceCaves" type="StrBoolean" />
       <xs:element name="genSteps">
         <xs:complexType>
           <xs:sequence>
@@ -42,15 +42,15 @@
           <xs:attribute name="MayRequireAnyOf" type="xs:string" />
         </xs:complexType>
       </xs:element>
-      <xs:element name="ignoreAreaRevealedLetter" type="xs:boolean" />
+      <xs:element name="ignoreAreaRevealedLetter" type="StrBoolean" />
       <xs:element name="roofDef" type="xs:string" />
-      <xs:element name="disableShadows" type="xs:boolean" />
-      <xs:element name="disableCallAid" type="xs:boolean" />
-      <xs:element name="disableMapClippers" type="xs:boolean" />
-      <xs:element name="renderWorld" type="xs:boolean" />
-      <xs:element name="defeatRequiresCantReachUnfogged" type="xs:boolean" />
+      <xs:element name="disableShadows" type="StrBoolean" />
+      <xs:element name="disableCallAid" type="StrBoolean" />
+      <xs:element name="disableMapClippers" type="StrBoolean" />
+      <xs:element name="renderWorld" type="StrBoolean" />
+      <xs:element name="defeatRequiresCantReachUnfogged" type="StrBoolean" />
       <xs:element name="defaultUnderGridTerrain" type="xs:string" />
-      <xs:element name="validScenarioMap" type="xs:boolean" />
+      <xs:element name="validScenarioMap" type="StrBoolean" />
       <xs:element name="defName" type="xs:string" />
       <xs:element name="label" type="xs:string" />
       <xs:element name="description" type="xs:string" />
@@ -63,8 +63,8 @@
           <xs:attribute name="MayRequireAnyOf" type="xs:string" />
         </xs:complexType>
       </xs:element>
-      <xs:element name="ignoreConfigErrors" type="xs:boolean" />
-      <xs:element name="ignoreIllegalLabelCharacterConfigError" type="xs:boolean" />
+      <xs:element name="ignoreConfigErrors" type="StrBoolean" />
+      <xs:element name="ignoreIllegalLabelCharacterConfigError" type="StrBoolean" />
       <xs:element name="modExtensions">
         <xs:complexType>
           <xs:sequence>

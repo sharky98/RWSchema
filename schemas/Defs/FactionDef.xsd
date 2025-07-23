@@ -3,13 +3,13 @@
   <xs:include schemaLocation="CommonElements.xsd" />
   <xs:complexType name="FactionDef">
     <xs:choice minOccurs="1" maxOccurs="unbounded">
-      <xs:element name="isPlayer" type="xs:boolean" />
+      <xs:element name="isPlayer" type="StrBoolean" />
       <xs:element name="factionNameMaker" type="xs:string" />
       <xs:element name="settlementNameMaker" type="xs:string" />
       <xs:element name="playerInitialSettlementNameMaker" type="xs:string" />
       <xs:element name="fixedName" type="xs:string" />
-      <xs:element name="humanlikeFaction" type="xs:boolean" />
-      <xs:element name="hidden" type="xs:boolean" />
+      <xs:element name="humanlikeFaction" type="StrBoolean" />
+      <xs:element name="hidden" type="StrBoolean" />
       <xs:element name="listOrderPriority" type="xs:float" />
       <xs:element name="pawnGroupMakers">
         <xs:complexType>
@@ -20,7 +20,7 @@
           <xs:attribute name="MayRequireAnyOf" type="xs:string" />
         </xs:complexType>
       </xs:element>
-      <xs:element name="autoFlee" type="xs:boolean" />
+      <xs:element name="autoFlee" type="StrBoolean" />
       <xs:element name="attackersDownPercentageRangeForAutoFlee">
         <xs:simpleType>
           <xs:restriction base="xs:string">
@@ -28,10 +28,10 @@
           </xs:restriction>
         </xs:simpleType>
       </xs:element>
-      <xs:element name="canSiege" type="xs:boolean" />
-      <xs:element name="canStageAttacks" type="xs:boolean" />
-      <xs:element name="canUseAvoidGrid" type="xs:boolean" />
-      <xs:element name="canPsychicRitualSiege" type="xs:boolean" />
+      <xs:element name="canSiege" type="StrBoolean" />
+      <xs:element name="canStageAttacks" type="StrBoolean" />
+      <xs:element name="canUseAvoidGrid" type="StrBoolean" />
+      <xs:element name="canPsychicRitualSiege" type="StrBoolean" />
       <xs:element name="earliestRaidDays" type="xs:float" />
       <xs:element name="allowedArrivalTemperatureRange">
         <xs:simpleType>
@@ -95,7 +95,7 @@
           <xs:attribute name="MayRequireAnyOf" type="xs:string" />
         </xs:complexType>
       </xs:element>
-      <xs:element name="rescueesCanJoin" type="xs:boolean" />
+      <xs:element name="rescueesCanJoin" type="StrBoolean" />
       <xs:element name="pawnSingular" type="xs:string" />
       <xs:element name="pawnsPlural" type="xs:string" />
       <xs:element name="leaderTitle" type="xs:string" />
@@ -120,7 +120,7 @@
           <xs:attribute name="MayRequireAnyOf" type="xs:string" />
         </xs:complexType>
       </xs:element>
-      <xs:element name="leaderForceGenerateNewPawn" type="xs:boolean" />
+      <xs:element name="leaderForceGenerateNewPawn" type="StrBoolean" />
       <xs:element name="forageabilityFactor" type="xs:float" />
       <xs:element name="royalTitleTags">
         <xs:complexType>
@@ -141,15 +141,15 @@
         </xs:complexType>
       </xs:element>
       <xs:element name="categoryTag" type="xs:string" />
-      <xs:element name="hostileToFactionlessHumanlikes" type="xs:boolean" />
+      <xs:element name="hostileToFactionlessHumanlikes" type="StrBoolean" />
       <xs:element name="dropPodActive" type="xs:string" />
       <xs:element name="dropPodIncoming" type="xs:string" />
-      <xs:element name="raidsForbidden" type="xs:boolean" />
-      <xs:element name="animalsFleeDanger" type="xs:boolean" />
-      <xs:element name="canRequestTraders" type="xs:boolean" />
-      <xs:element name="canRequestMilitaryAid" type="xs:boolean" />
-      <xs:element name="canRequestOrbitalTrader" type="xs:boolean" />
-      <xs:element name="canGenerateQuestSites" type="xs:boolean" />
+      <xs:element name="raidsForbidden" type="StrBoolean" />
+      <xs:element name="animalsFleeDanger" type="StrBoolean" />
+      <xs:element name="canRequestTraders" type="StrBoolean" />
+      <xs:element name="canRequestMilitaryAid" type="StrBoolean" />
+      <xs:element name="canRequestOrbitalTrader" type="StrBoolean" />
+      <xs:element name="canGenerateQuestSites" type="StrBoolean" />
       <xs:element name="arrivalModeWhitelist">
         <xs:complexType>
           <xs:sequence>
@@ -332,12 +332,12 @@
       </xs:element>
       <xs:element name="requiredCountAtGameStart" type="xs:int" />
       <xs:element name="settlementGenerationWeight" type="xs:float" />
-      <xs:element name="generateNewLeaderFromMapMembersOnly" type="xs:boolean" />
+      <xs:element name="generateNewLeaderFromMapMembersOnly" type="StrBoolean" />
       <xs:element name="maxConfigurableAtWorldCreation" type="xs:int" />
       <xs:element name="startingCountAtWorldCreation" type="xs:int" />
       <xs:element name="configurationListOrderPriority" type="xs:int" />
       <xs:element name="replacesFaction" type="xs:string" />
-      <xs:element name="displayInFactionSelection" type="xs:boolean" />
+      <xs:element name="displayInFactionSelection" type="StrBoolean" />
       <xs:element name="techLevel" type="TechLevel" />
       <xs:element name="backstoryFilters">
         <xs:complexType>
@@ -466,10 +466,10 @@
           <xs:attribute name="MayRequireAnyOf" type="xs:string" />
         </xs:complexType>
       </xs:element>
-      <xs:element name="mustStartOneEnemy" type="xs:boolean" />
-      <xs:element name="naturalEnemy" type="xs:boolean" />
-      <xs:element name="permanentEnemy" type="xs:boolean" />
-      <xs:element name="permanentEnemyToEveryoneExceptPlayer" type="xs:boolean" />
+      <xs:element name="mustStartOneEnemy" type="StrBoolean" />
+      <xs:element name="naturalEnemy" type="StrBoolean" />
+      <xs:element name="permanentEnemy" type="StrBoolean" />
+      <xs:element name="permanentEnemyToEveryoneExceptPlayer" type="StrBoolean" />
       <xs:element name="permanentEnemyToEveryoneExcept">
         <xs:complexType>
           <xs:sequence>
@@ -627,10 +627,10 @@
           <xs:attribute name="MayRequireAnyOf" type="xs:string" />
         </xs:complexType>
       </xs:element>
-      <xs:element name="classicIdeo" type="xs:boolean" />
-      <xs:element name="fixedIdeo" type="xs:boolean" />
+      <xs:element name="classicIdeo" type="StrBoolean" />
+      <xs:element name="fixedIdeo" type="StrBoolean" />
       <xs:element name="ideoName" type="xs:string" />
-      <xs:element name="hiddenIdeo" type="xs:boolean" />
+      <xs:element name="hiddenIdeo" type="StrBoolean" />
       <xs:element name="ideoDescription" type="xs:string" />
       <xs:element name="styles">
         <xs:complexType>
@@ -677,9 +677,9 @@
           <xs:attribute name="MayRequireAnyOf" type="xs:string" />
         </xs:complexType>
       </xs:element>
-      <xs:element name="requiredPreceptsOnly" type="xs:boolean" />
+      <xs:element name="requiredPreceptsOnly" type="StrBoolean" />
       <xs:element name="maxCountAtGameStart" type="xs:int" />
-      <xs:element name="canMakeRandomly" type="xs:boolean" />
+      <xs:element name="canMakeRandomly" type="StrBoolean" />
       <xs:element name="dialogFactionGreetingHostile" type="xs:string" />
       <xs:element name="dialogFactionGreetingHostileAppreciative" type="xs:string" />
       <xs:element name="dialogFactionGreetingWary" type="xs:string" />
@@ -698,8 +698,8 @@
           <xs:attribute name="MayRequireAnyOf" type="xs:string" />
         </xs:complexType>
       </xs:element>
-      <xs:element name="ignoreConfigErrors" type="xs:boolean" />
-      <xs:element name="ignoreIllegalLabelCharacterConfigError" type="xs:boolean" />
+      <xs:element name="ignoreConfigErrors" type="StrBoolean" />
+      <xs:element name="ignoreIllegalLabelCharacterConfigError" type="StrBoolean" />
       <xs:element name="modExtensions">
         <xs:complexType>
           <xs:sequence>

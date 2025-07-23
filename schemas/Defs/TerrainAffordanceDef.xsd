@@ -4,9 +4,9 @@
   <xs:complexType name="TerrainAffordanceDef">
     <xs:choice minOccurs="1" maxOccurs="unbounded">
       <xs:element name="order" type="xs:int" />
-      <xs:element name="visualizeOnAffordanceOverlay" type="xs:boolean" />
+      <xs:element name="visualizeOnAffordanceOverlay" type="StrBoolean" />
       <xs:element name="affordanceOverlayColor" type="Color" />
-      <xs:element name="blockAffordanceOverlay" type="xs:boolean" />
+      <xs:element name="blockAffordanceOverlay" type="StrBoolean" />
       <xs:element name="defName" type="xs:string" />
       <xs:element name="label" type="xs:string" />
       <xs:element name="description" type="xs:string" />
@@ -19,8 +19,8 @@
           <xs:attribute name="MayRequireAnyOf" type="xs:string" />
         </xs:complexType>
       </xs:element>
-      <xs:element name="ignoreConfigErrors" type="xs:boolean" />
-      <xs:element name="ignoreIllegalLabelCharacterConfigError" type="xs:boolean" />
+      <xs:element name="ignoreConfigErrors" type="StrBoolean" />
+      <xs:element name="ignoreIllegalLabelCharacterConfigError" type="StrBoolean" />
       <xs:element name="modExtensions">
         <xs:complexType>
           <xs:sequence>

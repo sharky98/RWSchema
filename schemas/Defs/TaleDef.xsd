@@ -5,9 +5,9 @@
     <xs:choice minOccurs="1" maxOccurs="unbounded">
       <xs:element name="type" type="TaleType" />
       <xs:element name="taleClass" type="xs:string" />
-      <xs:element name="usableForArt" type="xs:boolean" />
-      <xs:element name="colonistOnly" type="xs:boolean" />
-      <xs:element name="usableWithChildren" type="xs:boolean" />
+      <xs:element name="usableForArt" type="StrBoolean" />
+      <xs:element name="colonistOnly" type="StrBoolean" />
+      <xs:element name="usableWithChildren" type="StrBoolean" />
       <xs:element name="maxPerPawn" type="xs:int" />
       <xs:element name="ignoreChance" type="xs:float" />
       <xs:element name="expireDays" type="xs:float" />
@@ -30,8 +30,8 @@
           <xs:attribute name="MayRequireAnyOf" type="xs:string" />
         </xs:complexType>
       </xs:element>
-      <xs:element name="ignoreConfigErrors" type="xs:boolean" />
-      <xs:element name="ignoreIllegalLabelCharacterConfigError" type="xs:boolean" />
+      <xs:element name="ignoreConfigErrors" type="StrBoolean" />
+      <xs:element name="ignoreIllegalLabelCharacterConfigError" type="StrBoolean" />
       <xs:element name="modExtensions">
         <xs:complexType>
           <xs:sequence>

@@ -3,21 +3,21 @@
   <xs:include schemaLocation="CommonElements.xsd" />
   <xs:complexType name="PlanetLayerDef">
     <xs:choice minOccurs="1" maxOccurs="unbounded">
-      <xs:element name="onlyAllowWhitelistedIncidents" type="xs:boolean" />
-      <xs:element name="onlyAllowWhitelistedBiomes" type="xs:boolean" />
-      <xs:element name="onlyAllowWhitelistedGameConditions" type="xs:boolean" />
-      <xs:element name="onlyAllowWhitelistedQuests" type="xs:boolean" />
-      <xs:element name="onlyAllowWhitelistedArrivals" type="xs:boolean" />
-      <xs:element name="onlyAllowWhitelistedArrivalModes" type="xs:boolean" />
-      <xs:element name="alwaysRaycastable" type="xs:boolean" />
-      <xs:element name="obstructsExpandingIcons" type="xs:boolean" />
-      <xs:element name="canFormCaravans" type="xs:boolean" />
-      <xs:element name="isSpace" type="xs:boolean" />
+      <xs:element name="onlyAllowWhitelistedIncidents" type="StrBoolean" />
+      <xs:element name="onlyAllowWhitelistedBiomes" type="StrBoolean" />
+      <xs:element name="onlyAllowWhitelistedGameConditions" type="StrBoolean" />
+      <xs:element name="onlyAllowWhitelistedQuests" type="StrBoolean" />
+      <xs:element name="onlyAllowWhitelistedArrivals" type="StrBoolean" />
+      <xs:element name="onlyAllowWhitelistedArrivalModes" type="StrBoolean" />
+      <xs:element name="alwaysRaycastable" type="StrBoolean" />
+      <xs:element name="obstructsExpandingIcons" type="StrBoolean" />
+      <xs:element name="canFormCaravans" type="StrBoolean" />
+      <xs:element name="isSpace" type="StrBoolean" />
       <xs:element name="rangeDistanceFactor" type="xs:float" />
       <xs:element name="generatedLocationFactor" type="xs:float" />
       <xs:element name="raidPointsFactor" type="xs:float" />
       <xs:element name="backgroundBiome" type="xs:string" />
-      <xs:element name="ignoreNoBuildArea" type="xs:boolean" />
+      <xs:element name="ignoreNoBuildArea" type="StrBoolean" />
       <xs:element name="lineColor" type="Color" />
       <xs:element name="lineWidthFactor" type="xs:float" />
       <xs:element name="worldDrawLayers">
@@ -43,7 +43,7 @@
       <xs:element name="elevationString" type="xs:string" />
       <xs:element name="viewGizmoTooltip" type="xs:string" />
       <xs:element name="gerundLabel" type="xs:string" />
-      <xs:element name="viewGizmoOnlyVisibleWithDirectConnection" type="xs:boolean" />
+      <xs:element name="viewGizmoOnlyVisibleWithDirectConnection" type="StrBoolean" />
       <xs:element name="settlementsPer100kTiles">
         <xs:simpleType>
           <xs:restriction base="xs:string">
@@ -64,8 +64,8 @@
           <xs:attribute name="MayRequireAnyOf" type="xs:string" />
         </xs:complexType>
       </xs:element>
-      <xs:element name="ignoreConfigErrors" type="xs:boolean" />
-      <xs:element name="ignoreIllegalLabelCharacterConfigError" type="xs:boolean" />
+      <xs:element name="ignoreConfigErrors" type="StrBoolean" />
+      <xs:element name="ignoreIllegalLabelCharacterConfigError" type="StrBoolean" />
       <xs:element name="modExtensions">
         <xs:complexType>
           <xs:sequence>

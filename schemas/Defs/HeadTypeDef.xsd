@@ -5,14 +5,14 @@
     <xs:choice minOccurs="1" maxOccurs="unbounded">
       <xs:element name="graphicPath" type="xs:string" />
       <xs:element name="gender" type="Gender" />
-      <xs:element name="narrow" type="xs:boolean" />
+      <xs:element name="narrow" type="StrBoolean" />
       <xs:element name="hairMeshSize" type="Vector2" />
       <xs:element name="beardMeshSize" type="Vector2" />
       <xs:element name="beardOffset" type="Vector3" />
       <xs:element name="eyeOffsetEastWest" type="Vector3" />
       <xs:element name="beardOffsetXEast" type="xs:float" />
       <xs:element name="selectionWeight" type="xs:float" />
-      <xs:element name="randomChosen" type="xs:boolean" />
+      <xs:element name="randomChosen" type="StrBoolean" />
       <xs:element name="requiredGenes">
         <xs:complexType>
           <xs:sequence>
@@ -43,8 +43,8 @@
           <xs:attribute name="MayRequireAnyOf" type="xs:string" />
         </xs:complexType>
       </xs:element>
-      <xs:element name="ignoreConfigErrors" type="xs:boolean" />
-      <xs:element name="ignoreIllegalLabelCharacterConfigError" type="xs:boolean" />
+      <xs:element name="ignoreConfigErrors" type="StrBoolean" />
+      <xs:element name="ignoreIllegalLabelCharacterConfigError" type="StrBoolean" />
       <xs:element name="modExtensions">
         <xs:complexType>
           <xs:sequence>

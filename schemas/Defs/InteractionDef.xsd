@@ -11,7 +11,7 @@
       <xs:element name="recipientThought" type="xs:string" />
       <xs:element name="recipientXpGainSkill" type="xs:string" />
       <xs:element name="recipientXpGainAmount" type="xs:int" />
-      <xs:element name="ignoreTimeSinceLastInteraction" type="xs:boolean" />
+      <xs:element name="ignoreTimeSinceLastInteraction" type="StrBoolean" />
       <xs:element name="symbolSource" type="InteractionSymbolSource" />
       <xs:element name="logRulesInitiator" type="RulePack" />
       <xs:element name="logRulesRecipient" type="RulePack" />
@@ -27,8 +27,8 @@
           <xs:attribute name="MayRequireAnyOf" type="xs:string" />
         </xs:complexType>
       </xs:element>
-      <xs:element name="ignoreConfigErrors" type="xs:boolean" />
-      <xs:element name="ignoreIllegalLabelCharacterConfigError" type="xs:boolean" />
+      <xs:element name="ignoreConfigErrors" type="StrBoolean" />
+      <xs:element name="ignoreIllegalLabelCharacterConfigError" type="StrBoolean" />
       <xs:element name="modExtensions">
         <xs:complexType>
           <xs:sequence>

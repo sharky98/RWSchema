@@ -16,10 +16,10 @@
       </xs:element>
       <xs:element name="stackLimit" type="xs:int" />
       <xs:element name="stackedEffectMultiplier" type="xs:float" />
-      <xs:element name="stagesStack" type="xs:boolean" />
+      <xs:element name="stagesStack" type="StrBoolean" />
       <xs:element name="durationDays" type="xs:float" />
-      <xs:element name="invert" type="xs:boolean" />
-      <xs:element name="validWhileDespawned" type="xs:boolean" />
+      <xs:element name="invert" type="StrBoolean" />
+      <xs:element name="validWhileDespawned" type="StrBoolean" />
       <xs:element name="nextThought" type="xs:string" />
       <xs:element name="producesMemoryThought" type="xs:string" />
       <xs:element name="nullifyingTraits">
@@ -198,9 +198,9 @@
       <xs:element name="hediff" type="xs:string" />
       <xs:element name="mentalState" type="xs:string" />
       <xs:element name="gameCondition" type="xs:string" />
-      <xs:element name="nullifiedIfNotColonist" type="xs:boolean" />
+      <xs:element name="nullifiedIfNotColonist" type="StrBoolean" />
       <xs:element name="thoughtToMake" type="xs:string" />
-      <xs:element name="showBubble" type="xs:boolean" />
+      <xs:element name="showBubble" type="StrBoolean" />
       <xs:element name="minExpectation" type="xs:string" />
       <xs:element name="minExpectationForNegativeThought" type="xs:string" />
       <xs:element name="replaceThoughts">
@@ -223,12 +223,12 @@
       </xs:element>
       <xs:element name="developmentalStageFilter" type="DevelopmentalStage" />
       <xs:element name="chemicalDef" type="xs:string" />
-      <xs:element name="lerpMoodToZero" type="xs:boolean" />
+      <xs:element name="lerpMoodToZero" type="StrBoolean" />
       <xs:element name="stackLimitForSameOtherPawn" type="xs:int" />
       <xs:element name="lerpOpinionToZeroAfterDurationPct" type="xs:float" />
       <xs:element name="socialTargetDevelopmentalStageFilter" type="DevelopmentalStage" />
-      <xs:element name="ignoreSubhumans" type="xs:boolean" />
-      <xs:element name="doNotApplyToQuestLodgers" type="xs:boolean" />
+      <xs:element name="ignoreSubhumans" type="StrBoolean" />
+      <xs:element name="doNotApplyToQuestLodgers" type="StrBoolean" />
       <xs:element name="maxCumulatedOpinionOffset" type="xs:float" />
       <xs:element name="taleDef" type="xs:string" />
       <xs:element name="gender" type="Gender" />
@@ -245,8 +245,8 @@
           <xs:attribute name="MayRequireAnyOf" type="xs:string" />
         </xs:complexType>
       </xs:element>
-      <xs:element name="ignoreConfigErrors" type="xs:boolean" />
-      <xs:element name="ignoreIllegalLabelCharacterConfigError" type="xs:boolean" />
+      <xs:element name="ignoreConfigErrors" type="StrBoolean" />
+      <xs:element name="ignoreIllegalLabelCharacterConfigError" type="StrBoolean" />
       <xs:element name="modExtensions">
         <xs:complexType>
           <xs:sequence>

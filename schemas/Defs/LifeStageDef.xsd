@@ -3,24 +3,24 @@
   <xs:include schemaLocation="CommonElements.xsd" />
   <xs:complexType name="LifeStageDef">
     <xs:choice minOccurs="1" maxOccurs="unbounded">
-      <xs:element name="visible" type="xs:boolean" />
-      <xs:element name="reproductive" type="xs:boolean" />
-      <xs:element name="milkable" type="xs:boolean" />
-      <xs:element name="shearable" type="xs:boolean" />
-      <xs:element name="caravanRideable" type="xs:boolean" />
-      <xs:element name="alwaysDowned" type="xs:boolean" />
-      <xs:element name="claimable" type="xs:boolean" />
+      <xs:element name="visible" type="StrBoolean" />
+      <xs:element name="reproductive" type="StrBoolean" />
+      <xs:element name="milkable" type="StrBoolean" />
+      <xs:element name="shearable" type="StrBoolean" />
+      <xs:element name="caravanRideable" type="StrBoolean" />
+      <xs:element name="alwaysDowned" type="StrBoolean" />
+      <xs:element name="claimable" type="StrBoolean" />
       <xs:element name="developmentalStage" type="DevelopmentalStage" />
       <xs:element name="workerClass" type="xs:string" />
-      <xs:element name="involuntarySleepIsNegativeEvent" type="xs:boolean" />
+      <xs:element name="involuntarySleepIsNegativeEvent" type="StrBoolean" />
       <xs:element name="thinkTreeMainOverride" type="xs:string" />
       <xs:element name="thinkTreeConstantOverride" type="xs:string" />
-      <xs:element name="canDoRandomMentalBreaks" type="xs:boolean" />
+      <xs:element name="canDoRandomMentalBreaks" type="StrBoolean" />
       <xs:element name="customMoodTipString" type="xs:string" />
-      <xs:element name="canSleepWhileHeld" type="xs:boolean" />
-      <xs:element name="canVoluntarilySleep" type="xs:boolean" />
-      <xs:element name="canSleepWhenStarving" type="xs:boolean" />
-      <xs:element name="canInitiateSocialInteraction" type="xs:boolean" />
+      <xs:element name="canSleepWhileHeld" type="StrBoolean" />
+      <xs:element name="canVoluntarilySleep" type="StrBoolean" />
+      <xs:element name="canSleepWhenStarving" type="StrBoolean" />
+      <xs:element name="canInitiateSocialInteraction" type="StrBoolean" />
       <xs:element name="equipmentDrawDistanceFactor" type="xs:float" />
       <xs:element name="soundAttackChance" type="xs:float" />
       <xs:element name="voxPitch" type="xs:float" />
@@ -72,8 +72,8 @@
           <xs:attribute name="MayRequireAnyOf" type="xs:string" />
         </xs:complexType>
       </xs:element>
-      <xs:element name="ignoreConfigErrors" type="xs:boolean" />
-      <xs:element name="ignoreIllegalLabelCharacterConfigError" type="xs:boolean" />
+      <xs:element name="ignoreConfigErrors" type="StrBoolean" />
+      <xs:element name="ignoreIllegalLabelCharacterConfigError" type="StrBoolean" />
       <xs:element name="modExtensions">
         <xs:complexType>
           <xs:sequence>

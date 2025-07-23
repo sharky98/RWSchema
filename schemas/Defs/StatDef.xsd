@@ -6,23 +6,23 @@
       <xs:element name="category" type="xs:string" />
       <xs:element name="workerClass" type="xs:string" />
       <xs:element name="labelForFullStatList" type="xs:string" />
-      <xs:element name="forInformationOnly" type="xs:boolean" />
+      <xs:element name="forInformationOnly" type="StrBoolean" />
       <xs:element name="hideAtValue" type="xs:float" />
-      <xs:element name="alwaysHide" type="xs:boolean" />
-      <xs:element name="showNonAbstract" type="xs:boolean" />
-      <xs:element name="showIfUndefined" type="xs:boolean" />
-      <xs:element name="showOnPawns" type="xs:boolean" />
-      <xs:element name="showOnHumanlikes" type="xs:boolean" />
-      <xs:element name="showOnNonWildManHumanlikes" type="xs:boolean" />
-      <xs:element name="showOnAnimals" type="xs:boolean" />
-      <xs:element name="showOnMechanoids" type="xs:boolean" />
-      <xs:element name="showOnNonWorkTables" type="xs:boolean" />
-      <xs:element name="showOnEntities" type="xs:boolean" />
-      <xs:element name="showOnDrones" type="xs:boolean" />
-      <xs:element name="showOnNonPowerPlants" type="xs:boolean" />
-      <xs:element name="showOnDefaultValue" type="xs:boolean" />
-      <xs:element name="showOnUnhaulables" type="xs:boolean" />
-      <xs:element name="showOnUntradeables" type="xs:boolean" />
+      <xs:element name="alwaysHide" type="StrBoolean" />
+      <xs:element name="showNonAbstract" type="StrBoolean" />
+      <xs:element name="showIfUndefined" type="StrBoolean" />
+      <xs:element name="showOnPawns" type="StrBoolean" />
+      <xs:element name="showOnHumanlikes" type="StrBoolean" />
+      <xs:element name="showOnNonWildManHumanlikes" type="StrBoolean" />
+      <xs:element name="showOnAnimals" type="StrBoolean" />
+      <xs:element name="showOnMechanoids" type="StrBoolean" />
+      <xs:element name="showOnNonWorkTables" type="StrBoolean" />
+      <xs:element name="showOnEntities" type="StrBoolean" />
+      <xs:element name="showOnDrones" type="StrBoolean" />
+      <xs:element name="showOnNonPowerPlants" type="StrBoolean" />
+      <xs:element name="showOnDefaultValue" type="StrBoolean" />
+      <xs:element name="showOnUnhaulables" type="StrBoolean" />
+      <xs:element name="showOnUntradeables" type="StrBoolean" />
       <xs:element name="showIfModsLoaded">
         <xs:complexType>
           <xs:sequence>
@@ -77,12 +77,12 @@
           <xs:attribute name="MayRequireAnyOf" type="xs:string" />
         </xs:complexType>
       </xs:element>
-      <xs:element name="neverDisabled" type="xs:boolean" />
-      <xs:element name="showZeroBaseValue" type="xs:boolean" />
-      <xs:element name="showOnSlavesOnly" type="xs:boolean" />
-      <xs:element name="showOnPlayerMechanoids" type="xs:boolean" />
+      <xs:element name="neverDisabled" type="StrBoolean" />
+      <xs:element name="showZeroBaseValue" type="StrBoolean" />
+      <xs:element name="showOnSlavesOnly" type="StrBoolean" />
+      <xs:element name="showOnPlayerMechanoids" type="StrBoolean" />
       <xs:element name="showDevelopmentalStageFilter" type="DevelopmentalStage" />
-      <xs:element name="hideInClassicMode" type="xs:boolean" />
+      <xs:element name="hideInClassicMode" type="StrBoolean" />
       <xs:element name="showOnPawnKind">
         <xs:complexType>
           <xs:sequence>
@@ -101,13 +101,13 @@
           <xs:attribute name="MayRequireAnyOf" type="xs:string" />
         </xs:complexType>
       </xs:element>
-      <xs:element name="overridesHideStats" type="xs:boolean" />
+      <xs:element name="overridesHideStats" type="StrBoolean" />
       <xs:element name="displayPriorityInCategory" type="xs:int" />
       <xs:element name="toStringNumberSense" type="ToStringNumberSense" />
       <xs:element name="toStringStyle" type="ToStringStyle" />
       <xs:element name="formatString" type="xs:string" />
       <xs:element name="formatStringUnfinalized" type="xs:string" />
-      <xs:element name="finalizeEquippedStatOffset" type="xs:boolean" />
+      <xs:element name="finalizeEquippedStatOffset" type="StrBoolean" />
       <xs:element name="statFactorsExplanationHeader" type="xs:string" />
       <xs:element name="defaultBaseValue" type="xs:float" />
       <xs:element name="skillNeedOffsets">
@@ -147,7 +147,7 @@
           <xs:attribute name="MayRequireAnyOf" type="xs:string" />
         </xs:complexType>
       </xs:element>
-      <xs:element name="applyFactorsIfNegative" type="xs:boolean" />
+      <xs:element name="applyFactorsIfNegative" type="StrBoolean" />
       <xs:element name="skillNeedFactors">
         <xs:complexType>
           <xs:sequence>
@@ -188,13 +188,13 @@
       <xs:element name="minValue" type="xs:float" />
       <xs:element name="maxValue" type="xs:float" />
       <xs:element name="valueIfMissing" type="xs:float" />
-      <xs:element name="roundValue" type="xs:boolean" />
+      <xs:element name="roundValue" type="StrBoolean" />
       <xs:element name="roundToFiveOver" type="xs:float" />
-      <xs:element name="minifiedThingInherits" type="xs:boolean" />
-      <xs:element name="supressDisabledError" type="xs:boolean" />
-      <xs:element name="cacheable" type="xs:boolean" />
-      <xs:element name="displayMaxWhenAboveOrEqual" type="xs:boolean" />
-      <xs:element name="scenarioRandomizable" type="xs:boolean" />
+      <xs:element name="minifiedThingInherits" type="StrBoolean" />
+      <xs:element name="supressDisabledError" type="StrBoolean" />
+      <xs:element name="cacheable" type="StrBoolean" />
+      <xs:element name="displayMaxWhenAboveOrEqual" type="StrBoolean" />
+      <xs:element name="scenarioRandomizable" type="StrBoolean" />
       <xs:element name="disableIfSkillDisabled" type="xs:string" />
       <xs:element name="parts">
         <xs:complexType>
@@ -217,8 +217,8 @@
           <xs:attribute name="MayRequireAnyOf" type="xs:string" />
         </xs:complexType>
       </xs:element>
-      <xs:element name="ignoreConfigErrors" type="xs:boolean" />
-      <xs:element name="ignoreIllegalLabelCharacterConfigError" type="xs:boolean" />
+      <xs:element name="ignoreConfigErrors" type="StrBoolean" />
+      <xs:element name="ignoreIllegalLabelCharacterConfigError" type="StrBoolean" />
       <xs:element name="modExtensions">
         <xs:complexType>
           <xs:sequence>

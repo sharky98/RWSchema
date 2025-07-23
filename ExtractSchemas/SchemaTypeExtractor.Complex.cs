@@ -75,6 +75,16 @@ partial class SchemaTypeExtractor
     if (IsFieldIgnored(field))
       return null;
 
+    // Boolean are a special case... The XML does not respect the standard xs:boolean XML data type.
+    if (field.FieldType == typeof(bool))
+    {
+      return new XmlSchemaElement()
+      {
+        Name = field.Name,
+        SchemaTypeName = new XmlQualifiedName("StrBoolean", SchemaCommonValues.targetNamespace),
+      };
+    }
+
     // If the field name is a known type, the element will be of that type.
     if (knownTypes.TryGetValue(field.FieldType, out string? value))
       return new XmlSchemaElement()

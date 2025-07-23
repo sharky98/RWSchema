@@ -4,8 +4,8 @@
   <xs:complexType name="TimeAssignmentDef">
     <xs:choice minOccurs="1" maxOccurs="unbounded">
       <xs:element name="color" type="Color" />
-      <xs:element name="allowRest" type="xs:boolean" />
-      <xs:element name="allowJoy" type="xs:boolean" />
+      <xs:element name="allowRest" type="StrBoolean" />
+      <xs:element name="allowJoy" type="StrBoolean" />
       <xs:element name="defName" type="xs:string" />
       <xs:element name="label" type="xs:string" />
       <xs:element name="description" type="xs:string" />
@@ -18,8 +18,8 @@
           <xs:attribute name="MayRequireAnyOf" type="xs:string" />
         </xs:complexType>
       </xs:element>
-      <xs:element name="ignoreConfigErrors" type="xs:boolean" />
-      <xs:element name="ignoreIllegalLabelCharacterConfigError" type="xs:boolean" />
+      <xs:element name="ignoreConfigErrors" type="StrBoolean" />
+      <xs:element name="ignoreIllegalLabelCharacterConfigError" type="StrBoolean" />
       <xs:element name="modExtensions">
         <xs:complexType>
           <xs:sequence>

@@ -4,18 +4,18 @@
   <xs:complexType name="DifficultyDef">
     <xs:choice minOccurs="1" maxOccurs="unbounded">
       <xs:element name="drawColor" type="Color" />
-      <xs:element name="isExtreme" type="xs:boolean" />
-      <xs:element name="isCustom" type="xs:boolean" />
+      <xs:element name="isExtreme" type="StrBoolean" />
+      <xs:element name="isCustom" type="StrBoolean" />
       <xs:element name="difficulty" type="xs:int" />
       <xs:element name="threatScale" type="xs:float" />
-      <xs:element name="allowBigThreats" type="xs:boolean" />
-      <xs:element name="allowIntroThreats" type="xs:boolean" />
-      <xs:element name="allowCaveHives" type="xs:boolean" />
-      <xs:element name="peacefulTemples" type="xs:boolean" />
-      <xs:element name="allowViolentQuests" type="xs:boolean" />
-      <xs:element name="predatorsHuntHumanlikes" type="xs:boolean" />
-      <xs:element name="babiesAreHealthy" type="xs:boolean" />
-      <xs:element name="noBabiesOrChildren" type="xs:boolean" />
+      <xs:element name="allowBigThreats" type="StrBoolean" />
+      <xs:element name="allowIntroThreats" type="StrBoolean" />
+      <xs:element name="allowCaveHives" type="StrBoolean" />
+      <xs:element name="peacefulTemples" type="StrBoolean" />
+      <xs:element name="allowViolentQuests" type="StrBoolean" />
+      <xs:element name="predatorsHuntHumanlikes" type="StrBoolean" />
+      <xs:element name="babiesAreHealthy" type="StrBoolean" />
+      <xs:element name="noBabiesOrChildren" type="StrBoolean" />
       <xs:element name="scariaRotChance" type="xs:float" />
       <xs:element name="colonistMoodOffset" type="xs:float" />
       <xs:element name="tradePriceFactorLoss" type="xs:float" />
@@ -39,18 +39,18 @@
       <xs:element name="adaptationEffectFactor" type="xs:float" />
       <xs:element name="questRewardValueFactor" type="xs:float" />
       <xs:element name="raidLootPointsFactor" type="xs:float" />
-      <xs:element name="allowTraps" type="xs:boolean" />
-      <xs:element name="allowTurrets" type="xs:boolean" />
-      <xs:element name="allowMortars" type="xs:boolean" />
-      <xs:element name="classicMortars" type="xs:boolean" />
-      <xs:element name="allowExtremeWeatherIncidents" type="xs:boolean" />
-      <xs:element name="fixedWealthMode" type="xs:boolean" />
+      <xs:element name="allowTraps" type="StrBoolean" />
+      <xs:element name="allowTurrets" type="StrBoolean" />
+      <xs:element name="allowMortars" type="StrBoolean" />
+      <xs:element name="classicMortars" type="StrBoolean" />
+      <xs:element name="allowExtremeWeatherIncidents" type="StrBoolean" />
+      <xs:element name="fixedWealthMode" type="StrBoolean" />
       <xs:element name="lowPopConversionBoost" type="xs:float" />
       <xs:element name="minThreatPointsRangeCeiling" type="xs:float" />
       <xs:element name="childAgingRate" type="xs:float" />
       <xs:element name="adultAgingRate" type="xs:float" />
-      <xs:element name="unwaveringPrisoners" type="xs:boolean" />
-      <xs:element name="childRaidersAllowed" type="xs:boolean" />
+      <xs:element name="unwaveringPrisoners" type="StrBoolean" />
+      <xs:element name="childRaidersAllowed" type="StrBoolean" />
       <xs:element name="anomalyThreatsInactiveFraction" type="xs:float" />
       <xs:element name="anomalyThreatsActiveFraction" type="xs:float" />
       <xs:element name="studyEfficiencyFactor" type="xs:float" />
@@ -66,8 +66,8 @@
           <xs:attribute name="MayRequireAnyOf" type="xs:string" />
         </xs:complexType>
       </xs:element>
-      <xs:element name="ignoreConfigErrors" type="xs:boolean" />
-      <xs:element name="ignoreIllegalLabelCharacterConfigError" type="xs:boolean" />
+      <xs:element name="ignoreConfigErrors" type="StrBoolean" />
+      <xs:element name="ignoreIllegalLabelCharacterConfigError" type="StrBoolean" />
       <xs:element name="modExtensions">
         <xs:complexType>
           <xs:sequence>

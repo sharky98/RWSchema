@@ -8,8 +8,8 @@
       <xs:element name="postSpawnPassiveThreatFactor" type="xs:float" />
       <xs:element name="minPoints" type="xs:int" />
       <xs:element name="spawnInOtherRoomChance" type="xs:float" />
-      <xs:element name="allowPassive" type="xs:boolean" />
-      <xs:element name="fallbackToRoomEnteredTrigger" type="xs:boolean" />
+      <xs:element name="allowPassive" type="StrBoolean" />
+      <xs:element name="fallbackToRoomEnteredTrigger" type="StrBoolean" />
       <xs:element name="delayChance" type="xs:float" />
       <xs:element name="delayTickOptions">
         <xs:complexType>
@@ -30,8 +30,8 @@
         </xs:complexType>
       </xs:element>
       <xs:element name="signalActionAmbushType" type="SignalActionAmbushType" />
-      <xs:element name="spawnAroundComplex" type="xs:boolean" />
-      <xs:element name="useDropPods" type="xs:boolean" />
+      <xs:element name="spawnAroundComplex" type="StrBoolean" />
+      <xs:element name="useDropPods" type="StrBoolean" />
       <xs:element name="defName" type="xs:string" />
       <xs:element name="label" type="xs:string" />
       <xs:element name="description" type="xs:string" />
@@ -44,8 +44,8 @@
           <xs:attribute name="MayRequireAnyOf" type="xs:string" />
         </xs:complexType>
       </xs:element>
-      <xs:element name="ignoreConfigErrors" type="xs:boolean" />
-      <xs:element name="ignoreIllegalLabelCharacterConfigError" type="xs:boolean" />
+      <xs:element name="ignoreConfigErrors" type="StrBoolean" />
+      <xs:element name="ignoreIllegalLabelCharacterConfigError" type="StrBoolean" />
       <xs:element name="modExtensions">
         <xs:complexType>
           <xs:sequence>

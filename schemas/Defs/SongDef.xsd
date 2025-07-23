@@ -5,9 +5,9 @@
     <xs:choice minOccurs="1" maxOccurs="unbounded">
       <xs:element name="clipPath" type="xs:string" />
       <xs:element name="volume" type="xs:float" />
-      <xs:element name="playOnMap" type="xs:boolean" />
+      <xs:element name="playOnMap" type="StrBoolean" />
       <xs:element name="commonality" type="xs:float" />
-      <xs:element name="tense" type="xs:boolean" />
+      <xs:element name="tense" type="StrBoolean" />
       <xs:element name="allowedTimeOfDay" type="TimeOfDay" />
       <xs:element name="allowedSeasons">
         <xs:complexType>
@@ -31,8 +31,8 @@
           <xs:attribute name="MayRequireAnyOf" type="xs:string" />
         </xs:complexType>
       </xs:element>
-      <xs:element name="ignoreConfigErrors" type="xs:boolean" />
-      <xs:element name="ignoreIllegalLabelCharacterConfigError" type="xs:boolean" />
+      <xs:element name="ignoreConfigErrors" type="StrBoolean" />
+      <xs:element name="ignoreIllegalLabelCharacterConfigError" type="StrBoolean" />
       <xs:element name="modExtensions">
         <xs:complexType>
           <xs:sequence>

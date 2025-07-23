@@ -7,7 +7,7 @@
       <xs:element name="ateAsIngredient" type="xs:string" />
       <xs:element name="corpseCategory" type="xs:string" />
       <xs:element name="damageEffecter" type="xs:string" />
-      <xs:element name="isOrganic" type="xs:boolean" />
+      <xs:element name="isOrganic" type="StrBoolean" />
       <xs:element name="genericWounds">
         <xs:complexType>
           <xs:sequence>
@@ -47,8 +47,8 @@
           <xs:attribute name="MayRequireAnyOf" type="xs:string" />
         </xs:complexType>
       </xs:element>
-      <xs:element name="ignoreConfigErrors" type="xs:boolean" />
-      <xs:element name="ignoreIllegalLabelCharacterConfigError" type="xs:boolean" />
+      <xs:element name="ignoreConfigErrors" type="StrBoolean" />
+      <xs:element name="ignoreIllegalLabelCharacterConfigError" type="StrBoolean" />
       <xs:element name="modExtensions">
         <xs:complexType>
           <xs:sequence>

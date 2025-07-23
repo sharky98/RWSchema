@@ -29,7 +29,7 @@
       <xs:element name="drawScale" type="xs:float" />
       <xs:element name="drawType" type="LandmarkDrawType" />
       <xs:element name="coastRotateMode" type="CoastRotateMode" />
-      <xs:element name="drawAboveRoads" type="xs:boolean" />
+      <xs:element name="drawAboveRoads" type="StrBoolean" />
       <xs:element name="category" type="xs:string" />
       <xs:element name="terrainParameters">
         <xs:complexType>
@@ -52,8 +52,8 @@
           <xs:attribute name="MayRequireAnyOf" type="xs:string" />
         </xs:complexType>
       </xs:element>
-      <xs:element name="ignoreConfigErrors" type="xs:boolean" />
-      <xs:element name="ignoreIllegalLabelCharacterConfigError" type="xs:boolean" />
+      <xs:element name="ignoreConfigErrors" type="StrBoolean" />
+      <xs:element name="ignoreIllegalLabelCharacterConfigError" type="StrBoolean" />
       <xs:element name="modExtensions">
         <xs:complexType>
           <xs:sequence>

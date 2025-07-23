@@ -7,9 +7,9 @@
       <xs:element name="workerClass" type="xs:string" />
       <xs:element name="baseCommonality" type="xs:float" />
       <xs:element name="baseDurationDays" type="xs:float" />
-      <xs:element name="allowedOnAnimals" type="xs:boolean" />
-      <xs:element name="allowedOnNonColonists" type="xs:boolean" />
-      <xs:element name="allowedOnDownedPawns" type="xs:boolean" />
+      <xs:element name="allowedOnAnimals" type="StrBoolean" />
+      <xs:element name="allowedOnNonColonists" type="StrBoolean" />
+      <xs:element name="allowedOnDownedPawns" type="StrBoolean" />
       <xs:element name="requiredNonDisabledStats">
         <xs:complexType>
           <xs:sequence>
@@ -155,8 +155,8 @@
           <xs:attribute name="MayRequireAnyOf" type="xs:string" />
         </xs:complexType>
       </xs:element>
-      <xs:element name="ignoreConfigErrors" type="xs:boolean" />
-      <xs:element name="ignoreIllegalLabelCharacterConfigError" type="xs:boolean" />
+      <xs:element name="ignoreConfigErrors" type="StrBoolean" />
+      <xs:element name="ignoreIllegalLabelCharacterConfigError" type="StrBoolean" />
       <xs:element name="modExtensions">
         <xs:complexType>
           <xs:sequence>

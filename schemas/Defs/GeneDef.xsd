@@ -35,9 +35,9 @@
           <xs:attribute name="MayRequireAnyOf" type="xs:string" />
         </xs:complexType>
       </xs:element>
-      <xs:element name="neverGrayHair" type="xs:boolean" />
-      <xs:element name="skinIsHairColor" type="xs:boolean" />
-      <xs:element name="tattoosVisible" type="xs:boolean" />
+      <xs:element name="neverGrayHair" type="StrBoolean" />
+      <xs:element name="skinIsHairColor" type="StrBoolean" />
+      <xs:element name="tattoosVisible" type="StrBoolean" />
       <xs:element name="fur" type="xs:string" />
       <xs:element name="soundCall" type="xs:string" />
       <xs:element name="soundDeath" type="xs:string" />
@@ -64,9 +64,9 @@
           <xs:attribute name="MayRequireAnyOf" type="xs:string" />
         </xs:complexType>
       </xs:element>
-      <xs:element name="showGizmoOnWorldView" type="xs:boolean" />
-      <xs:element name="showGizmoWhenDrafted" type="xs:boolean" />
-      <xs:element name="showGizmoOnMultiSelect" type="xs:boolean" />
+      <xs:element name="showGizmoOnWorldView" type="StrBoolean" />
+      <xs:element name="showGizmoWhenDrafted" type="StrBoolean" />
+      <xs:element name="showGizmoOnMultiSelect" type="StrBoolean" />
       <xs:element name="abilities">
         <xs:complexType>
           <xs:sequence>
@@ -140,14 +140,14 @@
         </xs:complexType>
       </xs:element>
       <xs:element name="disabledWorkTags" type="WorkTags" />
-      <xs:element name="ignoreDarkness" type="xs:boolean" />
+      <xs:element name="ignoreDarkness" type="StrBoolean" />
       <xs:element name="endogeneCategory" type="EndogeneCategory" />
-      <xs:element name="dislikesSunlight" type="xs:boolean" />
+      <xs:element name="dislikesSunlight" type="StrBoolean" />
       <xs:element name="minAgeActive" type="xs:float" />
       <xs:element name="lovinMTBFactor" type="xs:float" />
-      <xs:element name="immuneToToxGasExposure" type="xs:boolean" />
-      <xs:element name="immuneToVacuumBurns" type="xs:boolean" />
-      <xs:element name="randomChosen" type="xs:boolean" />
+      <xs:element name="immuneToToxGasExposure" type="StrBoolean" />
+      <xs:element name="immuneToVacuumBurns" type="StrBoolean" />
+      <xs:element name="randomChosen" type="StrBoolean" />
       <xs:element name="waterCellCost" type="xs:int" />
       <xs:element name="deathHistoryEvent" type="xs:string" />
       <xs:element name="aptitudes">
@@ -239,7 +239,7 @@
       <xs:element name="addictionChanceFactor" type="xs:float" />
       <xs:element name="overdoseChanceFactor" type="xs:float" />
       <xs:element name="toleranceBuildupFactor" type="xs:float" />
-      <xs:element name="sterilize" type="xs:boolean" />
+      <xs:element name="sterilize" type="StrBoolean" />
       <xs:element name="capMods">
         <xs:complexType>
           <xs:sequence>
@@ -249,8 +249,8 @@
           <xs:attribute name="MayRequireAnyOf" type="xs:string" />
         </xs:complexType>
       </xs:element>
-      <xs:element name="preventPermanentWounds" type="xs:boolean" />
-      <xs:element name="dontMindRawFood" type="xs:boolean" />
+      <xs:element name="preventPermanentWounds" type="StrBoolean" />
+      <xs:element name="dontMindRawFood" type="StrBoolean" />
       <xs:element name="hairColorOverride" type="Color" />
       <xs:element name="skinColorBase" type="Color" />
       <xs:element name="skinColorOverride" type="Color" />
@@ -278,7 +278,7 @@
       </xs:element>
       <xs:element name="minMelanin" type="xs:float" />
       <xs:element name="forcedHair" type="xs:string" />
-      <xs:element name="womenCanHaveBeards" type="xs:boolean" />
+      <xs:element name="womenCanHaveBeards" type="StrBoolean" />
       <xs:element name="socialFightChanceFactor" type="xs:float" />
       <xs:element name="aggroMentalBreakSelectionChanceFactor" type="xs:float" />
       <xs:element name="mentalBreakMtbDays" type="xs:float" />
@@ -308,11 +308,11 @@
       </xs:element>
       <xs:element name="prerequisite" type="xs:string" />
       <xs:element name="selectionWeight" type="xs:float" />
-      <xs:element name="canGenerateInGeneSet" type="xs:boolean" />
+      <xs:element name="canGenerateInGeneSet" type="StrBoolean" />
       <xs:element name="symbolPack" type="GeneSymbolPack" />
       <xs:element name="marketValueFactor" type="xs:float" />
-      <xs:element name="removeOnRedress" type="xs:boolean" />
-      <xs:element name="passOnDirectly" type="xs:boolean" />
+      <xs:element name="removeOnRedress" type="StrBoolean" />
+      <xs:element name="passOnDirectly" type="StrBoolean" />
       <xs:element name="selectionWeightFactorDarkSkin" type="xs:float" />
       <xs:element name="selectionWeightCultist" type="xs:float" />
       <xs:element name="defName" type="xs:string" />
@@ -327,8 +327,8 @@
           <xs:attribute name="MayRequireAnyOf" type="xs:string" />
         </xs:complexType>
       </xs:element>
-      <xs:element name="ignoreConfigErrors" type="xs:boolean" />
-      <xs:element name="ignoreIllegalLabelCharacterConfigError" type="xs:boolean" />
+      <xs:element name="ignoreConfigErrors" type="StrBoolean" />
+      <xs:element name="ignoreIllegalLabelCharacterConfigError" type="StrBoolean" />
       <xs:element name="modExtensions">
         <xs:complexType>
           <xs:sequence>

@@ -4,20 +4,20 @@
   <xs:complexType name="PawnColumnDef">
     <xs:choice minOccurs="1" maxOccurs="unbounded">
       <xs:element name="workerClass" type="xs:string" />
-      <xs:element name="sortable" type="xs:boolean" />
-      <xs:element name="ignoreWhenCalculatingOptimalTableSize" type="xs:boolean" />
+      <xs:element name="sortable" type="StrBoolean" />
+      <xs:element name="ignoreWhenCalculatingOptimalTableSize" type="StrBoolean" />
       <xs:element name="headerIcon" type="xs:string" />
       <xs:element name="headerIconSize" type="Vector2" />
       <xs:element name="headerTip" type="xs:string" />
-      <xs:element name="headerAlwaysInteractable" type="xs:boolean" />
-      <xs:element name="paintable" type="xs:boolean" />
-      <xs:element name="groupable" type="xs:boolean" />
+      <xs:element name="headerAlwaysInteractable" type="StrBoolean" />
+      <xs:element name="paintable" type="StrBoolean" />
+      <xs:element name="groupable" type="StrBoolean" />
       <xs:element name="trainable" type="xs:string" />
       <xs:element name="gap" type="xs:int" />
       <xs:element name="workType" type="xs:string" />
-      <xs:element name="moveWorkTypeLabelDown" type="xs:boolean" />
-      <xs:element name="showIcon" type="xs:boolean" />
-      <xs:element name="useLabelShort" type="xs:boolean" />
+      <xs:element name="moveWorkTypeLabelDown" type="StrBoolean" />
+      <xs:element name="showIcon" type="StrBoolean" />
+      <xs:element name="useLabelShort" type="StrBoolean" />
       <xs:element name="widthPriority" type="xs:int" />
       <xs:element name="width" type="xs:int" />
       <xs:element name="defName" type="xs:string" />
@@ -32,8 +32,8 @@
           <xs:attribute name="MayRequireAnyOf" type="xs:string" />
         </xs:complexType>
       </xs:element>
-      <xs:element name="ignoreConfigErrors" type="xs:boolean" />
-      <xs:element name="ignoreIllegalLabelCharacterConfigError" type="xs:boolean" />
+      <xs:element name="ignoreConfigErrors" type="StrBoolean" />
+      <xs:element name="ignoreIllegalLabelCharacterConfigError" type="StrBoolean" />
       <xs:element name="modExtensions">
         <xs:complexType>
           <xs:sequence>

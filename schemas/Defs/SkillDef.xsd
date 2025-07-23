@@ -5,11 +5,11 @@
     <xs:choice minOccurs="1" maxOccurs="unbounded">
       <xs:element name="skillLabel" type="xs:string" />
       <xs:element name="generalRules" type="RulePack" />
-      <xs:element name="usuallyDefinedInBackstories" type="xs:boolean" />
-      <xs:element name="pawnCreatorSummaryVisible" type="xs:boolean" />
+      <xs:element name="usuallyDefinedInBackstories" type="StrBoolean" />
+      <xs:element name="pawnCreatorSummaryVisible" type="StrBoolean" />
       <xs:element name="disablingWorkTags" type="WorkTags" />
       <xs:element name="listOrder" type="xs:float" />
-      <xs:element name="neverDisabledBasedOnWorkTypes" type="xs:boolean" />
+      <xs:element name="neverDisabledBasedOnWorkTypes" type="StrBoolean" />
       <xs:element name="lessonInteraction" type="xs:string" />
       <xs:element name="defName" type="xs:string" />
       <xs:element name="label" type="xs:string" />
@@ -23,8 +23,8 @@
           <xs:attribute name="MayRequireAnyOf" type="xs:string" />
         </xs:complexType>
       </xs:element>
-      <xs:element name="ignoreConfigErrors" type="xs:boolean" />
-      <xs:element name="ignoreIllegalLabelCharacterConfigError" type="xs:boolean" />
+      <xs:element name="ignoreConfigErrors" type="StrBoolean" />
+      <xs:element name="ignoreIllegalLabelCharacterConfigError" type="StrBoolean" />
       <xs:element name="modExtensions">
         <xs:complexType>
           <xs:sequence>

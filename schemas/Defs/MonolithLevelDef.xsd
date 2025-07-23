@@ -5,10 +5,10 @@
     <xs:choice minOccurs="1" maxOccurs="unbounded">
       <xs:element name="level" type="xs:int" />
       <xs:element name="graphicIndex" type="xs:int" />
-      <xs:element name="monolithGlows" type="xs:boolean" />
+      <xs:element name="monolithGlows" type="StrBoolean" />
       <xs:element name="anomalyThreatTier" type="xs:int" />
-      <xs:element name="useInactiveAnomalyThreatFraction" type="xs:boolean" />
-      <xs:element name="useActiveAnomalyThreatFraction" type="xs:boolean" />
+      <xs:element name="useInactiveAnomalyThreatFraction" type="StrBoolean" />
+      <xs:element name="useActiveAnomalyThreatFraction" type="StrBoolean" />
       <xs:element name="anomalyThreatFractionFactor" type="xs:float" />
       <xs:element name="anomalyThreatFraction" type="xs:float" />
       <xs:element name="incidentsOnReached">
@@ -29,7 +29,7 @@
           <xs:attribute name="MayRequireAnyOf" type="xs:string" />
         </xs:complexType>
       </xs:element>
-      <xs:element name="triggersGrayPall" type="xs:boolean" />
+      <xs:element name="triggersGrayPall" type="StrBoolean" />
       <xs:element name="unreachableDuringConditions">
         <xs:complexType>
           <xs:sequence>
@@ -48,9 +48,9 @@
           <xs:attribute name="MayRequireAnyOf" type="xs:string" />
         </xs:complexType>
       </xs:element>
-      <xs:element name="advanceThroughActivation" type="xs:boolean" />
+      <xs:element name="advanceThroughActivation" type="StrBoolean" />
       <xs:element name="desiredHarbingerTreeCount" type="xs:int" />
-      <xs:element name="postEndgame" type="xs:boolean" />
+      <xs:element name="postEndgame" type="StrBoolean" />
       <xs:element name="monolithGlowRadiusOverride" type="xs:int" />
       <xs:element name="monolithStudyCategory" type="xs:string" />
       <xs:element name="entityCatagoryCompletionRequired" type="xs:string" />
@@ -94,8 +94,8 @@
           <xs:attribute name="MayRequireAnyOf" type="xs:string" />
         </xs:complexType>
       </xs:element>
-      <xs:element name="ignoreConfigErrors" type="xs:boolean" />
-      <xs:element name="ignoreIllegalLabelCharacterConfigError" type="xs:boolean" />
+      <xs:element name="ignoreConfigErrors" type="StrBoolean" />
+      <xs:element name="ignoreIllegalLabelCharacterConfigError" type="StrBoolean" />
       <xs:element name="modExtensions">
         <xs:complexType>
           <xs:sequence>

@@ -9,17 +9,17 @@
       <xs:element name="labelAnimals" type="xs:string" />
       <xs:element name="labelAnomalyEntity" type="xs:string" />
       <xs:element name="labelDrones" type="xs:string" />
-      <xs:element name="showOnHumanlikes" type="xs:boolean" />
-      <xs:element name="showOnAnimals" type="xs:boolean" />
-      <xs:element name="showOnMechanoids" type="xs:boolean" />
-      <xs:element name="showOnAnomalyEntities" type="xs:boolean" />
-      <xs:element name="showOnDrones" type="xs:boolean" />
-      <xs:element name="lethalFlesh" type="xs:boolean" />
-      <xs:element name="lethalMechanoids" type="xs:boolean" />
+      <xs:element name="showOnHumanlikes" type="StrBoolean" />
+      <xs:element name="showOnAnimals" type="StrBoolean" />
+      <xs:element name="showOnMechanoids" type="StrBoolean" />
+      <xs:element name="showOnAnomalyEntities" type="StrBoolean" />
+      <xs:element name="showOnDrones" type="StrBoolean" />
+      <xs:element name="lethalFlesh" type="StrBoolean" />
+      <xs:element name="lethalMechanoids" type="StrBoolean" />
       <xs:element name="minForCapable" type="xs:float" />
       <xs:element name="minValue" type="xs:float" />
-      <xs:element name="zeroIfCannotBeAwake" type="xs:boolean" />
-      <xs:element name="showOnCaravanHealthTab" type="xs:boolean" />
+      <xs:element name="zeroIfCannotBeAwake" type="StrBoolean" />
+      <xs:element name="showOnCaravanHealthTab" type="StrBoolean" />
       <xs:element name="defName" type="xs:string" />
       <xs:element name="label" type="xs:string" />
       <xs:element name="description" type="xs:string" />
@@ -32,8 +32,8 @@
           <xs:attribute name="MayRequireAnyOf" type="xs:string" />
         </xs:complexType>
       </xs:element>
-      <xs:element name="ignoreConfigErrors" type="xs:boolean" />
-      <xs:element name="ignoreIllegalLabelCharacterConfigError" type="xs:boolean" />
+      <xs:element name="ignoreConfigErrors" type="StrBoolean" />
+      <xs:element name="ignoreIllegalLabelCharacterConfigError" type="StrBoolean" />
       <xs:element name="modExtensions">
         <xs:complexType>
           <xs:sequence>

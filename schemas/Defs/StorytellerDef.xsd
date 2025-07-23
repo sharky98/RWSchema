@@ -4,11 +4,11 @@
   <xs:complexType name="StorytellerDef">
     <xs:choice minOccurs="1" maxOccurs="unbounded">
       <xs:element name="listOrder" type="xs:int" />
-      <xs:element name="listVisible" type="xs:boolean" />
-      <xs:element name="tutorialMode" type="xs:boolean" />
-      <xs:element name="disableAdaptiveTraining" type="xs:boolean" />
-      <xs:element name="disableAlerts" type="xs:boolean" />
-      <xs:element name="disablePermadeath" type="xs:boolean" />
+      <xs:element name="listVisible" type="StrBoolean" />
+      <xs:element name="tutorialMode" type="StrBoolean" />
+      <xs:element name="disableAdaptiveTraining" type="StrBoolean" />
+      <xs:element name="disableAlerts" type="StrBoolean" />
+      <xs:element name="disablePermadeath" type="StrBoolean" />
       <xs:element name="forcedDifficulty" type="xs:string" />
       <xs:element name="comps">
         <xs:complexType>
@@ -34,8 +34,8 @@
           <xs:attribute name="MayRequireAnyOf" type="xs:string" />
         </xs:complexType>
       </xs:element>
-      <xs:element name="ignoreConfigErrors" type="xs:boolean" />
-      <xs:element name="ignoreIllegalLabelCharacterConfigError" type="xs:boolean" />
+      <xs:element name="ignoreConfigErrors" type="StrBoolean" />
+      <xs:element name="ignoreIllegalLabelCharacterConfigError" type="StrBoolean" />
       <xs:element name="modExtensions">
         <xs:complexType>
           <xs:sequence>

@@ -23,7 +23,7 @@ static class SchemaCommonValues
     [typeof(float)] = "float",
     [typeof(double)] = "double",
     [typeof(decimal)] = "decimal",
-    [typeof(bool)] = "boolean",
+    // [typeof(bool)] = "boolean",
     [typeof(char)] = "string",
     [typeof(string)] = "string",
     [typeof(Type)] = "string",

@@ -6,11 +6,11 @@
       <xs:element name="stateClass" type="xs:string" />
       <xs:element name="workerClass" type="xs:string" />
       <xs:element name="category" type="MentalStateCategory" />
-      <xs:element name="prisonersCanDo" type="xs:boolean" />
-      <xs:element name="slavesCanDo" type="xs:boolean" />
-      <xs:element name="inCaravanCanDo" type="xs:boolean" />
-      <xs:element name="colonistsOnly" type="xs:boolean" />
-      <xs:element name="slavesOnly" type="xs:boolean" />
+      <xs:element name="prisonersCanDo" type="StrBoolean" />
+      <xs:element name="slavesCanDo" type="StrBoolean" />
+      <xs:element name="inCaravanCanDo" type="StrBoolean" />
+      <xs:element name="colonistsOnly" type="StrBoolean" />
+      <xs:element name="slavesOnly" type="StrBoolean" />
       <xs:element name="requiredCapacities">
         <xs:complexType>
           <xs:sequence>
@@ -29,10 +29,10 @@
           <xs:attribute name="MayRequireAnyOf" type="xs:string" />
         </xs:complexType>
       </xs:element>
-      <xs:element name="downedCanDo" type="xs:boolean" />
-      <xs:element name="unspawnedNotInCaravanCanDo" type="xs:boolean" />
-      <xs:element name="blockNormalThoughts" type="xs:boolean" />
-      <xs:element name="stopsJobs" type="xs:boolean" />
+      <xs:element name="downedCanDo" type="StrBoolean" />
+      <xs:element name="unspawnedNotInCaravanCanDo" type="StrBoolean" />
+      <xs:element name="blockNormalThoughts" type="StrBoolean" />
+      <xs:element name="stopsJobs" type="StrBoolean" />
       <xs:element name="blockInteractionInitiationExcept">
         <xs:complexType>
           <xs:sequence>
@@ -69,12 +69,12 @@
           <xs:attribute name="MayRequireAnyOf" type="xs:string" />
         </xs:complexType>
       </xs:element>
-      <xs:element name="blockRandomInteraction" type="xs:boolean" />
+      <xs:element name="blockRandomInteraction" type="StrBoolean" />
       <xs:element name="stateEffecter" type="xs:string" />
       <xs:element name="tale" type="xs:string" />
-      <xs:element name="allowBeatfire" type="xs:boolean" />
+      <xs:element name="allowBeatfire" type="StrBoolean" />
       <xs:element name="drugCategory" type="DrugCategory" />
-      <xs:element name="ignoreDrugPolicy" type="xs:boolean" />
+      <xs:element name="ignoreDrugPolicy" type="StrBoolean" />
       <xs:element name="ticksBetweenRamblingRange">
         <xs:simpleType>
           <xs:restriction base="xs:string">
@@ -85,20 +85,20 @@
       <xs:element name="recoveryMtbDays" type="xs:float" />
       <xs:element name="minTicksBeforeRecovery" type="xs:int" />
       <xs:element name="maxTicksBeforeRecovery" type="xs:int" />
-      <xs:element name="recoverFromSleep" type="xs:boolean" />
-      <xs:element name="recoverFromDowned" type="xs:boolean" />
-      <xs:element name="recoverFromCaptured" type="xs:boolean" />
-      <xs:element name="recoverFromCollapsingExhausted" type="xs:boolean" />
+      <xs:element name="recoverFromSleep" type="StrBoolean" />
+      <xs:element name="recoverFromDowned" type="StrBoolean" />
+      <xs:element name="recoverFromCaptured" type="StrBoolean" />
+      <xs:element name="recoverFromCollapsingExhausted" type="StrBoolean" />
       <xs:element name="moodRecoveryThought" type="xs:string" />
-      <xs:element name="allowGuilty" type="xs:boolean" />
+      <xs:element name="allowGuilty" type="StrBoolean" />
       <xs:element name="beginLetter" type="xs:string" />
       <xs:element name="beginLetterLabel" type="xs:string" />
       <xs:element name="beginLetterDef" type="xs:string" />
       <xs:element name="nameColor" type="Color" />
       <xs:element name="recoveryMessage" type="xs:string" />
       <xs:element name="baseInspectLine" type="xs:string" />
-      <xs:element name="escapingPrisonersIgnore" type="xs:boolean" />
-      <xs:element name="blocksDefendAndExpandHive" type="xs:boolean" />
+      <xs:element name="escapingPrisonersIgnore" type="StrBoolean" />
+      <xs:element name="blocksDefendAndExpandHive" type="StrBoolean" />
       <xs:element name="defName" type="xs:string" />
       <xs:element name="label" type="xs:string" />
       <xs:element name="description" type="xs:string" />
@@ -111,8 +111,8 @@
           <xs:attribute name="MayRequireAnyOf" type="xs:string" />
         </xs:complexType>
       </xs:element>
-      <xs:element name="ignoreConfigErrors" type="xs:boolean" />
-      <xs:element name="ignoreIllegalLabelCharacterConfigError" type="xs:boolean" />
+      <xs:element name="ignoreConfigErrors" type="StrBoolean" />
+      <xs:element name="ignoreIllegalLabelCharacterConfigError" type="StrBoolean" />
       <xs:element name="modExtensions">
         <xs:complexType>
           <xs:sequence>

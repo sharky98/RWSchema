@@ -26,6 +26,8 @@ class SchemaExtractor
 
     var assemblyTypes = GetAssemblyType("Assembly-CSharp");
     knownTypes.AddRange(assemblyTypes.ToDictionary(x => x, x => "string"));
+    commonElements.Add(CreateCustomBoolean());
+
     foreach (var assemblyType in assemblyTypes)
     {
       ExtractAssemblyTypeSchema(assemblyType);
@@ -35,7 +37,6 @@ class SchemaExtractor
     var commonElementSchema = CreateNewSchema();
     schemaSet.Add(commonElementSchema);
     commonElements.ToList().ForEach(x => commonElementSchema.Items.Add(x));
-
     combinedSchema.Includes.Add(new XmlSchemaInclude { SchemaLocation = $"CommonElements.xsd" });
 
     var schemas = CompileXmlSchemaSet();
@@ -43,6 +44,16 @@ class SchemaExtractor
     {
       WriteXmlSchemaToFile(schema);
     }
+  }
+
+  private XmlSchemaSimpleType CreateCustomBoolean()
+  {
+    var restriction = new XmlSchemaSimpleTypeRestriction() { BaseTypeName = SchemaCommonValues.stringType };
+    restriction.Facets.Add(new XmlSchemaEnumerationFacet() { Value = "true" });
+    restriction.Facets.Add(new XmlSchemaEnumerationFacet() { Value = "True" });
+    restriction.Facets.Add(new XmlSchemaEnumerationFacet() { Value = "false" });
+    restriction.Facets.Add(new XmlSchemaEnumerationFacet() { Value = "False" });
+    return new XmlSchemaSimpleType() { Content = restriction, Name = "StrBoolean" };
   }
 
   private XmlSchema CreateCombinedSchema()

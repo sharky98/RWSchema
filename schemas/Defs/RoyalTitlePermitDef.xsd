@@ -9,7 +9,7 @@
       <xs:element name="minTitle" type="xs:string" />
       <xs:element name="permitPointCost" type="xs:int" />
       <xs:element name="faction" type="xs:string" />
-      <xs:element name="usableOnWorldMap" type="xs:boolean" />
+      <xs:element name="usableOnWorldMap" type="StrBoolean" />
       <xs:element name="prerequisite" type="xs:string" />
       <xs:element name="uiPosition" type="Vector2" />
       <xs:element name="layerBlacklist">
@@ -42,8 +42,8 @@
           <xs:attribute name="MayRequireAnyOf" type="xs:string" />
         </xs:complexType>
       </xs:element>
-      <xs:element name="ignoreConfigErrors" type="xs:boolean" />
-      <xs:element name="ignoreIllegalLabelCharacterConfigError" type="xs:boolean" />
+      <xs:element name="ignoreConfigErrors" type="StrBoolean" />
+      <xs:element name="ignoreIllegalLabelCharacterConfigError" type="StrBoolean" />
       <xs:element name="modExtensions">
         <xs:complexType>
           <xs:sequence>

@@ -12,7 +12,7 @@
           </xs:restriction>
         </xs:simpleType>
       </xs:element>
-      <xs:element name="usesThreatPoints" type="xs:boolean" />
+      <xs:element name="usesThreatPoints" type="StrBoolean" />
       <xs:element name="disableEnteringTicks" type="xs:int" />
       <xs:element name="disableEnteringReason" type="xs:string" />
       <xs:element name="letterText" type="xs:string" />
@@ -29,8 +29,8 @@
           <xs:attribute name="MayRequireAnyOf" type="xs:string" />
         </xs:complexType>
       </xs:element>
-      <xs:element name="ignoreConfigErrors" type="xs:boolean" />
-      <xs:element name="ignoreIllegalLabelCharacterConfigError" type="xs:boolean" />
+      <xs:element name="ignoreConfigErrors" type="StrBoolean" />
+      <xs:element name="ignoreIllegalLabelCharacterConfigError" type="StrBoolean" />
       <xs:element name="modExtensions">
         <xs:complexType>
           <xs:sequence>

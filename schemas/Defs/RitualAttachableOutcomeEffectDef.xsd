@@ -59,10 +59,10 @@
         </xs:complexType>
       </xs:element>
       <xs:element name="requiredFaction" type="xs:string" />
-      <xs:element name="onlyPositiveOutcomes" type="xs:boolean" />
-      <xs:element name="onlyBestOutcome" type="xs:boolean" />
-      <xs:element name="onlyNegativeOutcomes" type="xs:boolean" />
-      <xs:element name="onlyWorstOutcome" type="xs:boolean" />
+      <xs:element name="onlyPositiveOutcomes" type="StrBoolean" />
+      <xs:element name="onlyBestOutcome" type="StrBoolean" />
+      <xs:element name="onlyNegativeOutcomes" type="StrBoolean" />
+      <xs:element name="onlyWorstOutcome" type="StrBoolean" />
       <xs:element name="letterInfoText" type="xs:string" />
       <xs:element name="effectDesc" type="xs:string" />
       <xs:element name="defName" type="xs:string" />
@@ -77,8 +77,8 @@
           <xs:attribute name="MayRequireAnyOf" type="xs:string" />
         </xs:complexType>
       </xs:element>
-      <xs:element name="ignoreConfigErrors" type="xs:boolean" />
-      <xs:element name="ignoreIllegalLabelCharacterConfigError" type="xs:boolean" />
+      <xs:element name="ignoreConfigErrors" type="StrBoolean" />
+      <xs:element name="ignoreIllegalLabelCharacterConfigError" type="StrBoolean" />
       <xs:element name="modExtensions">
         <xs:complexType>
           <xs:sequence>

@@ -54,7 +54,7 @@
       <xs:element name="arrivalTextEnemy" type="xs:string" />
       <xs:element name="letterLabelEnemy" type="xs:string" />
       <xs:element name="letterLabelFriendly" type="xs:string" />
-      <xs:element name="pawnsCanBringFood" type="xs:boolean" />
+      <xs:element name="pawnsCanBringFood" type="StrBoolean" />
       <xs:element name="arriveModes">
         <xs:complexType>
           <xs:sequence>
@@ -86,8 +86,8 @@
           <xs:attribute name="MayRequireAnyOf" type="xs:string" />
         </xs:complexType>
       </xs:element>
-      <xs:element name="ignoreConfigErrors" type="xs:boolean" />
-      <xs:element name="ignoreIllegalLabelCharacterConfigError" type="xs:boolean" />
+      <xs:element name="ignoreConfigErrors" type="StrBoolean" />
+      <xs:element name="ignoreIllegalLabelCharacterConfigError" type="StrBoolean" />
       <xs:element name="modExtensions">
         <xs:complexType>
           <xs:sequence>

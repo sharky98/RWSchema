@@ -4,12 +4,12 @@
   <xs:complexType name="WorldObjectDef">
     <xs:choice minOccurs="1" maxOccurs="unbounded">
       <xs:element name="worldObjectClass" type="xs:string" />
-      <xs:element name="canHaveFaction" type="xs:boolean" />
-      <xs:element name="saved" type="xs:boolean" />
-      <xs:element name="canBePlayerHome" type="xs:boolean" />
-      <xs:element name="treatAsPlayerHome" type="xs:boolean" />
-      <xs:element name="canResizeToGravship" type="xs:boolean" />
-      <xs:element name="requiresSignalJammerToReach" type="xs:boolean" />
+      <xs:element name="canHaveFaction" type="StrBoolean" />
+      <xs:element name="saved" type="StrBoolean" />
+      <xs:element name="canBePlayerHome" type="StrBoolean" />
+      <xs:element name="treatAsPlayerHome" type="StrBoolean" />
+      <xs:element name="canResizeToGravship" type="StrBoolean" />
+      <xs:element name="requiresSignalJammerToReach" type="StrBoolean" />
       <xs:element name="overrideMapSize" type="IntVec3" />
       <xs:element name="comps">
         <xs:complexType>
@@ -20,10 +20,10 @@
           <xs:attribute name="MayRequireAnyOf" type="xs:string" />
         </xs:complexType>
       </xs:element>
-      <xs:element name="canHaveMap" type="xs:boolean" />
-      <xs:element name="validLaunchTarget" type="xs:boolean" />
-      <xs:element name="allowCaravanIncidentsWhichGenerateMap" type="xs:boolean" />
-      <xs:element name="isTempIncidentMapOwner" type="xs:boolean" />
+      <xs:element name="canHaveMap" type="StrBoolean" />
+      <xs:element name="validLaunchTarget" type="StrBoolean" />
+      <xs:element name="allowCaravanIncidentsWhichGenerateMap" type="StrBoolean" />
+      <xs:element name="isTempIncidentMapOwner" type="StrBoolean" />
       <xs:element name="incidentTargetTags">
         <xs:complexType>
           <xs:sequence>
@@ -42,8 +42,8 @@
           <xs:attribute name="MayRequireAnyOf" type="xs:string" />
         </xs:complexType>
       </xs:element>
-      <xs:element name="selectable" type="xs:boolean" />
-      <xs:element name="neverMultiSelect" type="xs:boolean" />
+      <xs:element name="selectable" type="StrBoolean" />
+      <xs:element name="neverMultiSelect" type="StrBoolean" />
       <xs:element name="mapGenerator" type="xs:string" />
       <xs:element name="inspectorTabs">
         <xs:complexType>
@@ -63,21 +63,21 @@
           <xs:attribute name="MayRequireAnyOf" type="xs:string" />
         </xs:complexType>
       </xs:element>
-      <xs:element name="useDynamicDrawer" type="xs:boolean" />
-      <xs:element name="expandingIcon" type="xs:boolean" />
+      <xs:element name="useDynamicDrawer" type="StrBoolean" />
+      <xs:element name="expandingIcon" type="StrBoolean" />
       <xs:element name="expandingIconTexture" type="xs:string" />
       <xs:element name="expandingIconMaskTexture" type="xs:string" />
       <xs:element name="expandingIconPriority" type="xs:float" />
       <xs:element name="texture" type="xs:string" />
       <xs:element name="mapEdgeTexture" type="xs:string" />
-      <xs:element name="expandMore" type="xs:boolean" />
-      <xs:element name="rotateGraphicWhenTraveling" type="xs:boolean" />
+      <xs:element name="expandMore" type="StrBoolean" />
+      <xs:element name="rotateGraphicWhenTraveling" type="StrBoolean" />
       <xs:element name="expandingIconColor" type="Color" />
       <xs:element name="expandingIconDrawSize" type="xs:float" />
-      <xs:element name="fullyExpandedInSpace" type="xs:boolean" />
+      <xs:element name="fullyExpandedInSpace" type="StrBoolean" />
       <xs:element name="shader" type="xs:string" />
       <xs:element name="expandingShader" type="xs:string" />
-      <xs:element name="blockExitGridUntilBattleIsWon" type="xs:boolean" />
+      <xs:element name="blockExitGridUntilBattleIsWon" type="StrBoolean" />
       <xs:element name="nameMaker" type="xs:string" />
       <xs:element name="defName" type="xs:string" />
       <xs:element name="label" type="xs:string" />
@@ -91,8 +91,8 @@
           <xs:attribute name="MayRequireAnyOf" type="xs:string" />
         </xs:complexType>
       </xs:element>
-      <xs:element name="ignoreConfigErrors" type="xs:boolean" />
-      <xs:element name="ignoreIllegalLabelCharacterConfigError" type="xs:boolean" />
+      <xs:element name="ignoreConfigErrors" type="StrBoolean" />
+      <xs:element name="ignoreIllegalLabelCharacterConfigError" type="StrBoolean" />
       <xs:element name="modExtensions">
         <xs:complexType>
           <xs:sequence>

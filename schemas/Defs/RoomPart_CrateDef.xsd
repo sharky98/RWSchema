@@ -6,7 +6,7 @@
       <xs:element name="crateDef" type="xs:string" />
       <xs:element name="thingSetMaker" type="xs:string" />
       <xs:element name="rotations" type="RotEnum" />
-      <xs:element name="triggerThreatSignal" type="xs:boolean" />
+      <xs:element name="triggerThreatSignal" type="StrBoolean" />
       <xs:element name="defName" type="xs:string" />
       <xs:element name="label" type="xs:string" />
       <xs:element name="description" type="xs:string" />
@@ -19,8 +19,8 @@
           <xs:attribute name="MayRequireAnyOf" type="xs:string" />
         </xs:complexType>
       </xs:element>
-      <xs:element name="ignoreConfigErrors" type="xs:boolean" />
-      <xs:element name="ignoreIllegalLabelCharacterConfigError" type="xs:boolean" />
+      <xs:element name="ignoreConfigErrors" type="StrBoolean" />
+      <xs:element name="ignoreIllegalLabelCharacterConfigError" type="StrBoolean" />
       <xs:element name="modExtensions">
         <xs:complexType>
           <xs:sequence>

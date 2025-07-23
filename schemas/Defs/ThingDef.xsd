@@ -8,11 +8,11 @@
       <xs:element name="tickerType" type="TickerType" />
       <xs:element name="stackLimit" type="xs:int" />
       <xs:element name="size" type="IntVec2" />
-      <xs:element name="destroyable" type="xs:boolean" />
-      <xs:element name="rotatable" type="xs:boolean" />
-      <xs:element name="smallVolume" type="xs:boolean" />
-      <xs:element name="useHitPoints" type="xs:boolean" />
-      <xs:element name="receivesSignals" type="xs:boolean" />
+      <xs:element name="destroyable" type="StrBoolean" />
+      <xs:element name="rotatable" type="StrBoolean" />
+      <xs:element name="smallVolume" type="StrBoolean" />
+      <xs:element name="useHitPoints" type="StrBoolean" />
+      <xs:element name="receivesSignals" type="StrBoolean" />
       <xs:element name="comps">
         <xs:complexType>
           <xs:sequence>
@@ -70,7 +70,7 @@
         </xs:complexType>
       </xs:element>
       <xs:element name="killedLeavingsChance" type="xs:float" />
-      <xs:element name="forceLeavingsAllowed" type="xs:boolean" />
+      <xs:element name="forceLeavingsAllowed" type="StrBoolean" />
       <xs:element name="butcherProducts">
         <xs:complexType>
           <xs:sequence>
@@ -89,9 +89,9 @@
           <xs:attribute name="MayRequireAnyOf" type="xs:string" />
         </xs:complexType>
       </xs:element>
-      <xs:element name="smeltable" type="xs:boolean" />
-      <xs:element name="burnableByRecipe" type="xs:boolean" />
-      <xs:element name="randomizeRotationOnSpawn" type="xs:boolean" />
+      <xs:element name="smeltable" type="StrBoolean" />
+      <xs:element name="burnableByRecipe" type="StrBoolean" />
+      <xs:element name="randomizeRotationOnSpawn" type="StrBoolean" />
       <xs:element name="damageMultipliers">
         <xs:complexType>
           <xs:sequence>
@@ -101,13 +101,13 @@
           <xs:attribute name="MayRequireAnyOf" type="xs:string" />
         </xs:complexType>
       </xs:element>
-      <xs:element name="isTechHediff" type="xs:boolean" />
+      <xs:element name="isTechHediff" type="StrBoolean" />
       <xs:element name="recipeMaker" type="RecipeMakerProperties" />
       <xs:element name="minifiedDef" type="xs:string" />
-      <xs:element name="isUnfinishedThing" type="xs:boolean" />
-      <xs:element name="leaveResourcesWhenKilled" type="xs:boolean" />
+      <xs:element name="isUnfinishedThing" type="StrBoolean" />
+      <xs:element name="leaveResourcesWhenKilled" type="StrBoolean" />
       <xs:element name="slagDef" type="xs:string" />
-      <xs:element name="isFrameInt" type="xs:boolean" />
+      <xs:element name="isFrameInt" type="StrBoolean" />
       <xs:element name="multipleInteractionCellOffsets">
         <xs:complexType>
           <xs:sequence>
@@ -118,13 +118,13 @@
         </xs:complexType>
       </xs:element>
       <xs:element name="interactionCellOffset" type="IntVec3" />
-      <xs:element name="hasInteractionCell" type="xs:boolean" />
+      <xs:element name="hasInteractionCell" type="StrBoolean" />
       <xs:element name="interactionCellIcon" type="xs:string" />
-      <xs:element name="interactionCellIconReverse" type="xs:boolean" />
+      <xs:element name="interactionCellIconReverse" type="StrBoolean" />
       <xs:element name="filthLeaving" type="xs:string" />
-      <xs:element name="forceDebugSpawnable" type="xs:boolean" />
-      <xs:element name="intricate" type="xs:boolean" />
-      <xs:element name="scatterableOnMapGen" type="xs:boolean" />
+      <xs:element name="forceDebugSpawnable" type="StrBoolean" />
+      <xs:element name="intricate" type="StrBoolean" />
+      <xs:element name="scatterableOnMapGen" type="StrBoolean" />
       <xs:element name="deepCommonality" type="xs:float" />
       <xs:element name="deepCountPerCell" type="xs:int" />
       <xs:element name="deepCountPerPortion" type="xs:int" />
@@ -162,7 +162,7 @@
           <xs:attribute name="MayRequireAnyOf" type="xs:string" />
         </xs:complexType>
       </xs:element>
-      <xs:element name="alwaysFlee" type="xs:boolean" />
+      <xs:element name="alwaysFlee" type="StrBoolean" />
       <xs:element name="recipes">
         <xs:complexType>
           <xs:sequence>
@@ -181,11 +181,11 @@
           <xs:attribute name="MayRequireAnyOf" type="xs:string" />
         </xs:complexType>
       </xs:element>
-      <xs:element name="messageOnDeteriorateInStorage" type="xs:boolean" />
-      <xs:element name="deteriorateFromEnvironmentalEffects" type="xs:boolean" />
-      <xs:element name="canDeteriorateUnspawned" type="xs:boolean" />
-      <xs:element name="canLoadIntoCaravan" type="xs:boolean" />
-      <xs:element name="isMechClusterThreat" type="xs:boolean" />
+      <xs:element name="messageOnDeteriorateInStorage" type="StrBoolean" />
+      <xs:element name="deteriorateFromEnvironmentalEffects" type="StrBoolean" />
+      <xs:element name="canDeteriorateUnspawned" type="StrBoolean" />
+      <xs:element name="canLoadIntoCaravan" type="StrBoolean" />
+      <xs:element name="isMechClusterThreat" type="StrBoolean" />
       <xs:element name="displayNumbersBetweenSameDefDistRange">
         <xs:simpleType>
           <xs:restriction base="xs:string">
@@ -194,28 +194,28 @@
         </xs:simpleType>
       </xs:element>
       <xs:element name="minRewardCount" type="xs:int" />
-      <xs:element name="preventSkyfallersLandingOn" type="xs:boolean" />
+      <xs:element name="preventSkyfallersLandingOn" type="StrBoolean" />
       <xs:element name="requiresFactionToAcquire" type="xs:string" />
       <xs:element name="relicChance" type="xs:float" />
       <xs:element name="orderedTakeGroup" type="xs:string" />
       <xs:element name="allowedArchonexusCount" type="xs:int" />
       <xs:element name="possessionCount" type="xs:int" />
-      <xs:element name="notifyMapRemoved" type="xs:boolean" />
-      <xs:element name="canScatterOver" type="xs:boolean" />
-      <xs:element name="genericMarketSellable" type="xs:boolean" />
-      <xs:element name="drawHighlight" type="xs:boolean" />
+      <xs:element name="notifyMapRemoved" type="StrBoolean" />
+      <xs:element name="canScatterOver" type="StrBoolean" />
+      <xs:element name="genericMarketSellable" type="StrBoolean" />
+      <xs:element name="drawHighlight" type="StrBoolean" />
       <xs:element name="highlightColor" type="Color" />
-      <xs:element name="drawHighlightOnlyForHostile" type="xs:boolean" />
-      <xs:element name="autoTargetNearbyIdenticalThings" type="xs:boolean" />
-      <xs:element name="preventDroppingThingsOn" type="xs:boolean" />
-      <xs:element name="hiddenWhileUndiscovered" type="xs:boolean" />
-      <xs:element name="disableImpassableShotOverConfigError" type="xs:boolean" />
-      <xs:element name="showInSearch" type="xs:boolean" />
-      <xs:element name="bringAlongOnGravship" type="xs:boolean" />
+      <xs:element name="drawHighlightOnlyForHostile" type="StrBoolean" />
+      <xs:element name="autoTargetNearbyIdenticalThings" type="StrBoolean" />
+      <xs:element name="preventDroppingThingsOn" type="StrBoolean" />
+      <xs:element name="hiddenWhileUndiscovered" type="StrBoolean" />
+      <xs:element name="disableImpassableShotOverConfigError" type="StrBoolean" />
+      <xs:element name="showInSearch" type="StrBoolean" />
+      <xs:element name="bringAlongOnGravship" type="StrBoolean" />
       <xs:element name="dropPodFaller" type="xs:string" />
-      <xs:element name="preventSpawningInResourcePod" type="xs:boolean" />
-      <xs:element name="pathfinderDangerous" type="xs:boolean" />
-      <xs:element name="noRightClickDraftAttack" type="xs:boolean" />
+      <xs:element name="preventSpawningInResourcePod" type="StrBoolean" />
+      <xs:element name="pathfinderDangerous" type="StrBoolean" />
+      <xs:element name="noRightClickDraftAttack" type="StrBoolean" />
       <xs:element name="gravshipSpawnPriority" type="xs:int" />
       <xs:element name="replaceTags">
         <xs:complexType>
@@ -235,17 +235,17 @@
           <xs:attribute name="MayRequireAnyOf" type="xs:string" />
         </xs:complexType>
       </xs:element>
-      <xs:element name="preventGravshipLandingOn" type="xs:boolean" />
+      <xs:element name="preventGravshipLandingOn" type="StrBoolean" />
       <xs:element name="graphicData" type="GraphicData" />
       <xs:element name="drawerType" type="DrawerType" />
-      <xs:element name="drawOffscreen" type="xs:boolean" />
+      <xs:element name="drawOffscreen" type="StrBoolean" />
       <xs:element name="colorGenerator" type="ColorGenerator" />
       <xs:element name="hideAtSnowOrSandDepth" type="xs:float" />
-      <xs:element name="drawDamagedOverlay" type="xs:boolean" />
-      <xs:element name="castEdgeShadows" type="xs:boolean" />
+      <xs:element name="drawDamagedOverlay" type="StrBoolean" />
+      <xs:element name="castEdgeShadows" type="StrBoolean" />
       <xs:element name="staticSunShadowHeight" type="xs:float" />
-      <xs:element name="useSameGraphicForGhost" type="xs:boolean" />
-      <xs:element name="useBlueprintGraphicAsGhost" type="xs:boolean" />
+      <xs:element name="useSameGraphicForGhost" type="StrBoolean" />
+      <xs:element name="useBlueprintGraphicAsGhost" type="StrBoolean" />
       <xs:element name="randomStyle">
         <xs:complexType>
           <xs:sequence>
@@ -256,21 +256,21 @@
         </xs:complexType>
       </xs:element>
       <xs:element name="randomStyleChance" type="xs:float" />
-      <xs:element name="canEditAnyStyle" type="xs:boolean" />
-      <xs:element name="dontPrint" type="xs:boolean" />
+      <xs:element name="canEditAnyStyle" type="StrBoolean" />
+      <xs:element name="dontPrint" type="StrBoolean" />
       <xs:element name="defaultStuff" type="xs:string" />
       <xs:element name="killedLeavingsExpandRect" type="xs:int" />
-      <xs:element name="minifiedManualDraw" type="xs:boolean" />
+      <xs:element name="minifiedManualDraw" type="StrBoolean" />
       <xs:element name="minifiedDrawScale" type="xs:float" />
       <xs:element name="overrideMinifiedRot" type="Rot4" />
       <xs:element name="minifiedDrawOffset" type="Vector3" />
       <xs:element name="deselectedSelectionBracketFactor" type="xs:float" />
-      <xs:element name="selectable" type="xs:boolean" />
-      <xs:element name="containedPawnsSelectable" type="xs:boolean" />
-      <xs:element name="containedItemsSelectable" type="xs:boolean" />
-      <xs:element name="neverMultiSelect" type="xs:boolean" />
-      <xs:element name="isAutoAttackableMapObject" type="xs:boolean" />
-      <xs:element name="hasTooltip" type="xs:boolean" />
+      <xs:element name="selectable" type="StrBoolean" />
+      <xs:element name="containedPawnsSelectable" type="StrBoolean" />
+      <xs:element name="containedItemsSelectable" type="StrBoolean" />
+      <xs:element name="neverMultiSelect" type="StrBoolean" />
+      <xs:element name="isAutoAttackableMapObject" type="StrBoolean" />
+      <xs:element name="hasTooltip" type="StrBoolean" />
       <xs:element name="inspectorTabs">
         <xs:complexType>
           <xs:sequence>
@@ -289,22 +289,22 @@
           <xs:attribute name="MayRequireAnyOf" type="xs:string" />
         </xs:complexType>
       </xs:element>
-      <xs:element name="seeThroughFog" type="xs:boolean" />
-      <xs:element name="drawGUIOverlay" type="xs:boolean" />
-      <xs:element name="drawGUIOverlayQuality" type="xs:boolean" />
+      <xs:element name="seeThroughFog" type="StrBoolean" />
+      <xs:element name="drawGUIOverlay" type="StrBoolean" />
+      <xs:element name="drawGUIOverlayQuality" type="StrBoolean" />
       <xs:element name="resourceReadoutPriority" type="ResourceCountPriority" />
-      <xs:element name="resourceReadoutAlwaysShow" type="xs:boolean" />
-      <xs:element name="drawPlaceWorkersWhileSelected" type="xs:boolean" />
-      <xs:element name="drawPlaceWorkersWhileInstallBlueprintSelected" type="xs:boolean" />
+      <xs:element name="resourceReadoutAlwaysShow" type="StrBoolean" />
+      <xs:element name="drawPlaceWorkersWhileSelected" type="StrBoolean" />
+      <xs:element name="drawPlaceWorkersWhileInstallBlueprintSelected" type="StrBoolean" />
       <xs:element name="storedConceptLearnOpportunity" type="xs:string" />
       <xs:element name="uiIconScale" type="xs:float" />
-      <xs:element name="hasCustomRectForSelector" type="xs:boolean" />
-      <xs:element name="hideStats" type="xs:boolean" />
-      <xs:element name="hideInspect" type="xs:boolean" />
-      <xs:element name="onlyShowInspectString" type="xs:boolean" />
-      <xs:element name="hideMainDesc" type="xs:boolean" />
-      <xs:element name="alwaysHaulable" type="xs:boolean" />
-      <xs:element name="designateHaulable" type="xs:boolean" />
+      <xs:element name="hasCustomRectForSelector" type="StrBoolean" />
+      <xs:element name="hideStats" type="StrBoolean" />
+      <xs:element name="hideInspect" type="StrBoolean" />
+      <xs:element name="onlyShowInspectString" type="StrBoolean" />
+      <xs:element name="hideMainDesc" type="StrBoolean" />
+      <xs:element name="alwaysHaulable" type="StrBoolean" />
+      <xs:element name="designateHaulable" type="StrBoolean" />
       <xs:element name="thingCategories">
         <xs:complexType>
           <xs:sequence>
@@ -323,9 +323,9 @@
           <xs:attribute name="MayRequireAnyOf" type="xs:string" />
         </xs:complexType>
       </xs:element>
-      <xs:element name="mineable" type="xs:boolean" />
-      <xs:element name="socialPropernessMatters" type="xs:boolean" />
-      <xs:element name="stealable" type="xs:boolean" />
+      <xs:element name="mineable" type="StrBoolean" />
+      <xs:element name="socialPropernessMatters" type="StrBoolean" />
+      <xs:element name="stealable" type="StrBoolean" />
       <xs:element name="soundSpawned" type="xs:string" />
       <xs:element name="soundDrop" type="xs:string" />
       <xs:element name="soundPickup" type="xs:string" />
@@ -333,18 +333,18 @@
       <xs:element name="soundImpactDefault" type="xs:string" />
       <xs:element name="soundPlayInstrument" type="xs:string" />
       <xs:element name="soundOpen" type="xs:string" />
-      <xs:element name="saveCompressible" type="xs:boolean" />
-      <xs:element name="isSaveable" type="xs:boolean" />
-      <xs:element name="holdsRoof" type="xs:boolean" />
+      <xs:element name="saveCompressible" type="StrBoolean" />
+      <xs:element name="isSaveable" type="StrBoolean" />
+      <xs:element name="holdsRoof" type="StrBoolean" />
       <xs:element name="fillPercent" type="xs:float" />
-      <xs:element name="coversFloor" type="xs:boolean" />
-      <xs:element name="neverOverlapFloors" type="xs:boolean" />
+      <xs:element name="coversFloor" type="StrBoolean" />
+      <xs:element name="neverOverlapFloors" type="StrBoolean" />
       <xs:element name="surfaceType" type="SurfaceType" />
-      <xs:element name="wipesPlants" type="xs:boolean" />
-      <xs:element name="blockPlants" type="xs:boolean" />
-      <xs:element name="blockLight" type="xs:boolean" />
-      <xs:element name="blockWind" type="xs:boolean" />
-      <xs:element name="blockWeather" type="xs:boolean" />
+      <xs:element name="wipesPlants" type="StrBoolean" />
+      <xs:element name="blockPlants" type="StrBoolean" />
+      <xs:element name="blockLight" type="StrBoolean" />
+      <xs:element name="blockWind" type="StrBoolean" />
+      <xs:element name="blockWeather" type="StrBoolean" />
       <xs:element name="tradeability" type="Tradeability" />
       <xs:element name="tradeTags">
         <xs:complexType>
@@ -364,9 +364,9 @@
           <xs:attribute name="MayRequireAnyOf" type="xs:string" />
         </xs:complexType>
       </xs:element>
-      <xs:element name="tradeNeverStack" type="xs:boolean" />
-      <xs:element name="tradeNeverGenerateStacked" type="xs:boolean" />
-      <xs:element name="healthAffectsPrice" type="xs:boolean" />
+      <xs:element name="tradeNeverStack" type="StrBoolean" />
+      <xs:element name="tradeNeverGenerateStacked" type="StrBoolean" />
+      <xs:element name="healthAffectsPrice" type="StrBoolean" />
       <xs:element name="colorGeneratorInTraderStock" type="ColorGenerator" />
       <xs:element name="tools">
         <xs:complexType>
@@ -435,8 +435,8 @@
           <xs:attribute name="MayRequireAnyOf" type="xs:string" />
         </xs:complexType>
       </xs:element>
-      <xs:element name="violentTechHediff" type="xs:boolean" />
-      <xs:element name="destroyOnDrop" type="xs:boolean" />
+      <xs:element name="violentTechHediff" type="StrBoolean" />
+      <xs:element name="destroyOnDrop" type="StrBoolean" />
       <xs:element name="equippedStatOffsets">
         <xs:complexType>
           <xs:sequence>
@@ -449,8 +449,8 @@
       <xs:element name="meleeHitSound" type="xs:string" />
       <xs:element name="recoilPower" type="xs:float" />
       <xs:element name="recoilRelaxation" type="xs:float" />
-      <xs:element name="rotateInShelves" type="xs:boolean" />
-      <xs:element name="mergeVerbGizmos" type="xs:boolean" />
+      <xs:element name="rotateInShelves" type="StrBoolean" />
+      <xs:element name="mergeVerbGizmos" type="StrBoolean" />
       <xs:element name="entityDefToBuild" type="xs:string" />
       <xs:element name="projectileWhenLoaded" type="xs:string" />
       <xs:element name="ideoBuildingNamerBase" type="xs:string" />
@@ -470,7 +470,7 @@
       <xs:element name="ritualFocus" type="RitualFocusProperties" />
       <xs:element name="ingredient" type="IngredientProperties" />
       <xs:element name="portal" type="MapPortalProperties" />
-      <xs:element name="canBeUsedUnderRoof" type="xs:boolean" />
+      <xs:element name="canBeUsedUnderRoof" type="StrBoolean" />
       <xs:element name="statBases">
         <xs:complexType>
           <xs:sequence>
@@ -482,7 +482,7 @@
       </xs:element>
       <xs:element name="passability" type="Traversability" />
       <xs:element name="pathCost" type="xs:int" />
-      <xs:element name="pathCostIgnoreRepeat" type="xs:boolean" />
+      <xs:element name="pathCostIgnoreRepeat" type="StrBoolean" />
       <xs:element name="fertility" type="xs:float" />
       <xs:element name="costList">
         <xs:complexType>
@@ -515,7 +515,7 @@
       <xs:element name="stuffCategorySummary" type="xs:string" />
       <xs:element name="costListForDifficulty" type="CostListForDifficulty" />
       <xs:element name="drawStyleCategory" type="xs:string" />
-      <xs:element name="clearBuildingArea" type="xs:boolean" />
+      <xs:element name="clearBuildingArea" type="StrBoolean" />
       <xs:element name="defaultPlacingRot" type="Rot4" />
       <xs:element name="resourcesFractionWhenDeconstructed" type="xs:float" />
       <xs:element name="blocksAltitudes">
@@ -528,10 +528,10 @@
         </xs:complexType>
       </xs:element>
       <xs:element name="dominantStyleCategory" type="xs:string" />
-      <xs:element name="forcePassableByFlyingPawns" type="xs:boolean" />
-      <xs:element name="forceMoveItemsBeforeConstruction" type="xs:boolean" />
-      <xs:element name="isAltar" type="xs:boolean" />
-      <xs:element name="useStuffTerrainAffordance" type="xs:boolean" />
+      <xs:element name="forcePassableByFlyingPawns" type="StrBoolean" />
+      <xs:element name="forceMoveItemsBeforeConstruction" type="StrBoolean" />
+      <xs:element name="isAltar" type="StrBoolean" />
+      <xs:element name="useStuffTerrainAffordance" type="StrBoolean" />
       <xs:element name="terrainAffordanceNeeded" type="xs:string" />
       <xs:element name="buildingPrerequisites">
         <xs:complexType>
@@ -592,7 +592,7 @@
       <xs:element name="artisticSkillPrerequisite" type="xs:int" />
       <xs:element name="minTechLevelToBuild" type="TechLevel" />
       <xs:element name="maxTechLevelToBuild" type="TechLevel" />
-      <xs:element name="requireInspectedGravEngine" type="xs:boolean" />
+      <xs:element name="requireInspectedGravEngine" type="StrBoolean" />
       <xs:element name="altitudeLayer" type="AltitudeLayer" />
       <xs:element name="repairEffect" type="xs:string" />
       <xs:element name="constructEffect" type="xs:string" />
@@ -605,8 +605,8 @@
           <xs:attribute name="MayRequireAnyOf" type="xs:string" />
         </xs:complexType>
       </xs:element>
-      <xs:element name="canGenerateDefaultDesignator" type="xs:boolean" />
-      <xs:element name="ideoBuilding" type="xs:boolean" />
+      <xs:element name="canGenerateDefaultDesignator" type="StrBoolean" />
+      <xs:element name="ideoBuilding" type="StrBoolean" />
       <xs:element name="specialDisplayRadius" type="xs:float" />
       <xs:element name="placeWorkers">
         <xs:complexType>
@@ -656,8 +656,8 @@
           <xs:attribute name="MayRequireAnyOf" type="xs:string" />
         </xs:complexType>
       </xs:element>
-      <xs:element name="ignoreConfigErrors" type="xs:boolean" />
-      <xs:element name="ignoreIllegalLabelCharacterConfigError" type="xs:boolean" />
+      <xs:element name="ignoreConfigErrors" type="StrBoolean" />
+      <xs:element name="ignoreIllegalLabelCharacterConfigError" type="StrBoolean" />
       <xs:element name="modExtensions">
         <xs:complexType>
           <xs:sequence>

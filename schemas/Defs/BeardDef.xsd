@@ -24,7 +24,7 @@
         </xs:complexType>
       </xs:element>
       <xs:element name="styleGender" type="StyleGender" />
-      <xs:element name="noGraphic" type="xs:boolean" />
+      <xs:element name="noGraphic" type="StrBoolean" />
       <xs:element name="overrideShaderTypeDef" type="xs:string" />
       <xs:element name="requiredGene" type="xs:string" />
       <xs:element name="requiredMutant" type="xs:string" />
@@ -42,8 +42,8 @@
           <xs:attribute name="MayRequireAnyOf" type="xs:string" />
         </xs:complexType>
       </xs:element>
-      <xs:element name="ignoreConfigErrors" type="xs:boolean" />
-      <xs:element name="ignoreIllegalLabelCharacterConfigError" type="xs:boolean" />
+      <xs:element name="ignoreConfigErrors" type="StrBoolean" />
+      <xs:element name="ignoreIllegalLabelCharacterConfigError" type="StrBoolean" />
       <xs:element name="modExtensions">
         <xs:complexType>
           <xs:sequence>

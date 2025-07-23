@@ -84,9 +84,9 @@
           <xs:attribute name="MayRequireAnyOf" type="xs:string" />
         </xs:complexType>
       </xs:element>
-      <xs:element name="suppressIdleAlert" type="xs:boolean" />
-      <xs:element name="canBeInherited" type="xs:boolean" />
-      <xs:element name="allowDignifiedMeditationFocus" type="xs:boolean" />
+      <xs:element name="suppressIdleAlert" type="StrBoolean" />
+      <xs:element name="canBeInherited" type="StrBoolean" />
+      <xs:element name="allowDignifiedMeditationFocus" type="StrBoolean" />
       <xs:element name="permitPointsAwarded" type="xs:int" />
       <xs:element name="awardWorkerClass" type="xs:string" />
       <xs:element name="awardThought" type="xs:string" />
@@ -171,8 +171,8 @@
           <xs:attribute name="MayRequireAnyOf" type="xs:string" />
         </xs:complexType>
       </xs:element>
-      <xs:element name="ignoreConfigErrors" type="xs:boolean" />
-      <xs:element name="ignoreIllegalLabelCharacterConfigError" type="xs:boolean" />
+      <xs:element name="ignoreConfigErrors" type="StrBoolean" />
+      <xs:element name="ignoreIllegalLabelCharacterConfigError" type="StrBoolean" />
       <xs:element name="modExtensions">
         <xs:complexType>
           <xs:sequence>

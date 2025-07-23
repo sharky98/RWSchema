@@ -13,11 +13,11 @@
         </xs:complexType>
       </xs:element>
       <xs:element name="workerClass" type="xs:string" />
-      <xs:element name="clearRoomsEntirely" type="xs:boolean" />
-      <xs:element name="canHaveMultipleLayoutsInRoom" type="xs:boolean" />
+      <xs:element name="clearRoomsEntirely" type="StrBoolean" />
+      <xs:element name="canHaveMultipleLayoutsInRoom" type="StrBoolean" />
       <xs:element name="multipleLayoutRoomChance" type="xs:float" />
-      <xs:element name="shouldDamage" type="xs:boolean" />
-      <xs:element name="noRoof" type="xs:boolean" />
+      <xs:element name="shouldDamage" type="StrBoolean" />
+      <xs:element name="noRoof" type="StrBoolean" />
       <xs:element name="adjacentRoomMergeChance" type="xs:float" />
       <xs:element name="borderDoorRemoveChance" type="xs:float" />
       <xs:element name="minRoomWidth" type="xs:int" />
@@ -97,8 +97,8 @@
           <xs:attribute name="MayRequireAnyOf" type="xs:string" />
         </xs:complexType>
       </xs:element>
-      <xs:element name="ignoreConfigErrors" type="xs:boolean" />
-      <xs:element name="ignoreIllegalLabelCharacterConfigError" type="xs:boolean" />
+      <xs:element name="ignoreConfigErrors" type="StrBoolean" />
+      <xs:element name="ignoreIllegalLabelCharacterConfigError" type="StrBoolean" />
       <xs:element name="modExtensions">
         <xs:complexType>
           <xs:sequence>

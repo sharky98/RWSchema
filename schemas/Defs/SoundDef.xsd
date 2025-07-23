@@ -3,7 +3,7 @@
   <xs:include schemaLocation="CommonElements.xsd" />
   <xs:complexType name="SoundDef">
     <xs:choice minOccurs="1" maxOccurs="unbounded">
-      <xs:element name="sustain" type="xs:boolean" />
+      <xs:element name="sustain" type="StrBoolean" />
       <xs:element name="context" type="SoundContext" />
       <xs:element name="eventNames">
         <xs:complexType>
@@ -52,8 +52,8 @@
           <xs:attribute name="MayRequireAnyOf" type="xs:string" />
         </xs:complexType>
       </xs:element>
-      <xs:element name="ignoreConfigErrors" type="xs:boolean" />
-      <xs:element name="ignoreIllegalLabelCharacterConfigError" type="xs:boolean" />
+      <xs:element name="ignoreConfigErrors" type="StrBoolean" />
+      <xs:element name="ignoreIllegalLabelCharacterConfigError" type="StrBoolean" />
       <xs:element name="modExtensions">
         <xs:complexType>
           <xs:sequence>

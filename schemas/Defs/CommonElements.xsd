@@ -1,5 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xs:schema xmlns="https://github.com/sharky98/RWSchema/Defs" elementFormDefault="qualified" targetNamespace="https://github.com/sharky98/RWSchema/Defs" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:simpleType name="StrBoolean">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="true" />
+      <xs:enumeration value="True" />
+      <xs:enumeration value="false" />
+      <xs:enumeration value="False" />
+    </xs:restriction>
+  </xs:simpleType>
   <xs:complexType name="DefHyperlink">
     <xs:choice minOccurs="1" maxOccurs="unbounded">
       <xs:element name="def" type="xs:string" />
@@ -56,8 +64,8 @@
   </xs:complexType>
   <xs:complexType name="DrawData">
     <xs:choice minOccurs="1" maxOccurs="unbounded">
-      <xs:element name="scaleOffsetByBodySize" type="xs:boolean" />
-      <xs:element name="useBodyPartAnchor" type="xs:boolean" />
+      <xs:element name="scaleOffsetByBodySize" type="StrBoolean" />
+      <xs:element name="useBodyPartAnchor" type="StrBoolean" />
       <xs:element name="scale" type="xs:float" />
       <xs:element name="childScale" type="xs:float" />
     </xs:choice>
@@ -88,6 +96,12 @@
     <xs:choice minOccurs="1" maxOccurs="unbounded">
       <xs:element name="value__" type="xs:int" />
     </xs:choice>
+    <xs:attribute name="Class" type="xs:string" />
+    <xs:attribute name="MayRequire" type="xs:string" />
+    <xs:attribute name="MayRequireAnyOf" type="xs:string" />
+  </xs:complexType>
+  <xs:complexType name="Boolean">
+    <xs:choice minOccurs="1" maxOccurs="unbounded" />
     <xs:attribute name="Class" type="xs:string" />
     <xs:attribute name="MayRequire" type="xs:string" />
     <xs:attribute name="MayRequireAnyOf" type="xs:string" />
@@ -173,20 +187,20 @@
         </xs:complexType>
       </xs:element>
       <xs:element name="texSeed" type="xs:int" />
-      <xs:element name="useGraphic" type="xs:boolean" />
+      <xs:element name="useGraphic" type="StrBoolean" />
       <xs:element name="skipFlag" type="xs:string" />
       <xs:element name="rotDrawMode" type="RotDrawMode" />
       <xs:element name="pawnType" type="RenderNodePawnType" />
       <xs:element name="linkedBodyPartsGroup" type="xs:string" />
       <xs:element name="color" type="Color" />
       <xs:element name="colorRGBPostFactor" type="xs:float" />
-      <xs:element name="useRottenColor" type="xs:boolean" />
-      <xs:element name="useSkinShader" type="xs:boolean" />
+      <xs:element name="useRottenColor" type="StrBoolean" />
+      <xs:element name="useSkinShader" type="StrBoolean" />
       <xs:element name="shaderTypeDef" type="xs:string" />
       <xs:element name="colorType" type="AttachmentColorType" />
       <xs:element name="baseLayer" type="xs:float" />
       <xs:element name="drawData" type="DrawData" />
-      <xs:element name="oppositeFacingLayerWhenFlipped" type="xs:boolean" />
+      <xs:element name="oppositeFacingLayerWhenFlipped" type="StrBoolean" />
       <xs:element name="overrideMeshSize" type="Vector2" />
       <xs:element name="drawSize" type="Vector2" />
       <xs:element name="anchorTag" type="xs:string" />
@@ -201,11 +215,11 @@
           <xs:attribute name="MayRequireAnyOf" type="xs:string" />
         </xs:complexType>
       </xs:element>
-      <xs:element name="flipGraphic" type="xs:boolean" />
-      <xs:element name="rotateIndependently" type="xs:boolean" />
+      <xs:element name="flipGraphic" type="StrBoolean" />
+      <xs:element name="rotateIndependently" type="StrBoolean" />
       <xs:element name="debugLabel" type="xs:string" />
       <xs:element name="overlayLayer" type="OverlayLayer" />
-      <xs:element name="overlayOverApparel" type="xs:boolean" />
+      <xs:element name="overlayOverApparel" type="Boolean" />
     </xs:choice>
     <xs:attribute name="Class" type="xs:string" />
     <xs:attribute name="MayRequire" type="xs:string" />
@@ -338,7 +352,7 @@
           <xs:attribute name="MayRequireAnyOf" type="xs:string" />
         </xs:complexType>
       </xs:element>
-      <xs:element name="whitelist" type="xs:boolean" />
+      <xs:element name="whitelist" type="StrBoolean" />
     </xs:choice>
     <xs:attribute name="Class" type="xs:string" />
     <xs:attribute name="MayRequire" type="xs:string" />
@@ -483,7 +497,7 @@
           <xs:attribute name="MayRequireAnyOf" type="xs:string" />
         </xs:complexType>
       </xs:element>
-      <xs:element name="normalized" type="xs:boolean" />
+      <xs:element name="normalized" type="StrBoolean" />
       <xs:element name="offset" type="Vector3Curve" />
       <xs:element name="angle" type="ComplexCurve" />
       <xs:element name="scale" type="Vector3Curve" />
@@ -547,7 +561,7 @@
         </xs:complexType>
       </xs:element>
       <xs:element name="woundAnchorTag" type="xs:string" />
-      <xs:element name="flipGraphic" type="xs:boolean" />
+      <xs:element name="flipGraphic" type="StrBoolean" />
       <xs:element name="visibleHediffRots">
         <xs:complexType>
           <xs:sequence>
@@ -718,7 +732,7 @@
   </xs:complexType>
   <xs:complexType name="DamageGraphicData">
     <xs:choice minOccurs="1" maxOccurs="unbounded">
-      <xs:element name="enabled" type="xs:boolean" />
+      <xs:element name="enabled" type="StrBoolean" />
       <xs:element name="rectN" type="Rect" />
       <xs:element name="rectE" type="Rect" />
       <xs:element name="rectS" type="Rect" />
@@ -784,7 +798,7 @@
   <xs:complexType name="AsymmetricLinkData">
     <xs:choice minOccurs="1" maxOccurs="unbounded">
       <xs:element name="linkFlags" type="LinkFlags" />
-      <xs:element name="linkToDoors" type="xs:boolean" />
+      <xs:element name="linkToDoors" type="StrBoolean" />
       <xs:element name="drawDoorBorderEast" type="BorderData" />
       <xs:element name="drawDoorBorderWest" type="BorderData" />
     </xs:choice>
@@ -817,11 +831,11 @@
       <xs:element name="drawOffsetSouth" type="Vector3" />
       <xs:element name="drawOffsetWest" type="Vector3" />
       <xs:element name="onGroundRandomRotateAngle" type="xs:float" />
-      <xs:element name="drawRotated" type="xs:boolean" />
-      <xs:element name="allowFlip" type="xs:boolean" />
+      <xs:element name="drawRotated" type="StrBoolean" />
+      <xs:element name="allowFlip" type="StrBoolean" />
       <xs:element name="flipExtraRotation" type="xs:float" />
-      <xs:element name="renderInstanced" type="xs:boolean" />
-      <xs:element name="allowAtlasing" type="xs:boolean" />
+      <xs:element name="renderInstanced" type="StrBoolean" />
+      <xs:element name="allowAtlasing" type="StrBoolean" />
       <xs:element name="renderQueue" type="xs:int" />
       <xs:element name="overlayOpacity" type="xs:float" />
       <xs:element name="attachments">
@@ -842,8 +856,8 @@
           <xs:attribute name="MayRequireAnyOf" type="xs:string" />
         </xs:complexType>
       </xs:element>
-      <xs:element name="addTopAltitudeBias" type="xs:boolean" />
-      <xs:element name="ignoreThingDrawColor" type="xs:boolean" />
+      <xs:element name="addTopAltitudeBias" type="StrBoolean" />
+      <xs:element name="ignoreThingDrawColor" type="StrBoolean" />
       <xs:element name="maxSnS" type="Vector2" />
       <xs:element name="offsetSnS" type="Vector2" />
       <xs:element name="shadowData" type="ShadowData" />
@@ -861,8 +875,8 @@
     <xs:choice minOccurs="1" maxOccurs="unbounded">
       <xs:element name="bodyPartGroup" type="xs:string" />
       <xs:element name="thing" type="xs:string" />
-      <xs:element name="allowMale" type="xs:boolean" />
-      <xs:element name="allowFemale" type="xs:boolean" />
+      <xs:element name="allowMale" type="StrBoolean" />
+      <xs:element name="allowFemale" type="StrBoolean" />
     </xs:choice>
     <xs:attribute name="Class" type="xs:string" />
     <xs:attribute name="MayRequire" type="xs:string" />
@@ -1116,8 +1130,8 @@
       <xs:element name="severityPerDamageDealt" type="xs:float" />
       <xs:element name="severityFixed" type="xs:float" />
       <xs:element name="victimSeverityScaling" type="xs:string" />
-      <xs:element name="inverseStatScaling" type="xs:boolean" />
-      <xs:element name="victimSeverityScalingByInvBodySize" type="xs:boolean" />
+      <xs:element name="inverseStatScaling" type="StrBoolean" />
+      <xs:element name="victimSeverityScalingByInvBodySize" type="StrBoolean" />
     </xs:choice>
     <xs:attribute name="Class" type="xs:string" />
     <xs:attribute name="MayRequire" type="xs:string" />
@@ -1184,7 +1198,7 @@
         </xs:complexType>
       </xs:element>
       <xs:element name="positionDimensions" type="Vector3" />
-      <xs:element name="attachToSpawnThing" type="xs:boolean" />
+      <xs:element name="attachToSpawnThing" type="StrBoolean" />
       <xs:element name="avoidLastPositionRadius" type="xs:float" />
       <xs:element name="attachPoint" type="AttachPointType" />
       <xs:element name="moteDef" type="xs:string" />
@@ -1197,13 +1211,13 @@
           </xs:restriction>
         </xs:simpleType>
       </xs:element>
-      <xs:element name="absoluteAngle" type="xs:boolean" />
-      <xs:element name="useTargetAInitialRotation" type="xs:boolean" />
-      <xs:element name="useTargetBInitialRotation" type="xs:boolean" />
-      <xs:element name="fleckUsesAngleForVelocity" type="xs:boolean" />
-      <xs:element name="rotateTowardsTargetCenter" type="xs:boolean" />
-      <xs:element name="useTargetABodyAngle" type="xs:boolean" />
-      <xs:element name="useTargetBBodyAngle" type="xs:boolean" />
+      <xs:element name="absoluteAngle" type="StrBoolean" />
+      <xs:element name="useTargetAInitialRotation" type="StrBoolean" />
+      <xs:element name="useTargetBInitialRotation" type="StrBoolean" />
+      <xs:element name="fleckUsesAngleForVelocity" type="StrBoolean" />
+      <xs:element name="rotateTowardsTargetCenter" type="StrBoolean" />
+      <xs:element name="useTargetABodyAngle" type="StrBoolean" />
+      <xs:element name="useTargetBBodyAngle" type="StrBoolean" />
       <xs:element name="speed">
         <xs:simpleType>
           <xs:restriction base="xs:string">
@@ -1248,7 +1262,7 @@
         </xs:simpleType>
       </xs:element>
       <xs:element name="ticksBeforeSustainerStart" type="xs:int" />
-      <xs:element name="orbitOrigin" type="xs:boolean" />
+      <xs:element name="orbitOrigin" type="StrBoolean" />
       <xs:element name="orbitSpeed">
         <xs:simpleType>
           <xs:restriction base="xs:string">
@@ -1257,8 +1271,8 @@
         </xs:simpleType>
       </xs:element>
       <xs:element name="orbitSnapStrength" type="xs:float" />
-      <xs:element name="makeMoteOnSubtrigger" type="xs:boolean" />
-      <xs:element name="destroyMoteOnCleanup" type="xs:boolean" />
+      <xs:element name="makeMoteOnSubtrigger" type="StrBoolean" />
+      <xs:element name="destroyMoteOnCleanup" type="StrBoolean" />
       <xs:element name="cameraShake">
         <xs:simpleType>
           <xs:restriction base="xs:string">
@@ -1269,7 +1283,7 @@
       <xs:element name="distanceAttenuationScale" type="xs:float" />
       <xs:element name="distanceAttenuationMax" type="xs:float" />
       <xs:element name="randomWeight" type="xs:float" />
-      <xs:element name="subTriggerOnSpawn" type="xs:boolean" />
+      <xs:element name="subTriggerOnSpawn" type="StrBoolean" />
       <xs:element name="children">
         <xs:complexType>
           <xs:sequence>
@@ -1353,11 +1367,11 @@
           <xs:attribute name="MayRequireAnyOf" type="xs:string" />
         </xs:complexType>
       </xs:element>
-      <xs:element name="canAffectAnyLivePart" type="xs:boolean" />
-      <xs:element name="allowOnLodgers" type="xs:boolean" />
-      <xs:element name="allowOnQuestRewardPawns" type="xs:boolean" />
-      <xs:element name="allowOnQuestReservedPawns" type="xs:boolean" />
-      <xs:element name="allowOnBeggars" type="xs:boolean" />
+      <xs:element name="canAffectAnyLivePart" type="StrBoolean" />
+      <xs:element name="allowOnLodgers" type="StrBoolean" />
+      <xs:element name="allowOnQuestRewardPawns" type="StrBoolean" />
+      <xs:element name="allowOnQuestReservedPawns" type="StrBoolean" />
+      <xs:element name="allowOnBeggars" type="StrBoolean" />
       <xs:element name="countToAffect" type="xs:int" />
     </xs:choice>
     <xs:attribute name="Class" type="xs:string" />
@@ -1386,18 +1400,18 @@
       <xs:element name="minSeverity" type="xs:float" />
       <xs:element name="label" type="xs:string" />
       <xs:element name="overrideLabel" type="xs:string" />
-      <xs:element name="becomeVisible" type="xs:boolean" />
-      <xs:element name="lifeThreatening" type="xs:boolean" />
+      <xs:element name="becomeVisible" type="StrBoolean" />
+      <xs:element name="lifeThreatening" type="StrBoolean" />
       <xs:element name="tale" type="xs:string" />
       <xs:element name="vomitMtbDays" type="xs:float" />
       <xs:element name="deathMtbDays" type="xs:float" />
-      <xs:element name="mtbDeathDestroysBrain" type="xs:boolean" />
+      <xs:element name="mtbDeathDestroysBrain" type="StrBoolean" />
       <xs:element name="painFactor" type="xs:float" />
       <xs:element name="painOffset" type="xs:float" />
       <xs:element name="totalBleedFactor" type="xs:float" />
       <xs:element name="naturalHealingFactor" type="xs:float" />
       <xs:element name="regeneration" type="xs:float" />
-      <xs:element name="showRegenerationStat" type="xs:boolean" />
+      <xs:element name="showRegenerationStat" type="StrBoolean" />
       <xs:element name="forgetMemoryThoughtMtbDays" type="xs:float" />
       <xs:element name="pctConditionalThoughtsNullified" type="xs:float" />
       <xs:element name="pctAllThoughtNullification" type="xs:float" />
@@ -1411,8 +1425,8 @@
       <xs:element name="foodPoisoningChanceFactor" type="xs:float" />
       <xs:element name="mentalBreakMtbDays" type="xs:float" />
       <xs:element name="mentalBreakExplanation" type="xs:string" />
-      <xs:element name="blocksMentalBreaks" type="xs:boolean" />
-      <xs:element name="blocksInspirations" type="xs:boolean" />
+      <xs:element name="blocksMentalBreaks" type="StrBoolean" />
+      <xs:element name="blocksInspirations" type="StrBoolean" />
       <xs:element name="overrideMoodBase" type="xs:float" />
       <xs:element name="severityGainFactor" type="xs:float" />
       <xs:element name="allowedMentalBreakIntensities">
@@ -1550,17 +1564,17 @@
           <xs:attribute name="MayRequireAnyOf" type="xs:string" />
         </xs:complexType>
       </xs:element>
-      <xs:element name="multiplyStatChangesBySeverity" type="xs:boolean" />
+      <xs:element name="multiplyStatChangesBySeverity" type="StrBoolean" />
       <xs:element name="statOffsetEffectMultiplier" type="xs:string" />
       <xs:element name="statFactorEffectMultiplier" type="xs:string" />
       <xs:element name="capacityFactorEffectMultiplier" type="xs:string" />
       <xs:element name="disabledWorkTags" type="WorkTags" />
       <xs:element name="overrideTooltip" type="xs:string" />
       <xs:element name="extraTooltip" type="xs:string" />
-      <xs:element name="blocksSleeping" type="xs:boolean" />
+      <xs:element name="blocksSleeping" type="StrBoolean" />
       <xs:element name="partEfficiencyOffset" type="xs:float" />
-      <xs:element name="partIgnoreMissingHP" type="xs:boolean" />
-      <xs:element name="destroyPart" type="xs:boolean" />
+      <xs:element name="partIgnoreMissingHP" type="StrBoolean" />
+      <xs:element name="destroyPart" type="StrBoolean" />
     </xs:choice>
     <xs:attribute name="Class" type="xs:string" />
     <xs:attribute name="MayRequire" type="xs:string" />
@@ -1577,11 +1591,11 @@
       <xs:element name="painPerSeverity" type="xs:float" />
       <xs:element name="averagePainPerSeverityPermanent" type="xs:float" />
       <xs:element name="bleedRate" type="xs:float" />
-      <xs:element name="canMerge" type="xs:boolean" />
+      <xs:element name="canMerge" type="StrBoolean" />
       <xs:element name="destroyedLabel" type="xs:string" />
       <xs:element name="destroyedOutLabel" type="xs:string" />
-      <xs:element name="useRemovedLabel" type="xs:boolean" />
-      <xs:element name="alwaysUseDestroyedLabel" type="xs:boolean" />
+      <xs:element name="useRemovedLabel" type="StrBoolean" />
+      <xs:element name="alwaysUseDestroyedLabel" type="StrBoolean" />
     </xs:choice>
     <xs:attribute name="Class" type="xs:string" />
     <xs:attribute name="MayRequire" type="xs:string" />
@@ -1590,9 +1604,9 @@
   <xs:complexType name="AddedBodyPartProps">
     <xs:choice minOccurs="1" maxOccurs="unbounded">
       <xs:element name="partEfficiency" type="xs:float" />
-      <xs:element name="solid" type="xs:boolean" />
-      <xs:element name="isGoodWeapon" type="xs:boolean" />
-      <xs:element name="betterThanNatural" type="xs:boolean" />
+      <xs:element name="solid" type="StrBoolean" />
+      <xs:element name="isGoodWeapon" type="StrBoolean" />
+      <xs:element name="betterThanNatural" type="StrBoolean" />
     </xs:choice>
     <xs:attribute name="Class" type="xs:string" />
     <xs:attribute name="MayRequire" type="xs:string" />
@@ -1661,13 +1675,13 @@
       <xs:element name="loadID" type="xs:int" />
       <xs:element name="randomKey" type="xs:int" />
       <xs:element name="colorFromSpectrum" type="xs:float" />
-      <xs:element name="defeated" type="xs:boolean" />
+      <xs:element name="defeated" type="StrBoolean" />
       <xs:element name="lastTraderRequestTick" type="xs:int" />
       <xs:element name="lastOrbitalTraderRequestTick" type="xs:int" />
       <xs:element name="lastMilitaryAidRequestTick" type="xs:int" />
       <xs:element name="lastExecutionTick" type="xs:int" />
-      <xs:element name="allowRoyalFavorRewards" type="xs:boolean" />
-      <xs:element name="allowGoodwillRewards" type="xs:boolean" />
+      <xs:element name="allowRoyalFavorRewards" type="StrBoolean" />
+      <xs:element name="allowGoodwillRewards" type="StrBoolean" />
       <xs:element name="questTags">
         <xs:complexType>
           <xs:sequence>
@@ -1688,11 +1702,11 @@
       </xs:element>
       <xs:element name="color" type="Color" />
       <xs:element name="allegianceColor" type="Color" />
-      <xs:element name="hidden" type="xs:boolean" />
-      <xs:element name="temporary" type="xs:boolean" />
-      <xs:element name="factionHostileOnHarmByPlayer" type="xs:boolean" />
-      <xs:element name="neverFlee" type="xs:boolean" />
-      <xs:element name="deactivated" type="xs:boolean" />
+      <xs:element name="hidden" type="Boolean" />
+      <xs:element name="temporary" type="StrBoolean" />
+      <xs:element name="factionHostileOnHarmByPlayer" type="StrBoolean" />
+      <xs:element name="neverFlee" type="StrBoolean" />
+      <xs:element name="deactivated" type="StrBoolean" />
     </xs:choice>
     <xs:attribute name="Class" type="xs:string" />
     <xs:attribute name="MayRequire" type="xs:string" />
@@ -1708,18 +1722,18 @@
   </xs:complexType>
   <xs:complexType name="TargetingParameters">
     <xs:choice minOccurs="1" maxOccurs="unbounded">
-      <xs:element name="canTargetLocations" type="xs:boolean" />
-      <xs:element name="canTargetSelf" type="xs:boolean" />
-      <xs:element name="canTargetPawns" type="xs:boolean" />
-      <xs:element name="canTargetFires" type="xs:boolean" />
-      <xs:element name="canTargetBuildings" type="xs:boolean" />
-      <xs:element name="canTargetItems" type="xs:boolean" />
-      <xs:element name="canTargetAnimals" type="xs:boolean" />
-      <xs:element name="canTargetHumans" type="xs:boolean" />
-      <xs:element name="canTargetMechs" type="xs:boolean" />
-      <xs:element name="canTargetPlants" type="xs:boolean" />
-      <xs:element name="canTargetSubhumans" type="xs:boolean" />
-      <xs:element name="canTargetEntities" type="xs:boolean" />
+      <xs:element name="canTargetLocations" type="StrBoolean" />
+      <xs:element name="canTargetSelf" type="StrBoolean" />
+      <xs:element name="canTargetPawns" type="StrBoolean" />
+      <xs:element name="canTargetFires" type="StrBoolean" />
+      <xs:element name="canTargetBuildings" type="StrBoolean" />
+      <xs:element name="canTargetItems" type="StrBoolean" />
+      <xs:element name="canTargetAnimals" type="StrBoolean" />
+      <xs:element name="canTargetHumans" type="StrBoolean" />
+      <xs:element name="canTargetMechs" type="StrBoolean" />
+      <xs:element name="canTargetPlants" type="StrBoolean" />
+      <xs:element name="canTargetSubhumans" type="StrBoolean" />
+      <xs:element name="canTargetEntities" type="StrBoolean" />
       <xs:element name="onlyTargetFactions">
         <xs:complexType>
           <xs:sequence>
@@ -1729,30 +1743,30 @@
           <xs:attribute name="MayRequireAnyOf" type="xs:string" />
         </xs:complexType>
       </xs:element>
-      <xs:element name="onlyTargetFlammables" type="xs:boolean" />
-      <xs:element name="mustBeSelectable" type="xs:boolean" />
-      <xs:element name="neverTargetDoors" type="xs:boolean" />
-      <xs:element name="neverTargetIncapacitated" type="xs:boolean" />
-      <xs:element name="neverTargetHostileFaction" type="xs:boolean" />
-      <xs:element name="onlyTargetSameIdeo" type="xs:boolean" />
-      <xs:element name="onlyTargetThingsAffectingRegions" type="xs:boolean" />
-      <xs:element name="onlyTargetDamagedThings" type="xs:boolean" />
-      <xs:element name="mapObjectTargetsMustBeAutoAttackable" type="xs:boolean" />
-      <xs:element name="onlyTargetIncapacitatedPawns" type="xs:boolean" />
-      <xs:element name="onlyTargetColonistsOrPrisoners" type="xs:boolean" />
-      <xs:element name="onlyTargetColonistsOrPrisonersOrSlaves" type="xs:boolean" />
-      <xs:element name="onlyTargetColonistsOrPrisonersOrSlavesAllowMinorMentalBreaks" type="xs:boolean" />
-      <xs:element name="onlyTargetControlledPawns" type="xs:boolean" />
-      <xs:element name="onlyTargetColonists" type="xs:boolean" />
-      <xs:element name="onlyTargetPrisonersOfColony" type="xs:boolean" />
-      <xs:element name="onlyTargetPsychicSensitive" type="xs:boolean" />
-      <xs:element name="onlyTargetAnimaTrees" type="xs:boolean" />
-      <xs:element name="canTargetBloodfeeders" type="xs:boolean" />
-      <xs:element name="onlyRepairableMechs" type="xs:boolean" />
+      <xs:element name="onlyTargetFlammables" type="StrBoolean" />
+      <xs:element name="mustBeSelectable" type="StrBoolean" />
+      <xs:element name="neverTargetDoors" type="StrBoolean" />
+      <xs:element name="neverTargetIncapacitated" type="StrBoolean" />
+      <xs:element name="neverTargetHostileFaction" type="StrBoolean" />
+      <xs:element name="onlyTargetSameIdeo" type="StrBoolean" />
+      <xs:element name="onlyTargetThingsAffectingRegions" type="StrBoolean" />
+      <xs:element name="onlyTargetDamagedThings" type="StrBoolean" />
+      <xs:element name="mapObjectTargetsMustBeAutoAttackable" type="StrBoolean" />
+      <xs:element name="onlyTargetIncapacitatedPawns" type="StrBoolean" />
+      <xs:element name="onlyTargetColonistsOrPrisoners" type="StrBoolean" />
+      <xs:element name="onlyTargetColonistsOrPrisonersOrSlaves" type="StrBoolean" />
+      <xs:element name="onlyTargetColonistsOrPrisonersOrSlavesAllowMinorMentalBreaks" type="StrBoolean" />
+      <xs:element name="onlyTargetControlledPawns" type="StrBoolean" />
+      <xs:element name="onlyTargetColonists" type="StrBoolean" />
+      <xs:element name="onlyTargetPrisonersOfColony" type="StrBoolean" />
+      <xs:element name="onlyTargetPsychicSensitive" type="StrBoolean" />
+      <xs:element name="onlyTargetAnimaTrees" type="StrBoolean" />
+      <xs:element name="canTargetBloodfeeders" type="StrBoolean" />
+      <xs:element name="onlyRepairableMechs" type="StrBoolean" />
       <xs:element name="thingCategory" type="ThingCategory" />
-      <xs:element name="onlyTargetDoors" type="xs:boolean" />
-      <xs:element name="canTargetCorpses" type="xs:boolean" />
-      <xs:element name="onlyTargetCorpses" type="xs:boolean" />
+      <xs:element name="onlyTargetDoors" type="StrBoolean" />
+      <xs:element name="canTargetCorpses" type="StrBoolean" />
+      <xs:element name="onlyTargetCorpses" type="StrBoolean" />
       <xs:element name="mapBoundsContractedBy" type="xs:int" />
     </xs:choice>
     <xs:attribute name="Class" type="xs:string" />
@@ -1799,34 +1813,34 @@
       <xs:element name="category" type="VerbCategory" />
       <xs:element name="verbClass" type="xs:string" />
       <xs:element name="label" type="xs:string" />
-      <xs:element name="isPrimary" type="xs:boolean" />
-      <xs:element name="violent" type="xs:boolean" />
+      <xs:element name="isPrimary" type="StrBoolean" />
+      <xs:element name="violent" type="StrBoolean" />
       <xs:element name="minRange" type="xs:float" />
       <xs:element name="range" type="xs:float" />
       <xs:element name="rangeStat" type="xs:string" />
       <xs:element name="burstShotCount" type="xs:int" />
       <xs:element name="ticksBetweenBurstShots" type="xs:int" />
-      <xs:element name="showBurstShotStats" type="xs:boolean" />
+      <xs:element name="showBurstShotStats" type="StrBoolean" />
       <xs:element name="noiseRadius" type="xs:float" />
-      <xs:element name="hasStandardCommand" type="xs:boolean" />
-      <xs:element name="targetable" type="xs:boolean" />
-      <xs:element name="nonInterruptingSelfCast" type="xs:boolean" />
+      <xs:element name="hasStandardCommand" type="StrBoolean" />
+      <xs:element name="targetable" type="StrBoolean" />
+      <xs:element name="nonInterruptingSelfCast" type="StrBoolean" />
       <xs:element name="targetParams" type="TargetingParameters" />
-      <xs:element name="requireLineOfSight" type="xs:boolean" />
-      <xs:element name="mustCastOnOpenGround" type="xs:boolean" />
-      <xs:element name="forceNormalTimeSpeed" type="xs:boolean" />
-      <xs:element name="onlyManualCast" type="xs:boolean" />
-      <xs:element name="stopBurstWithoutLos" type="xs:boolean" />
+      <xs:element name="requireLineOfSight" type="StrBoolean" />
+      <xs:element name="mustCastOnOpenGround" type="StrBoolean" />
+      <xs:element name="forceNormalTimeSpeed" type="StrBoolean" />
+      <xs:element name="onlyManualCast" type="StrBoolean" />
+      <xs:element name="stopBurstWithoutLos" type="StrBoolean" />
       <xs:element name="surpriseAttack" type="SurpriseAttackProps" />
       <xs:element name="commonality" type="xs:float" />
       <xs:element name="minIntelligence" type="Intelligence" />
       <xs:element name="consumeFuelPerShot" type="xs:float" />
       <xs:element name="consumeFuelPerBurst" type="xs:float" />
-      <xs:element name="stunTargetOnCastStart" type="xs:boolean" />
+      <xs:element name="stunTargetOnCastStart" type="StrBoolean" />
       <xs:element name="invalidTargetPawn" type="xs:string" />
       <xs:element name="commonalityVsEdificeFactor" type="xs:float" />
-      <xs:element name="useableInPocketMaps" type="xs:boolean" />
-      <xs:element name="useableInVacuum" type="xs:boolean" />
+      <xs:element name="useableInPocketMaps" type="StrBoolean" />
+      <xs:element name="useableInVacuum" type="StrBoolean" />
       <xs:element name="mouseTargetingText" type="xs:string" />
       <xs:element name="layerWhitelist">
         <xs:complexType>
@@ -1873,9 +1887,9 @@
       <xs:element name="muzzleFlashScale" type="xs:float" />
       <xs:element name="impactMote" type="xs:string" />
       <xs:element name="impactFleck" type="xs:string" />
-      <xs:element name="drawAimPie" type="xs:boolean" />
+      <xs:element name="drawAimPie" type="StrBoolean" />
       <xs:element name="warmupEffecter" type="xs:string" />
-      <xs:element name="drawHighlightWithLineOfSight" type="xs:boolean" />
+      <xs:element name="drawHighlightWithLineOfSight" type="StrBoolean" />
       <xs:element name="aimingLineMote" type="xs:string" />
       <xs:element name="aimingLineMoteFixedLength" type="xs:float" />
       <xs:element name="aimingChargeMote" type="xs:string" />
@@ -1884,24 +1898,24 @@
       <xs:element name="aimingTargetEffecter" type="xs:string" />
       <xs:element name="explosionRadiusRingColor" type="Color" />
       <xs:element name="linkedBodyPartsGroup" type="xs:string" />
-      <xs:element name="ensureLinkedBodyPartsGroupAlwaysUsable" type="xs:boolean" />
+      <xs:element name="ensureLinkedBodyPartsGroupAlwaysUsable" type="StrBoolean" />
       <xs:element name="meleeDamageDef" type="xs:string" />
       <xs:element name="meleeDamageBaseAmount" type="xs:int" />
       <xs:element name="meleeArmorPenetrationBase" type="xs:float" />
-      <xs:element name="ai_IsWeapon" type="xs:boolean" />
-      <xs:element name="ai_IsBuildingDestroyer" type="xs:boolean" />
+      <xs:element name="ai_IsWeapon" type="StrBoolean" />
+      <xs:element name="ai_IsBuildingDestroyer" type="StrBoolean" />
       <xs:element name="ai_AvoidFriendlyFireRadius" type="xs:float" />
-      <xs:element name="ai_RangedAlawaysShootGroundBelowTarget" type="xs:boolean" />
-      <xs:element name="ai_IsDoorDestroyer" type="xs:boolean" />
-      <xs:element name="ai_ProjectileLaunchingIgnoresMeleeThreats" type="xs:boolean" />
+      <xs:element name="ai_RangedAlawaysShootGroundBelowTarget" type="StrBoolean" />
+      <xs:element name="ai_IsDoorDestroyer" type="StrBoolean" />
+      <xs:element name="ai_ProjectileLaunchingIgnoresMeleeThreats" type="StrBoolean" />
       <xs:element name="ai_TargetHasRangedAttackScoreOffset" type="xs:float" />
       <xs:element name="defaultProjectile" type="xs:string" />
-      <xs:element name="forcedMissEvenDispersal" type="xs:boolean" />
+      <xs:element name="forcedMissEvenDispersal" type="StrBoolean" />
       <xs:element name="accuracyTouch" type="xs:float" />
       <xs:element name="accuracyShort" type="xs:float" />
       <xs:element name="accuracyMedium" type="xs:float" />
       <xs:element name="accuracyLong" type="xs:float" />
-      <xs:element name="canGoWild" type="xs:boolean" />
+      <xs:element name="canGoWild" type="StrBoolean" />
       <xs:element name="beamDamageDef" type="xs:string" />
       <xs:element name="beamWidth" type="xs:float" />
       <xs:element name="beamMaxDeviation" type="xs:float" />
@@ -1923,13 +1937,13 @@
         </xs:simpleType>
       </xs:element>
       <xs:element name="soundCastBeam" type="xs:string" />
-      <xs:element name="beamTargetsGround" type="xs:boolean" />
-      <xs:element name="beamSetsGroundOnFire" type="xs:boolean" />
+      <xs:element name="beamTargetsGround" type="StrBoolean" />
+      <xs:element name="beamSetsGroundOnFire" type="StrBoolean" />
       <xs:element name="beamTotalDamage" type="xs:float" />
-      <xs:element name="beamHitsNeighborCells" type="xs:boolean" />
-      <xs:element name="beamCantHitWithinMinRange" type="xs:boolean" />
-      <xs:element name="beamHitsNeighborCellsRequiresLOS" type="xs:boolean" />
-      <xs:element name="ai_BeamIsIncendiary" type="xs:boolean" />
+      <xs:element name="beamHitsNeighborCells" type="StrBoolean" />
+      <xs:element name="beamCantHitWithinMinRange" type="StrBoolean" />
+      <xs:element name="beamHitsNeighborCellsRequiresLOS" type="StrBoolean" />
+      <xs:element name="ai_BeamIsIncendiary" type="StrBoolean" />
       <xs:element name="sprayWidth" type="xs:float" />
       <xs:element name="sprayArching" type="xs:float" />
       <xs:element name="sprayNumExtraCells" type="xs:int" />
@@ -1944,7 +1958,7 @@
       <xs:element name="rangedFireRulepack" type="xs:string" />
       <xs:element name="soundLanding" type="xs:string" />
       <xs:element name="flightEffecterDef" type="xs:string" />
-      <xs:element name="flyWithCarriedThing" type="xs:boolean" />
+      <xs:element name="flyWithCarriedThing" type="StrBoolean" />
       <xs:element name="workModeDef" type="xs:string" />
     </xs:choice>
     <xs:attribute name="Class" type="xs:string" />
@@ -1973,9 +1987,9 @@
         </xs:complexType>
       </xs:element>
       <xs:element name="temperature" type="xs:float" />
-      <xs:element name="destroyOnParentMapAbandoned" type="xs:boolean" />
-      <xs:element name="preventPrisonerEscape" type="xs:boolean" />
-      <xs:element name="canLaunchGravship" type="xs:boolean" />
+      <xs:element name="destroyOnParentMapAbandoned" type="StrBoolean" />
+      <xs:element name="preventPrisonerEscape" type="StrBoolean" />
+      <xs:element name="canLaunchGravship" type="StrBoolean" />
     </xs:choice>
     <xs:attribute name="Class" type="xs:string" />
     <xs:attribute name="MayRequire" type="xs:string" />
@@ -2041,11 +2055,11 @@
   </xs:complexType>
   <xs:complexType name="DifficultyConditionConfig">
     <xs:choice minOccurs="1" maxOccurs="unbounded">
-      <xs:element name="bigThreatsDisabled" type="xs:boolean" />
-      <xs:element name="trapsDisabled" type="xs:boolean" />
-      <xs:element name="turretsDisabled" type="xs:boolean" />
-      <xs:element name="mortarsDisabled" type="xs:boolean" />
-      <xs:element name="extremeWeatherIncidentsDisabled" type="xs:boolean" />
+      <xs:element name="bigThreatsDisabled" type="StrBoolean" />
+      <xs:element name="trapsDisabled" type="StrBoolean" />
+      <xs:element name="turretsDisabled" type="StrBoolean" />
+      <xs:element name="mortarsDisabled" type="StrBoolean" />
+      <xs:element name="extremeWeatherIncidentsDisabled" type="StrBoolean" />
     </xs:choice>
     <xs:attribute name="Class" type="xs:string" />
     <xs:attribute name="MayRequire" type="xs:string" />
@@ -2153,9 +2167,9 @@
   <xs:complexType name="SubSoundDef">
     <xs:choice minOccurs="1" maxOccurs="unbounded">
       <xs:element name="name" type="xs:string" />
-      <xs:element name="onCamera" type="xs:boolean" />
-      <xs:element name="muteWhenPaused" type="xs:boolean" />
-      <xs:element name="tempoAffectedByGameSpeed" type="xs:boolean" />
+      <xs:element name="onCamera" type="StrBoolean" />
+      <xs:element name="muteWhenPaused" type="StrBoolean" />
+      <xs:element name="tempoAffectedByGameSpeed" type="StrBoolean" />
       <xs:element name="grains">
         <xs:complexType>
           <xs:sequence>
@@ -2220,7 +2234,7 @@
         </xs:simpleType>
       </xs:element>
       <xs:element name="tag" type="xs:string" />
-      <xs:element name="sustainLoop" type="xs:boolean" />
+      <xs:element name="sustainLoop" type="StrBoolean" />
       <xs:element name="sustainLoopDurationRange">
         <xs:simpleType>
           <xs:restriction base="xs:string">
@@ -2236,10 +2250,10 @@
         </xs:simpleType>
       </xs:element>
       <xs:element name="sustainAttack" type="xs:float" />
-      <xs:element name="sustainSkipFirstAttack" type="xs:boolean" />
+      <xs:element name="sustainSkipFirstAttack" type="StrBoolean" />
       <xs:element name="sustainRelease" type="xs:float" />
-      <xs:element name="randomStartPoint" type="xs:boolean" />
-      <xs:element name="canVacuumDampen" type="xs:boolean" />
+      <xs:element name="randomStartPoint" type="StrBoolean" />
+      <xs:element name="canVacuumDampen" type="StrBoolean" />
     </xs:choice>
     <xs:attribute name="Class" type="xs:string" />
     <xs:attribute name="MayRequire" type="xs:string" />
@@ -2271,7 +2285,7 @@
     <xs:choice minOccurs="1" maxOccurs="unbounded">
       <xs:element name="label" type="xs:string" />
       <xs:element name="labelNoLocation" type="xs:string" />
-      <xs:element name="labelUsedInLogging" type="xs:boolean" />
+      <xs:element name="labelUsedInLogging" type="StrBoolean" />
       <xs:element name="capacities">
         <xs:complexType>
           <xs:sequence>
@@ -2296,7 +2310,7 @@
       <xs:element name="surpriseAttack" type="SurpriseAttackProps" />
       <xs:element name="hediff" type="xs:string" />
       <xs:element name="chanceFactor" type="xs:float" />
-      <xs:element name="alwaysTreatAsWeapon" type="xs:boolean" />
+      <xs:element name="alwaysTreatAsWeapon" type="StrBoolean" />
       <xs:element name="extraMeleeDamages">
         <xs:complexType>
           <xs:sequence>
@@ -2309,7 +2323,7 @@
       <xs:element name="soundMeleeHit" type="xs:string" />
       <xs:element name="soundMeleeMiss" type="xs:string" />
       <xs:element name="linkedBodyPartsGroup" type="xs:string" />
-      <xs:element name="ensureLinkedBodyPartsGroupAlwaysUsable" type="xs:boolean" />
+      <xs:element name="ensureLinkedBodyPartsGroupAlwaysUsable" type="StrBoolean" />
     </xs:choice>
     <xs:attribute name="Class" type="xs:string" />
     <xs:attribute name="MayRequire" type="xs:string" />
@@ -2388,9 +2402,9 @@
   <xs:complexType name="TempTerrainProps">
     <xs:choice minOccurs="1" maxOccurs="unbounded">
       <xs:element name="terrainOnRemoved" type="xs:string" />
-      <xs:element name="destroysFloors" type="xs:boolean" />
-      <xs:element name="removedByExplosions" type="xs:boolean" />
-      <xs:element name="replaceableByBridge" type="xs:boolean" />
+      <xs:element name="destroysFloors" type="StrBoolean" />
+      <xs:element name="removedByExplosions" type="StrBoolean" />
+      <xs:element name="replaceableByBridge" type="StrBoolean" />
     </xs:choice>
     <xs:attribute name="Class" type="xs:string" />
     <xs:attribute name="MayRequire" type="xs:string" />
@@ -2459,7 +2473,7 @@
         </xs:complexType>
       </xs:element>
       <xs:element name="costStuffCount" type="xs:int" />
-      <xs:element name="invert" type="xs:boolean" />
+      <xs:element name="invert" type="StrBoolean" />
     </xs:choice>
     <xs:attribute name="Class" type="xs:string" />
     <xs:attribute name="MayRequire" type="xs:string" />
@@ -2536,7 +2550,7 @@
       <xs:element name="productCount" type="xs:int" />
       <xs:element name="targetCountAdjustment" type="xs:int" />
       <xs:element name="bulkRecipeCount" type="xs:int" />
-      <xs:element name="useIngredientsForColor" type="xs:boolean" />
+      <xs:element name="useIngredientsForColor" type="StrBoolean" />
       <xs:element name="workAmount" type="xs:int" />
       <xs:element name="workSpeedStat" type="xs:string" />
       <xs:element name="efficiencyStat" type="xs:string" />
@@ -2628,8 +2642,8 @@
           <xs:attribute name="MayRequireAnyOf" type="xs:string" />
         </xs:complexType>
       </xs:element>
-      <xs:element name="mechanitorOnlyRecipe" type="xs:boolean" />
-      <xs:element name="fromIdeoBuildingPreceptOnly" type="xs:boolean" />
+      <xs:element name="mechanitorOnlyRecipe" type="StrBoolean" />
+      <xs:element name="fromIdeoBuildingPreceptOnly" type="StrBoolean" />
       <xs:element name="displayPriority" type="xs:int" />
     </xs:choice>
     <xs:attribute name="Class" type="xs:string" />
@@ -2698,7 +2712,7 @@
   <xs:complexType name="IngestionOutcomeDoer">
     <xs:choice minOccurs="1" maxOccurs="unbounded">
       <xs:element name="chance" type="xs:float" />
-      <xs:element name="doToGeneratedPawnIfAddicted" type="xs:boolean" />
+      <xs:element name="doToGeneratedPawnIfAddicted" type="StrBoolean" />
     </xs:choice>
     <xs:attribute name="Class" type="xs:string" />
     <xs:attribute name="MayRequire" type="xs:string" />
@@ -2707,8 +2721,8 @@
   <xs:complexType name="HoldOffset">
     <xs:choice minOccurs="1" maxOccurs="unbounded">
       <xs:element name="offset" type="Vector3" />
-      <xs:element name="flip" type="xs:boolean" />
-      <xs:element name="behind" type="xs:boolean" />
+      <xs:element name="flip" type="StrBoolean" />
+      <xs:element name="behind" type="StrBoolean" />
     </xs:choice>
     <xs:attribute name="Class" type="xs:string" />
     <xs:attribute name="MayRequire" type="xs:string" />
@@ -2756,9 +2770,9 @@
       </xs:element>
       <xs:element name="baseIngestTicks" type="xs:int" />
       <xs:element name="chairSearchRadius" type="xs:float" />
-      <xs:element name="useEatingSpeedStat" type="xs:boolean" />
-      <xs:element name="babiesCanIngest" type="xs:boolean" />
-      <xs:element name="humanlikeOnly" type="xs:boolean" />
+      <xs:element name="useEatingSpeedStat" type="StrBoolean" />
+      <xs:element name="babiesCanIngest" type="StrBoolean" />
+      <xs:element name="humanlikeOnly" type="StrBoolean" />
       <xs:element name="tasteThought" type="xs:string" />
       <xs:element name="specialThoughtDirect" type="xs:string" />
       <xs:element name="specialThoughtAsIngredient" type="xs:string" />
@@ -2770,20 +2784,20 @@
       <xs:element name="ingestReportString" type="xs:string" />
       <xs:element name="ingestReportStringEat" type="xs:string" />
       <xs:element name="ingestHoldOffsetStanding" type="HoldOffsetSet" />
-      <xs:element name="ingestHoldUsesTable" type="xs:boolean" />
-      <xs:element name="tableDesired" type="xs:boolean" />
-      <xs:element name="showIngestFloatOption" type="xs:boolean" />
+      <xs:element name="ingestHoldUsesTable" type="StrBoolean" />
+      <xs:element name="tableDesired" type="StrBoolean" />
+      <xs:element name="showIngestFloatOption" type="StrBoolean" />
       <xs:element name="foodType" type="FoodTypeFlags" />
       <xs:element name="joy" type="xs:float" />
       <xs:element name="joyKind" type="xs:string" />
       <xs:element name="sourceDef" type="xs:string" />
       <xs:element name="preferability" type="FoodPreferability" />
-      <xs:element name="nurseable" type="xs:boolean" />
+      <xs:element name="nurseable" type="StrBoolean" />
       <xs:element name="optimalityOffsetHumanlikes" type="xs:float" />
       <xs:element name="optimalityOffsetFeedingAnimals" type="xs:float" />
       <xs:element name="drugCategory" type="DrugCategory" />
-      <xs:element name="canAutoSelectAsFoodForCaravan" type="xs:boolean" />
-      <xs:element name="lowPriorityCaravanFood" type="xs:boolean" />
+      <xs:element name="canAutoSelectAsFoodForCaravan" type="StrBoolean" />
+      <xs:element name="lowPriorityCaravanFood" type="StrBoolean" />
     </xs:choice>
     <xs:attribute name="Class" type="xs:string" />
     <xs:attribute name="MayRequire" type="xs:string" />
@@ -2792,10 +2806,10 @@
   <xs:complexType name="FilthProperties">
     <xs:choice minOccurs="1" maxOccurs="unbounded">
       <xs:element name="cleaningWorkToReduceThickness" type="xs:float" />
-      <xs:element name="canFilthAttach" type="xs:boolean" />
-      <xs:element name="rainWashes" type="xs:boolean" />
-      <xs:element name="allowsFire" type="xs:boolean" />
-      <xs:element name="ignoreFilthMultiplierStat" type="xs:boolean" />
+      <xs:element name="canFilthAttach" type="StrBoolean" />
+      <xs:element name="rainWashes" type="StrBoolean" />
+      <xs:element name="allowsFire" type="StrBoolean" />
+      <xs:element name="ignoreFilthMultiplierStat" type="StrBoolean" />
       <xs:element name="maxThickness" type="xs:int" />
       <xs:element name="disappearsInDays">
         <xs:simpleType>
@@ -2873,7 +2887,7 @@
   </xs:complexType>
   <xs:complexType name="BuildingProperties">
     <xs:choice minOccurs="1" maxOccurs="unbounded">
-      <xs:element name="isEdifice" type="xs:boolean" />
+      <xs:element name="isEdifice" type="StrBoolean" />
       <xs:element name="buildingTags">
         <xs:complexType>
           <xs:sequence>
@@ -2892,10 +2906,10 @@
           <xs:attribute name="MayRequireAnyOf" type="xs:string" />
         </xs:complexType>
       </xs:element>
-      <xs:element name="isInert" type="xs:boolean" />
-      <xs:element name="isTargetable" type="xs:boolean" />
-      <xs:element name="alwaysDeconstructible" type="xs:boolean" />
-      <xs:element name="alwaysUninstallable" type="xs:boolean" />
+      <xs:element name="isInert" type="StrBoolean" />
+      <xs:element name="isTargetable" type="StrBoolean" />
+      <xs:element name="alwaysDeconstructible" type="StrBoolean" />
+      <xs:element name="alwaysUninstallable" type="StrBoolean" />
       <xs:element name="leavingsBlacklist">
         <xs:complexType>
           <xs:sequence>
@@ -2932,39 +2946,39 @@
           <xs:attribute name="MayRequireAnyOf" type="xs:string" />
         </xs:complexType>
       </xs:element>
-      <xs:element name="claimable" type="xs:boolean" />
-      <xs:element name="isSittable" type="xs:boolean" />
-      <xs:element name="multiSittable" type="xs:boolean" />
-      <xs:element name="sitIgnoreOrientation" type="xs:boolean" />
+      <xs:element name="claimable" type="StrBoolean" />
+      <xs:element name="isSittable" type="StrBoolean" />
+      <xs:element name="multiSittable" type="StrBoolean" />
+      <xs:element name="sitIgnoreOrientation" type="StrBoolean" />
       <xs:element name="spawnedConceptLearnOpportunity" type="xs:string" />
       <xs:element name="boughtConceptLearnOpportunity" type="xs:string" />
-      <xs:element name="expandHomeArea" type="xs:boolean" />
+      <xs:element name="expandHomeArea" type="StrBoolean" />
       <xs:element name="blueprintClass" type="xs:string" />
       <xs:element name="blueprintGraphicData" type="GraphicData" />
       <xs:element name="uninstallWork" type="xs:float" />
-      <xs:element name="forceShowRoomStats" type="xs:boolean" />
-      <xs:element name="neverBuildable" type="xs:boolean" />
-      <xs:element name="isWall" type="xs:boolean" />
-      <xs:element name="alwaysExchangeVacuum" type="xs:boolean" />
-      <xs:element name="canExchangeVacuum" type="xs:boolean" />
-      <xs:element name="draftAttackNonDeconstructable" type="xs:boolean" />
-      <xs:element name="wantsHopperAdjacent" type="xs:boolean" />
-      <xs:element name="allowWireConnection" type="xs:boolean" />
-      <xs:element name="shipPart" type="xs:boolean" />
-      <xs:element name="canPlaceOverImpassablePlant" type="xs:boolean" />
+      <xs:element name="forceShowRoomStats" type="StrBoolean" />
+      <xs:element name="neverBuildable" type="StrBoolean" />
+      <xs:element name="isWall" type="StrBoolean" />
+      <xs:element name="alwaysExchangeVacuum" type="StrBoolean" />
+      <xs:element name="canExchangeVacuum" type="StrBoolean" />
+      <xs:element name="draftAttackNonDeconstructable" type="StrBoolean" />
+      <xs:element name="wantsHopperAdjacent" type="StrBoolean" />
+      <xs:element name="allowWireConnection" type="StrBoolean" />
+      <xs:element name="shipPart" type="StrBoolean" />
+      <xs:element name="canPlaceOverImpassablePlant" type="StrBoolean" />
       <xs:element name="heatPerTickWhileWorking" type="xs:float" />
-      <xs:element name="canBuildNonEdificesUnder" type="xs:boolean" />
-      <xs:element name="canPlaceOverWall" type="xs:boolean" />
-      <xs:element name="isPlaceOverableWall" type="xs:boolean" />
-      <xs:element name="allowAutoroof" type="xs:boolean" />
-      <xs:element name="preventDeteriorationOnTop" type="xs:boolean" />
-      <xs:element name="preventDeteriorationInside" type="xs:boolean" />
-      <xs:element name="isMealSource" type="xs:boolean" />
-      <xs:element name="isNaturalRock" type="xs:boolean" />
-      <xs:element name="isResourceRock" type="xs:boolean" />
-      <xs:element name="repairable" type="xs:boolean" />
+      <xs:element name="canBuildNonEdificesUnder" type="StrBoolean" />
+      <xs:element name="canPlaceOverWall" type="StrBoolean" />
+      <xs:element name="isPlaceOverableWall" type="StrBoolean" />
+      <xs:element name="allowAutoroof" type="StrBoolean" />
+      <xs:element name="preventDeteriorationOnTop" type="StrBoolean" />
+      <xs:element name="preventDeteriorationInside" type="StrBoolean" />
+      <xs:element name="isMealSource" type="StrBoolean" />
+      <xs:element name="isNaturalRock" type="StrBoolean" />
+      <xs:element name="isResourceRock" type="StrBoolean" />
+      <xs:element name="repairable" type="StrBoolean" />
       <xs:element name="roofCollapseDamageMultiplier" type="xs:float" />
-      <xs:element name="hasFuelingPort" type="xs:boolean" />
+      <xs:element name="hasFuelingPort" type="StrBoolean" />
       <xs:element name="smoothedThing" type="xs:string" />
       <xs:element name="naturalTerrain" type="xs:string" />
       <xs:element name="leaveTerrain" type="xs:string" />
@@ -2975,7 +2989,7 @@
       <xs:element name="soundMeleeHitOverride" type="xs:string" />
       <xs:element name="destroyEffecter" type="xs:string" />
       <xs:element name="buildingSizeCategory" type="BuildingSizeCategory" />
-      <xs:element name="isFence" type="xs:boolean" />
+      <xs:element name="isFence" type="StrBoolean" />
       <xs:element name="relatedBuildCommands">
         <xs:complexType>
           <xs:sequence>
@@ -3012,43 +3026,43 @@
           <xs:attribute name="MayRequireAnyOf" type="xs:string" />
         </xs:complexType>
       </xs:element>
-      <xs:element name="alwaysShowRelatedBuildCommands" type="xs:boolean" />
-      <xs:element name="useIdeoColor" type="xs:boolean" />
-      <xs:element name="wakeDormantPawnsOnConstruction" type="xs:boolean" />
+      <xs:element name="alwaysShowRelatedBuildCommands" type="StrBoolean" />
+      <xs:element name="useIdeoColor" type="StrBoolean" />
+      <xs:element name="wakeDormantPawnsOnConstruction" type="StrBoolean" />
       <xs:element name="maxItemsInCell" type="xs:int" />
-      <xs:element name="paintable" type="xs:boolean" />
-      <xs:element name="canBeDamagedByAttacks" type="xs:boolean" />
-      <xs:element name="isHopper" type="xs:boolean" />
-      <xs:element name="quickTargetable" type="xs:boolean" />
-      <xs:element name="displayAttackToDestroyOnInspectPane" type="xs:boolean" />
-      <xs:element name="isEscapableContainer" type="xs:boolean" />
-      <xs:element name="isPowerConduit" type="xs:boolean" />
-      <xs:element name="biomeSpecific" type="xs:boolean" />
-      <xs:element name="crater" type="xs:boolean" />
-      <xs:element name="canLandGravshipOn" type="xs:boolean" />
-      <xs:element name="isAirtight" type="xs:boolean" />
-      <xs:element name="isStuffableAirtight" type="xs:boolean" />
-      <xs:element name="canConstructInCorner" type="xs:boolean" />
-      <xs:element name="isAttachment" type="xs:boolean" />
-      <xs:element name="supportsWallAttachments" type="xs:boolean" />
-      <xs:element name="isPlayerEjectable" type="xs:boolean" />
+      <xs:element name="paintable" type="StrBoolean" />
+      <xs:element name="canBeDamagedByAttacks" type="StrBoolean" />
+      <xs:element name="isHopper" type="StrBoolean" />
+      <xs:element name="quickTargetable" type="StrBoolean" />
+      <xs:element name="displayAttackToDestroyOnInspectPane" type="StrBoolean" />
+      <xs:element name="isEscapableContainer" type="StrBoolean" />
+      <xs:element name="isPowerConduit" type="StrBoolean" />
+      <xs:element name="biomeSpecific" type="StrBoolean" />
+      <xs:element name="crater" type="StrBoolean" />
+      <xs:element name="canLandGravshipOn" type="StrBoolean" />
+      <xs:element name="isAirtight" type="StrBoolean" />
+      <xs:element name="isStuffableAirtight" type="StrBoolean" />
+      <xs:element name="canConstructInCorner" type="StrBoolean" />
+      <xs:element name="isAttachment" type="StrBoolean" />
+      <xs:element name="supportsWallAttachments" type="StrBoolean" />
+      <xs:element name="isPlayerEjectable" type="StrBoolean" />
       <xs:element name="openingStartedSound" type="xs:string" />
       <xs:element name="fullGraveGraphicData" type="GraphicData" />
       <xs:element name="bed_healPerDay" type="xs:float" />
-      <xs:element name="bed_defaultMedical" type="xs:boolean" />
-      <xs:element name="bed_showSleeperBody" type="xs:boolean" />
-      <xs:element name="bed_humanlike" type="xs:boolean" />
+      <xs:element name="bed_defaultMedical" type="StrBoolean" />
+      <xs:element name="bed_showSleeperBody" type="StrBoolean" />
+      <xs:element name="bed_humanlike" type="StrBoolean" />
       <xs:element name="bed_maxBodySize" type="xs:float" />
-      <xs:element name="bed_caravansCanUse" type="xs:boolean" />
-      <xs:element name="bed_slabBed" type="xs:boolean" />
-      <xs:element name="bed_crib" type="xs:boolean" />
+      <xs:element name="bed_caravansCanUse" type="StrBoolean" />
+      <xs:element name="bed_slabBed" type="StrBoolean" />
+      <xs:element name="bed_crib" type="StrBoolean" />
       <xs:element name="bed_pawnDrawOffset" type="xs:float" />
-      <xs:element name="bed_canBeMedical" type="xs:boolean" />
-      <xs:element name="bed_DisplayOwnerType" type="xs:boolean" />
-      <xs:element name="bed_DisplayOwnersInInspectString" type="xs:boolean" />
-      <xs:element name="bed_countsForBedroomOrBarracks" type="xs:boolean" />
-      <xs:element name="bed_emptyCountsForBarracks" type="xs:boolean" />
-      <xs:element name="bed_UseSheetColor" type="xs:boolean" />
+      <xs:element name="bed_canBeMedical" type="StrBoolean" />
+      <xs:element name="bed_DisplayOwnerType" type="StrBoolean" />
+      <xs:element name="bed_DisplayOwnersInInspectString" type="StrBoolean" />
+      <xs:element name="bed_countsForBedroomOrBarracks" type="StrBoolean" />
+      <xs:element name="bed_emptyCountsForBarracks" type="StrBoolean" />
+      <xs:element name="bed_UseSheetColor" type="StrBoolean" />
       <xs:element name="nutritionCostPerDispense" type="xs:float" />
       <xs:element name="soundDispense" type="xs:string" />
       <xs:element name="turretGunDef" type="xs:string" />
@@ -3063,7 +3077,7 @@
       <xs:element name="turretInitialCooldownTime" type="xs:float" />
       <xs:element name="turretTopDrawSize" type="xs:float" />
       <xs:element name="turretTopOffset" type="Vector2" />
-      <xs:element name="playTargetAcquiredSound" type="xs:boolean" />
+      <xs:element name="playTargetAcquiredSound" type="StrBoolean" />
       <xs:element name="turretTopLoadedGraphic" type="GraphicData" />
       <xs:element name="requiredMechWeightClasses">
         <xs:complexType>
@@ -3083,11 +3097,11 @@
           <xs:attribute name="MayRequireAnyOf" type="xs:string" />
         </xs:complexType>
       </xs:element>
-      <xs:element name="ai_combatDangerous" type="xs:boolean" />
-      <xs:element name="ai_chillDestination" type="xs:boolean" />
-      <xs:element name="ai_neverTrashThis" type="xs:boolean" />
-      <xs:element name="preferConnectingToFences" type="xs:boolean" />
-      <xs:element name="roamerCanOpen" type="xs:boolean" />
+      <xs:element name="ai_combatDangerous" type="StrBoolean" />
+      <xs:element name="ai_chillDestination" type="StrBoolean" />
+      <xs:element name="ai_neverTrashThis" type="StrBoolean" />
+      <xs:element name="preferConnectingToFences" type="StrBoolean" />
+      <xs:element name="roamerCanOpen" type="StrBoolean" />
       <xs:element name="soundDoorOpenPowered" type="xs:string" />
       <xs:element name="soundDoorClosePowered" type="xs:string" />
       <xs:element name="soundDoorOpenManual" type="xs:string" />
@@ -3104,10 +3118,10 @@
       <xs:element name="defaultPlantToGrow" type="xs:string" />
       <xs:element name="mineableThing" type="xs:string" />
       <xs:element name="mineableYield" type="xs:int" />
-      <xs:element name="veinMineable" type="xs:boolean" />
+      <xs:element name="veinMineable" type="StrBoolean" />
       <xs:element name="mineableNonMinedEfficiency" type="xs:float" />
       <xs:element name="mineableDropChance" type="xs:float" />
-      <xs:element name="mineableYieldWasteable" type="xs:boolean" />
+      <xs:element name="mineableYieldWasteable" type="StrBoolean" />
       <xs:element name="mineableScatterCommonality" type="xs:float" />
       <xs:element name="mineableScatterLumpSizeRange">
         <xs:simpleType>
@@ -3116,14 +3130,14 @@
           </xs:restriction>
         </xs:simpleType>
       </xs:element>
-      <xs:element name="mineablePreventMeteorite" type="xs:boolean" />
-      <xs:element name="mineablePreventNaturalRockOnSurface" type="xs:boolean" />
-      <xs:element name="ignoreStoredThingsBeauty" type="xs:boolean" />
+      <xs:element name="mineablePreventMeteorite" type="StrBoolean" />
+      <xs:element name="mineablePreventNaturalRockOnSurface" type="StrBoolean" />
+      <xs:element name="ignoreStoredThingsBeauty" type="StrBoolean" />
       <xs:element name="storageGroupTag" type="xs:string" />
       <xs:element name="groupingLabel" type="xs:string" />
       <xs:element name="groupingOrder" type="xs:int" />
-      <xs:element name="isTrap" type="xs:boolean" />
-      <xs:element name="trapDestroyOnSpring" type="xs:boolean" />
+      <xs:element name="isTrap" type="StrBoolean" />
+      <xs:element name="trapDestroyOnSpring" type="StrBoolean" />
       <xs:element name="trapPeacefulWildAnimalsSpringChanceFactor" type="xs:float" />
       <xs:element name="trapDamageCategory" type="xs:string" />
       <xs:element name="trapUnarmedGraphicData" type="GraphicData" />
@@ -3139,12 +3153,12 @@
         </xs:simpleType>
       </xs:element>
       <xs:element name="watchBuildingStandRectWidth" type="xs:int" />
-      <xs:element name="watchBuildingInSameRoom" type="xs:boolean" />
+      <xs:element name="watchBuildingInSameRoom" type="StrBoolean" />
       <xs:element name="joyKind" type="xs:string" />
       <xs:element name="haulToContainerDuration" type="xs:int" />
       <xs:element name="instrumentRange" type="xs:float" />
       <xs:element name="minDistanceToSameTypeOfBuilding" type="xs:int" />
-      <xs:element name="artificialForMeditationPurposes" type="xs:boolean" />
+      <xs:element name="artificialForMeditationPurposes" type="StrBoolean" />
       <xs:element name="effectWatching" type="xs:string" />
       <xs:element name="gibbetCageTopGraphicData" type="GraphicData" />
       <xs:element name="gibbetCorposeDrawOffset" type="Vector3" />
@@ -3180,18 +3194,18 @@
       </xs:element>
       <xs:element name="subcoreScannerTicks" type="xs:int" />
       <xs:element name="subcoreScannerHediff" type="xs:string" />
-      <xs:element name="destroyBrain" type="xs:boolean" />
+      <xs:element name="destroyBrain" type="StrBoolean" />
       <xs:element name="subcoreScannerOutputDef" type="xs:string" />
       <xs:element name="subcoreScannerStartEffect" type="xs:string" />
       <xs:element name="subcoreScannerWorking" type="xs:string" />
       <xs:element name="subcoreScannerComplete" type="xs:string" />
-      <xs:element name="isInsectCocoon" type="xs:boolean" />
+      <xs:element name="isInsectCocoon" type="StrBoolean" />
       <xs:element name="wastepackAtomizerBottomGraphic" type="GraphicData" />
       <xs:element name="wastepackAtomizerWindowGraphic" type="GraphicData" />
       <xs:element name="wastepackAtomizerOperationEffecter" type="xs:string" />
       <xs:element name="bookendGraphicEast" type="GraphicData" />
       <xs:element name="bookendGraphicNorth" type="GraphicData" />
-      <xs:element name="isSupportDoor" type="xs:boolean" />
+      <xs:element name="isSupportDoor" type="StrBoolean" />
       <xs:element name="doorTopGraphic" type="GraphicData" />
       <xs:element name="doorSupportGraphic" type="GraphicData" />
       <xs:element name="upperMoverGraphic" type="GraphicData" />
@@ -3207,7 +3221,7 @@
           </xs:restriction>
         </xs:simpleType>
       </xs:element>
-      <xs:element name="groundSpawnerDestroyAdjacent" type="xs:boolean" />
+      <xs:element name="groundSpawnerDestroyAdjacent" type="StrBoolean" />
       <xs:element name="groundSpawnerSustainerSound" type="xs:string" />
       <xs:element name="groundSpawnerSustainedEffecter" type="xs:string" />
       <xs:element name="groundSpawnerCompleteEffecter" type="xs:string" />
@@ -3297,9 +3311,9 @@
   <xs:complexType name="RaceProperties">
     <xs:choice minOccurs="1" maxOccurs="unbounded">
       <xs:element name="intelligence" type="Intelligence" />
-      <xs:element name="hasGenders" type="xs:boolean" />
+      <xs:element name="hasGenders" type="StrBoolean" />
       <xs:element name="forceGender" type="Gender" />
-      <xs:element name="needsRest" type="xs:boolean" />
+      <xs:element name="needsRest" type="StrBoolean" />
       <xs:element name="thinkTreeMain" type="xs:string" />
       <xs:element name="thinkTreeConstant" type="xs:string" />
       <xs:element name="dutyBoss" type="xs:string" />
@@ -3316,7 +3330,7 @@
           <xs:attribute name="MayRequireAnyOf" type="xs:string" />
         </xs:complexType>
       </xs:element>
-      <xs:element name="makesFootprints" type="xs:boolean" />
+      <xs:element name="makesFootprints" type="StrBoolean" />
       <xs:element name="executionRange" type="xs:int" />
       <xs:element name="lifeExpectancy" type="xs:float" />
       <xs:element name="hediffGiverSets">
@@ -3338,33 +3352,33 @@
         </xs:complexType>
       </xs:element>
       <xs:element name="roamMtbDays" type="xs:float" />
-      <xs:element name="allowedOnCaravan" type="xs:boolean" />
-      <xs:element name="canReleaseToWild" type="xs:boolean" />
-      <xs:element name="playerCanChangeMaster" type="xs:boolean" />
-      <xs:element name="showTrainables" type="xs:boolean" />
-      <xs:element name="hideTrainingTab" type="xs:boolean" />
-      <xs:element name="doesntMove" type="xs:boolean" />
+      <xs:element name="allowedOnCaravan" type="StrBoolean" />
+      <xs:element name="canReleaseToWild" type="StrBoolean" />
+      <xs:element name="playerCanChangeMaster" type="StrBoolean" />
+      <xs:element name="showTrainables" type="StrBoolean" />
+      <xs:element name="hideTrainingTab" type="StrBoolean" />
+      <xs:element name="doesntMove" type="StrBoolean" />
       <xs:element name="renderTree" type="xs:string" />
       <xs:element name="startingAnimation" type="xs:string" />
       <xs:element name="linkedCorpseKind" type="xs:string" />
-      <xs:element name="canOpenFactionlessDoors" type="xs:boolean" />
-      <xs:element name="alwaysAwake" type="xs:boolean" />
-      <xs:element name="alwaysViolent" type="xs:boolean" />
-      <xs:element name="isImmuneToInfections" type="xs:boolean" />
+      <xs:element name="canOpenFactionlessDoors" type="StrBoolean" />
+      <xs:element name="alwaysAwake" type="StrBoolean" />
+      <xs:element name="alwaysViolent" type="StrBoolean" />
+      <xs:element name="isImmuneToInfections" type="StrBoolean" />
       <xs:element name="bleedRateFactor" type="xs:float" />
-      <xs:element name="canBecomeShambler" type="xs:boolean" />
-      <xs:element name="neverIncludeInQuests" type="xs:boolean" />
-      <xs:element name="canBeVacuumBurnt" type="xs:boolean" />
-      <xs:element name="herdAnimal" type="xs:boolean" />
-      <xs:element name="packAnimal" type="xs:boolean" />
-      <xs:element name="predator" type="xs:boolean" />
+      <xs:element name="canBecomeShambler" type="StrBoolean" />
+      <xs:element name="neverIncludeInQuests" type="StrBoolean" />
+      <xs:element name="canBeVacuumBurnt" type="StrBoolean" />
+      <xs:element name="herdAnimal" type="StrBoolean" />
+      <xs:element name="packAnimal" type="StrBoolean" />
+      <xs:element name="predator" type="StrBoolean" />
       <xs:element name="maxPreyBodySize" type="xs:float" />
       <xs:element name="petness" type="xs:float" />
       <xs:element name="nuzzleMtbHours" type="xs:float" />
       <xs:element name="manhunterOnDamageChance" type="xs:float" />
       <xs:element name="manhunterOnTameFailChance" type="xs:float" />
-      <xs:element name="canBePredatorPrey" type="xs:boolean" />
-      <xs:element name="herdMigrationAllowed" type="xs:boolean" />
+      <xs:element name="canBePredatorPrey" type="StrBoolean" />
+      <xs:element name="herdMigrationAllowed" type="StrBoolean" />
       <xs:element name="animalType" type="AnimalType" />
       <xs:element name="willNeverEat">
         <xs:complexType>
@@ -3384,12 +3398,12 @@
           <xs:attribute name="MayRequireAnyOf" type="xs:string" />
         </xs:complexType>
       </xs:element>
-      <xs:element name="giveNonToolUserBeatFireVerb" type="xs:boolean" />
-      <xs:element name="disableIgniteVerb" type="xs:boolean" />
-      <xs:element name="disableAreaControl" type="xs:boolean" />
-      <xs:element name="waterSeeker" type="xs:boolean" />
+      <xs:element name="giveNonToolUserBeatFireVerb" type="StrBoolean" />
+      <xs:element name="disableIgniteVerb" type="StrBoolean" />
+      <xs:element name="disableAreaControl" type="StrBoolean" />
+      <xs:element name="waterSeeker" type="StrBoolean" />
       <xs:element name="waterCellCost" type="xs:int" />
-      <xs:element name="disableMating" type="xs:boolean" />
+      <xs:element name="disableMating" type="StrBoolean" />
       <xs:element name="canCrossBreedWith">
         <xs:complexType>
           <xs:sequence>
@@ -3426,13 +3440,13 @@
           <xs:attribute name="MayRequireAnyOf" type="xs:string" />
         </xs:complexType>
       </xs:element>
-      <xs:element name="canFishForFood" type="xs:boolean" />
-      <xs:element name="canFlyInVacuum" type="xs:boolean" />
+      <xs:element name="canFishForFood" type="StrBoolean" />
+      <xs:element name="canFlyInVacuum" type="StrBoolean" />
       <xs:element name="manhunterPackUseLabelFrom" type="xs:string" />
       <xs:element name="flightStartChanceOnJobStart" type="xs:float" />
       <xs:element name="flightSpeedFactor" type="xs:float" />
-      <xs:element name="canFlyIntoMap" type="xs:boolean" />
-      <xs:element name="canLeaveMapFlying" type="xs:boolean" />
+      <xs:element name="canFlyIntoMap" type="StrBoolean" />
+      <xs:element name="canLeaveMapFlying" type="StrBoolean" />
       <xs:element name="leaveMapOnFleeChance" type="xs:float" />
       <xs:element name="maxMechEnergy" type="xs:int" />
       <xs:element name="mechEnabledWorkTypes">
@@ -3466,7 +3480,7 @@
       <xs:element name="bulletStaggerDelayTicks" type="xs:int" />
       <xs:element name="bulletStaggerSpeedFactor" type="xs:float" />
       <xs:element name="bulletStaggerEffecterDef" type="xs:string" />
-      <xs:element name="bulletStaggerIgnoreBodySize" type="xs:boolean" />
+      <xs:element name="bulletStaggerIgnoreBodySize" type="StrBoolean" />
       <xs:element name="mechWeightClass" type="xs:string" />
       <xs:element name="detritusLeavings">
         <xs:complexType>
@@ -3556,16 +3570,16 @@
           <xs:attribute name="MayRequireAnyOf" type="xs:string" />
         </xs:complexType>
       </xs:element>
-      <xs:element name="hasMeat" type="xs:boolean" />
+      <xs:element name="hasMeat" type="StrBoolean" />
       <xs:element name="meatLabel" type="xs:string" />
       <xs:element name="meatColor" type="Color" />
       <xs:element name="meatMarketValue" type="xs:float" />
       <xs:element name="specificMeatDef" type="xs:string" />
       <xs:element name="useMeatFrom" type="xs:string" />
       <xs:element name="useLeatherFrom" type="xs:string" />
-      <xs:element name="hasCorpse" type="xs:boolean" />
-      <xs:element name="hasUnnaturalCorpse" type="xs:boolean" />
-      <xs:element name="corpseHiddenWhileUndiscovered" type="xs:boolean" />
+      <xs:element name="hasCorpse" type="StrBoolean" />
+      <xs:element name="hasUnnaturalCorpse" type="StrBoolean" />
+      <xs:element name="corpseHiddenWhileUndiscovered" type="StrBoolean" />
       <xs:element name="leatherDef" type="xs:string" />
       <xs:element name="specialShadowData" type="ShadowData" />
       <xs:element name="headPosPerRotation">
@@ -3625,7 +3639,7 @@
   </xs:complexType>
   <xs:complexType name="WornGraphicData">
     <xs:choice minOccurs="1" maxOccurs="unbounded">
-      <xs:element name="renderUtilityAsPack" type="xs:boolean" />
+      <xs:element name="renderUtilityAsPack" type="StrBoolean" />
       <xs:element name="north" type="WornGraphicDirectionData" />
       <xs:element name="south" type="WornGraphicDirectionData" />
       <xs:element name="east" type="WornGraphicDirectionData" />
@@ -3698,7 +3712,7 @@
         </xs:complexType>
       </xs:element>
       <xs:element name="wornGraphicData" type="WornGraphicData" />
-      <xs:element name="useWornGraphicMask" type="xs:boolean" />
+      <xs:element name="useWornGraphicMask" type="StrBoolean" />
       <xs:element name="renderSkipFlags">
         <xs:complexType>
           <xs:sequence>
@@ -3737,7 +3751,7 @@
           <xs:attribute name="MayRequireAnyOf" type="xs:string" />
         </xs:complexType>
       </xs:element>
-      <xs:element name="shellRenderedBehindHead" type="xs:boolean" />
+      <xs:element name="shellRenderedBehindHead" type="StrBoolean" />
       <xs:element name="tags">
         <xs:complexType>
           <xs:sequence>
@@ -3774,10 +3788,10 @@
           <xs:attribute name="MayRequireAnyOf" type="xs:string" />
         </xs:complexType>
       </xs:element>
-      <xs:element name="canBeGeneratedToSatisfyWarmth" type="xs:boolean" />
-      <xs:element name="canBeGeneratedToSatisfyVacuumResistance" type="xs:boolean" />
-      <xs:element name="canBeGeneratedToSatisfyToxicEnvironmentResistance" type="xs:boolean" />
-      <xs:element name="canBeDesiredForIdeo" type="xs:boolean" />
+      <xs:element name="canBeGeneratedToSatisfyWarmth" type="StrBoolean" />
+      <xs:element name="canBeGeneratedToSatisfyVacuumResistance" type="StrBoolean" />
+      <xs:element name="canBeGeneratedToSatisfyToxicEnvironmentResistance" type="StrBoolean" />
+      <xs:element name="canBeDesiredForIdeo" type="StrBoolean" />
       <xs:element name="ideoDesireAllowedFactionCategoryTags">
         <xs:complexType>
           <xs:sequence>
@@ -3833,19 +3847,19 @@
         </xs:complexType>
       </xs:element>
       <xs:element name="wearPerDay" type="xs:float" />
-      <xs:element name="careIfWornByCorpse" type="xs:boolean" />
-      <xs:element name="careIfDamaged" type="xs:boolean" />
-      <xs:element name="ignoredByNonViolent" type="xs:boolean" />
-      <xs:element name="ai_pickUpOpportunistically" type="xs:boolean" />
-      <xs:element name="blocksAddedPartWoundGraphics" type="xs:boolean" />
-      <xs:element name="blocksVision" type="xs:boolean" />
-      <xs:element name="immuneToToxGasExposure" type="xs:boolean" />
-      <xs:element name="slaveApparel" type="xs:boolean" />
-      <xs:element name="mechanitorApparel" type="xs:boolean" />
-      <xs:element name="legsNakedUnlessCoveredBySomethingElse" type="xs:boolean" />
-      <xs:element name="useDeflectMetalEffect" type="xs:boolean" />
-      <xs:element name="countsAsClothingForNudity" type="xs:boolean" />
-      <xs:element name="anyTechLevelCanUseForWarmth" type="xs:boolean" />
+      <xs:element name="careIfWornByCorpse" type="StrBoolean" />
+      <xs:element name="careIfDamaged" type="StrBoolean" />
+      <xs:element name="ignoredByNonViolent" type="StrBoolean" />
+      <xs:element name="ai_pickUpOpportunistically" type="StrBoolean" />
+      <xs:element name="blocksAddedPartWoundGraphics" type="StrBoolean" />
+      <xs:element name="blocksVision" type="StrBoolean" />
+      <xs:element name="immuneToToxGasExposure" type="StrBoolean" />
+      <xs:element name="slaveApparel" type="StrBoolean" />
+      <xs:element name="mechanitorApparel" type="StrBoolean" />
+      <xs:element name="legsNakedUnlessCoveredBySomethingElse" type="StrBoolean" />
+      <xs:element name="useDeflectMetalEffect" type="StrBoolean" />
+      <xs:element name="countsAsClothingForNudity" type="StrBoolean" />
+      <xs:element name="anyTechLevelCanUseForWarmth" type="StrBoolean" />
       <xs:element name="gender" type="Gender" />
       <xs:element name="scoreOffset" type="xs:float" />
       <xs:element name="developmentalStageFilter" type="DevelopmentalStage" />
@@ -3880,27 +3894,27 @@
   </xs:complexType>
   <xs:complexType name="MoteProperties">
     <xs:choice minOccurs="1" maxOccurs="unbounded">
-      <xs:element name="realTime" type="xs:boolean" />
+      <xs:element name="realTime" type="StrBoolean" />
       <xs:element name="fadeInTime" type="xs:float" />
       <xs:element name="solidTime" type="xs:float" />
       <xs:element name="fadeOutTime" type="xs:float" />
       <xs:element name="acceleration" type="Vector3" />
       <xs:element name="speedPerTime" type="xs:float" />
       <xs:element name="growthRate" type="xs:float" />
-      <xs:element name="collide" type="xs:boolean" />
+      <xs:element name="collide" type="StrBoolean" />
       <xs:element name="archHeight" type="xs:float" />
       <xs:element name="archDuration" type="xs:float" />
       <xs:element name="archStartOffset" type="xs:float" />
       <xs:element name="landSound" type="xs:string" />
       <xs:element name="unattachedDrawOffset" type="Vector3" />
       <xs:element name="attachedDrawOffset" type="Vector3" />
-      <xs:element name="needsMaintenance" type="xs:boolean" />
-      <xs:element name="rotateTowardsTarget" type="xs:boolean" />
-      <xs:element name="rotateTowardsMoveDirection" type="xs:boolean" />
-      <xs:element name="scaleToConnectTargets" type="xs:boolean" />
-      <xs:element name="attachedToHead" type="xs:boolean" />
-      <xs:element name="fadeOutUnmaintained" type="xs:boolean" />
-      <xs:element name="updateOffsetToMatchTargetRotation" type="xs:boolean" />
+      <xs:element name="needsMaintenance" type="StrBoolean" />
+      <xs:element name="rotateTowardsTarget" type="StrBoolean" />
+      <xs:element name="rotateTowardsMoveDirection" type="StrBoolean" />
+      <xs:element name="scaleToConnectTargets" type="StrBoolean" />
+      <xs:element name="attachedToHead" type="StrBoolean" />
+      <xs:element name="fadeOutUnmaintained" type="StrBoolean" />
+      <xs:element name="updateOffsetToMatchTargetRotation" type="StrBoolean" />
       <xs:element name="yFightingOffsetScalar01" type="xs:float" />
       <xs:element name="scalers">
         <xs:complexType>
@@ -3963,8 +3977,8 @@
       <xs:element name="wildClusterRadius" type="xs:int" />
       <xs:element name="wildClusterWeight" type="xs:float" />
       <xs:element name="wildOrder" type="xs:float" />
-      <xs:element name="wildEqualLocalDistribution" type="xs:boolean" />
-      <xs:element name="cavePlant" type="xs:boolean" />
+      <xs:element name="wildEqualLocalDistribution" type="StrBoolean" />
+      <xs:element name="cavePlant" type="StrBoolean" />
       <xs:element name="cavePlantWeight" type="xs:float" />
       <xs:element name="wildTerrainTags">
         <xs:complexType>
@@ -3984,7 +3998,7 @@
           <xs:attribute name="MayRequireAnyOf" type="xs:string" />
         </xs:complexType>
       </xs:element>
-      <xs:element name="wildPlantUseDistanceToShore" type="xs:boolean" />
+      <xs:element name="wildPlantUseDistanceToShore" type="StrBoolean" />
       <xs:element name="plantRespawningCommonalityFactor" type="xs:float" />
       <xs:element name="sowTags">
         <xs:complexType>
@@ -4006,7 +4020,7 @@
       </xs:element>
       <xs:element name="sowWork" type="xs:float" />
       <xs:element name="sowMinSkill" type="xs:int" />
-      <xs:element name="blockAdjacentSow" type="xs:boolean" />
+      <xs:element name="blockAdjacentSow" type="StrBoolean" />
       <xs:element name="sowResearchPrerequisites">
         <xs:complexType>
           <xs:sequence>
@@ -4025,26 +4039,26 @@
           <xs:attribute name="MayRequireAnyOf" type="xs:string" />
         </xs:complexType>
       </xs:element>
-      <xs:element name="mustBeWildToSow" type="xs:boolean" />
+      <xs:element name="mustBeWildToSow" type="StrBoolean" />
       <xs:element name="harvestWork" type="xs:float" />
       <xs:element name="harvestYield" type="xs:float" />
       <xs:element name="harvestedThingDef" type="xs:string" />
       <xs:element name="harvestTag" type="xs:string" />
       <xs:element name="harvestMinGrowth" type="xs:float" />
       <xs:element name="harvestAfterGrowth" type="xs:float" />
-      <xs:element name="harvestFailable" type="xs:boolean" />
-      <xs:element name="harvestYieldAffectedByDifficulty" type="xs:boolean" />
+      <xs:element name="harvestFailable" type="StrBoolean" />
+      <xs:element name="harvestYieldAffectedByDifficulty" type="StrBoolean" />
       <xs:element name="soundHarvesting" type="xs:string" />
       <xs:element name="soundHarvestFinish" type="xs:string" />
-      <xs:element name="autoHarvestable" type="xs:boolean" />
-      <xs:element name="skipDeteriorationMessage" type="xs:boolean" />
+      <xs:element name="autoHarvestable" type="StrBoolean" />
+      <xs:element name="skipDeteriorationMessage" type="StrBoolean" />
       <xs:element name="growDays" type="xs:float" />
       <xs:element name="lifespanDaysPerGrowDays" type="xs:float" />
       <xs:element name="growMinGlow" type="xs:float" />
       <xs:element name="growOptimalGlow" type="xs:float" />
-      <xs:element name="diesToLight" type="xs:boolean" />
-      <xs:element name="vacuumResistant" type="xs:boolean" />
-      <xs:element name="terraformable" type="xs:boolean" />
+      <xs:element name="diesToLight" type="StrBoolean" />
+      <xs:element name="vacuumResistant" type="StrBoolean" />
+      <xs:element name="terraformable" type="StrBoolean" />
       <xs:element name="pollution" type="Pollution" />
       <xs:element name="minGrowthTemperature" type="xs:float" />
       <xs:element name="minOptimalGrowthTemperature" type="xs:float" />
@@ -4052,27 +4066,27 @@
       <xs:element name="maxGrowthTemperature" type="xs:float" />
       <xs:element name="fertilityMin" type="xs:float" />
       <xs:element name="fertilitySensitivity" type="xs:float" />
-      <xs:element name="completelyIgnoreFertility" type="xs:boolean" />
-      <xs:element name="dieIfLeafless" type="xs:boolean" />
-      <xs:element name="neverBlightable" type="xs:boolean" />
-      <xs:element name="interferesWithRoof" type="xs:boolean" />
-      <xs:element name="dieIfNoSunlight" type="xs:boolean" />
-      <xs:element name="dieFromToxicFallout" type="xs:boolean" />
+      <xs:element name="completelyIgnoreFertility" type="StrBoolean" />
+      <xs:element name="dieIfLeafless" type="StrBoolean" />
+      <xs:element name="neverBlightable" type="StrBoolean" />
+      <xs:element name="interferesWithRoof" type="StrBoolean" />
+      <xs:element name="dieIfNoSunlight" type="StrBoolean" />
+      <xs:element name="dieFromToxicFallout" type="StrBoolean" />
       <xs:element name="purpose" type="PlantPurpose" />
-      <xs:element name="humanFoodPlant" type="xs:boolean" />
-      <xs:element name="treeLoversCareIfChopped" type="xs:boolean" />
-      <xs:element name="allowAutoCut" type="xs:boolean" />
-      <xs:element name="drugForHarvestPurposes" type="xs:boolean" />
+      <xs:element name="humanFoodPlant" type="StrBoolean" />
+      <xs:element name="treeLoversCareIfChopped" type="StrBoolean" />
+      <xs:element name="allowAutoCut" type="StrBoolean" />
+      <xs:element name="drugForHarvestPurposes" type="StrBoolean" />
       <xs:element name="treeCategory" type="TreeCategory" />
       <xs:element name="burnedThingDef" type="xs:string" />
       <xs:element name="choppedThingDef" type="xs:string" />
       <xs:element name="smashedThingDef" type="xs:string" />
-      <xs:element name="canDeteriorate" type="xs:boolean" />
-      <xs:element name="showGrowthInInspectPane" type="xs:boolean" />
+      <xs:element name="canDeteriorate" type="StrBoolean" />
+      <xs:element name="showGrowthInInspectPane" type="StrBoolean" />
       <xs:element name="minSpacingBetweenSamePlant" type="xs:float" />
-      <xs:element name="forceIsTree" type="xs:boolean" />
-      <xs:element name="warnIfMarkedForCut" type="xs:boolean" />
-      <xs:element name="isStump" type="xs:boolean" />
+      <xs:element name="forceIsTree" type="StrBoolean" />
+      <xs:element name="warnIfMarkedForCut" type="StrBoolean" />
+      <xs:element name="isStump" type="StrBoolean" />
       <xs:element name="topWindExposure" type="xs:float" />
       <xs:element name="maxMeshCount" type="xs:int" />
       <xs:element name="visualSizeRange">
@@ -4082,9 +4096,9 @@
           </xs:restriction>
         </xs:simpleType>
       </xs:element>
-      <xs:element name="showInFrozenWater" type="xs:boolean" />
-      <xs:element name="destroyedByFlooding" type="xs:boolean" />
-      <xs:element name="dropLeaves" type="xs:boolean" />
+      <xs:element name="showInFrozenWater" type="StrBoolean" />
+      <xs:element name="destroyedByFlooding" type="StrBoolean" />
+      <xs:element name="dropLeaves" type="StrBoolean" />
     </xs:choice>
     <xs:attribute name="Class" type="xs:string" />
     <xs:attribute name="MayRequire" type="xs:string" />
@@ -4101,8 +4115,8 @@
   <xs:complexType name="ProjectileProperties">
     <xs:choice minOccurs="1" maxOccurs="unbounded">
       <xs:element name="speed" type="xs:float" />
-      <xs:element name="flyOverhead" type="xs:boolean" />
-      <xs:element name="alwaysFreeIntercept" type="xs:boolean" />
+      <xs:element name="flyOverhead" type="StrBoolean" />
+      <xs:element name="alwaysFreeIntercept" type="StrBoolean" />
       <xs:element name="damageDef" type="xs:string" />
       <xs:element name="stoppingPower" type="xs:float" />
       <xs:element name="extraDamages">
@@ -4118,7 +4132,7 @@
       <xs:element name="shadowSize" type="xs:float" />
       <xs:element name="landedEffecter" type="xs:string" />
       <xs:element name="spinRate" type="xs:float" />
-      <xs:element name="useGraphicClass" type="xs:boolean" />
+      <xs:element name="useGraphicClass" type="StrBoolean" />
       <xs:element name="soundHitThickRoof" type="xs:string" />
       <xs:element name="soundExplode" type="xs:string" />
       <xs:element name="soundImpactAnticipate" type="xs:string" />
@@ -4127,7 +4141,7 @@
       <xs:element name="explosionRadius" type="xs:float" />
       <xs:element name="explosionRadiusDisplayPadding" type="xs:float" />
       <xs:element name="explosionDelay" type="xs:int" />
-      <xs:element name="doExplosionVFX" type="xs:boolean" />
+      <xs:element name="doExplosionVFX" type="StrBoolean" />
       <xs:element name="preExplosionSpawnThingDef" type="xs:string" />
       <xs:element name="preExplosionSpawnChance" type="xs:float" />
       <xs:element name="preExplosionSpawnThingCount" type="xs:int" />
@@ -4136,9 +4150,9 @@
       <xs:element name="postExplosionSpawnChance" type="xs:float" />
       <xs:element name="postExplosionSpawnThingCount" type="xs:int" />
       <xs:element name="postExplosionGasType" type="GasType" />
-      <xs:element name="applyDamageToExplosionCellsNeighbors" type="xs:boolean" />
+      <xs:element name="applyDamageToExplosionCellsNeighbors" type="StrBoolean" />
       <xs:element name="explosionChanceToStartFire" type="xs:float" />
-      <xs:element name="explosionDamageFalloff" type="xs:boolean" />
+      <xs:element name="explosionDamageFalloff" type="StrBoolean" />
       <xs:element name="screenShakeFactor" type="xs:float" />
       <xs:element name="preExplosionSpawnSingleThingDef" type="xs:string" />
       <xs:element name="postExplosionSpawnSingleThingDef" type="xs:string" />
@@ -4152,18 +4166,18 @@
         </xs:simpleType>
       </xs:element>
       <xs:element name="numExtraHitCells" type="xs:int" />
-      <xs:element name="explosionSpawnsSingleFilth" type="xs:boolean" />
+      <xs:element name="explosionSpawnsSingleFilth" type="StrBoolean" />
       <xs:element name="spawnTerrain" type="xs:string" />
       <xs:element name="terrainChance" type="xs:float" />
-      <xs:element name="terrainReplacesFloors" type="xs:boolean" />
+      <xs:element name="terrainReplacesFloors" type="StrBoolean" />
       <xs:element name="explosionEffect" type="xs:string" />
       <xs:element name="explosionEffectLifetimeTicks" type="xs:int" />
       <xs:element name="spawnsThingDef" type="xs:string" />
-      <xs:element name="tryAdjacentFreeSpaces" type="xs:boolean" />
+      <xs:element name="tryAdjacentFreeSpaces" type="StrBoolean" />
       <xs:element name="spawnsPawnKind" type="xs:string" />
       <xs:element name="beamMoteDef" type="xs:string" />
       <xs:element name="beamStartOffset" type="xs:float" />
-      <xs:element name="ai_IsIncendiary" type="xs:boolean" />
+      <xs:element name="ai_IsIncendiary" type="StrBoolean" />
     </xs:choice>
     <xs:attribute name="Class" type="xs:string" />
     <xs:attribute name="MayRequire" type="xs:string" />
@@ -4199,7 +4213,7 @@
           <xs:attribute name="MayRequireAnyOf" type="xs:string" />
         </xs:complexType>
       </xs:element>
-      <xs:element name="allowedInStuffGeneration" type="xs:boolean" />
+      <xs:element name="allowedInStuffGeneration" type="StrBoolean" />
       <xs:element name="statOffsets">
         <xs:complexType>
           <xs:sequence>
@@ -4239,9 +4253,9 @@
       <xs:element name="color" type="Color" />
       <xs:element name="constructEffect" type="xs:string" />
       <xs:element name="appearance" type="xs:string" />
-      <xs:element name="allowColorGenerators" type="xs:boolean" />
-      <xs:element name="canSuggestUseDefaultStuff" type="xs:boolean" />
-      <xs:element name="isAirtight" type="xs:boolean" />
+      <xs:element name="allowColorGenerators" type="StrBoolean" />
+      <xs:element name="canSuggestUseDefaultStuff" type="StrBoolean" />
+      <xs:element name="isAirtight" type="StrBoolean" />
       <xs:element name="soundImpactBullet" type="xs:string" />
       <xs:element name="soundImpactMelee" type="xs:string" />
       <xs:element name="soundMeleeHitSharp" type="xs:string" />
@@ -4261,7 +4275,7 @@
   </xs:complexType>
   <xs:complexType name="SkyfallerProperties">
     <xs:choice minOccurs="1" maxOccurs="unbounded">
-      <xs:element name="hitRoof" type="xs:boolean" />
+      <xs:element name="hitRoof" type="StrBoolean" />
       <xs:element name="ticksToImpactRange">
         <xs:simpleType>
           <xs:restriction base="xs:string">
@@ -4276,11 +4290,11 @@
           </xs:restriction>
         </xs:simpleType>
       </xs:element>
-      <xs:element name="reversed" type="xs:boolean" />
-      <xs:element name="flightFlippedHorizontally" type="xs:boolean" />
+      <xs:element name="reversed" type="StrBoolean" />
+      <xs:element name="flightFlippedHorizontally" type="StrBoolean" />
       <xs:element name="explosionRadius" type="xs:float" />
       <xs:element name="explosionDamage" type="xs:string" />
-      <xs:element name="damageSpawnedThings" type="xs:boolean" />
+      <xs:element name="damageSpawnedThings" type="StrBoolean" />
       <xs:element name="explosionDamageFactor" type="xs:float" />
       <xs:element name="metalShrapnelCountRange">
         <xs:simpleType>
@@ -4304,7 +4318,7 @@
       <xs:element name="shadowSize" type="Vector2" />
       <xs:element name="cameraShake" type="xs:float" />
       <xs:element name="impactSound" type="xs:string" />
-      <xs:element name="rotateGraphicTowardsDirection" type="xs:boolean" />
+      <xs:element name="rotateGraphicTowardsDirection" type="StrBoolean" />
       <xs:element name="anticipationSound" type="xs:string" />
       <xs:element name="floatingSound" type="xs:string" />
       <xs:element name="anticipationSoundTicks" type="xs:int" />
@@ -4352,7 +4366,7 @@
         </xs:simpleType>
       </xs:element>
       <xs:element name="allowedSpectateSides" type="SpectateRectSide" />
-      <xs:element name="consumable" type="xs:boolean" />
+      <xs:element name="consumable" type="StrBoolean" />
     </xs:choice>
     <xs:attribute name="Class" type="xs:string" />
     <xs:attribute name="MayRequire" type="xs:string" />
@@ -4408,7 +4422,7 @@
           <xs:attribute name="MayRequireAnyOf" type="xs:string" />
         </xs:complexType>
       </xs:element>
-      <xs:element name="leaveJoinableLordIfIssuesJob" type="xs:boolean" />
+      <xs:element name="leaveJoinableLordIfIssuesJob" type="StrBoolean" />
       <xs:element name="tag" type="xs:string" />
     </xs:choice>
     <xs:attribute name="Class" type="xs:string" />
@@ -4563,7 +4577,7 @@
       <xs:element name="minFertility" type="xs:float" />
       <xs:element name="maxFertility" type="xs:float" />
       <xs:element name="minSize" type="xs:int" />
-      <xs:element name="isPond" type="xs:boolean" />
+      <xs:element name="isPond" type="StrBoolean" />
     </xs:choice>
     <xs:attribute name="Class" type="xs:string" />
     <xs:attribute name="MayRequire" type="xs:string" />
@@ -4635,9 +4649,9 @@
     <xs:choice minOccurs="1" maxOccurs="unbounded">
       <xs:element name="tag" type="xs:string" />
       <xs:element name="group" type="xs:string" />
-      <xs:element name="narrowCrown" type="xs:boolean" />
+      <xs:element name="narrowCrown" type="Boolean" />
       <xs:element name="rotation" type="Rot4" />
-      <xs:element name="canMirror" type="xs:boolean" />
+      <xs:element name="canMirror" type="StrBoolean" />
       <xs:element name="offset" type="Vector3" />
       <xs:element name="layer" type="OverlayLayer" />
       <xs:element name="debugColor" type="Color" />
@@ -4712,11 +4726,11 @@
           <xs:attribute name="MayRequireAnyOf" type="xs:string" />
         </xs:complexType>
       </xs:element>
-      <xs:element name="canAffectAnyLivePart" type="xs:boolean" />
-      <xs:element name="allowOnLodgers" type="xs:boolean" />
-      <xs:element name="allowOnQuestRewardPawns" type="xs:boolean" />
-      <xs:element name="allowOnQuestReservedPawns" type="xs:boolean" />
-      <xs:element name="allowOnBeggars" type="xs:boolean" />
+      <xs:element name="canAffectAnyLivePart" type="StrBoolean" />
+      <xs:element name="allowOnLodgers" type="StrBoolean" />
+      <xs:element name="allowOnQuestRewardPawns" type="StrBoolean" />
+      <xs:element name="allowOnQuestReservedPawns" type="StrBoolean" />
+      <xs:element name="allowOnBeggars" type="StrBoolean" />
       <xs:element name="countToAffect" type="xs:int" />
     </xs:choice>
     <xs:attribute name="Class" type="xs:string" />
@@ -4752,9 +4766,9 @@
   <xs:complexType name="DrugPolicyEntry">
     <xs:choice minOccurs="1" maxOccurs="unbounded">
       <xs:element name="drug" type="xs:string" />
-      <xs:element name="allowedForAddiction" type="xs:boolean" />
-      <xs:element name="allowedForJoy" type="xs:boolean" />
-      <xs:element name="allowScheduled" type="xs:boolean" />
+      <xs:element name="allowedForAddiction" type="StrBoolean" />
+      <xs:element name="allowedForJoy" type="StrBoolean" />
+      <xs:element name="allowScheduled" type="StrBoolean" />
       <xs:element name="daysFrequency" type="xs:float" />
       <xs:element name="onlyIfMoodBelow" type="xs:float" />
       <xs:element name="onlyIfJoyBelow" type="xs:float" />
@@ -4891,21 +4905,21 @@
       <xs:element name="textureEast" type="xs:string" />
       <xs:element name="textureNorth" type="xs:string" />
       <xs:element name="textureWest" type="xs:string" />
-      <xs:element name="flipSouth" type="xs:boolean" />
-      <xs:element name="flipEast" type="xs:boolean" />
-      <xs:element name="flipNorth" type="xs:boolean" />
-      <xs:element name="flipWest" type="xs:boolean" />
+      <xs:element name="flipSouth" type="StrBoolean" />
+      <xs:element name="flipEast" type="StrBoolean" />
+      <xs:element name="flipNorth" type="StrBoolean" />
+      <xs:element name="flipWest" type="StrBoolean" />
       <xs:element name="scale" type="xs:float" />
       <xs:element name="drawOffsetSouth" type="Vector3" />
       <xs:element name="drawOffsetEastWest" type="Vector3" />
       <xs:element name="color" type="Color" />
-      <xs:element name="tintWithSkinColor" type="xs:boolean" />
+      <xs:element name="tintWithSkinColor" type="StrBoolean" />
       <xs:element name="flipOnWoundAnchorTag" type="xs:string" />
       <xs:element name="flipOnRotation" type="Rot4" />
       <xs:element name="onlyOnPart" type="xs:string" />
-      <xs:element name="displayOverApparel" type="xs:boolean" />
-      <xs:element name="displayPermanent" type="xs:boolean" />
-      <xs:element name="missingBodyPartFresh" type="xs:boolean" />
+      <xs:element name="displayOverApparel" type="StrBoolean" />
+      <xs:element name="displayPermanent" type="StrBoolean" />
+      <xs:element name="missingBodyPartFresh" type="Boolean" />
     </xs:choice>
     <xs:attribute name="Class" type="xs:string" />
     <xs:attribute name="MayRequire" type="xs:string" />
@@ -4913,7 +4927,7 @@
   </xs:complexType>
   <xs:complexType name="HediffWound">
     <xs:choice minOccurs="1" maxOccurs="unbounded">
-      <xs:element name="onlyHumanlikes" type="xs:boolean" />
+      <xs:element name="onlyHumanlikes" type="StrBoolean" />
       <xs:element name="hediff" type="xs:string" />
       <xs:element name="wounds">
         <xs:complexType>
@@ -4989,7 +5003,7 @@
       <xs:element name="prefab" type="xs:string" />
       <xs:element name="weight" type="xs:float" />
       <xs:element name="max" type="xs:int" />
-      <xs:element name="indoorRuin" type="xs:boolean" />
+      <xs:element name="indoorRuin" type="StrBoolean" />
       <xs:element name="filthDef" type="xs:string" />
       <xs:element name="filthExpandBy" type="xs:int" />
       <xs:element name="filthChance" type="xs:float" />
@@ -5160,9 +5174,9 @@
       <xs:element name="def" type="xs:string" />
       <xs:element name="stuff" type="xs:string" />
       <xs:element name="fixedRot" type="Rot4" />
-      <xs:element name="alignWithRect" type="xs:boolean" />
+      <xs:element name="alignWithRect" type="StrBoolean" />
       <xs:element name="contractedBy" type="xs:int" />
-      <xs:element name="snapToGrid" type="xs:boolean" />
+      <xs:element name="snapToGrid" type="StrBoolean" />
       <xs:element name="countRange">
         <xs:simpleType>
           <xs:restriction base="xs:string">
@@ -5223,7 +5237,7 @@
           </xs:restriction>
         </xs:simpleType>
       </xs:element>
-      <xs:element name="ensureNoBlocks" type="xs:boolean" />
+      <xs:element name="ensureNoBlocks" type="StrBoolean" />
       <xs:element name="countPerHundredCells">
         <xs:simpleType>
           <xs:restriction base="xs:string">
@@ -5403,7 +5417,7 @@
       <xs:element name="theme" type="xs:string" />
       <xs:element name="adjective" type="xs:string" />
       <xs:element name="member" type="xs:string" />
-      <xs:element name="prefix" type="xs:boolean" />
+      <xs:element name="prefix" type="StrBoolean" />
     </xs:choice>
     <xs:attribute name="Class" type="xs:string" />
     <xs:attribute name="MayRequire" type="xs:string" />
@@ -5683,7 +5697,7 @@
   <xs:complexType name="SkillNeed">
     <xs:choice minOccurs="1" maxOccurs="unbounded">
       <xs:element name="skill" type="xs:string" />
-      <xs:element name="required" type="xs:boolean" />
+      <xs:element name="required" type="StrBoolean" />
     </xs:choice>
     <xs:attribute name="Class" type="xs:string" />
     <xs:attribute name="MayRequire" type="xs:string" />
@@ -5704,7 +5718,7 @@
       <xs:element name="capacity" type="xs:string" />
       <xs:element name="weight" type="xs:float" />
       <xs:element name="max" type="xs:float" />
-      <xs:element name="useReciprocal" type="xs:boolean" />
+      <xs:element name="useReciprocal" type="StrBoolean" />
       <xs:element name="allowedDefect" type="xs:float" />
     </xs:choice>
     <xs:attribute name="Class" type="xs:string" />
@@ -5862,7 +5876,7 @@
       <xs:element name="qualityGenerator" type="QualityGenerator" />
       <xs:element name="maxTotalMass" type="xs:float" />
       <xs:element name="maxThingMarketValue" type="xs:float" />
-      <xs:element name="allowNonStackableDuplicates" type="xs:boolean" />
+      <xs:element name="allowNonStackableDuplicates" type="Boolean" />
       <xs:element name="minSingleItemMarketValuePct" type="xs:float" />
       <xs:element name="totalMarketValueRange" type="FloatRange" />
       <xs:element name="totalNutritionRange" type="FloatRange" />
@@ -5908,7 +5922,7 @@
       <xs:element name="description" type="xs:string" />
       <xs:element name="baseMoodEffect" type="xs:float" />
       <xs:element name="baseOpinionOffset" type="xs:float" />
-      <xs:element name="visible" type="xs:boolean" />
+      <xs:element name="visible" type="StrBoolean" />
     </xs:choice>
     <xs:attribute name="Class" type="xs:string" />
     <xs:attribute name="MayRequire" type="xs:string" />
@@ -6337,7 +6351,7 @@
       <xs:element name="ammoCountToRefill" type="xs:int" />
       <xs:element name="ammoCountPerCharge" type="xs:int" />
       <xs:element name="baseReloadTicks" type="xs:int" />
-      <xs:element name="replenishAfterCooldown" type="xs:boolean" />
+      <xs:element name="replenishAfterCooldown" type="StrBoolean" />
       <xs:element name="soundReload" type="xs:string" />
       <xs:element name="chargeNoun" type="xs:string" />
       <xs:element name="cooldownGerund" type="xs:string" />
@@ -6437,22 +6451,22 @@
       <xs:element name="precept" type="xs:string" />
       <xs:element name="maxCount" type="xs:int" />
       <xs:element name="mergeId" type="xs:string" />
-      <xs:element name="required" type="xs:boolean" />
-      <xs:element name="substitutable" type="xs:boolean" />
-      <xs:element name="ignoreBleeding" type="xs:boolean" />
-      <xs:element name="countsAsParticipant" type="xs:boolean" />
-      <xs:element name="addToLord" type="xs:boolean" />
-      <xs:element name="allowNonAggroMentalState" type="xs:boolean" />
-      <xs:element name="defaultForSelectedColonist" type="xs:boolean" />
-      <xs:element name="allowOtherIdeos" type="xs:boolean" />
-      <xs:element name="allowDowned" type="xs:boolean" />
-      <xs:element name="allowKeepLayingDown" type="xs:boolean" />
-      <xs:element name="allowChild" type="xs:boolean" />
-      <xs:element name="allowBaby" type="xs:boolean" />
-      <xs:element name="removeFromAssignmentsOnDeath" type="xs:boolean" />
-      <xs:element name="endJobOnRitualCleanup" type="xs:boolean" />
-      <xs:element name="mustBeAbleToReachTarget" type="xs:boolean" />
-      <xs:element name="blocksSocialInteraction" type="xs:boolean" />
+      <xs:element name="required" type="StrBoolean" />
+      <xs:element name="substitutable" type="StrBoolean" />
+      <xs:element name="ignoreBleeding" type="StrBoolean" />
+      <xs:element name="countsAsParticipant" type="StrBoolean" />
+      <xs:element name="addToLord" type="StrBoolean" />
+      <xs:element name="allowNonAggroMentalState" type="StrBoolean" />
+      <xs:element name="defaultForSelectedColonist" type="StrBoolean" />
+      <xs:element name="allowOtherIdeos" type="StrBoolean" />
+      <xs:element name="allowDowned" type="StrBoolean" />
+      <xs:element name="allowKeepLayingDown" type="StrBoolean" />
+      <xs:element name="allowChild" type="StrBoolean" />
+      <xs:element name="allowBaby" type="StrBoolean" />
+      <xs:element name="removeFromAssignmentsOnDeath" type="StrBoolean" />
+      <xs:element name="endJobOnRitualCleanup" type="StrBoolean" />
+      <xs:element name="mustBeAbleToReachTarget" type="StrBoolean" />
+      <xs:element name="blocksSocialInteraction" type="StrBoolean" />
     </xs:choice>
     <xs:attribute name="Class" type="xs:string" />
     <xs:attribute name="MayRequire" type="xs:string" />
@@ -6460,7 +6474,7 @@
   </xs:complexType>
   <xs:complexType name="StageEndTrigger">
     <xs:choice minOccurs="1" maxOccurs="unbounded">
-      <xs:element name="countsTowardsProgress" type="xs:boolean" />
+      <xs:element name="countsTowardsProgress" type="StrBoolean" />
     </xs:choice>
     <xs:attribute name="Class" type="xs:string" />
     <xs:attribute name="MayRequire" type="xs:string" />
@@ -6552,9 +6566,9 @@
       </xs:element>
       <xs:element name="tickActionMaker" type="RitualStageTickActionMaker" />
       <xs:element name="visualEffectDef" type="xs:string" />
-      <xs:element name="spectatorsRequired" type="xs:boolean" />
-      <xs:element name="essential" type="xs:boolean" />
-      <xs:element name="ignoreDurationToFinishAfterStage" type="xs:boolean" />
+      <xs:element name="spectatorsRequired" type="StrBoolean" />
+      <xs:element name="essential" type="StrBoolean" />
+      <xs:element name="ignoreDurationToFinishAfterStage" type="StrBoolean" />
       <xs:element name="allowedSpectateSidesOverride" type="SpectateRectSide" />
       <xs:element name="spectateDistanceOverride">
         <xs:simpleType>
@@ -6563,7 +6577,7 @@
           </xs:restriction>
         </xs:simpleType>
       </xs:element>
-      <xs:element name="showProgressBar" type="xs:boolean" />
+      <xs:element name="showProgressBar" type="StrBoolean" />
       <xs:element name="roleBehaviors">
         <xs:complexType>
           <xs:sequence>
@@ -6647,7 +6661,7 @@
   <xs:complexType name="RitualObligationTriggerProperties">
     <xs:choice minOccurs="1" maxOccurs="unbounded">
       <xs:element name="triggerClass" type="xs:string" />
-      <xs:element name="mustBePlayerIdeo" type="xs:boolean" />
+      <xs:element name="mustBePlayerIdeo" type="StrBoolean" />
     </xs:choice>
     <xs:attribute name="Class" type="xs:string" />
     <xs:attribute name="MayRequire" type="xs:string" />
@@ -6690,9 +6704,9 @@
       </xs:element>
       <xs:element name="offset" type="Vector3" />
       <xs:element name="roomCheckOffset" type="IntVec3" />
-      <xs:element name="scaleWithRoom" type="xs:boolean" />
-      <xs:element name="scalePositionWithRoom" type="xs:boolean" />
-      <xs:element name="onlySpawnInSameRoom" type="xs:boolean" />
+      <xs:element name="scaleWithRoom" type="StrBoolean" />
+      <xs:element name="scalePositionWithRoom" type="StrBoolean" />
+      <xs:element name="onlySpawnInSameRoom" type="StrBoolean" />
       <xs:element name="colorOverride" type="Color" />
       <xs:element name="overrideColors">
         <xs:complexType>
@@ -6712,7 +6726,7 @@
     <xs:choice minOccurs="1" maxOccurs="unbounded">
       <xs:element name="mutator" type="xs:string" />
       <xs:element name="chance" type="xs:float" />
-      <xs:element name="required" type="xs:boolean" />
+      <xs:element name="required" type="StrBoolean" />
     </xs:choice>
     <xs:attribute name="Class" type="xs:string" />
     <xs:attribute name="MayRequire" type="xs:string" />
@@ -6849,7 +6863,7 @@
       <xs:element name="pawnCount" type="xs:int" />
       <xs:element name="pawnKindDef" type="xs:string" />
       <xs:element name="targetingRange" type="xs:float" />
-      <xs:element name="targetingRequireLOS" type="xs:boolean" />
+      <xs:element name="targetingRequireLOS" type="StrBoolean" />
       <xs:element name="aidDurationDays" type="xs:float" />
       <xs:element name="radius" type="xs:float" />
       <xs:element name="intervalTicks" type="xs:int" />
@@ -6886,8 +6900,8 @@
     <xs:choice minOccurs="1" maxOccurs="unbounded">
       <xs:element name="chance" type="xs:float" />
       <xs:element name="totalDamage" type="xs:int" />
-      <xs:element name="applyEffectsToPart" type="xs:boolean" />
-      <xs:element name="failure" type="xs:boolean" />
+      <xs:element name="applyEffectsToPart" type="StrBoolean" />
+      <xs:element name="failure" type="StrBoolean" />
       <xs:element name="letterLabel" type="xs:string" />
       <xs:element name="letterText" type="xs:string" />
     </xs:choice>

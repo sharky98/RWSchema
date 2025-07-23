@@ -26,16 +26,16 @@
       <xs:element name="permanentInjuryChanceFactor" type="xs:float" />
       <xs:element name="bleedRate" type="xs:float" />
       <xs:element name="frostbiteVulnerability" type="xs:float" />
-      <xs:element name="alive" type="xs:boolean" />
-      <xs:element name="delicate" type="xs:boolean" />
-      <xs:element name="canScarify" type="xs:boolean" />
-      <xs:element name="beautyRelated" type="xs:boolean" />
-      <xs:element name="conceptual" type="xs:boolean" />
-      <xs:element name="socketed" type="xs:boolean" />
+      <xs:element name="alive" type="StrBoolean" />
+      <xs:element name="delicate" type="StrBoolean" />
+      <xs:element name="canScarify" type="StrBoolean" />
+      <xs:element name="beautyRelated" type="StrBoolean" />
+      <xs:element name="conceptual" type="StrBoolean" />
+      <xs:element name="socketed" type="StrBoolean" />
       <xs:element name="spawnThingOnRemoved" type="xs:string" />
-      <xs:element name="pawnGeneratorCanAmputate" type="xs:boolean" />
-      <xs:element name="canSuggestAmputation" type="xs:boolean" />
-      <xs:element name="forceAlwaysRemovable" type="xs:boolean" />
+      <xs:element name="pawnGeneratorCanAmputate" type="StrBoolean" />
+      <xs:element name="canSuggestAmputation" type="StrBoolean" />
+      <xs:element name="forceAlwaysRemovable" type="StrBoolean" />
       <xs:element name="hitChanceFactors">
         <xs:complexType>
           <xs:sequence>
@@ -54,8 +54,8 @@
           <xs:attribute name="MayRequireAnyOf" type="xs:string" />
         </xs:complexType>
       </xs:element>
-      <xs:element name="destroyableByDamage" type="xs:boolean" />
-      <xs:element name="canBeVacuumBurnt" type="xs:boolean" />
+      <xs:element name="destroyableByDamage" type="StrBoolean" />
+      <xs:element name="canBeVacuumBurnt" type="StrBoolean" />
       <xs:element name="removeRecipeLabelOverride" type="xs:string" />
       <xs:element name="executionPartPriority" type="xs:float" />
       <xs:element name="defName" type="xs:string" />
@@ -70,8 +70,8 @@
           <xs:attribute name="MayRequireAnyOf" type="xs:string" />
         </xs:complexType>
       </xs:element>
-      <xs:element name="ignoreConfigErrors" type="xs:boolean" />
-      <xs:element name="ignoreIllegalLabelCharacterConfigError" type="xs:boolean" />
+      <xs:element name="ignoreConfigErrors" type="StrBoolean" />
+      <xs:element name="ignoreIllegalLabelCharacterConfigError" type="StrBoolean" />
       <xs:element name="modExtensions">
         <xs:complexType>
           <xs:sequence>

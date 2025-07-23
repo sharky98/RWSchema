@@ -44,18 +44,18 @@
           <xs:attribute name="MayRequireAnyOf" type="xs:string" />
         </xs:complexType>
       </xs:element>
-      <xs:element name="layerable" type="xs:boolean" />
+      <xs:element name="layerable" type="StrBoolean" />
       <xs:element name="scatterType" type="xs:string" />
-      <xs:element name="takeFootprints" type="xs:boolean" />
-      <xs:element name="natural" type="xs:boolean" />
-      <xs:element name="takeSplashes" type="xs:boolean" />
-      <xs:element name="avoidWander" type="xs:boolean" />
-      <xs:element name="changeable" type="xs:boolean" />
+      <xs:element name="takeFootprints" type="StrBoolean" />
+      <xs:element name="natural" type="StrBoolean" />
+      <xs:element name="takeSplashes" type="StrBoolean" />
+      <xs:element name="avoidWander" type="StrBoolean" />
+      <xs:element name="changeable" type="StrBoolean" />
       <xs:element name="smoothedTerrain" type="xs:string" />
       <xs:element name="gravshipReplacementTerrain" type="xs:string" />
-      <xs:element name="holdSnowOrSand" type="xs:boolean" />
-      <xs:element name="isPaintable" type="xs:boolean" />
-      <xs:element name="extinguishesFire" type="xs:boolean" />
+      <xs:element name="holdSnowOrSand" type="StrBoolean" />
+      <xs:element name="isPaintable" type="StrBoolean" />
+      <xs:element name="extinguishesFire" type="StrBoolean" />
       <xs:element name="color" type="Color" />
       <xs:element name="colorDef" type="xs:string" />
       <xs:element name="driesTo" type="xs:string" />
@@ -89,13 +89,13 @@
       </xs:element>
       <xs:element name="extraDeteriorationFactor" type="xs:float" />
       <xs:element name="destroyOnBombDamageThreshold" type="xs:float" />
-      <xs:element name="destroyBuildingsOnDestroyed" type="xs:boolean" />
+      <xs:element name="destroyBuildingsOnDestroyed" type="StrBoolean" />
       <xs:element name="traversedThought" type="xs:string" />
       <xs:element name="extraDraftedPerceivedPathCost" type="xs:int" />
       <xs:element name="extraNonDraftedPerceivedPathCost" type="xs:int" />
       <xs:element name="destroyEffect" type="xs:string" />
       <xs:element name="destroyEffectWater" type="xs:string" />
-      <xs:element name="autoRebuildable" type="xs:boolean" />
+      <xs:element name="autoRebuildable" type="StrBoolean" />
       <xs:element name="categoryType" type="TerrainCategoryType" />
       <xs:element name="meltSnowRadius" type="xs:float" />
       <xs:element name="heatPerTick" type="xs:float" />
@@ -103,27 +103,27 @@
       <xs:element name="ignitePawnsIntervalTicks" type="xs:float" />
       <xs:element name="burnDamage" type="xs:int" />
       <xs:element name="burnIntervalTicks" type="xs:float" />
-      <xs:element name="supportsRock" type="xs:boolean" />
+      <xs:element name="supportsRock" type="StrBoolean" />
       <xs:element name="toxicBuildupFactor" type="xs:float" />
-      <xs:element name="dontRender" type="xs:boolean" />
-      <xs:element name="exposesToVacuum" type="xs:boolean" />
-      <xs:element name="canFreeze" type="xs:boolean" />
-      <xs:element name="dangerous" type="xs:boolean" />
-      <xs:element name="preventCraters" type="xs:boolean" />
-      <xs:element name="canEverTerraform" type="xs:boolean" />
+      <xs:element name="dontRender" type="StrBoolean" />
+      <xs:element name="exposesToVacuum" type="StrBoolean" />
+      <xs:element name="canFreeze" type="StrBoolean" />
+      <xs:element name="dangerous" type="StrBoolean" />
+      <xs:element name="preventCraters" type="StrBoolean" />
+      <xs:element name="canEverTerraform" type="StrBoolean" />
       <xs:element name="waterBodyType" type="WaterBodyType" />
-      <xs:element name="cropIcon" type="xs:boolean" />
+      <xs:element name="cropIcon" type="StrBoolean" />
       <xs:element name="glowRadius" type="xs:float" />
       <xs:element name="glowColor" type="ColorInt" />
       <xs:element name="throwFleckChance" type="xs:float" />
       <xs:element name="fleckData" type="TerrainFleckData" />
-      <xs:element name="isFoundation" type="xs:boolean" />
-      <xs:element name="bridge" type="xs:boolean" />
+      <xs:element name="isFoundation" type="StrBoolean" />
+      <xs:element name="bridge" type="StrBoolean" />
       <xs:element name="bridgePropsPath" type="xs:string" />
-      <xs:element name="temporary" type="xs:boolean" />
+      <xs:element name="temporary" type="StrBoolean" />
       <xs:element name="tempTerrain" type="TempTerrainProps" />
       <xs:element name="floodTerrain" type="xs:string" />
-      <xs:element name="canBePolluted" type="xs:boolean" />
+      <xs:element name="canBePolluted" type="StrBoolean" />
       <xs:element name="pollutedTexturePath" type="xs:string" />
       <xs:element name="pollutionOverlayTexturePath" type="xs:string" />
       <xs:element name="pollutionShaderType" type="xs:string" />
@@ -146,7 +146,7 @@
       </xs:element>
       <xs:element name="passability" type="Traversability" />
       <xs:element name="pathCost" type="xs:int" />
-      <xs:element name="pathCostIgnoreRepeat" type="xs:boolean" />
+      <xs:element name="pathCostIgnoreRepeat" type="StrBoolean" />
       <xs:element name="fertility" type="xs:float" />
       <xs:element name="costList">
         <xs:complexType>
@@ -179,7 +179,7 @@
       <xs:element name="stuffCategorySummary" type="xs:string" />
       <xs:element name="costListForDifficulty" type="CostListForDifficulty" />
       <xs:element name="drawStyleCategory" type="xs:string" />
-      <xs:element name="clearBuildingArea" type="xs:boolean" />
+      <xs:element name="clearBuildingArea" type="StrBoolean" />
       <xs:element name="defaultPlacingRot" type="Rot4" />
       <xs:element name="resourcesFractionWhenDeconstructed" type="xs:float" />
       <xs:element name="blocksAltitudes">
@@ -192,10 +192,10 @@
         </xs:complexType>
       </xs:element>
       <xs:element name="dominantStyleCategory" type="xs:string" />
-      <xs:element name="forcePassableByFlyingPawns" type="xs:boolean" />
-      <xs:element name="forceMoveItemsBeforeConstruction" type="xs:boolean" />
-      <xs:element name="isAltar" type="xs:boolean" />
-      <xs:element name="useStuffTerrainAffordance" type="xs:boolean" />
+      <xs:element name="forcePassableByFlyingPawns" type="StrBoolean" />
+      <xs:element name="forceMoveItemsBeforeConstruction" type="StrBoolean" />
+      <xs:element name="isAltar" type="StrBoolean" />
+      <xs:element name="useStuffTerrainAffordance" type="StrBoolean" />
       <xs:element name="terrainAffordanceNeeded" type="xs:string" />
       <xs:element name="buildingPrerequisites">
         <xs:complexType>
@@ -256,7 +256,7 @@
       <xs:element name="artisticSkillPrerequisite" type="xs:int" />
       <xs:element name="minTechLevelToBuild" type="TechLevel" />
       <xs:element name="maxTechLevelToBuild" type="TechLevel" />
-      <xs:element name="requireInspectedGravEngine" type="xs:boolean" />
+      <xs:element name="requireInspectedGravEngine" type="StrBoolean" />
       <xs:element name="altitudeLayer" type="AltitudeLayer" />
       <xs:element name="repairEffect" type="xs:string" />
       <xs:element name="constructEffect" type="xs:string" />
@@ -269,8 +269,8 @@
           <xs:attribute name="MayRequireAnyOf" type="xs:string" />
         </xs:complexType>
       </xs:element>
-      <xs:element name="canGenerateDefaultDesignator" type="xs:boolean" />
-      <xs:element name="ideoBuilding" type="xs:boolean" />
+      <xs:element name="canGenerateDefaultDesignator" type="StrBoolean" />
+      <xs:element name="ideoBuilding" type="StrBoolean" />
       <xs:element name="specialDisplayRadius" type="xs:float" />
       <xs:element name="placeWorkers">
         <xs:complexType>
@@ -320,8 +320,8 @@
           <xs:attribute name="MayRequireAnyOf" type="xs:string" />
         </xs:complexType>
       </xs:element>
-      <xs:element name="ignoreConfigErrors" type="xs:boolean" />
-      <xs:element name="ignoreIllegalLabelCharacterConfigError" type="xs:boolean" />
+      <xs:element name="ignoreConfigErrors" type="StrBoolean" />
+      <xs:element name="ignoreIllegalLabelCharacterConfigError" type="StrBoolean" />
       <xs:element name="modExtensions">
         <xs:complexType>
           <xs:sequence>

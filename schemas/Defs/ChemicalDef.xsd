@@ -5,9 +5,9 @@
     <xs:choice minOccurs="1" maxOccurs="unbounded">
       <xs:element name="addictionHediff" type="xs:string" />
       <xs:element name="toleranceHediff" type="xs:string" />
-      <xs:element name="canBinge" type="xs:boolean" />
-      <xs:element name="canBeAddicted" type="xs:boolean" />
-      <xs:element name="generateAddictionGenes" type="xs:boolean" />
+      <xs:element name="canBinge" type="StrBoolean" />
+      <xs:element name="canBeAddicted" type="StrBoolean" />
+      <xs:element name="generateAddictionGenes" type="StrBoolean" />
       <xs:element name="geneOverdoseChanceFactorResist" type="xs:float" />
       <xs:element name="geneOverdoseChanceFactorImmune" type="xs:float" />
       <xs:element name="geneToleranceBuildupFactorResist" type="xs:float" />
@@ -34,8 +34,8 @@
           <xs:attribute name="MayRequireAnyOf" type="xs:string" />
         </xs:complexType>
       </xs:element>
-      <xs:element name="ignoreConfigErrors" type="xs:boolean" />
-      <xs:element name="ignoreIllegalLabelCharacterConfigError" type="xs:boolean" />
+      <xs:element name="ignoreConfigErrors" type="StrBoolean" />
+      <xs:element name="ignoreIllegalLabelCharacterConfigError" type="StrBoolean" />
       <xs:element name="modExtensions">
         <xs:complexType>
           <xs:sequence>

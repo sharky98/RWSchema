@@ -4,7 +4,7 @@
   <xs:complexType name="RoadDef">
     <xs:choice minOccurs="1" maxOccurs="unbounded">
       <xs:element name="priority" type="xs:int" />
-      <xs:element name="ancientOnly" type="xs:boolean" />
+      <xs:element name="ancientOnly" type="StrBoolean" />
       <xs:element name="movementCostMultiplier" type="xs:float" />
       <xs:element name="tilesPerSegment" type="xs:int" />
       <xs:element name="pathingMode" type="xs:string" />
@@ -41,8 +41,8 @@
           <xs:attribute name="MayRequireAnyOf" type="xs:string" />
         </xs:complexType>
       </xs:element>
-      <xs:element name="ignoreConfigErrors" type="xs:boolean" />
-      <xs:element name="ignoreIllegalLabelCharacterConfigError" type="xs:boolean" />
+      <xs:element name="ignoreConfigErrors" type="StrBoolean" />
+      <xs:element name="ignoreIllegalLabelCharacterConfigError" type="StrBoolean" />
       <xs:element name="modExtensions">
         <xs:complexType>
           <xs:sequence>

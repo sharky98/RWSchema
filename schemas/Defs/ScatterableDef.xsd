@@ -8,7 +8,7 @@
       <xs:element name="maxSize" type="xs:float" />
       <xs:element name="scatterChance" type="xs:float" />
       <xs:element name="scatterType" type="xs:string" />
-      <xs:element name="placeUnderNaturalRoofs" type="xs:boolean" />
+      <xs:element name="placeUnderNaturalRoofs" type="StrBoolean" />
       <xs:element name="mat" type="Material" />
       <xs:element name="defName" type="xs:string" />
       <xs:element name="label" type="xs:string" />
@@ -22,8 +22,8 @@
           <xs:attribute name="MayRequireAnyOf" type="xs:string" />
         </xs:complexType>
       </xs:element>
-      <xs:element name="ignoreConfigErrors" type="xs:boolean" />
-      <xs:element name="ignoreIllegalLabelCharacterConfigError" type="xs:boolean" />
+      <xs:element name="ignoreConfigErrors" type="StrBoolean" />
+      <xs:element name="ignoreIllegalLabelCharacterConfigError" type="StrBoolean" />
       <xs:element name="modExtensions">
         <xs:complexType>
           <xs:sequence>

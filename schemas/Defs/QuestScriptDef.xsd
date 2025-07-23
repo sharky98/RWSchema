@@ -5,11 +5,11 @@
     <xs:choice minOccurs="1" maxOccurs="unbounded">
       <xs:element name="root" type="QuestNode" />
       <xs:element name="rootSelectionWeight" type="xs:float" />
-      <xs:element name="randomlySelectable" type="xs:boolean" />
+      <xs:element name="randomlySelectable" type="StrBoolean" />
       <xs:element name="rootMinPoints" type="xs:float" />
       <xs:element name="rootMinProgressScore" type="xs:float" />
       <xs:element name="rootEarliestDay" type="xs:int" />
-      <xs:element name="rootIncreasesPopulation" type="xs:boolean" />
+      <xs:element name="rootIncreasesPopulation" type="StrBoolean" />
       <xs:element name="minRefireDays" type="xs:float" />
       <xs:element name="decreeSelectionWeight" type="xs:float" />
       <xs:element name="decreeTags">
@@ -35,8 +35,8 @@
       <xs:element name="questDescriptionAndNameRules" type="RulePack" />
       <xs:element name="questContentRules" type="RulePack" />
       <xs:element name="questSubjectRules" type="RulePack" />
-      <xs:element name="autoAccept" type="xs:boolean" />
-      <xs:element name="hideOnCleanup" type="xs:boolean" />
+      <xs:element name="autoAccept" type="StrBoolean" />
+      <xs:element name="hideOnCleanup" type="StrBoolean" />
       <xs:element name="expireDaysRange">
         <xs:simpleType>
           <xs:restriction base="xs:string">
@@ -44,25 +44,25 @@
           </xs:restriction>
         </xs:simpleType>
       </xs:element>
-      <xs:element name="nameMustBeUnique" type="xs:boolean" />
+      <xs:element name="nameMustBeUnique" type="StrBoolean" />
       <xs:element name="defaultChallengeRating" type="xs:int" />
-      <xs:element name="defaultHidden" type="xs:boolean" />
-      <xs:element name="isRootSpecial" type="xs:boolean" />
-      <xs:element name="canGiveRoyalFavor" type="xs:boolean" />
+      <xs:element name="defaultHidden" type="StrBoolean" />
+      <xs:element name="isRootSpecial" type="StrBoolean" />
+      <xs:element name="canGiveRoyalFavor" type="StrBoolean" />
       <xs:element name="questAvailableLetterLabel" type="xs:string" />
       <xs:element name="questAvailableLetterDef" type="xs:string" />
-      <xs:element name="questAvailableLetterTextIsDescription" type="xs:boolean" />
-      <xs:element name="hideInvolvedFactionsInfo" type="xs:boolean" />
-      <xs:element name="affectedByPopulation" type="xs:boolean" />
-      <xs:element name="affectedByPoints" type="xs:boolean" />
-      <xs:element name="defaultCharity" type="xs:boolean" />
+      <xs:element name="questAvailableLetterTextIsDescription" type="StrBoolean" />
+      <xs:element name="hideInvolvedFactionsInfo" type="StrBoolean" />
+      <xs:element name="affectedByPopulation" type="StrBoolean" />
+      <xs:element name="affectedByPoints" type="StrBoolean" />
+      <xs:element name="defaultCharity" type="StrBoolean" />
       <xs:element name="successHistoryEvent" type="xs:string" />
       <xs:element name="failedOrExpiredHistoryEvent" type="xs:string" />
-      <xs:element name="sendAvailableLetter" type="xs:boolean" />
-      <xs:element name="epic" type="xs:boolean" />
+      <xs:element name="sendAvailableLetter" type="StrBoolean" />
+      <xs:element name="epic" type="StrBoolean" />
       <xs:element name="epicParent" type="xs:string" />
-      <xs:element name="endOnColonyMove" type="xs:boolean" />
-      <xs:element name="everAcceptableInSpace" type="xs:boolean" />
+      <xs:element name="endOnColonyMove" type="StrBoolean" />
+      <xs:element name="everAcceptableInSpace" type="StrBoolean" />
       <xs:element name="givenBy">
         <xs:complexType>
           <xs:sequence>
@@ -108,7 +108,7 @@
           <xs:attribute name="MayRequireAnyOf" type="xs:string" />
         </xs:complexType>
       </xs:element>
-      <xs:element name="canOccurOnAllPlanetLayers" type="xs:boolean" />
+      <xs:element name="canOccurOnAllPlanetLayers" type="StrBoolean" />
       <xs:element name="defName" type="xs:string" />
       <xs:element name="label" type="xs:string" />
       <xs:element name="description" type="xs:string" />
@@ -121,8 +121,8 @@
           <xs:attribute name="MayRequireAnyOf" type="xs:string" />
         </xs:complexType>
       </xs:element>
-      <xs:element name="ignoreConfigErrors" type="xs:boolean" />
-      <xs:element name="ignoreIllegalLabelCharacterConfigError" type="xs:boolean" />
+      <xs:element name="ignoreConfigErrors" type="StrBoolean" />
+      <xs:element name="ignoreIllegalLabelCharacterConfigError" type="StrBoolean" />
       <xs:element name="modExtensions">
         <xs:complexType>
           <xs:sequence>

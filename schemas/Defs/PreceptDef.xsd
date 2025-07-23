@@ -124,9 +124,9 @@
           <xs:attribute name="MayRequireAnyOf" type="xs:string" />
         </xs:complexType>
       </xs:element>
-      <xs:element name="visible" type="xs:boolean" />
-      <xs:element name="visibleOnAddFloatMenu" type="xs:boolean" />
-      <xs:element name="listedForRoles" type="xs:boolean" />
+      <xs:element name="visible" type="StrBoolean" />
+      <xs:element name="visibleOnAddFloatMenu" type="StrBoolean" />
+      <xs:element name="listedForRoles" type="StrBoolean" />
       <xs:element name="takeNameFrom" type="xs:string" />
       <xs:element name="alsoAdds" type="xs:string" />
       <xs:element name="maxCount" type="xs:int" />
@@ -148,24 +148,24 @@
           <xs:attribute name="MayRequireAnyOf" type="xs:string" />
         </xs:complexType>
       </xs:element>
-      <xs:element name="allowDuplicates" type="xs:boolean" />
-      <xs:element name="ignoreLimitsInEditMode" type="xs:boolean" />
-      <xs:element name="canUseAlreadyUsedThingDef" type="xs:boolean" />
-      <xs:element name="classic" type="xs:boolean" />
-      <xs:element name="classicExtra" type="xs:boolean" />
+      <xs:element name="allowDuplicates" type="StrBoolean" />
+      <xs:element name="ignoreLimitsInEditMode" type="StrBoolean" />
+      <xs:element name="canUseAlreadyUsedThingDef" type="StrBoolean" />
+      <xs:element name="classic" type="StrBoolean" />
+      <xs:element name="classicExtra" type="StrBoolean" />
       <xs:element name="defaultSelectionWeight" type="xs:float" />
-      <xs:element name="enabledForNPCFactions" type="xs:boolean" />
-      <xs:element name="countsTowardsPreceptLimit" type="xs:boolean" />
-      <xs:element name="canGenerateAsSpecialPrecept" type="xs:boolean" />
+      <xs:element name="enabledForNPCFactions" type="StrBoolean" />
+      <xs:element name="countsTowardsPreceptLimit" type="StrBoolean" />
+      <xs:element name="canGenerateAsSpecialPrecept" type="StrBoolean" />
       <xs:element name="nameMaker" type="xs:string" />
       <xs:element name="nameMaxLength" type="xs:int" />
       <xs:element name="ritualPatternBase" type="xs:string" />
-      <xs:element name="receivesExpectationsQualityOffset" type="xs:boolean" />
-      <xs:element name="usesIdeoVisualEffects" type="xs:boolean" />
-      <xs:element name="mergeRitualGizmosFromAllIdeos" type="xs:boolean" />
-      <xs:element name="allowSpectatorsFromOtherIdeos" type="xs:boolean" />
-      <xs:element name="allowOptionalRitualObligations" type="xs:boolean" />
-      <xs:element name="classicModeOnly" type="xs:boolean" />
+      <xs:element name="receivesExpectationsQualityOffset" type="StrBoolean" />
+      <xs:element name="usesIdeoVisualEffects" type="StrBoolean" />
+      <xs:element name="mergeRitualGizmosFromAllIdeos" type="StrBoolean" />
+      <xs:element name="allowSpectatorsFromOtherIdeos" type="StrBoolean" />
+      <xs:element name="allowOptionalRitualObligations" type="StrBoolean" />
+      <xs:element name="classicModeOnly" type="StrBoolean" />
       <xs:element name="buildingDefChances">
         <xs:complexType>
           <xs:sequence>
@@ -211,7 +211,7 @@
           <xs:attribute name="MayRequireAnyOf" type="xs:string" />
         </xs:complexType>
       </xs:element>
-      <xs:element name="leaderRole" type="xs:boolean" />
+      <xs:element name="leaderRole" type="StrBoolean" />
       <xs:element name="activationBelieverCount" type="xs:int" />
       <xs:element name="deactivationBelieverCount" type="xs:int" />
       <xs:element name="roleRequirements">
@@ -285,25 +285,25 @@
       <xs:element name="certaintyLossFactor" type="xs:float" />
       <xs:element name="convertPowerFactor" type="xs:float" />
       <xs:element name="expectationsOffset" type="xs:int" />
-      <xs:element name="createsRoleEmptyThought" type="xs:boolean" />
-      <xs:element name="roleCanBeChild" type="xs:boolean" />
-      <xs:element name="disallowLoggingCamps" type="xs:boolean" />
-      <xs:element name="disallowMiningCamps" type="xs:boolean" />
-      <xs:element name="disallowHuntingCamps" type="xs:boolean" />
-      <xs:element name="disallowFarmingCamps" type="xs:boolean" />
-      <xs:element name="approvesOfSlavery" type="xs:boolean" />
-      <xs:element name="prefersNudity" type="xs:boolean" />
+      <xs:element name="createsRoleEmptyThought" type="StrBoolean" />
+      <xs:element name="roleCanBeChild" type="StrBoolean" />
+      <xs:element name="disallowLoggingCamps" type="StrBoolean" />
+      <xs:element name="disallowMiningCamps" type="StrBoolean" />
+      <xs:element name="disallowHuntingCamps" type="StrBoolean" />
+      <xs:element name="disallowFarmingCamps" type="StrBoolean" />
+      <xs:element name="approvesOfSlavery" type="StrBoolean" />
+      <xs:element name="prefersNudity" type="StrBoolean" />
       <xs:element name="genderPrefersNudity" type="Gender" />
-      <xs:element name="useChoicesFromBuildingDefs" type="xs:boolean" />
+      <xs:element name="useChoicesFromBuildingDefs" type="StrBoolean" />
       <xs:element name="displayOrderInImpact" type="xs:int" />
       <xs:element name="displayOrderInIssue" type="xs:int" />
-      <xs:element name="proselytizes" type="xs:boolean" />
+      <xs:element name="proselytizes" type="StrBoolean" />
       <xs:element name="requiredScars" type="xs:int" />
-      <xs:element name="approvesOfCharity" type="xs:boolean" />
+      <xs:element name="approvesOfCharity" type="StrBoolean" />
       <xs:element name="blindPawnChance" type="xs:float" />
-      <xs:element name="approvesOfBlindness" type="xs:boolean" />
-      <xs:element name="canRemoveInUI" type="xs:boolean" />
-      <xs:element name="prefersDarkness" type="xs:boolean" />
+      <xs:element name="approvesOfBlindness" type="StrBoolean" />
+      <xs:element name="canRemoveInUI" type="StrBoolean" />
+      <xs:element name="prefersDarkness" type="StrBoolean" />
       <xs:element name="enablesNeeds">
         <xs:complexType>
           <xs:sequence>
@@ -342,27 +342,27 @@
       </xs:element>
       <xs:element name="blindPsychicSensitivityOffset" type="xs:float" />
       <xs:element name="defaultDrugPolicyOverride" type="xs:string" />
-      <xs:element name="warnPlayerOnDesignateChopTree" type="xs:boolean" />
-      <xs:element name="warnPlayerOnDesignateMine" type="xs:boolean" />
-      <xs:element name="willingToConstructOtherIdeoBuildables" type="xs:boolean" />
+      <xs:element name="warnPlayerOnDesignateChopTree" type="StrBoolean" />
+      <xs:element name="warnPlayerOnDesignateMine" type="StrBoolean" />
+      <xs:element name="willingToConstructOtherIdeoBuildables" type="StrBoolean" />
       <xs:element name="biosculpterPodCycleSpeedFactor" type="xs:float" />
       <xs:element name="growthVatSpeedFactor" type="xs:float" />
-      <xs:element name="prefersSlabBed" type="xs:boolean" />
-      <xs:element name="useRepeatPenalty" type="xs:boolean" />
-      <xs:element name="showRitualFloatMenuOption" type="xs:boolean" />
+      <xs:element name="prefersSlabBed" type="StrBoolean" />
+      <xs:element name="useRepeatPenalty" type="StrBoolean" />
+      <xs:element name="showRitualFloatMenuOption" type="StrBoolean" />
       <xs:element name="tipLabelOverride" type="xs:string" />
-      <xs:element name="capitalizeAsTitle" type="xs:boolean" />
-      <xs:element name="ignoreNameUniqueness" type="xs:boolean" />
+      <xs:element name="capitalizeAsTitle" type="StrBoolean" />
+      <xs:element name="ignoreNameUniqueness" type="StrBoolean" />
       <xs:element name="extraTextPawnDeathLetter" type="xs:string" />
       <xs:element name="apparelPreceptSwapDef" type="xs:string" />
       <xs:element name="useCooldownFromAbilityGroupDef" type="xs:string" />
-      <xs:element name="iconIgnoresIdeoColor" type="xs:boolean" />
+      <xs:element name="iconIgnoresIdeoColor" type="StrBoolean" />
       <xs:element name="sourcePawnRoleDef" type="xs:string" />
       <xs:element name="sourceAbilityDef" type="xs:string" />
-      <xs:element name="likesHumanLeatherApparel" type="xs:boolean" />
-      <xs:element name="approvesOfRaiding" type="xs:boolean" />
+      <xs:element name="likesHumanLeatherApparel" type="StrBoolean" />
+      <xs:element name="approvesOfRaiding" type="StrBoolean" />
       <xs:element name="skipOpportunityLettersBeforeDay" type="xs:float" />
-      <xs:element name="notifyPlayerOnOpportunity" type="xs:boolean" />
+      <xs:element name="notifyPlayerOnOpportunity" type="StrBoolean" />
       <xs:element name="workerClass" type="xs:string" />
       <xs:element name="defName" type="xs:string" />
       <xs:element name="label" type="xs:string" />
@@ -376,8 +376,8 @@
           <xs:attribute name="MayRequireAnyOf" type="xs:string" />
         </xs:complexType>
       </xs:element>
-      <xs:element name="ignoreConfigErrors" type="xs:boolean" />
-      <xs:element name="ignoreIllegalLabelCharacterConfigError" type="xs:boolean" />
+      <xs:element name="ignoreConfigErrors" type="StrBoolean" />
+      <xs:element name="ignoreIllegalLabelCharacterConfigError" type="StrBoolean" />
       <xs:element name="modExtensions">
         <xs:complexType>
           <xs:sequence>

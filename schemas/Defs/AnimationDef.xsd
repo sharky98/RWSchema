@@ -4,8 +4,8 @@
   <xs:complexType name="AnimationDef">
     <xs:choice minOccurs="1" maxOccurs="unbounded">
       <xs:element name="durationTicks" type="xs:int" />
-      <xs:element name="startOnRandomTick" type="xs:boolean" />
-      <xs:element name="playWhenDowned" type="xs:boolean" />
+      <xs:element name="startOnRandomTick" type="StrBoolean" />
+      <xs:element name="playWhenDowned" type="StrBoolean" />
       <xs:element name="posRotScale" type="xs:float" />
       <xs:element name="loopMode" type="LoopMode" />
       <xs:element name="keyframeParts">
@@ -56,8 +56,8 @@
           <xs:attribute name="MayRequireAnyOf" type="xs:string" />
         </xs:complexType>
       </xs:element>
-      <xs:element name="ignoreConfigErrors" type="xs:boolean" />
-      <xs:element name="ignoreIllegalLabelCharacterConfigError" type="xs:boolean" />
+      <xs:element name="ignoreConfigErrors" type="StrBoolean" />
+      <xs:element name="ignoreIllegalLabelCharacterConfigError" type="StrBoolean" />
       <xs:element name="modExtensions">
         <xs:complexType>
           <xs:sequence>

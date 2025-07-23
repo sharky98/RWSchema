@@ -4,16 +4,16 @@
   <xs:complexType name="PrisonerInteractionModeDef">
     <xs:choice minOccurs="1" maxOccurs="unbounded">
       <xs:element name="listOrder" type="xs:int" />
-      <xs:element name="allowOnWildMan" type="xs:boolean" />
-      <xs:element name="hideIfNoBloodfeeders" type="xs:boolean" />
-      <xs:element name="hideOnHemogenicPawns" type="xs:boolean" />
-      <xs:element name="mustBeAwake" type="xs:boolean" />
-      <xs:element name="allowInClassicIdeoMode" type="xs:boolean" />
-      <xs:element name="hideIfNotRecruitable" type="xs:boolean" />
-      <xs:element name="hideIfNotStudiableAsPrisoner" type="xs:boolean" />
-      <xs:element name="hideIfGrayFleshNotAppeared" type="xs:boolean" />
-      <xs:element name="isNonExclusiveInteraction" type="xs:boolean" />
-      <xs:element name="isChildInteraction" type="xs:boolean" />
+      <xs:element name="allowOnWildMan" type="StrBoolean" />
+      <xs:element name="hideIfNoBloodfeeders" type="StrBoolean" />
+      <xs:element name="hideOnHemogenicPawns" type="StrBoolean" />
+      <xs:element name="mustBeAwake" type="StrBoolean" />
+      <xs:element name="allowInClassicIdeoMode" type="StrBoolean" />
+      <xs:element name="hideIfNotRecruitable" type="StrBoolean" />
+      <xs:element name="hideIfNotStudiableAsPrisoner" type="StrBoolean" />
+      <xs:element name="hideIfGrayFleshNotAppeared" type="StrBoolean" />
+      <xs:element name="isNonExclusiveInteraction" type="StrBoolean" />
+      <xs:element name="isChildInteraction" type="StrBoolean" />
       <xs:element name="defName" type="xs:string" />
       <xs:element name="label" type="xs:string" />
       <xs:element name="description" type="xs:string" />
@@ -26,8 +26,8 @@
           <xs:attribute name="MayRequireAnyOf" type="xs:string" />
         </xs:complexType>
       </xs:element>
-      <xs:element name="ignoreConfigErrors" type="xs:boolean" />
-      <xs:element name="ignoreIllegalLabelCharacterConfigError" type="xs:boolean" />
+      <xs:element name="ignoreConfigErrors" type="StrBoolean" />
+      <xs:element name="ignoreIllegalLabelCharacterConfigError" type="StrBoolean" />
       <xs:element name="modExtensions">
         <xs:complexType>
           <xs:sequence>

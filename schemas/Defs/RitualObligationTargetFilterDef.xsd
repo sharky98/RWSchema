@@ -4,7 +4,7 @@
   <xs:complexType name="RitualObligationTargetFilterDef">
     <xs:choice minOccurs="1" maxOccurs="unbounded">
       <xs:element name="workerClass" type="xs:string" />
-      <xs:element name="colonistThingsOnly" type="xs:boolean" />
+      <xs:element name="colonistThingsOnly" type="StrBoolean" />
       <xs:element name="thingDefs">
         <xs:complexType>
           <xs:sequence>
@@ -40,8 +40,8 @@
           <xs:attribute name="MayRequireAnyOf" type="xs:string" />
         </xs:complexType>
       </xs:element>
-      <xs:element name="ignoreConfigErrors" type="xs:boolean" />
-      <xs:element name="ignoreIllegalLabelCharacterConfigError" type="xs:boolean" />
+      <xs:element name="ignoreConfigErrors" type="StrBoolean" />
+      <xs:element name="ignoreIllegalLabelCharacterConfigError" type="StrBoolean" />
       <xs:element name="modExtensions">
         <xs:complexType>
           <xs:sequence>

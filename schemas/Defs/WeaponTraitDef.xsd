@@ -24,7 +24,7 @@
         </xs:complexType>
       </xs:element>
       <xs:element name="commonality" type="xs:float" />
-      <xs:element name="canGenerateAlone" type="xs:boolean" />
+      <xs:element name="canGenerateAlone" type="StrBoolean" />
       <xs:element name="damageDefOverride" type="xs:string" />
       <xs:element name="extraDamages">
         <xs:complexType>
@@ -66,7 +66,7 @@
       <xs:element name="burstShotSpeedMultiplier" type="xs:float" />
       <xs:element name="burstShotCountMultiplier" type="xs:float" />
       <xs:element name="additionalStoppingPower" type="xs:float" />
-      <xs:element name="ignoresAccuracyMaluses" type="xs:boolean" />
+      <xs:element name="ignoresAccuracyMaluses" type="StrBoolean" />
       <xs:element name="forcedColor" type="xs:string" />
       <xs:element name="traitAdjectives">
         <xs:complexType>
@@ -124,7 +124,7 @@
       </xs:element>
       <xs:element name="bondedThought" type="xs:string" />
       <xs:element name="killThought" type="xs:string" />
-      <xs:element name="neverBond" type="xs:boolean" />
+      <xs:element name="neverBond" type="StrBoolean" />
       <xs:element name="abilityProps" type="CompProperties_EquippableAbilityReloadable" />
       <xs:element name="defName" type="xs:string" />
       <xs:element name="label" type="xs:string" />
@@ -138,8 +138,8 @@
           <xs:attribute name="MayRequireAnyOf" type="xs:string" />
         </xs:complexType>
       </xs:element>
-      <xs:element name="ignoreConfigErrors" type="xs:boolean" />
-      <xs:element name="ignoreIllegalLabelCharacterConfigError" type="xs:boolean" />
+      <xs:element name="ignoreConfigErrors" type="StrBoolean" />
+      <xs:element name="ignoreIllegalLabelCharacterConfigError" type="StrBoolean" />
       <xs:element name="modExtensions">
         <xs:complexType>
           <xs:sequence>

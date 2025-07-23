@@ -7,12 +7,12 @@
       <xs:element name="thinkTree" type="xs:string" />
       <xs:element name="thinkTreeConstant" type="xs:string" />
       <xs:element name="allowedDevelopmentalStages" type="DevelopmentalStage" />
-      <xs:element name="clearMutantStatusOnDeath" type="xs:boolean" />
-      <xs:element name="consideredSubhuman" type="xs:boolean" />
+      <xs:element name="clearMutantStatusOnDeath" type="StrBoolean" />
+      <xs:element name="consideredSubhuman" type="StrBoolean" />
       <xs:element name="workDisables" type="WorkTags" />
-      <xs:element name="disablesIdeo" type="xs:boolean" />
-      <xs:element name="disableAging" type="xs:boolean" />
-      <xs:element name="disableApparel" type="xs:boolean" />
+      <xs:element name="disablesIdeo" type="StrBoolean" />
+      <xs:element name="disableAging" type="StrBoolean" />
+      <xs:element name="disableApparel" type="StrBoolean" />
       <xs:element name="disablesGenes">
         <xs:complexType>
           <xs:sequence>
@@ -31,26 +31,26 @@
           <xs:attribute name="MayRequireAnyOf" type="xs:string" />
         </xs:complexType>
       </xs:element>
-      <xs:element name="preventsMentalBreaks" type="xs:boolean" />
-      <xs:element name="canOpenDoors" type="xs:boolean" />
-      <xs:element name="canOpenAnyDoor" type="xs:boolean" />
-      <xs:element name="canCarryPawns" type="xs:boolean" />
-      <xs:element name="canTend" type="xs:boolean" />
-      <xs:element name="canTravelInCaravan" type="xs:boolean" />
-      <xs:element name="respectsAllowedArea" type="xs:boolean" />
-      <xs:element name="canGainXP" type="xs:boolean" />
-      <xs:element name="disableEatingAtTable" type="xs:boolean" />
-      <xs:element name="disableOwnership" type="xs:boolean" />
-      <xs:element name="disablePolicies" type="xs:boolean" />
-      <xs:element name="disableTitles" type="xs:boolean" />
-      <xs:element name="disableFlying" type="xs:boolean" />
+      <xs:element name="preventsMentalBreaks" type="StrBoolean" />
+      <xs:element name="canOpenDoors" type="StrBoolean" />
+      <xs:element name="canOpenAnyDoor" type="StrBoolean" />
+      <xs:element name="canCarryPawns" type="StrBoolean" />
+      <xs:element name="canTend" type="StrBoolean" />
+      <xs:element name="canTravelInCaravan" type="StrBoolean" />
+      <xs:element name="respectsAllowedArea" type="StrBoolean" />
+      <xs:element name="canGainXP" type="StrBoolean" />
+      <xs:element name="disableEatingAtTable" type="StrBoolean" />
+      <xs:element name="disableOwnership" type="StrBoolean" />
+      <xs:element name="disablePolicies" type="StrBoolean" />
+      <xs:element name="disableTitles" type="StrBoolean" />
+      <xs:element name="disableFlying" type="StrBoolean" />
       <xs:element name="namePrefix" type="xs:string" />
-      <xs:element name="hideLabel" type="xs:boolean" />
+      <xs:element name="hideLabel" type="StrBoolean" />
       <xs:element name="codexEntry" type="xs:string" />
-      <xs:element name="showInScenarioEditor" type="xs:boolean" />
-      <xs:element name="overrideLabel" type="xs:boolean" />
-      <xs:element name="overrideInspectString" type="xs:boolean" />
-      <xs:element name="showJobReport" type="xs:boolean" />
+      <xs:element name="showInScenarioEditor" type="StrBoolean" />
+      <xs:element name="overrideLabel" type="StrBoolean" />
+      <xs:element name="overrideInspectString" type="StrBoolean" />
+      <xs:element name="showJobReport" type="StrBoolean" />
       <xs:element name="whitelistedFloatMenuProviders">
         <xs:complexType>
           <xs:sequence>
@@ -69,7 +69,7 @@
           <xs:attribute name="MayRequireAnyOf" type="xs:string" />
         </xs:complexType>
       </xs:element>
-      <xs:element name="disableNeeds" type="xs:boolean" />
+      <xs:element name="disableNeeds" type="StrBoolean" />
       <xs:element name="needWhitelist">
         <xs:complexType>
           <xs:sequence>
@@ -88,10 +88,10 @@
           <xs:attribute name="MayRequireAnyOf" type="xs:string" />
         </xs:complexType>
       </xs:element>
-      <xs:element name="overrideFoodType" type="xs:boolean" />
+      <xs:element name="overrideFoodType" type="StrBoolean" />
       <xs:element name="foodType" type="FoodTypeFlags" />
-      <xs:element name="allowEatingCorpses" type="xs:boolean" />
-      <xs:element name="useCorpseGraphics" type="xs:boolean" />
+      <xs:element name="allowEatingCorpses" type="StrBoolean" />
+      <xs:element name="useCorpseGraphics" type="StrBoolean" />
       <xs:element name="skinColorOverride" type="Color" />
       <xs:element name="skinColorTint" type="Color" />
       <xs:element name="skinColorTintStrength" type="xs:float" />
@@ -126,13 +126,13 @@
       <xs:element name="hairTagFilter" type="TagFilter" />
       <xs:element name="beardTagFilter" type="TagFilter" />
       <xs:element name="standingAnimation" type="xs:string" />
-      <xs:element name="makesFootprints" type="xs:boolean" />
-      <xs:element name="canBleed" type="xs:boolean" />
+      <xs:element name="makesFootprints" type="StrBoolean" />
+      <xs:element name="canBleed" type="StrBoolean" />
       <xs:element name="bloodDef" type="xs:string" />
       <xs:element name="bloodSmearDef" type="xs:string" />
-      <xs:element name="entitledToMedicalCare" type="xs:boolean" />
-      <xs:element name="isImmuneToInfections" type="xs:boolean" />
-      <xs:element name="canUseDrugs" type="xs:boolean" />
+      <xs:element name="entitledToMedicalCare" type="StrBoolean" />
+      <xs:element name="isImmuneToInfections" type="StrBoolean" />
+      <xs:element name="canUseDrugs" type="StrBoolean" />
       <xs:element name="drugWhitelist">
         <xs:complexType>
           <xs:sequence>
@@ -152,16 +152,16 @@
         </xs:complexType>
       </xs:element>
       <xs:element name="woundColor" type="Color" />
-      <xs:element name="preventIllnesses" type="xs:boolean" />
-      <xs:element name="removeChronicIllnesses" type="xs:boolean" />
-      <xs:element name="removePermanentInjuries" type="xs:boolean" />
-      <xs:element name="removeAddictions" type="xs:boolean" />
-      <xs:element name="removeAllInjuries" type="xs:boolean" />
-      <xs:element name="restoreLegs" type="xs:boolean" />
-      <xs:element name="terminatePregnancy" type="xs:boolean" />
-      <xs:element name="partsCleanAndDroppable" type="xs:boolean" />
-      <xs:element name="clearsEgo" type="xs:boolean" />
-      <xs:element name="breathesAir" type="xs:boolean" />
+      <xs:element name="preventIllnesses" type="StrBoolean" />
+      <xs:element name="removeChronicIllnesses" type="StrBoolean" />
+      <xs:element name="removePermanentInjuries" type="StrBoolean" />
+      <xs:element name="removeAddictions" type="StrBoolean" />
+      <xs:element name="removeAllInjuries" type="StrBoolean" />
+      <xs:element name="restoreLegs" type="StrBoolean" />
+      <xs:element name="terminatePregnancy" type="StrBoolean" />
+      <xs:element name="partsCleanAndDroppable" type="StrBoolean" />
+      <xs:element name="clearsEgo" type="StrBoolean" />
+      <xs:element name="breathesAir" type="StrBoolean" />
       <xs:element name="givesHediffs">
         <xs:complexType>
           <xs:sequence>
@@ -259,9 +259,9 @@
           <xs:attribute name="MayRequireAnyOf" type="xs:string" />
         </xs:complexType>
       </xs:element>
-      <xs:element name="passive" type="xs:boolean" />
-      <xs:element name="canBeDrafted" type="xs:boolean" />
-      <xs:element name="canAttackWhileCrawling" type="xs:boolean" />
+      <xs:element name="passive" type="StrBoolean" />
+      <xs:element name="canBeDrafted" type="StrBoolean" />
+      <xs:element name="canAttackWhileCrawling" type="StrBoolean" />
       <xs:element name="deathOnDownedChance" type="xs:float" />
       <xs:element name="soundAttackChance" type="xs:float" />
       <xs:element name="killedLeavings">
@@ -273,15 +273,15 @@
           <xs:attribute name="MayRequireAnyOf" type="xs:string" />
         </xs:complexType>
       </xs:element>
-      <xs:element name="psychicShockUntargetable" type="xs:boolean" />
-      <xs:element name="disableHostilityResponse" type="xs:boolean" />
+      <xs:element name="psychicShockUntargetable" type="StrBoolean" />
+      <xs:element name="disableHostilityResponse" type="StrBoolean" />
       <xs:element name="defaultFaction" type="xs:string" />
-      <xs:element name="isConsideredCorpse" type="xs:boolean" />
+      <xs:element name="isConsideredCorpse" type="StrBoolean" />
       <xs:element name="relativeTurnedThought" type="xs:string" />
-      <xs:element name="incapableOfSocialInteractions" type="xs:boolean" />
-      <xs:element name="tameable" type="xs:boolean" />
-      <xs:element name="canBeCapturedToHoldingPlatform" type="xs:boolean" />
-      <xs:element name="producesBioferrite" type="xs:boolean" />
+      <xs:element name="incapableOfSocialInteractions" type="StrBoolean" />
+      <xs:element name="tameable" type="StrBoolean" />
+      <xs:element name="canBeCapturedToHoldingPlatform" type="StrBoolean" />
+      <xs:element name="producesBioferrite" type="StrBoolean" />
       <xs:element name="anomalyKnowledgeOffset" type="xs:float" />
       <xs:element name="knowledgeCategory" type="xs:string" />
       <xs:element name="defName" type="xs:string" />
@@ -296,8 +296,8 @@
           <xs:attribute name="MayRequireAnyOf" type="xs:string" />
         </xs:complexType>
       </xs:element>
-      <xs:element name="ignoreConfigErrors" type="xs:boolean" />
-      <xs:element name="ignoreIllegalLabelCharacterConfigError" type="xs:boolean" />
+      <xs:element name="ignoreConfigErrors" type="StrBoolean" />
+      <xs:element name="ignoreIllegalLabelCharacterConfigError" type="StrBoolean" />
       <xs:element name="modExtensions">
         <xs:complexType>
           <xs:sequence>

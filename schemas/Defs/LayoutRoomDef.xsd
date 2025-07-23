@@ -11,7 +11,7 @@
           </xs:restriction>
         </xs:simpleType>
       </xs:element>
-      <xs:element name="requiresSingleRectRoom" type="xs:boolean" />
+      <xs:element name="requiresSingleRectRoom" type="StrBoolean" />
       <xs:element name="floorTypes">
         <xs:complexType>
           <xs:sequence>
@@ -34,18 +34,18 @@
       <xs:element name="minSingleRectWidth" type="xs:int" />
       <xs:element name="minSingleRectHeight" type="xs:int" />
       <xs:element name="roomContentsWorkerType" type="xs:string" />
-      <xs:element name="canBeInMixedRoom" type="xs:boolean" />
-      <xs:element name="dontPlaceRandomly" type="xs:boolean" />
-      <xs:element name="isValidPlayerSpawnRoom" type="xs:boolean" />
-      <xs:element name="dontDestroyWallsDoors" type="xs:boolean" />
+      <xs:element name="canBeInMixedRoom" type="StrBoolean" />
+      <xs:element name="dontPlaceRandomly" type="StrBoolean" />
+      <xs:element name="isValidPlayerSpawnRoom" type="StrBoolean" />
+      <xs:element name="dontDestroyWallsDoors" type="StrBoolean" />
       <xs:element name="minConnectedRooms" type="xs:int" />
       <xs:element name="minAdjRooms" type="xs:int" />
-      <xs:element name="spawnJunk" type="xs:boolean" />
-      <xs:element name="canMergeWithAdjacentRoom" type="xs:boolean" />
-      <xs:element name="canRemoveBorderDoors" type="xs:boolean" />
-      <xs:element name="canRemoveBorderWalls" type="xs:boolean" />
+      <xs:element name="spawnJunk" type="StrBoolean" />
+      <xs:element name="canMergeWithAdjacentRoom" type="StrBoolean" />
+      <xs:element name="canRemoveBorderDoors" type="StrBoolean" />
+      <xs:element name="canRemoveBorderWalls" type="StrBoolean" />
       <xs:element name="roofDef" type="xs:string" />
-      <xs:element name="noRoof" type="xs:boolean" />
+      <xs:element name="noRoof" type="StrBoolean" />
       <xs:element name="itemsPer100CellsRange" type="FloatRange" />
       <xs:element name="thingSetMakerDef" type="xs:string" />
       <xs:element name="scatter">
@@ -123,8 +123,8 @@
           <xs:attribute name="MayRequireAnyOf" type="xs:string" />
         </xs:complexType>
       </xs:element>
-      <xs:element name="ignoreConfigErrors" type="xs:boolean" />
-      <xs:element name="ignoreIllegalLabelCharacterConfigError" type="xs:boolean" />
+      <xs:element name="ignoreConfigErrors" type="StrBoolean" />
+      <xs:element name="ignoreIllegalLabelCharacterConfigError" type="StrBoolean" />
       <xs:element name="modExtensions">
         <xs:complexType>
           <xs:sequence>

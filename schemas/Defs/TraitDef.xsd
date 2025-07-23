@@ -124,8 +124,8 @@
       <xs:element name="disabledWorkTags" type="WorkTags" />
       <xs:element name="disableHostilityFromAnimalType" type="AnimalType" />
       <xs:element name="disableHostilityFromFaction" type="xs:string" />
-      <xs:element name="canBeSuppressed" type="xs:boolean" />
-      <xs:element name="allowOnHostileSpawn" type="xs:boolean" />
+      <xs:element name="canBeSuppressed" type="StrBoolean" />
+      <xs:element name="allowOnHostileSpawn" type="StrBoolean" />
       <xs:element name="defName" type="xs:string" />
       <xs:element name="label" type="xs:string" />
       <xs:element name="description" type="xs:string" />
@@ -138,8 +138,8 @@
           <xs:attribute name="MayRequireAnyOf" type="xs:string" />
         </xs:complexType>
       </xs:element>
-      <xs:element name="ignoreConfigErrors" type="xs:boolean" />
-      <xs:element name="ignoreIllegalLabelCharacterConfigError" type="xs:boolean" />
+      <xs:element name="ignoreConfigErrors" type="StrBoolean" />
+      <xs:element name="ignoreIllegalLabelCharacterConfigError" type="StrBoolean" />
       <xs:element name="modExtensions">
         <xs:complexType>
           <xs:sequence>

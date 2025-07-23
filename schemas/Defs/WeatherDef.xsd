@@ -10,9 +10,9 @@
           </xs:restriction>
         </xs:simpleType>
       </xs:element>
-      <xs:element name="repeatable" type="xs:boolean" />
-      <xs:element name="isBad" type="xs:boolean" />
-      <xs:element name="canOccurAsRandomForcedEvent" type="xs:boolean" />
+      <xs:element name="repeatable" type="StrBoolean" />
+      <xs:element name="isBad" type="StrBoolean" />
+      <xs:element name="canOccurAsRandomForcedEvent" type="StrBoolean" />
       <xs:element name="favorability" type="Favorability" />
       <xs:element name="temperatureRange">
         <xs:simpleType>
@@ -23,7 +23,7 @@
       </xs:element>
       <xs:element name="transitionTicksOverride" type="xs:int" />
       <xs:element name="minMonolithLevel" type="xs:int" />
-      <xs:element name="canOccurInAmbientHorror" type="xs:boolean" />
+      <xs:element name="canOccurInAmbientHorror" type="StrBoolean" />
       <xs:element name="letterText" type="xs:string" />
       <xs:element name="letterLabel" type="xs:string" />
       <xs:element name="letterDef" type="xs:string" />
@@ -36,11 +36,11 @@
       <xs:element name="accuracyMultiplier" type="xs:float" />
       <xs:element name="maxRangeCap" type="xs:float" />
       <xs:element name="perceivePriority" type="xs:float" />
-      <xs:element name="doToxicBuildup" type="xs:boolean" />
+      <xs:element name="doToxicBuildup" type="StrBoolean" />
       <xs:element name="weatherThought" type="xs:string" />
       <xs:element name="maxGlow" type="xs:float" />
-      <xs:element name="preventSkygaze" type="xs:boolean" />
-      <xs:element name="preventsShuttleLaunch" type="xs:boolean" />
+      <xs:element name="preventSkygaze" type="StrBoolean" />
+      <xs:element name="preventsShuttleLaunch" type="StrBoolean" />
       <xs:element name="ambientSounds">
         <xs:complexType>
           <xs:sequence>
@@ -103,8 +103,8 @@
           <xs:attribute name="MayRequireAnyOf" type="xs:string" />
         </xs:complexType>
       </xs:element>
-      <xs:element name="ignoreConfigErrors" type="xs:boolean" />
-      <xs:element name="ignoreIllegalLabelCharacterConfigError" type="xs:boolean" />
+      <xs:element name="ignoreConfigErrors" type="StrBoolean" />
+      <xs:element name="ignoreIllegalLabelCharacterConfigError" type="StrBoolean" />
       <xs:element name="modExtensions">
         <xs:complexType>
           <xs:sequence>

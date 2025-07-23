@@ -63,7 +63,7 @@
           </xs:restriction>
         </xs:simpleType>
       </xs:element>
-      <xs:element name="allowDuringTutorial" type="xs:boolean" />
+      <xs:element name="allowDuringTutorial" type="StrBoolean" />
       <xs:element name="factionWhitelist">
         <xs:complexType>
           <xs:sequence>
@@ -82,13 +82,13 @@
           <xs:attribute name="MayRequireAnyOf" type="xs:string" />
         </xs:complexType>
       </xs:element>
-      <xs:element name="hiddenInChooseMemes" type="xs:boolean" />
+      <xs:element name="hiddenInChooseMemes" type="StrBoolean" />
       <xs:element name="generalRules" type="RulePack" />
       <xs:element name="descriptionMaker" type="IdeoDescriptionMaker" />
       <xs:element name="deityNameMakerOverride" type="xs:string" />
       <xs:element name="deityTypeMakerOverride" type="xs:string" />
-      <xs:element name="allowSymbolsFromDeity" type="xs:boolean" />
-      <xs:element name="symbolPackOverride" type="xs:boolean" />
+      <xs:element name="allowSymbolsFromDeity" type="StrBoolean" />
+      <xs:element name="symbolPackOverride" type="StrBoolean" />
       <xs:element name="symbolPacks">
         <xs:complexType>
           <xs:sequence>
@@ -270,7 +270,7 @@
           <xs:attribute name="MayRequireAnyOf" type="xs:string" />
         </xs:complexType>
       </xs:element>
-      <xs:element name="preventApparelRequirements" type="xs:boolean" />
+      <xs:element name="preventApparelRequirements" type="StrBoolean" />
       <xs:element name="xenotypeSet" type="XenotypeSet" />
       <xs:element name="defName" type="xs:string" />
       <xs:element name="label" type="xs:string" />
@@ -284,8 +284,8 @@
           <xs:attribute name="MayRequireAnyOf" type="xs:string" />
         </xs:complexType>
       </xs:element>
-      <xs:element name="ignoreConfigErrors" type="xs:boolean" />
-      <xs:element name="ignoreIllegalLabelCharacterConfigError" type="xs:boolean" />
+      <xs:element name="ignoreConfigErrors" type="StrBoolean" />
+      <xs:element name="ignoreIllegalLabelCharacterConfigError" type="StrBoolean" />
       <xs:element name="modExtensions">
         <xs:complexType>
           <xs:sequence>

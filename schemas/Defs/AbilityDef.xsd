@@ -39,16 +39,16 @@
       <xs:element name="warmupPreEndSoundSeconds" type="xs:float" />
       <xs:element name="moteDrawOffset" type="Vector3" />
       <xs:element name="moteOffsetAmountTowardsTarget" type="xs:float" />
-      <xs:element name="canUseAoeToGetTargets" type="xs:boolean" />
-      <xs:element name="useAverageTargetPositionForWarmupEffecter" type="xs:boolean" />
-      <xs:element name="targetRequired" type="xs:boolean" />
-      <xs:element name="targetWorldCell" type="xs:boolean" />
-      <xs:element name="showGizmoOnWorldView" type="xs:boolean" />
-      <xs:element name="aiCanUse" type="xs:boolean" />
-      <xs:element name="ai_SearchAOEForTargets" type="xs:boolean" />
-      <xs:element name="ai_IsOffensive" type="xs:boolean" />
-      <xs:element name="ai_IsIncendiary" type="xs:boolean" />
-      <xs:element name="groupAbility" type="xs:boolean" />
+      <xs:element name="canUseAoeToGetTargets" type="StrBoolean" />
+      <xs:element name="useAverageTargetPositionForWarmupEffecter" type="StrBoolean" />
+      <xs:element name="targetRequired" type="StrBoolean" />
+      <xs:element name="targetWorldCell" type="StrBoolean" />
+      <xs:element name="showGizmoOnWorldView" type="StrBoolean" />
+      <xs:element name="aiCanUse" type="StrBoolean" />
+      <xs:element name="ai_SearchAOEForTargets" type="StrBoolean" />
+      <xs:element name="ai_IsOffensive" type="StrBoolean" />
+      <xs:element name="ai_IsIncendiary" type="StrBoolean" />
+      <xs:element name="groupAbility" type="StrBoolean" />
       <xs:element name="level" type="xs:int" />
       <xs:element name="cooldownTicksRange">
         <xs:simpleType>
@@ -57,11 +57,11 @@
           </xs:restriction>
         </xs:simpleType>
       </xs:element>
-      <xs:element name="cooldownPerCharge" type="xs:boolean" />
-      <xs:element name="hasExternallyHandledCooldown" type="xs:boolean" />
+      <xs:element name="cooldownPerCharge" type="StrBoolean" />
+      <xs:element name="hasExternallyHandledCooldown" type="StrBoolean" />
       <xs:element name="charges" type="xs:int" />
       <xs:element name="groupDef" type="xs:string" />
-      <xs:element name="overrideGroupCooldown" type="xs:boolean" />
+      <xs:element name="overrideGroupCooldown" type="StrBoolean" />
       <xs:element name="requiredMemes">
         <xs:complexType>
           <xs:sequence>
@@ -80,21 +80,21 @@
           <xs:attribute name="MayRequireAnyOf" type="xs:string" />
         </xs:complexType>
       </xs:element>
-      <xs:element name="sendLetterOnCooldownComplete" type="xs:boolean" />
-      <xs:element name="sendMessageOnCooldownComplete" type="xs:boolean" />
-      <xs:element name="displayGizmoWhileUndrafted" type="xs:boolean" />
-      <xs:element name="disableGizmoWhileUndrafted" type="xs:boolean" />
-      <xs:element name="writeCombatLog" type="xs:boolean" />
-      <xs:element name="stunTargetWhileCasting" type="xs:boolean" />
-      <xs:element name="showPsycastEffects" type="xs:boolean" />
-      <xs:element name="showCastingProgressBar" type="xs:boolean" />
+      <xs:element name="sendLetterOnCooldownComplete" type="StrBoolean" />
+      <xs:element name="sendMessageOnCooldownComplete" type="StrBoolean" />
+      <xs:element name="displayGizmoWhileUndrafted" type="StrBoolean" />
+      <xs:element name="disableGizmoWhileUndrafted" type="StrBoolean" />
+      <xs:element name="writeCombatLog" type="StrBoolean" />
+      <xs:element name="stunTargetWhileCasting" type="StrBoolean" />
+      <xs:element name="showPsycastEffects" type="StrBoolean" />
+      <xs:element name="showCastingProgressBar" type="StrBoolean" />
       <xs:element name="detectionChanceOverride" type="xs:float" />
       <xs:element name="uiOrder" type="xs:float" />
-      <xs:element name="waitForJobEnd" type="xs:boolean" />
-      <xs:element name="showWhenDrafted" type="xs:boolean" />
-      <xs:element name="showOnCharacterCard" type="xs:boolean" />
-      <xs:element name="hostile" type="xs:boolean" />
-      <xs:element name="casterMustBeCapableOfViolence" type="xs:boolean" />
+      <xs:element name="waitForJobEnd" type="StrBoolean" />
+      <xs:element name="showWhenDrafted" type="StrBoolean" />
+      <xs:element name="showOnCharacterCard" type="StrBoolean" />
+      <xs:element name="hostile" type="StrBoolean" />
+      <xs:element name="casterMustBeCapableOfViolence" type="StrBoolean" />
       <xs:element name="confirmationDialogText" type="xs:string" />
       <xs:element name="iconPath" type="xs:string" />
       <xs:element name="uiIcon" type="Texture2D" />
@@ -110,8 +110,8 @@
           <xs:attribute name="MayRequireAnyOf" type="xs:string" />
         </xs:complexType>
       </xs:element>
-      <xs:element name="ignoreConfigErrors" type="xs:boolean" />
-      <xs:element name="ignoreIllegalLabelCharacterConfigError" type="xs:boolean" />
+      <xs:element name="ignoreConfigErrors" type="StrBoolean" />
+      <xs:element name="ignoreIllegalLabelCharacterConfigError" type="StrBoolean" />
       <xs:element name="modExtensions">
         <xs:complexType>
           <xs:sequence>

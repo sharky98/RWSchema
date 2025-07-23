@@ -27,12 +27,12 @@
       <xs:element name="defaultAffordanceTerrainDef" type="xs:string" />
       <xs:element name="importantRoomDef" type="xs:string" />
       <xs:element name="roomToExteriorDoorRatio" type="xs:float" />
-      <xs:element name="spawnDoors" type="xs:boolean" />
-      <xs:element name="clearDoorFaction" type="xs:boolean" />
-      <xs:element name="canConnectRoomsExternally" type="xs:boolean" />
+      <xs:element name="spawnDoors" type="StrBoolean" />
+      <xs:element name="clearDoorFaction" type="StrBoolean" />
+      <xs:element name="canConnectRoomsExternally" type="StrBoolean" />
       <xs:element name="areaPrunePercent" type="xs:float" />
-      <xs:element name="canDisconnectRooms" type="xs:boolean" />
-      <xs:element name="ensureOneDoorUnlocked" type="xs:boolean" />
+      <xs:element name="canDisconnectRooms" type="StrBoolean" />
+      <xs:element name="ensureOneDoorUnlocked" type="StrBoolean" />
       <xs:element name="corridorDef" type="xs:string" />
       <xs:element name="wallDamageRange">
         <xs:simpleType>
@@ -70,11 +70,11 @@
         </xs:complexType>
       </xs:element>
       <xs:element name="workerClass" type="xs:string" />
-      <xs:element name="clearRoomsEntirely" type="xs:boolean" />
-      <xs:element name="canHaveMultipleLayoutsInRoom" type="xs:boolean" />
+      <xs:element name="clearRoomsEntirely" type="StrBoolean" />
+      <xs:element name="canHaveMultipleLayoutsInRoom" type="StrBoolean" />
       <xs:element name="multipleLayoutRoomChance" type="xs:float" />
-      <xs:element name="shouldDamage" type="xs:boolean" />
-      <xs:element name="noRoof" type="xs:boolean" />
+      <xs:element name="shouldDamage" type="StrBoolean" />
+      <xs:element name="noRoof" type="StrBoolean" />
       <xs:element name="adjacentRoomMergeChance" type="xs:float" />
       <xs:element name="borderDoorRemoveChance" type="xs:float" />
       <xs:element name="minRoomWidth" type="xs:int" />
@@ -154,8 +154,8 @@
           <xs:attribute name="MayRequireAnyOf" type="xs:string" />
         </xs:complexType>
       </xs:element>
-      <xs:element name="ignoreConfigErrors" type="xs:boolean" />
-      <xs:element name="ignoreIllegalLabelCharacterConfigError" type="xs:boolean" />
+      <xs:element name="ignoreConfigErrors" type="StrBoolean" />
+      <xs:element name="ignoreIllegalLabelCharacterConfigError" type="StrBoolean" />
       <xs:element name="modExtensions">
         <xs:complexType>
           <xs:sequence>

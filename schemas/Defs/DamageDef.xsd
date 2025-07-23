@@ -4,26 +4,26 @@
   <xs:complexType name="DamageDef">
     <xs:choice minOccurs="1" maxOccurs="unbounded">
       <xs:element name="workerClass" type="xs:string" />
-      <xs:element name="hasForcefulImpact" type="xs:boolean" />
-      <xs:element name="harmsHealth" type="xs:boolean" />
-      <xs:element name="makesBlood" type="xs:boolean" />
-      <xs:element name="canInterruptJobs" type="xs:boolean" />
-      <xs:element name="isRanged" type="xs:boolean" />
-      <xs:element name="makesAnimalsFlee" type="xs:boolean" />
-      <xs:element name="execution" type="xs:boolean" />
+      <xs:element name="hasForcefulImpact" type="StrBoolean" />
+      <xs:element name="harmsHealth" type="StrBoolean" />
+      <xs:element name="makesBlood" type="StrBoolean" />
+      <xs:element name="canInterruptJobs" type="StrBoolean" />
+      <xs:element name="isRanged" type="StrBoolean" />
+      <xs:element name="makesAnimalsFlee" type="StrBoolean" />
+      <xs:element name="execution" type="StrBoolean" />
       <xs:element name="combatLogRules" type="xs:string" />
       <xs:element name="buildingDamageFactor" type="xs:float" />
       <xs:element name="buildingDamageFactorPassable" type="xs:float" />
       <xs:element name="buildingDamageFactorImpassable" type="xs:float" />
       <xs:element name="plantDamageFactor" type="xs:float" />
       <xs:element name="corpseDamageFactor" type="xs:float" />
-      <xs:element name="causeStun" type="xs:boolean" />
+      <xs:element name="causeStun" type="StrBoolean" />
       <xs:element name="stunAdaptationTicks" type="xs:int" />
       <xs:element name="constantStunDurationTicks" type="xs:int" />
       <xs:element name="stunResistStat" type="xs:string" />
-      <xs:element name="displayAdaptedTextMote" type="xs:boolean" />
+      <xs:element name="displayAdaptedTextMote" type="StrBoolean" />
       <xs:element name="adaptedText" type="xs:string" />
-      <xs:element name="canUseDeflectMetalEffect" type="xs:boolean" />
+      <xs:element name="canUseDeflectMetalEffect" type="StrBoolean" />
       <xs:element name="impactSoundType" type="xs:string" />
       <xs:element name="deathMessage" type="xs:string" />
       <xs:element name="damageEffecter" type="xs:string" />
@@ -57,7 +57,7 @@
           <xs:attribute name="MayRequireAnyOf" type="xs:string" />
         </xs:complexType>
       </xs:element>
-      <xs:element name="applyAdditionalHediffsIfHuntingForFood" type="xs:boolean" />
+      <xs:element name="applyAdditionalHediffsIfHuntingForFood" type="StrBoolean" />
       <xs:element name="armorCategory" type="xs:string" />
       <xs:element name="minDamageToFragment" type="xs:int" />
       <xs:element name="overkillPctToDestroyPart">
@@ -67,16 +67,16 @@
           </xs:restriction>
         </xs:simpleType>
       </xs:element>
-      <xs:element name="consideredHelpful" type="xs:boolean" />
+      <xs:element name="consideredHelpful" type="StrBoolean" />
       <xs:element name="igniteCellChance" type="xs:float" />
-      <xs:element name="ignoreShields" type="xs:boolean" />
-      <xs:element name="harmAllLayersUntilOutside" type="xs:boolean" />
+      <xs:element name="ignoreShields" type="StrBoolean" />
+      <xs:element name="harmAllLayersUntilOutside" type="StrBoolean" />
       <xs:element name="hediff" type="xs:string" />
       <xs:element name="hediffSkin" type="xs:string" />
       <xs:element name="hediffSolid" type="xs:string" />
-      <xs:element name="isExplosive" type="xs:boolean" />
+      <xs:element name="isExplosive" type="StrBoolean" />
       <xs:element name="explosionSnowMeltAmount" type="xs:float" />
-      <xs:element name="explosionAffectOutsidePartsOnly" type="xs:boolean" />
+      <xs:element name="explosionAffectOutsidePartsOnly" type="StrBoolean" />
       <xs:element name="explosionCellMote" type="xs:string" />
       <xs:element name="explosionCellFleck" type="xs:string" />
       <xs:element name="explosionColorCenter" type="Color" />
@@ -114,7 +114,7 @@
       </xs:element>
       <xs:element name="bluntStunDuration" type="xs:float" />
       <xs:element name="scratchSplitPercentage" type="xs:float" />
-      <xs:element name="scaleDamageToBuildingsBasedOnFlammability" type="xs:boolean" />
+      <xs:element name="scaleDamageToBuildingsBasedOnFlammability" type="StrBoolean" />
       <xs:element name="defName" type="xs:string" />
       <xs:element name="label" type="xs:string" />
       <xs:element name="description" type="xs:string" />
@@ -127,8 +127,8 @@
           <xs:attribute name="MayRequireAnyOf" type="xs:string" />
         </xs:complexType>
       </xs:element>
-      <xs:element name="ignoreConfigErrors" type="xs:boolean" />
-      <xs:element name="ignoreIllegalLabelCharacterConfigError" type="xs:boolean" />
+      <xs:element name="ignoreConfigErrors" type="StrBoolean" />
+      <xs:element name="ignoreIllegalLabelCharacterConfigError" type="StrBoolean" />
       <xs:element name="modExtensions">
         <xs:complexType>
           <xs:sequence>

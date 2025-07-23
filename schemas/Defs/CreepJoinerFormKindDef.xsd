@@ -131,7 +131,7 @@
       <xs:element name="alternateGraphicChance" type="xs:float" />
       <xs:element name="mutant" type="xs:string" />
       <xs:element name="xenotypeSet" type="XenotypeSet" />
-      <xs:element name="useFactionXenotypes" type="xs:boolean" />
+      <xs:element name="useFactionXenotypes" type="StrBoolean" />
       <xs:element name="styleItemTags">
         <xs:complexType>
           <xs:sequence>
@@ -172,9 +172,9 @@
           <xs:attribute name="MayRequireAnyOf" type="xs:string" />
         </xs:complexType>
       </xs:element>
-      <xs:element name="preventIdeo" type="xs:boolean" />
-      <xs:element name="studiableAsPrisoner" type="xs:boolean" />
-      <xs:element name="isBoss" type="xs:boolean" />
+      <xs:element name="preventIdeo" type="StrBoolean" />
+      <xs:element name="studiableAsPrisoner" type="StrBoolean" />
+      <xs:element name="isBoss" type="StrBoolean" />
       <xs:element name="moveSpeedFactorByTerrainTag">
         <xs:complexType>
           <xs:sequence>
@@ -233,35 +233,35 @@
       <xs:element name="chronologicalAgeRange" type="FloatRange" />
       <xs:element name="minGenerationAge" type="xs:int" />
       <xs:element name="maxGenerationAge" type="xs:int" />
-      <xs:element name="factionLeader" type="xs:boolean" />
+      <xs:element name="factionLeader" type="StrBoolean" />
       <xs:element name="fixedGender" type="Gender" />
-      <xs:element name="allowOldAgeInjuries" type="xs:boolean" />
-      <xs:element name="generateInitialNonFamilyRelations" type="xs:boolean" />
+      <xs:element name="allowOldAgeInjuries" type="StrBoolean" />
+      <xs:element name="generateInitialNonFamilyRelations" type="StrBoolean" />
       <xs:element name="pawnGroupDevelopmentStage" type="DevelopmentalStage" />
-      <xs:element name="destroyGearOnDrop" type="xs:boolean" />
-      <xs:element name="canStrip" type="xs:boolean" />
+      <xs:element name="destroyGearOnDrop" type="StrBoolean" />
+      <xs:element name="canStrip" type="StrBoolean" />
       <xs:element name="defendPointRadius" type="xs:float" />
-      <xs:element name="factionHostileOnKill" type="xs:boolean" />
-      <xs:element name="factionHostileOnDeath" type="xs:boolean" />
-      <xs:element name="hostileToAll" type="xs:boolean" />
+      <xs:element name="factionHostileOnKill" type="StrBoolean" />
+      <xs:element name="factionHostileOnDeath" type="StrBoolean" />
+      <xs:element name="hostileToAll" type="StrBoolean" />
       <xs:element name="initialResistanceRange" type="FloatRange" />
       <xs:element name="initialWillRange" type="FloatRange" />
-      <xs:element name="forceNoDeathNotification" type="xs:boolean" />
-      <xs:element name="skipResistant" type="xs:boolean" />
+      <xs:element name="forceNoDeathNotification" type="StrBoolean" />
+      <xs:element name="skipResistant" type="StrBoolean" />
       <xs:element name="controlGroupPortraitZoom" type="xs:float" />
       <xs:element name="overrideDeathOnDownedChance" type="xs:float" />
-      <xs:element name="forceDeathOnDowned" type="xs:boolean" />
-      <xs:element name="immuneToGameConditionEffects" type="xs:boolean" />
-      <xs:element name="immuneToTraps" type="xs:boolean" />
-      <xs:element name="collidesWithPawns" type="xs:boolean" />
-      <xs:element name="ignoresPainShock" type="xs:boolean" />
-      <xs:element name="canMeleeAttack" type="xs:boolean" />
+      <xs:element name="forceDeathOnDowned" type="StrBoolean" />
+      <xs:element name="immuneToGameConditionEffects" type="StrBoolean" />
+      <xs:element name="immuneToTraps" type="StrBoolean" />
+      <xs:element name="collidesWithPawns" type="StrBoolean" />
+      <xs:element name="ignoresPainShock" type="StrBoolean" />
+      <xs:element name="canMeleeAttack" type="StrBoolean" />
       <xs:element name="basePrisonBreakMtbDays" type="xs:float" />
-      <xs:element name="useFixedRotation" type="xs:boolean" />
+      <xs:element name="useFixedRotation" type="StrBoolean" />
       <xs:element name="fixedRotation" type="Rot4" />
-      <xs:element name="showInDebugSpawner" type="xs:boolean" />
-      <xs:element name="canOpenAnyDoor" type="xs:boolean" />
-      <xs:element name="canOpenDoors" type="xs:boolean" />
+      <xs:element name="showInDebugSpawner" type="StrBoolean" />
+      <xs:element name="canOpenAnyDoor" type="StrBoolean" />
+      <xs:element name="canOpenDoors" type="StrBoolean" />
       <xs:element name="overrideDebugActionCategory" type="xs:string" />
       <xs:element name="royalTitleChance" type="xs:float" />
       <xs:element name="titleRequired" type="xs:string" />
@@ -284,8 +284,8 @@
           <xs:attribute name="MayRequireAnyOf" type="xs:string" />
         </xs:complexType>
       </xs:element>
-      <xs:element name="allowRoyalRoomRequirements" type="xs:boolean" />
-      <xs:element name="allowRoyalApparelRequirements" type="xs:boolean" />
+      <xs:element name="allowRoyalRoomRequirements" type="StrBoolean" />
+      <xs:element name="allowRoyalApparelRequirements" type="StrBoolean" />
       <xs:element name="meleeAttackInfectionPathways">
         <xs:complexType>
           <xs:sequence>
@@ -322,17 +322,17 @@
           <xs:attribute name="MayRequireAnyOf" type="xs:string" />
         </xs:complexType>
       </xs:element>
-      <xs:element name="isFighter" type="xs:boolean" />
+      <xs:element name="isFighter" type="StrBoolean" />
       <xs:element name="combatPower" type="xs:float" />
-      <xs:element name="canArriveManhunter" type="xs:boolean" />
-      <xs:element name="canBeSapper" type="xs:boolean" />
-      <xs:element name="isGoodBreacher" type="xs:boolean" />
-      <xs:element name="allowInMechClusters" type="xs:boolean" />
+      <xs:element name="canArriveManhunter" type="StrBoolean" />
+      <xs:element name="canBeSapper" type="StrBoolean" />
+      <xs:element name="isGoodBreacher" type="StrBoolean" />
+      <xs:element name="allowInMechClusters" type="StrBoolean" />
       <xs:element name="maxPerGroup" type="xs:int" />
-      <xs:element name="isGoodPsychicRitualInvoker" type="xs:boolean" />
-      <xs:element name="canBeScattered" type="xs:boolean" />
-      <xs:element name="appearsRandomlyInCombatGroups" type="xs:boolean" />
-      <xs:element name="aiAvoidCover" type="xs:boolean" />
+      <xs:element name="isGoodPsychicRitualInvoker" type="StrBoolean" />
+      <xs:element name="canBeScattered" type="StrBoolean" />
+      <xs:element name="appearsRandomlyInCombatGroups" type="StrBoolean" />
+      <xs:element name="aiAvoidCover" type="StrBoolean" />
       <xs:element name="fleeHealthThresholdRange">
         <xs:simpleType>
           <xs:restriction base="xs:string">
@@ -341,10 +341,10 @@
         </xs:simpleType>
       </xs:element>
       <xs:element name="acceptArrestChanceFactor" type="xs:float" />
-      <xs:element name="canUseAvoidGrid" type="xs:boolean" />
+      <xs:element name="canUseAvoidGrid" type="StrBoolean" />
       <xs:element name="itemQuality" type="QualityCategory" />
       <xs:element name="forceWeaponQuality" type="QualityCategory" />
-      <xs:element name="forceNormalGearQuality" type="xs:boolean" />
+      <xs:element name="forceNormalGearQuality" type="StrBoolean" />
       <xs:element name="gearHealthRange">
         <xs:simpleType>
           <xs:restriction base="xs:string">
@@ -441,13 +441,13 @@
         </xs:complexType>
       </xs:element>
       <xs:element name="apparelAllowHeadgearChance" type="xs:float" />
-      <xs:element name="apparelIgnoreSeasons" type="xs:boolean" />
-      <xs:element name="apparelIgnorePollution" type="xs:boolean" />
-      <xs:element name="ignoreFactionApparelStuffRequirements" type="xs:boolean" />
+      <xs:element name="apparelIgnoreSeasons" type="StrBoolean" />
+      <xs:element name="apparelIgnorePollution" type="StrBoolean" />
+      <xs:element name="ignoreFactionApparelStuffRequirements" type="StrBoolean" />
       <xs:element name="apparelColor" type="Color" />
       <xs:element name="skinColorOverride" type="Color" />
       <xs:element name="favoriteColor" type="xs:string" />
-      <xs:element name="ignoreIdeoApparelColors" type="xs:boolean" />
+      <xs:element name="ignoreIdeoApparelColors" type="StrBoolean" />
       <xs:element name="specificApparelRequirements">
         <xs:complexType>
           <xs:sequence>
@@ -582,7 +582,7 @@
           <xs:attribute name="MayRequireAnyOf" type="xs:string" />
         </xs:complexType>
       </xs:element>
-      <xs:element name="trader" type="xs:boolean" />
+      <xs:element name="trader" type="StrBoolean" />
       <xs:element name="skills">
         <xs:complexType>
           <xs:sequence>
@@ -614,8 +614,8 @@
       <xs:element name="flyingAnimationFrameCount" type="xs:int" />
       <xs:element name="flyingAnimationTicksPerFrame" type="xs:int" />
       <xs:element name="flyingAnimationDrawSize" type="xs:float" />
-      <xs:element name="flyingAnimationDrawSizeIsMultiplier" type="xs:boolean" />
-      <xs:element name="flyingAnimationInheritColors" type="xs:boolean" />
+      <xs:element name="flyingAnimationDrawSizeIsMultiplier" type="StrBoolean" />
+      <xs:element name="flyingAnimationInheritColors" type="StrBoolean" />
       <xs:element name="defName" type="xs:string" />
       <xs:element name="label" type="xs:string" />
       <xs:element name="description" type="xs:string" />
@@ -628,8 +628,8 @@
           <xs:attribute name="MayRequireAnyOf" type="xs:string" />
         </xs:complexType>
       </xs:element>
-      <xs:element name="ignoreConfigErrors" type="xs:boolean" />
-      <xs:element name="ignoreIllegalLabelCharacterConfigError" type="xs:boolean" />
+      <xs:element name="ignoreConfigErrors" type="StrBoolean" />
+      <xs:element name="ignoreIllegalLabelCharacterConfigError" type="StrBoolean" />
       <xs:element name="modExtensions">
         <xs:complexType>
           <xs:sequence>

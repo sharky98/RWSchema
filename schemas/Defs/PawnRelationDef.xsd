@@ -6,14 +6,14 @@
       <xs:element name="workerClass" type="xs:string" />
       <xs:element name="labelFemale" type="xs:string" />
       <xs:element name="importance" type="xs:float" />
-      <xs:element name="implied" type="xs:boolean" />
-      <xs:element name="reflexive" type="xs:boolean" />
+      <xs:element name="implied" type="StrBoolean" />
+      <xs:element name="reflexive" type="StrBoolean" />
       <xs:element name="opinionOffset" type="xs:int" />
       <xs:element name="generationChanceFactor" type="xs:float" />
       <xs:element name="romanceChanceFactor" type="xs:float" />
       <xs:element name="incestOpinionOffset" type="xs:float" />
-      <xs:element name="familyByBloodRelation" type="xs:boolean" />
-      <xs:element name="removeOnDeath" type="xs:boolean" />
+      <xs:element name="familyByBloodRelation" type="StrBoolean" />
+      <xs:element name="removeOnDeath" type="StrBoolean" />
       <xs:element name="inbredChanceOnChild" type="xs:float" />
       <xs:element name="diedThought" type="xs:string" />
       <xs:element name="diedThoughtFemale" type="xs:string" />
@@ -51,8 +51,8 @@
           <xs:attribute name="MayRequireAnyOf" type="xs:string" />
         </xs:complexType>
       </xs:element>
-      <xs:element name="ignoreConfigErrors" type="xs:boolean" />
-      <xs:element name="ignoreIllegalLabelCharacterConfigError" type="xs:boolean" />
+      <xs:element name="ignoreConfigErrors" type="StrBoolean" />
+      <xs:element name="ignoreIllegalLabelCharacterConfigError" type="StrBoolean" />
       <xs:element name="modExtensions">
         <xs:complexType>
           <xs:sequence>

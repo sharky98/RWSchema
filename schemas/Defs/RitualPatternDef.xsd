@@ -24,18 +24,18 @@
       <xs:element name="ritualTargetFilter" type="xs:string" />
       <xs:element name="ritualBehavior" type="xs:string" />
       <xs:element name="ritualOutcomeEffect" type="xs:string" />
-      <xs:element name="ritualOnlyForIdeoMembers" type="xs:boolean" />
-      <xs:element name="canStartAnytime" type="xs:boolean" />
-      <xs:element name="alwaysStartAnytime" type="xs:boolean" />
-      <xs:element name="allowOtherInstances" type="xs:boolean" />
-      <xs:element name="playsIdeoMusic" type="xs:boolean" />
-      <xs:element name="ignoreConsumableBuildingRequirement" type="xs:boolean" />
-      <xs:element name="mergeGizmosForObligations" type="xs:boolean" />
-      <xs:element name="canMergeGizmosFromDifferentIdeos" type="xs:boolean" />
-      <xs:element name="ignoreExtremeTemperatures" type="xs:boolean" />
+      <xs:element name="ritualOnlyForIdeoMembers" type="StrBoolean" />
+      <xs:element name="canStartAnytime" type="StrBoolean" />
+      <xs:element name="alwaysStartAnytime" type="StrBoolean" />
+      <xs:element name="allowOtherInstances" type="StrBoolean" />
+      <xs:element name="playsIdeoMusic" type="StrBoolean" />
+      <xs:element name="ignoreConsumableBuildingRequirement" type="StrBoolean" />
+      <xs:element name="mergeGizmosForObligations" type="StrBoolean" />
+      <xs:element name="canMergeGizmosFromDifferentIdeos" type="StrBoolean" />
+      <xs:element name="ignoreExtremeTemperatures" type="StrBoolean" />
       <xs:element name="minTechLevel" type="TechLevel" />
       <xs:element name="maxTechLevel" type="TechLevel" />
-      <xs:element name="showIdeoIconsInDialog" type="xs:boolean" />
+      <xs:element name="showIdeoIconsInDialog" type="StrBoolean" />
       <xs:element name="ritualExpectedDesc" type="xs:string" />
       <xs:element name="ritualExpectedDescNoAdjective" type="xs:string" />
       <xs:element name="shortDescOverride" type="xs:string" />
@@ -111,8 +111,8 @@
           <xs:attribute name="MayRequireAnyOf" type="xs:string" />
         </xs:complexType>
       </xs:element>
-      <xs:element name="ignoreConfigErrors" type="xs:boolean" />
-      <xs:element name="ignoreIllegalLabelCharacterConfigError" type="xs:boolean" />
+      <xs:element name="ignoreConfigErrors" type="StrBoolean" />
+      <xs:element name="ignoreIllegalLabelCharacterConfigError" type="StrBoolean" />
       <xs:element name="modExtensions">
         <xs:complexType>
           <xs:sequence>

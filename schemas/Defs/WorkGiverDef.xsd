@@ -9,9 +9,9 @@
       <xs:element name="priorityInType" type="xs:int" />
       <xs:element name="verb" type="xs:string" />
       <xs:element name="gerund" type="xs:string" />
-      <xs:element name="scanThings" type="xs:boolean" />
-      <xs:element name="scanCells" type="xs:boolean" />
-      <xs:element name="emergency" type="xs:boolean" />
+      <xs:element name="scanThings" type="StrBoolean" />
+      <xs:element name="scanCells" type="StrBoolean" />
+      <xs:element name="emergency" type="StrBoolean" />
       <xs:element name="requiredCapacities">
         <xs:complexType>
           <xs:sequence>
@@ -30,16 +30,16 @@
           <xs:attribute name="MayRequireAnyOf" type="xs:string" />
         </xs:complexType>
       </xs:element>
-      <xs:element name="directOrderable" type="xs:boolean" />
-      <xs:element name="prioritizeSustains" type="xs:boolean" />
-      <xs:element name="nonColonistsCanDo" type="xs:boolean" />
+      <xs:element name="directOrderable" type="StrBoolean" />
+      <xs:element name="prioritizeSustains" type="StrBoolean" />
+      <xs:element name="nonColonistsCanDo" type="StrBoolean" />
       <xs:element name="tagToGive" type="JobTag" />
       <xs:element name="equivalenceGroup" type="xs:string" />
-      <xs:element name="canBeDoneWhileDrafted" type="xs:boolean" />
+      <xs:element name="canBeDoneWhileDrafted" type="StrBoolean" />
       <xs:element name="autoTakeablePriorityDrafted" type="xs:int" />
       <xs:element name="forceMote" type="xs:string" />
       <xs:element name="forceFleck" type="xs:string" />
-      <xs:element name="canBeDoneByMechs" type="xs:boolean" />
+      <xs:element name="canBeDoneByMechs" type="StrBoolean" />
       <xs:element name="fixedBillGiverDefs">
         <xs:complexType>
           <xs:sequence>
@@ -58,15 +58,15 @@
           <xs:attribute name="MayRequireAnyOf" type="xs:string" />
         </xs:complexType>
       </xs:element>
-      <xs:element name="billGiversAllHumanlikes" type="xs:boolean" />
-      <xs:element name="billGiversAllHumanlikesCorpses" type="xs:boolean" />
-      <xs:element name="billGiversAllMechanoids" type="xs:boolean" />
-      <xs:element name="billGiversAllMechanoidsCorpses" type="xs:boolean" />
-      <xs:element name="billGiversAllAnimals" type="xs:boolean" />
-      <xs:element name="billGiversAllAnimalsCorpses" type="xs:boolean" />
-      <xs:element name="feedHumanlikesOnly" type="xs:boolean" />
-      <xs:element name="feedAnimalsOnly" type="xs:boolean" />
-      <xs:element name="doesSmoothing" type="xs:boolean" />
+      <xs:element name="billGiversAllHumanlikes" type="StrBoolean" />
+      <xs:element name="billGiversAllHumanlikesCorpses" type="StrBoolean" />
+      <xs:element name="billGiversAllMechanoids" type="StrBoolean" />
+      <xs:element name="billGiversAllMechanoidsCorpses" type="StrBoolean" />
+      <xs:element name="billGiversAllAnimals" type="StrBoolean" />
+      <xs:element name="billGiversAllAnimalsCorpses" type="StrBoolean" />
+      <xs:element name="feedHumanlikesOnly" type="StrBoolean" />
+      <xs:element name="feedAnimalsOnly" type="StrBoolean" />
+      <xs:element name="doesSmoothing" type="StrBoolean" />
       <xs:element name="scannerDef" type="xs:string" />
       <xs:element name="defName" type="xs:string" />
       <xs:element name="label" type="xs:string" />
@@ -80,8 +80,8 @@
           <xs:attribute name="MayRequireAnyOf" type="xs:string" />
         </xs:complexType>
       </xs:element>
-      <xs:element name="ignoreConfigErrors" type="xs:boolean" />
-      <xs:element name="ignoreIllegalLabelCharacterConfigError" type="xs:boolean" />
+      <xs:element name="ignoreConfigErrors" type="StrBoolean" />
+      <xs:element name="ignoreIllegalLabelCharacterConfigError" type="StrBoolean" />
       <xs:element name="modExtensions">
         <xs:complexType>
           <xs:sequence>

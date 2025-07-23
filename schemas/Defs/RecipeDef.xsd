@@ -21,8 +21,8 @@
           <xs:attribute name="MayRequireAnyOf" type="xs:string" />
         </xs:complexType>
       </xs:element>
-      <xs:element name="allowMixingIngredients" type="xs:boolean" />
-      <xs:element name="ignoreIngredientCountTakeEntireStacks" type="xs:boolean" />
+      <xs:element name="allowMixingIngredients" type="StrBoolean" />
+      <xs:element name="ignoreIngredientCountTakeEntireStacks" type="StrBoolean" />
       <xs:element name="forceHiddenSpecialFilters">
         <xs:complexType>
           <xs:sequence>
@@ -41,8 +41,8 @@
           <xs:attribute name="MayRequireAnyOf" type="xs:string" />
         </xs:complexType>
       </xs:element>
-      <xs:element name="autoStripCorpses" type="xs:boolean" />
-      <xs:element name="interruptIfIngredientIsRotting" type="xs:boolean" />
+      <xs:element name="autoStripCorpses" type="StrBoolean" />
+      <xs:element name="interruptIfIngredientIsRotting" type="StrBoolean" />
       <xs:element name="products">
         <xs:complexType>
           <xs:sequence>
@@ -61,8 +61,8 @@
           <xs:attribute name="MayRequireAnyOf" type="xs:string" />
         </xs:complexType>
       </xs:element>
-      <xs:element name="productHasIngredientStuff" type="xs:boolean" />
-      <xs:element name="useIngredientsForColor" type="xs:boolean" />
+      <xs:element name="productHasIngredientStuff" type="StrBoolean" />
+      <xs:element name="useIngredientsForColor" type="StrBoolean" />
       <xs:element name="targetCountAdjustment" type="xs:int" />
       <xs:element name="unfinishedThingDef" type="xs:string" />
       <xs:element name="skillRequirements">
@@ -155,22 +155,22 @@
         </xs:complexType>
       </xs:element>
       <xs:element name="hediffLevelOffset" type="xs:int" />
-      <xs:element name="hideBodyPartNames" type="xs:boolean" />
-      <xs:element name="isViolation" type="xs:boolean" />
+      <xs:element name="hideBodyPartNames" type="StrBoolean" />
+      <xs:element name="isViolation" type="StrBoolean" />
       <xs:element name="successfullyRemovedHediffMessage" type="xs:string" />
       <xs:element name="surgerySuccessChanceFactor" type="xs:float" />
       <xs:element name="deathOnFailedSurgeryChance" type="xs:float" />
-      <xs:element name="targetsBodyPart" type="xs:boolean" />
-      <xs:element name="anesthetize" type="xs:boolean" />
+      <xs:element name="targetsBodyPart" type="StrBoolean" />
+      <xs:element name="anesthetize" type="StrBoolean" />
       <xs:element name="minPartCount" type="xs:int" />
-      <xs:element name="surgeryIgnoreEnvironment" type="xs:boolean" />
+      <xs:element name="surgeryIgnoreEnvironment" type="StrBoolean" />
       <xs:element name="surgeryOutcomeEffect" type="xs:string" />
       <xs:element name="genderPrerequisite" type="Gender" />
-      <xs:element name="mustBeFertile" type="xs:boolean" />
-      <xs:element name="allowedForQuestLodgers" type="xs:boolean" />
+      <xs:element name="mustBeFertile" type="StrBoolean" />
+      <xs:element name="allowedForQuestLodgers" type="StrBoolean" />
       <xs:element name="minAllowedAge" type="xs:int" />
       <xs:element name="developmentalStageFilter" type="DevelopmentalStage" />
-      <xs:element name="humanlikeOnly" type="xs:boolean" />
+      <xs:element name="humanlikeOnly" type="StrBoolean" />
       <xs:element name="mutantPrerequisite">
         <xs:complexType>
           <xs:sequence>
@@ -263,14 +263,14 @@
           <xs:attribute name="MayRequireAnyOf" type="xs:string" />
         </xs:complexType>
       </xs:element>
-      <xs:element name="fromIdeoBuildingPreceptOnly" type="xs:boolean" />
+      <xs:element name="fromIdeoBuildingPreceptOnly" type="StrBoolean" />
       <xs:element name="conceptLearned" type="xs:string" />
-      <xs:element name="dontShowIfAnyIngredientMissing" type="xs:boolean" />
+      <xs:element name="dontShowIfAnyIngredientMissing" type="StrBoolean" />
       <xs:element name="displayPriority" type="xs:int" />
       <xs:element name="formingTicks" type="xs:int" />
-      <xs:element name="mechanitorOnlyRecipe" type="xs:boolean" />
+      <xs:element name="mechanitorOnlyRecipe" type="StrBoolean" />
       <xs:element name="gestationCycles" type="xs:int" />
-      <xs:element name="mechResurrection" type="xs:boolean" />
+      <xs:element name="mechResurrection" type="StrBoolean" />
       <xs:element name="defName" type="xs:string" />
       <xs:element name="label" type="xs:string" />
       <xs:element name="description" type="xs:string" />
@@ -283,8 +283,8 @@
           <xs:attribute name="MayRequireAnyOf" type="xs:string" />
         </xs:complexType>
       </xs:element>
-      <xs:element name="ignoreConfigErrors" type="xs:boolean" />
-      <xs:element name="ignoreIllegalLabelCharacterConfigError" type="xs:boolean" />
+      <xs:element name="ignoreConfigErrors" type="StrBoolean" />
+      <xs:element name="ignoreIllegalLabelCharacterConfigError" type="StrBoolean" />
       <xs:element name="modExtensions">
         <xs:complexType>
           <xs:sequence>

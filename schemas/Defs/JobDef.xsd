@@ -5,30 +5,30 @@
     <xs:choice minOccurs="1" maxOccurs="unbounded">
       <xs:element name="driverClass" type="xs:string" />
       <xs:element name="reportString" type="xs:string" />
-      <xs:element name="playerInterruptible" type="xs:boolean" />
-      <xs:element name="forceCompleteBeforeNextJob" type="xs:boolean" />
+      <xs:element name="playerInterruptible" type="StrBoolean" />
+      <xs:element name="forceCompleteBeforeNextJob" type="StrBoolean" />
       <xs:element name="checkOverrideOnDamage" type="CheckJobOverrideOnDamageMode" />
-      <xs:element name="alwaysShowWeapon" type="xs:boolean" />
-      <xs:element name="neverShowWeapon" type="xs:boolean" />
-      <xs:element name="suspendable" type="xs:boolean" />
-      <xs:element name="casualInterruptible" type="xs:boolean" />
-      <xs:element name="allowOpportunisticPrefix" type="xs:boolean" />
-      <xs:element name="collideWithPawns" type="xs:boolean" />
-      <xs:element name="isIdle" type="xs:boolean" />
+      <xs:element name="alwaysShowWeapon" type="StrBoolean" />
+      <xs:element name="neverShowWeapon" type="StrBoolean" />
+      <xs:element name="suspendable" type="StrBoolean" />
+      <xs:element name="casualInterruptible" type="StrBoolean" />
+      <xs:element name="allowOpportunisticPrefix" type="StrBoolean" />
+      <xs:element name="collideWithPawns" type="StrBoolean" />
+      <xs:element name="isIdle" type="StrBoolean" />
       <xs:element name="taleOnCompletion" type="xs:string" />
-      <xs:element name="neverFleeFromEnemies" type="xs:boolean" />
-      <xs:element name="sleepCanInterrupt" type="xs:boolean" />
-      <xs:element name="makeTargetPrisoner" type="xs:boolean" />
+      <xs:element name="neverFleeFromEnemies" type="StrBoolean" />
+      <xs:element name="sleepCanInterrupt" type="StrBoolean" />
+      <xs:element name="makeTargetPrisoner" type="StrBoolean" />
       <xs:element name="waitAfterArriving" type="xs:int" />
-      <xs:element name="carryThingAfterJob" type="xs:boolean" />
-      <xs:element name="dropThingBeforeJob" type="xs:boolean" />
-      <xs:element name="isCrawlingIfDowned" type="xs:boolean" />
-      <xs:element name="alwaysShowReport" type="xs:boolean" />
-      <xs:element name="abilityCasting" type="xs:boolean" />
-      <xs:element name="tryStartFlying" type="xs:boolean" />
-      <xs:element name="ifFlyingKeepFlying" type="xs:boolean" />
+      <xs:element name="carryThingAfterJob" type="StrBoolean" />
+      <xs:element name="dropThingBeforeJob" type="StrBoolean" />
+      <xs:element name="isCrawlingIfDowned" type="StrBoolean" />
+      <xs:element name="alwaysShowReport" type="StrBoolean" />
+      <xs:element name="abilityCasting" type="StrBoolean" />
+      <xs:element name="tryStartFlying" type="StrBoolean" />
+      <xs:element name="ifFlyingKeepFlying" type="StrBoolean" />
       <xs:element name="overrideFlyChance" type="xs:float" />
-      <xs:element name="displayAsAreaInFloatMenu" type="xs:boolean" />
+      <xs:element name="displayAsAreaInFloatMenu" type="StrBoolean" />
       <xs:element name="joyDuration" type="xs:int" />
       <xs:element name="joyMaxParticipants" type="xs:int" />
       <xs:element name="joyGainRate" type="xs:float" />
@@ -50,8 +50,8 @@
           <xs:attribute name="MayRequireAnyOf" type="xs:string" />
         </xs:complexType>
       </xs:element>
-      <xs:element name="ignoreConfigErrors" type="xs:boolean" />
-      <xs:element name="ignoreIllegalLabelCharacterConfigError" type="xs:boolean" />
+      <xs:element name="ignoreConfigErrors" type="StrBoolean" />
+      <xs:element name="ignoreIllegalLabelCharacterConfigError" type="StrBoolean" />
       <xs:element name="modExtensions">
         <xs:complexType>
           <xs:sequence>
