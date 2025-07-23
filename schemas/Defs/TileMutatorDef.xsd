@@ -7,7 +7,16 @@
       <xs:element name="categories">
         <xs:complexType>
           <xs:sequence>
-            <xs:element minOccurs="0" maxOccurs="unbounded" name="li" type="xs:string" />
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="li">
+              <xs:complexType>
+                <xs:simpleContent>
+                  <xs:extension base="xs:string">
+                    <xs:attribute name="MayRequire" type="xs:string" />
+                    <xs:attribute name="MayRequireAnyOf" type="xs:string" />
+                  </xs:extension>
+                </xs:simpleContent>
+              </xs:complexType>
+            </xs:element>
           </xs:sequence>
           <xs:attribute name="MayRequire" type="xs:string" />
           <xs:attribute name="MayRequireAnyOf" type="xs:string" />
@@ -16,7 +25,16 @@
       <xs:element name="overrideCategories">
         <xs:complexType>
           <xs:sequence>
-            <xs:element minOccurs="0" maxOccurs="unbounded" name="li" type="xs:string" />
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="li">
+              <xs:complexType>
+                <xs:simpleContent>
+                  <xs:extension base="xs:string">
+                    <xs:attribute name="MayRequire" type="xs:string" />
+                    <xs:attribute name="MayRequireAnyOf" type="xs:string" />
+                  </xs:extension>
+                </xs:simpleContent>
+              </xs:complexType>
+            </xs:element>
           </xs:sequence>
           <xs:attribute name="MayRequire" type="xs:string" />
           <xs:attribute name="MayRequireAnyOf" type="xs:string" />
@@ -28,7 +46,16 @@
       <xs:element name="extraGenSteps">
         <xs:complexType>
           <xs:sequence>
-            <xs:element minOccurs="0" maxOccurs="unbounded" name="li" type="xs:string" />
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="li">
+              <xs:complexType>
+                <xs:simpleContent>
+                  <xs:extension base="xs:string">
+                    <xs:attribute name="MayRequire" type="xs:string" />
+                    <xs:attribute name="MayRequireAnyOf" type="xs:string" />
+                  </xs:extension>
+                </xs:simpleContent>
+              </xs:complexType>
+            </xs:element>
           </xs:sequence>
           <xs:attribute name="MayRequire" type="xs:string" />
           <xs:attribute name="MayRequireAnyOf" type="xs:string" />
@@ -37,7 +64,16 @@
       <xs:element name="preventGenSteps">
         <xs:complexType>
           <xs:sequence>
-            <xs:element minOccurs="0" maxOccurs="unbounded" name="li" type="xs:string" />
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="li">
+              <xs:complexType>
+                <xs:simpleContent>
+                  <xs:extension base="xs:string">
+                    <xs:attribute name="MayRequire" type="xs:string" />
+                    <xs:attribute name="MayRequireAnyOf" type="xs:string" />
+                  </xs:extension>
+                </xs:simpleContent>
+              </xs:complexType>
+            </xs:element>
           </xs:sequence>
           <xs:attribute name="MayRequire" type="xs:string" />
           <xs:attribute name="MayRequireAnyOf" type="xs:string" />
@@ -70,7 +106,16 @@
       <xs:element name="blacklistedRaidStrategies">
         <xs:complexType>
           <xs:sequence>
-            <xs:element minOccurs="0" maxOccurs="unbounded" name="li" type="xs:string" />
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="li">
+              <xs:complexType>
+                <xs:simpleContent>
+                  <xs:extension base="xs:string">
+                    <xs:attribute name="MayRequire" type="xs:string" />
+                    <xs:attribute name="MayRequireAnyOf" type="xs:string" />
+                  </xs:extension>
+                </xs:simpleContent>
+              </xs:complexType>
+            </xs:element>
           </xs:sequence>
           <xs:attribute name="MayRequire" type="xs:string" />
           <xs:attribute name="MayRequireAnyOf" type="xs:string" />
@@ -79,7 +124,16 @@
       <xs:element name="additionalGameConditions">
         <xs:complexType>
           <xs:sequence>
-            <xs:element minOccurs="0" maxOccurs="unbounded" name="li" type="xs:string" />
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="li">
+              <xs:complexType>
+                <xs:simpleContent>
+                  <xs:extension base="xs:string">
+                    <xs:attribute name="MayRequire" type="xs:string" />
+                    <xs:attribute name="MayRequireAnyOf" type="xs:string" />
+                  </xs:extension>
+                </xs:simpleContent>
+              </xs:complexType>
+            </xs:element>
           </xs:sequence>
           <xs:attribute name="MayRequire" type="xs:string" />
           <xs:attribute name="MayRequireAnyOf" type="xs:string" />
@@ -91,7 +145,16 @@
       <xs:element name="biomeWhitelist">
         <xs:complexType>
           <xs:sequence>
-            <xs:element minOccurs="0" maxOccurs="unbounded" name="li" type="xs:string" />
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="li">
+              <xs:complexType>
+                <xs:simpleContent>
+                  <xs:extension base="xs:string">
+                    <xs:attribute name="MayRequire" type="xs:string" />
+                    <xs:attribute name="MayRequireAnyOf" type="xs:string" />
+                  </xs:extension>
+                </xs:simpleContent>
+              </xs:complexType>
+            </xs:element>
           </xs:sequence>
           <xs:attribute name="MayRequire" type="xs:string" />
           <xs:attribute name="MayRequireAnyOf" type="xs:string" />
@@ -100,7 +163,16 @@
       <xs:element name="biomeBlacklist">
         <xs:complexType>
           <xs:sequence>
-            <xs:element minOccurs="0" maxOccurs="unbounded" name="li" type="xs:string" />
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="li">
+              <xs:complexType>
+                <xs:simpleContent>
+                  <xs:extension base="xs:string">
+                    <xs:attribute name="MayRequire" type="xs:string" />
+                    <xs:attribute name="MayRequireAnyOf" type="xs:string" />
+                  </xs:extension>
+                </xs:simpleContent>
+              </xs:complexType>
+            </xs:element>
           </xs:sequence>
           <xs:attribute name="MayRequire" type="xs:string" />
           <xs:attribute name="MayRequireAnyOf" type="xs:string" />
@@ -152,7 +224,16 @@
       <xs:element name="weathersToAffect">
         <xs:complexType>
           <xs:sequence>
-            <xs:element minOccurs="0" maxOccurs="unbounded" name="li" type="xs:string" />
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="li">
+              <xs:complexType>
+                <xs:simpleContent>
+                  <xs:extension base="xs:string">
+                    <xs:attribute name="MayRequire" type="xs:string" />
+                    <xs:attribute name="MayRequireAnyOf" type="xs:string" />
+                  </xs:extension>
+                </xs:simpleContent>
+              </xs:complexType>
+            </xs:element>
           </xs:sequence>
           <xs:attribute name="MayRequire" type="xs:string" />
           <xs:attribute name="MayRequireAnyOf" type="xs:string" />
@@ -170,7 +251,16 @@
       <xs:element name="plantKinds">
         <xs:complexType>
           <xs:sequence>
-            <xs:element minOccurs="0" maxOccurs="unbounded" name="li" type="xs:string" />
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="li">
+              <xs:complexType>
+                <xs:simpleContent>
+                  <xs:extension base="xs:string">
+                    <xs:attribute name="MayRequire" type="xs:string" />
+                    <xs:attribute name="MayRequireAnyOf" type="xs:string" />
+                  </xs:extension>
+                </xs:simpleContent>
+              </xs:complexType>
+            </xs:element>
           </xs:sequence>
           <xs:attribute name="MayRequire" type="xs:string" />
           <xs:attribute name="MayRequireAnyOf" type="xs:string" />
@@ -180,7 +270,16 @@
       <xs:element name="resourceBlacklist">
         <xs:complexType>
           <xs:sequence>
-            <xs:element minOccurs="0" maxOccurs="unbounded" name="li" type="xs:string" />
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="li">
+              <xs:complexType>
+                <xs:simpleContent>
+                  <xs:extension base="xs:string">
+                    <xs:attribute name="MayRequire" type="xs:string" />
+                    <xs:attribute name="MayRequireAnyOf" type="xs:string" />
+                  </xs:extension>
+                </xs:simpleContent>
+              </xs:complexType>
+            </xs:element>
           </xs:sequence>
           <xs:attribute name="MayRequire" type="xs:string" />
           <xs:attribute name="MayRequireAnyOf" type="xs:string" />

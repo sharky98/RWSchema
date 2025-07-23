@@ -5,7 +5,7 @@ namespace ExtractSchemas;
 static class SchemaCommonValues
 {
   public static readonly string destination =
-    "/home/bparesimard/Documents/21-development/21.06-rimworld/RWSchema/ExtractSchemas/extractedSchemas";
+    "/home/bparesimard/Documents/21-development/21.06-rimworld/RWSchema/schemas/Defs";
   public static readonly string xsdSchema = "http://www.w3.org/2001/XMLSchema";
   public static readonly string targetNamespace = "https://github.com/sharky98/RWSchema/Defs";
   public static readonly XmlQualifiedName stringType = new("string", xsdSchema);

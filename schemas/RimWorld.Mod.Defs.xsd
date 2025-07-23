@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<xs:schema xmlns="https://github.com/sharky98/RWSchema/Defs" elementFormDefault="qualified" targetNamespace="https://github.com/sharky98/RWSchema/Defs"
-  xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<xs:schema xmlns="https://github.com/sharky98/RWSchema/Defs" elementFormDefault="qualified" targetNamespace="https://github.com/sharky98/RWSchema/Defs" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   <xs:include schemaLocation="Defs/WeaponClassDef.xsd" />
   <xs:include schemaLocation="Defs/WeaponClassPairDef.xsd" />
   <xs:include schemaLocation="Defs/GeneCategoryDef.xsd" />

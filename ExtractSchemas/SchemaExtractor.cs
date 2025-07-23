@@ -62,7 +62,7 @@ class SchemaExtractor
         SchemaTypeName = new XmlQualifiedName(schemaName.Name, SchemaCommonValues.targetNamespace),
       };
       choice.Items.Add(innerElement);
-      var include = new XmlSchemaInclude { SchemaLocation = $"{schemaName.Name}.xsd" };
+      var include = new XmlSchemaInclude { SchemaLocation = $"Defs/{schemaName.Name}.xsd" };
       combinedSchema.Includes.Add(include);
     }
 
@@ -70,7 +70,7 @@ class SchemaExtractor
     nsmgr.AddNamespace(string.Empty, SchemaCommonValues.targetNamespace);
     nsmgr.AddNamespace("xs", SchemaCommonValues.xsdSchema);
 
-    var path = SchemaCommonValues.destination + "/" + "CommonDefs.xsd";
+    var path = "/home/bparesimard/Documents/21-development/21.06-rimworld/RWSchema/schemas/RimWorld.Mod.Defs.xsd";
     File.WriteAllText(path, string.Empty);
     using StreamWriter file = new(path);
     combinedSchema.Write(file, nsmgr);
@@ -124,18 +124,11 @@ class SchemaExtractor
 
   private void WriteXmlSchemaToFile(XmlSchema schema)
   {
-    string filename = "";
-    try
+    XmlSchemaType schemaName = (XmlSchemaType)schema.Items[0];
+    string filename = $"{schemaName.Name}.xsd";
+    if (schema.Items.Count > 1)
     {
-      XmlSchemaType schemaName = (XmlSchemaType)schema.Items[0];
-      filename = $"{schemaName.Name}.xsd";
-    }
-    catch (System.InvalidCastException)
-    {
-      if (schema.Items.Count > 1)
-      {
-        filename = "CommonElements.xsd";
-      }
+      filename = "CommonElements.xsd";
     }
 
     if (filename == "")

@@ -27,7 +27,16 @@
       <xs:element name="incidentTargetTags">
         <xs:complexType>
           <xs:sequence>
-            <xs:element minOccurs="0" maxOccurs="unbounded" name="li" type="xs:string" />
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="li">
+              <xs:complexType>
+                <xs:simpleContent>
+                  <xs:extension base="xs:string">
+                    <xs:attribute name="MayRequire" type="xs:string" />
+                    <xs:attribute name="MayRequireAnyOf" type="xs:string" />
+                  </xs:extension>
+                </xs:simpleContent>
+              </xs:complexType>
+            </xs:element>
           </xs:sequence>
           <xs:attribute name="MayRequire" type="xs:string" />
           <xs:attribute name="MayRequireAnyOf" type="xs:string" />
@@ -39,7 +48,16 @@
       <xs:element name="inspectorTabs">
         <xs:complexType>
           <xs:sequence>
-            <xs:element minOccurs="0" maxOccurs="unbounded" name="li" type="xs:string" />
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="li">
+              <xs:complexType>
+                <xs:simpleContent>
+                  <xs:extension base="xs:string">
+                    <xs:attribute name="MayRequire" type="xs:string" />
+                    <xs:attribute name="MayRequireAnyOf" type="xs:string" />
+                  </xs:extension>
+                </xs:simpleContent>
+              </xs:complexType>
+            </xs:element>
           </xs:sequence>
           <xs:attribute name="MayRequire" type="xs:string" />
           <xs:attribute name="MayRequireAnyOf" type="xs:string" />

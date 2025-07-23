@@ -36,14 +36,33 @@ partial class SchemaTypeExtractor
 
   private XmlSchemaElement? DeriveFieldListGenericType(FieldInfo fieldInfo)
   {
-    // FIXME: Need to convert "li" into a complex element to add attributes
+    var baseType = GetSchemaTypeName(fieldInfo);
     var listElements = new XmlSchemaElement()
     {
       Name = "li",
-      SchemaTypeName = GetSchemaTypeName(fieldInfo),
       MinOccurs = 0,
       MaxOccursString = "unbounded",
     };
+
+    if (baseType.Namespace != SchemaCommonValues.targetNamespace)
+    {
+      var innerComplexType = new XmlSchemaComplexType();
+      listElements.SchemaType = innerComplexType;
+      var innerContent = new XmlSchemaSimpleContent();
+      var extension = new XmlSchemaSimpleContentExtension { BaseTypeName = baseType };
+      innerComplexType.ContentModel = innerContent;
+      innerContent.Content = extension;
+      extension.Attributes.Add(
+        new XmlSchemaAttribute() { Name = "MayRequire", SchemaTypeName = SchemaCommonValues.stringType }
+      );
+      extension.Attributes.Add(
+        new XmlSchemaAttribute() { Name = "MayRequireAnyOf", SchemaTypeName = SchemaCommonValues.stringType }
+      );
+    }
+    else
+    {
+      listElements.SchemaTypeName = baseType;
+    }
 
     // Sequence that contains the elements
     var list = new XmlSchemaSequence();

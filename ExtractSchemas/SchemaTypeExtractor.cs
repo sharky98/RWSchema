@@ -30,20 +30,20 @@ partial class SchemaTypeExtractor(
   private readonly IEnumerable<Type> wildcardTypes =
   [
     typeof(DefModExtension),
-    typeof(CompProperties),
-    typeof(IngestionOutcomeDoer),
-    typeof(HediffGiver),
-    typeof(ThinkNode),
-    typeof(GenStep),
+    // typeof(CompProperties),
+    // typeof(IngestionOutcomeDoer),
+    // typeof(HediffGiver),
+    // typeof(ThinkNode),
+    // typeof(GenStep),
     typeof(ScattererValidator),
-    typeof(SymbolResolver),
+    // typeof(SymbolResolver),
     typeof(ScenPart),
     typeof(AudioGrain),
-    typeof(StatPart),
-    typeof(SkillNeed),
+    // typeof(StatPart),
+    // typeof(SkillNeed),
     typeof(ColorGenerator),
-    typeof(StockGenerator),
-    typeof(WorldGenStep),
+    // typeof(StockGenerator),
+    // typeof(WorldGenStep),
   ];
 
   public void Derive()
