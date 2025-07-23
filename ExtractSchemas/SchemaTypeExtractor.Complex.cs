@@ -68,23 +68,35 @@ partial class SchemaTypeExtractor
   private IEnumerable<XmlSchemaElement> DeriveFieldsOfType()
   {
     var fieldList = new List<XmlSchemaElement>();
-    var fields = assemblyType.GetFields();
-    if (assemblyType.Name == "RulePack")
-    {
-      var addedFields = new List<FieldInfo>
-      {
-        assemblyType.GetField("rulesStrings", BindingFlags.NonPublic | BindingFlags.Instance)!,
-        assemblyType.GetField("rulesFiles", BindingFlags.NonPublic | BindingFlags.Instance)!,
-      };
-      addedFields.AddRange(fields);
-      fields = [.. addedFields];
-    }
+    var fields = PatchUsedPrivateFields(assemblyType.GetFields()).ToList().FindAll(x => x != null);
+
     foreach (var field in fields)
     {
       if (DeriveField(field) is var f and not null)
         fieldList.Add(f);
     }
     return fieldList;
+  }
+
+  private FieldInfo[] PatchUsedPrivateFields(FieldInfo[] baseFields)
+  {
+    FieldInfo[] addedFields = [];
+
+    if (assemblyType.Name == "RulePack")
+    {
+      addedFields =
+      [
+        assemblyType.GetField("rulesStrings", BindingFlags.NonPublic | BindingFlags.Instance)!,
+        assemblyType.GetField("rulesFiles", BindingFlags.NonPublic | BindingFlags.Instance)!,
+      ];
+    }
+    var assName = assemblyType.Name;
+    if (assemblyType.BaseType?.Name == "StyleItemDef")
+    {
+      addedFields = [assemblyType.BaseType.GetField("category", BindingFlags.NonPublic | BindingFlags.Instance)!];
+    }
+
+    return [.. baseFields, .. addedFields];
   }
 
   private XmlSchemaElement? DeriveField(FieldInfo field)
